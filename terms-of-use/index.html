@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="app" ng-init="$root.pageTitle = 'Terms of Use'">
+<head>
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+(function(){var e=document.getElementsByTagName("base")[0];e.href=e.href})()
+</script><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Use - Curious World</title>
+<link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+<div id="wrapper" class="off-canvas-wrap" data-offcanvas>
+  <header id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
+  <div id="content" class="inner-wrap" ng-class="$root.contentClass">
+    <div>
+      <div id="terms" class="columns">
+        <header id="header-bar">
+          <h1><span>Terms of Use</span></h1>
+        </header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut blandit purus. Maecenas molestie leo id nibh fringilla, vitae tincidunt mi molestie. Mauris luctus a odio nec pharetra. Maecenas placerat pretium turpis. Ut varius massa elit, a mattis metus lobortis eget. Fusce et semper erat. Curabitur cursus interdum volutpat. Aenean condimentum velit eget turpis ultrices convallis. Mauris in malesuada quam, in hendrerit libero. Donec tincidunt molestie ante eu iaculis. Sed nisl tortor, hendrerit auctor vehicula vel, interdum nec leo. Integer rutrum, massa at porta sollicitudin, mi est pellentesque nisl, imperdiet euismod quam mauris sit amet nunc. In suscipit auctor velit, vitae eleifend elit vehicula quis. Etiam ut metus elementum lorem cursus ultricies eu non neque. Proin sed lacinia quam, quis tristique lorem.</p>
+        <p>Quisque velit lorem, ultrices sed consectetur nec, pulvinar vel lorem. Etiam auctor urna eu tellus hendrerit, vel bibendum ante rutrum. Proin ullamcorper tortor lectus, nec pretium elit consectetur in. Integer malesuada in enim at varius. Vivamus tempus congue sem. Nulla dui augue, pulvinar sit amet molestie sed, lobortis eu nisi. Donec lacus augue, pretium ut ante sit amet, vulputate semper tellus. Aliquam adipiscing tincidunt magna at blandit. Sed elementum dolor sed adipiscing tincidunt. Fusce gravida erat quis ultricies euismod. Praesent porta scelerisque urna, ac convallis leo elementum eget. Vestibulum tortor risus, laoreet non porttitor non, pellentesque id arcu. Aliquam erat volutpat. Sed eu nibh interdum, congue orci nec, aliquet lectus. Curabitur rhoncus, turpis et vulputate rutrum, nulla ipsum varius mauris, nec egestas ipsum urna sed quam.</p>
+      </div>
+      <footer ng-include="'main/footer.html'"></footer>
+    </div>
+  </div>
+</div>
+<script src="js/vendor/modernizr.js"></script>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/foundation.min.js"></script>
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/vendor/angular-route.min.js"></script>
+<script src="js/vendor/angular-better-placeholder.js"></script>
+<script src="js/modules/authenticate.js"></script>
+<script src="main/main.js"></script>
+<script src="main/account-controller.js"></script>
+</body>
+</html>

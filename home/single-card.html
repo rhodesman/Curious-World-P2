@@ -1,0 +1,44 @@
+<div class="card" id="card-{{card.id}}">
+  <h1>{{card.title}}</h1>
+  <div class="example">{{card.example}}</div>
+  <div class="upload-buttons" ng-hide="userInfo.isLoggedIn()">
+    <a class="ready-state" href=""
+      ng-click="auth('card.media = true', this)"
+      ng-hide="card.media">
+      <span>Upload file to your private Kidfolio</span>
+    </a>
+    <a class="done-state" href=""
+      ng-show="card.media">
+      <span>Captured!</span>
+    </a>
+  </div>
+  <form action="/upload" method="post" enctype="multipart/form-data"
+    class="upload-buttons"
+    ng-init="card.media = false"
+    ng-show="userInfo.isLoggedIn()"
+    dropzone="dropzone"
+    ng-dropzone>
+    <a class="ready-state" href=""
+      ng-click="auth('card.media = true', this)"
+      ng-hide="card.media">
+      <span>Upload file to your private Kidfolio</span>
+    </a>
+    <a class="done-state" href=""
+      ng-show="card.media">
+      <span>Captured!</span>
+    </a>
+  </form>
+  <div class="completion-buttons" ng-init="card.event = false">
+    <a class="ready-state" href=""
+      ng-click="auth('card.event = true', this)"
+      ng-show="!card.event">
+      <span>Mark Complete</span>
+    </a>
+    <a class="done-state" href=""
+      ng-click="auth('card.event = false', this)"
+      ng-hide="!card.event">
+      <span>Completed!</span>
+    </a>
+  </div>
+  <div class="description">{{card.description}}</div>
+</div>

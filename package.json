@@ -1,13 +1,21 @@
 {
   "name": "node-js-getting-started",
   "version": "0.1.2",
-  "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
+  "devDependencies": {
+    "node-sass": "~0.7.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-sass": "~0.8.0",
+    "grunt-autoprefixer": "~0.8.1"
+  },
   "dependencies": {
-    "express": "~4.9.x"
+  	"express": "~4.9.x",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13"
   },
   "engines": {
     "node": "0.10.x"
@@ -16,10 +24,5 @@
     "type": "git",
     "url": "https://github.com/heroku/node-js-getting-started"
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+  "postinstall": "./node_modules/.bin/grunt"
 }

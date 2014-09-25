@@ -1,0 +1,53 @@
+<a href="#" data-reveal-id="manage-account-modal">Back</a>
+<div class="title">
+    <h2>Delete Account</h2>
+</div>
+<form class="base-form" name="deleteAccountForm" class="deleteAccount" ng-submit="$event.preventDefault()" action="#" method="post">
+            <div class="row">
+                <div class="small-12 columns">
+                <label class="leaving">I am leaving beacause:</label>
+                    <input type="radio" name="reason" value="old" id="old" ng-required="true" ng-model="deleteFormData.reason"><label for="old"><span class="custom"></span>My child is too old.</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <input type="radio" name="reason" value="privacy_concern" id="privacy_concern" ng-required="true" ng-model="deleteFormData.reason"><label for="privacy_concern"><span class="custom"></span>I have a privacy concern.</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <input type="radio" name="reason" value="misunderstand" id="misunderstand" ng-required="true" ng-model="deleteFormData.reason"><label for="misunderstand"><span class="custom"></span>I don't understand how to use it.</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <input type="radio" name="reason" value="notuseful" id="notuseful" ng-required="true" ng-model="deleteFormData.reason"><label for="notuseful"><span class="custom"></span>I don't find it useful.</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <input type="radio" name="reason" value="other" id="other" ng-required="true" ng-model="deleteFormData.reason"><label for="other"><span class="custom"></span>Other</label>
+                </div>
+            </div>
+            <div class="row" ng-show="deleteFormData.reason == 'other'">
+                <div class="small-12 columns">
+                    <textarea cols="40" rows="5" name="otherReason" ng-model="deleteFormData.otherReason" placeholder="Please specify.">
+                    </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns pill-button">
+            <label class="disclaimer">Deleting your account will remove all progress, photos, videos, and comments from Curious World.</label>
+            <input type="submit" class="button" value="I've changed my mind" data-reveal-id="manage-account-modal">
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns pill-button">
+            <input type="submit" class="button" value="Yes, delete my Account" ng-click="deleteAccount()">
+        </div>
+    </div>
+
+</form>
+<a class="close-reveal-modal">&#215;</a>

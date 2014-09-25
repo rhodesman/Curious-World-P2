@@ -1,0 +1,782 @@
+$challenge-gutter: 16px;
+$challenge-domain-width: 68px;
+$challenge-domain-height: 60px;
+$challenge-header-domain-size: 53px;
+$challenge-header-domain-offset: 43px;
+$share-button-height: 30px;
+$share-button-arrow-size: 6px;
+$community-background: $light-grey;
+
+.ng-social-container{
+margin-bottom:20px;
+}
+
+.ng-social-text{
+	font-weight:normal;
+}
+
+#content.community{
+	background: $community-background;
+}
+
+#community {
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0;
+	}
+	#header-bar {
+		position: relative;
+		padding-top: 32px;
+		margin-bottom: (\\$header-bar-height / 2);
+		line-height:0;
+
+		h1 {
+			color: $success-green;
+			margin-bottom: 0;
+
+			&:before,
+			&:after {
+				border-color: $success-green;
+				z-index: 0;
+			}
+			span {
+				background-color: $community-background;
+				z-index: 1;
+			}
+		}
+		#filters {
+			.category-selector {
+				@include filter-min-width(140px); // Defined in navigation.scss
+			}
+		}
+	}
+	&.single {
+		#header-bar {
+			padding-top: 0;
+
+			h1 {
+				height: auto;
+				line-height: ($header-bar-height) + 30px;
+				font-size: 2rem;
+
+				&:after,
+				&:before {
+					content: "";
+					display: none;
+				}
+				span {
+					background: none;
+				}
+			}
+		}
+		.add-post {
+			text-align: center;
+
+			.button {
+				margin: 0;
+				height: $header-bar-height;
+				background: $success-green;
+				border-radius: 6px;
+				margin-bottom:20px;
+
+				&:hover,
+				&:focus {
+					background: darken($success-green, 10);
+				}
+			}
+			strong {
+				display: block;
+				color: $grey;
+				padding-bottom:20px;
+				/* margin-bottom:20px; */
+			}
+		}
+	}
+	#filters {
+		.selector a b {
+			@include hide-text();
+			display: inline-block;
+			padding: 0 4px;
+			width: 20px;
+			height: 19px;
+			vertical-align: middle;
+			background: transparent url(../img/loved-icon.png) scroll no-repeat 50% 0;
+			pointer-events: none;
+		}
+		.single-selector a {
+			color: $success-green;
+
+			&:after {
+				background-image: url(../img/green-down-arrow.png);
+			}
+		}
+	}
+	#challenges {
+		position: relative;
+		z-index: 1;
+	}
+}
+#challenges {
+	list-style: none;
+	margin: auto;
+	padding-bottom: 60px;
+
+	& > li {
+		margin-bottom: $challenge-gutter;
+	}
+}
+
+// Single challenge
+@mixin challenge-domain-coloring($color, $image: none) {
+	.image {
+		border-color: $color;
+	}
+	.description {
+		background-color: $color;
+
+		&:before {
+			background: $color $image scroll no-repeat 50% 50%;
+		}
+	}
+}
+.challenge {
+	position: relative;
+	color: $dark-grey;
+
+	a {
+		color: inherit;
+	}
+	.title {
+		position: relative;
+		margin: 0;
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: $link-grey-hover;
+		z-index: 2;
+	}
+	.image {
+		position: relative;
+		display: block;
+		margin-bottom: $challenge-gutter;
+		z-index: 1;
+		border: 2px solid $grey;
+		overflow: hidden;
+
+		&:hover {
+			.description {
+				bottom: 0;
+			}
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.description {
+		position: relative;
+		padding: 10px 8px;
+		width: 100%;
+		background: $grey;
+		color: $white;
+		line-height:1.3;
+
+		@media #{$small-only} {
+			bottom: auto !important;
+		}
+		@media #{$medium-up} {
+			position: absolute;
+			left: 0;
+			bottom: auto;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: -$challenge-domain-height;
+			width: $challenge-domain-width;
+			height: $challenge-domain-height;
+			background: $grey;
+		}
+	}
+	.share {
+		display: none;
+		position: absolute;
+		right: $challenge-gutter;
+		//bottom: $challenge-gutter + (($challenge-domain-size - $share-button-height) / 2);
+		height: $share-button-height;
+		border-radius: 3px;
+		box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+	}
+	.total-completions {
+		position: relative;
+		display: block;
+		color: $grey;
+	}
+
+	// Domain colors
+	&.domain-creative	{
+		@include challenge-domain-coloring($color-creative, url(../img/domains/creative-icon-white.png));
+	}
+	&.domain-language	{
+		@include challenge-domain-coloring($color-language, url(../img/domains/language-icon-white.png));
+	}
+	&.domain-math	{
+		@include challenge-domain-coloring($color-math, url(../img/domains/math-icon-white.png));
+	}
+	&.domain-science	{
+		@include challenge-domain-coloring($color-science, url(../img/domains/science-icon-white.png));
+	}
+	&.domain-family	{
+		@include challenge-domain-coloring($color-family, url(../img/domains/family-icon-white.png));
+	}
+	&.domain-executive	{
+		@include challenge-domain-coloring($color-executive, url(../img/domains/executive-icon-white.png));
+	}
+	&.domain-social	{
+		@include challenge-domain-coloring($color-social, url(../img/domains/social-icon-white.png));
+	}
+	&.domain-health	{
+		@include challenge-domain-coloring($color-health, url(../img/domains/health-icon-white.png));
+	}
+}
+
+// Completions
+#completions {
+	list-style: none;
+	position: relative;
+}
+.completion,
+.comments-modal {
+	color: $dark-grey;
+	background: $white;
+
+	.rate {
+		padding: 0 $challenge-gutter;
+	}
+	.image {
+		display: block;
+		width: 100%;
+		height: auto;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.name, .author {
+		font-weight: 600;
+
+		& + time {
+			font-weight: 300;
+			color: $grey;
+
+			&:before {
+				content: "\00B7";
+				display: inline-block;
+				width: 0.5rem;
+			}
+		}
+	}
+	.description,
+	.first-comment,
+	.comments > li {
+		padding: ($challenge-gutter * 1.5) $challenge-gutter;
+	}
+	.description {
+		.name {
+			font-weight: bold;
+		}
+		.comment {
+			font-weight: 600;
+		}
+	}
+	.first-comment,
+	.comments > li {
+		position: relative;
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 5%;
+			top: 0;
+			width: 90%;
+			border-top: 1px solid $footer-border-color;
+		}
+	}
+	.comments {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.comment {
+		font-weight: 300;
+	}
+	.more {
+		position: relative;
+		display: block;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		color: $grey;
+		cursor: pointer;
+
+		&:hover {
+			background: transparentize($black, 0.9);
+		}
+	}
+	.managing {
+		position: relative;
+		top: 5px;
+		font-size: 0.75rem;
+		text-align: right;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s ease-in-out, top 0.2s ease-in-out;
+
+		&.flagging {
+			text-align: left;
+		}
+		a {
+			color: $grey;
+
+			&.first {
+				float: left;
+			}
+		}
+		.confirm {
+			&,
+			a {
+				color: $error-red;
+			}
+			a {
+				margin-left: 8px;
+
+				& + a {
+					margin-left: 0;
+
+					&:before {
+						content: " / ";
+					}
+				}
+			}
+		}
+	}
+	.first-comment,
+	.comments > li,
+	.description {
+		&:hover .managing {
+			top: 0;
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+}
+.completion {
+	position: relative;
+	margin-bottom: ($challenge-gutter * 2);
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: -3px;
+		top: -3px;
+		width: 100%;
+		height: 100%;
+		border: 3px solid $grey;
+		box-sizing: content-box;
+		opacity: 0;
+		z-index: 0;
+		pointer-events: none;
+	}
+	&:hover:before {
+		opacity: 1;
+	}
+}
+
+// Main "completion"
+@mixin completion-domain-coloring($color, $image: none) {
+	#descriptive-completion {
+		border-color: $color;
+		background-color: $color;
+
+		.description:before {
+			background-color: $color;
+			background-image: $image;
+		}
+	}
+	.completion:hover:before {
+		border-color: $color;
+	}
+}
+
+#descriptive-completion {
+	color: $white;
+	background: $grey;
+	border: 2px solid $grey;
+
+	&:before {
+		left: -5px;
+		top: -5px;
+		border-width: 5px;
+	}
+	time {
+		color: $white;
+	}
+	.description {
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: -$challenge-domain-height;
+			width: $challenge-domain-width;
+			height: $challenge-domain-height;
+			background: $grey none scroll no-repeat 50% 50%;
+		}
+	}
+	.more {
+		color: $white;
+		background: transparentize($black, 0.9);
+
+		&:hover {
+			background: transparentize($black, 0.8);
+		}
+	}
+}
+.domain-creative {
+	@include completion-domain-coloring(
+		$color-creative,
+		url(../img/domains/creative-icon-white.png)
+	);
+}
+.domain-language {
+	@include completion-domain-coloring(
+		$color-language,
+		url(../img/domains/language-icon-white.png)
+	);
+}
+.domain-math {
+	@include completion-domain-coloring(
+		$color-math,
+		url(../img/domains/math-icon-white.png)
+	);
+}
+.domain-health {
+	@include completion-domain-coloring(
+		$color-health,
+		url(../img/domains/health-icon-white.png)
+	);
+}
+.domain-family {
+	@include completion-domain-coloring(
+		$color-family,
+		url(../img/domains/family-icon-white.png)
+	);
+}
+.domain-executive {
+	@include completion-domain-coloring(
+		$color-executive,
+		url(../img/domains/executive-icon-white.png)
+	);
+}
+.domain-social {
+	@include completion-domain-coloring(
+		$color-social,
+		url(../img/domains/social-icon-white.png)
+	);
+}
+.domain-science {
+	@include completion-domain-coloring(
+		$color-science,
+		url(../img/domains/science-icon-white.png)
+	);
+}
+.completion,
+.challenge,
+.comments-modal {
+	.rate {
+		list-style: none;
+		height: 30px;
+		margin: $challenge-gutter 0;
+
+		& > li {
+			display: inline-block;
+
+			& + li {
+				margin-left: 8px;
+			}
+		}
+		a {
+			display: inline-block;
+			height: $share-button-height;
+			line-height: $share-button-height;
+			font-size: 0.75rem;
+			color: $success-green;
+			text-transform: uppercase;
+
+			strong {
+				position: relative;
+				display: inline-block;
+				padding: 0 8px;
+				margin-right: 8px;
+				font-size: 0.85rem;
+				background: $white;
+				border: 1px solid $success-green;
+
+				&:before,
+				&:after {
+					content: "";
+					position: absolute;
+					left: 100%;
+					top: 50%;
+					height: 0;
+					width: 0;
+					border: solid transparent;
+					pointer-events: none;
+				}
+				&:before {
+					border-color: transparentize($success-green, 1);
+					border-left-color: $success-green;
+					border-width: ($share-button-arrow-size + 1);
+					margin-top: -($share-button-arrow-size + 1);
+				}
+				&:after {
+					border-color: transparentize($white, 1);
+					border-left-color: $white;
+					border-width: $share-button-arrow-size;
+					margin-top: -($share-button-arrow-size);
+				}
+
+				&:hover{
+					color:white;
+					background: $success-green;
+					border-color: $white;
+
+					&:before {
+						border-left-color: $white;
+					}
+					&:after {
+						border-left-color: $success-green;
+					}
+				}
+
+			}
+			span {
+				color: $success-green;
+			}
+			.love {
+				@include hide-text();
+				display: inline-block;
+				padding: 0 4px;
+				width: 20px;
+				height: 19px;
+				vertical-align: middle;
+				background: transparent url(../img/loved-icon.png) scroll no-repeat 50% 100%;
+				pointer-events: none;
+
+				&:hover{
+					background-position: 50% 0;
+				}
+			}
+		}
+		.is-active a {
+			color: $white;
+
+			strong {
+				background: $success-green;
+				border-color: $white;
+
+				&:before {
+					border-left-color: $white;
+				}
+				&:after {
+					border-left-color: $success-green;
+				}
+			}
+		}
+		.is-active .love {
+			background-position: 50% 0;
+		}
+	}
+	.share {
+		width: 75px;
+
+		& > a {
+			@include hide-text();
+			position: relative;
+			display: block;
+			width: 100%;
+			background: $white;
+
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: ($share-button-height - 15px) / 2;
+				display: block;
+				width: 100%;
+				height: 15px;
+				background: transparent url(../img/social-icons.png) scroll no-repeat 50% 0;
+			}
+		}
+		& > ul {
+			width: 75px;
+			border-radius: 3px;
+			border: none;
+			box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+
+			&:before,
+			&:after {
+				content: none;
+			}
+			li {
+				padding: 5px;
+				height: $share-button-height + (5px * 2);
+
+				&:hover {
+					background: transparent;
+				}
+				& + li {
+					padding-top: 0;
+					height: $share-button-height + 5px;
+				}
+				a {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					padding-left: 50%;
+					color: $white;
+					background: $dark-grey;
+
+					strong {
+						@include hide-text();
+						position: absolute;
+						display: block;
+						right: 50%;
+						top: ($share-button-height - 15px) / 2;
+						margin-right: ($challenge-gutter / 4);
+						width: 0;
+						height: 15px;
+						background: transparent url(../img/social-icons.png) no-repeat scroll 0 -15px;
+					}
+				}
+				&.twitter {
+					a {
+						background: $color-twitter;
+
+						&:hover {
+							background: lighten($color-twitter, 10%);
+						}
+					}
+					strong {
+						width: 19px;
+						background-position: 0 -15px;
+					}
+				}
+				&.facebook {
+					a {
+						background: $color-facebook;
+
+						&:hover {
+							background: lighten($color-facebook, 10%);
+						}
+					}
+					strong {
+						width: 9px;
+						background-position: -25px -15px;
+					}
+				}
+				&.pinterest {
+					a {
+						background: $color-pinterest;
+
+						&:hover {
+							background: lighten($color-pinterest, 10%);
+						}
+					}
+					strong {
+						width: 12px;
+						margin-right: -(12px / 2);
+						background-position: -42px -15px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Modals
+.challenge-submission,
+.comments-modal {
+	padding: 0;
+
+	@media #{$medium-up} {
+		padding-bottom: ($challenge-gutter * 2);
+	}
+}
+.challenge-submission {
+	.media { // Upload form
+		margin: $challenge-gutter;
+		height: 200px;
+		padding-top: 15%;
+		text-align: center;
+		color: $grey;
+		border-radius: $challenge-gutter / 2;
+		border: 2px dashed $grey;
+		background: transparent url(../img/home/upload-photo.png) scroll no-repeat 50% 70%;
+		overflow: visible;
+		@media #{$medium-up}{
+			height:400px;
+			padding-top: 50%;
+			background: transparent url(../img/home/upload-photo.png) scroll no-repeat 50% (200px - 46px);
+
+		}
+
+		&.dz-drag-hover {
+			border-style: solid;
+		}
+		& > * {
+			display: block;
+			margin: 0 auto;
+			width: 80%;
+			height: 100%;
+			pointer-events: none;
+		}
+	}
+}
+.comments-modal {
+}
+
+// Generic forms
+.challenge-submission,
+.comments-modal,
+form.comment {
+	textarea {
+		margin: 0;
+		min-height: 200px;
+		border: none;
+		box-shadow: none;
+		resize: vertical;
+		padding: 16px;
+	}
+	button {
+		display: block;
+		width: 100%;
+		background-color: $success-green;
+
+		@media #{$medium-up} {
+			margin: 0 auto;
+			width: 80%;
+		}
+		&:hover {
+			background-color: darken($success-green, 10);
+		}
+	}
+}

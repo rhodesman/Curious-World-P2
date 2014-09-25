@@ -1,0 +1,650 @@
+$card-button-size: 133px;
+$card-icon-size: 66px;
+$card-navigation-width: 100px;
+$card-navigation-icon-width: 20px;
+$card-width-max: 880px;
+$card-height-min: 560px;
+$card-vertical-padding: 60px;
+$card-horizontal-padding: 40px;
+$card-vertical-margin: 50px;
+$age-selector-height: 35px;
+$age-selector-item-width: (100% / 5);
+$age-selector-label-width: 90px;
+
+// Domain wrapper
+#domain-viewer {
+	padding-top: ($mobile-hitbox / 2);
+	background: $grey;
+	overflow: hidden;
+
+	@media #{$medium-up} {
+		padding-top: 45px;
+	}
+
+	&.domain-creative {
+		background: $color-creative;
+	}
+	&.domain-language {
+		background: $color-language;
+	}
+	&.domain-math {
+		background: $color-math;
+	}
+	&.domain-health {
+		background: $color-health;
+	}
+	&.domain-family {
+		background: $color-family;
+	}
+	&.domain-executive {
+		background: $color-executive;
+	}
+	&.domain-social {
+		background: $color-social;
+	}
+	&.domain-science {
+		background: $color-science;
+	}
+}
+
+// Card selector
+#cards-section {
+  position: relative;
+	margin-bottom: ($mobile-hitbox / 2);
+	-webkit-perspective: 1000px;
+	-webkit-transform-style: preserve-3d;
+
+	@media #{$medium-up} {
+		margin: 0 $card-navigation-width 16px;
+	}
+
+	// Navigation
+  .item-navigation {
+    position: relative;
+		height: $mobile-hitbox;
+		color: $white;
+    z-index: 0;
+
+		@media #{$medium-up} {
+			position: absolute;
+			top: 0;
+			margin: 0 auto;
+			width: 100%;
+			height: 100%;
+    }
+    a {
+      position: absolute;
+      top: 0;
+      width: 49.9%;
+      height: 100%;
+			color: inherit;
+      line-height: $mobile-hitbox;
+      text-align: center;
+			background: transparentize($white, 0.7);
+
+			@media #{$medium-up} {
+				@include hide-text();
+				width: $card-navigation-width;
+				background: none;
+			}
+      &:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				width: $card-navigation-icon-width / 2;
+				height: 100%;
+				background: transparent none scroll no-repeat 50% 50%;
+				opacity: 0.8;
+				background-size: contain;
+
+				@media #{$medium-up} {
+					width: $card-navigation-icon-width;
+					background-size: auto;
+				}
+			}
+			&.prev {
+				left: 0;
+
+				@media #{$medium-up} {
+					left: (-$card-navigation-width);
+				}
+				&:before {
+					left: (($mobile-hitbox - $card-navigation-icon-width) / 2);
+					background-image: url(../img/home/card-nav-left.png);
+
+					@media #{$medium-up} {
+						left: (($card-navigation-width - $card-navigation-icon-width) / 2);
+					}
+				}
+			}
+			&.next {
+				right: 0;
+
+				@media #{$medium-up} {
+					right: (-$card-navigation-width);
+				}
+				&:before {
+					right: (($mobile-hitbox - $card-navigation-icon-width) / 2);
+					background-image: url(../img/home/card-nav-right.png);
+
+					@media #{$medium-up} {
+						right: (($card-navigation-width - $card-navigation-icon-width) / 2);
+					}
+				}
+			}
+		}
+  }
+
+	// Cards
+  .items {
+    position: relative;
+    margin: 0 auto;
+		max-width: $card-width-max;
+		overflow: visible !important;
+    z-index: 1;
+  }
+  .items.is-empty {
+    display: none;
+  }
+  #default-card {
+		padding: 0;
+		padding-bottom: 66%;
+		height: 0;
+		color: $link-grey;
+		text-align: center;
+		background: $white url(../img/home/main-card-image.jpg) scroll no-repeat 50% 50%;
+		background-size: cover;
+		overflow: hidden;
+
+    p {
+			display: none;
+			padding: 40px;
+			font-size: 1.5rem;
+			line-height: 1.2;
+			font-weight:100;
+			color: #999;
+
+			@media #{$small-only} {
+				margin: 0;
+			}
+
+			@media #{$medium-up} {
+				padding: 40px 40px 70px 40px;
+				font-size: 3rem;
+				line-height: 1.4;
+				}
+		}
+		.button {
+			float: left;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			display: block;
+			margin: 0;
+			padding: 0;
+			width: 49.8%;
+			height: 90px;
+			line-height: 90px;
+			text-align: center;
+			color: $grey;
+			font-weight: 600;
+			font-size: 1rem;
+			background-color: transparentize($white, 0.9);
+			white-space: nowrap;
+
+			@media #{$medium-up} {
+				font-size: 1.4rem;
+			}
+			@media #{$large-up} {
+				height: $card-button-size;
+				line-height: $card-button-size;
+				font-size: 1.9rem;
+			}
+			&:hover {
+				color: $success-green;
+				background: transparentize($white, 0.3);
+
+				&:before {
+					opacity: 1;
+				}
+			}
+			&:before {
+				content: "";
+				display: inline-block;
+				margin-right: 12px;
+				width: 28px;
+				height: 28px;
+				background: transparent none scroll no-repeat 50% 50%;
+				background-size: contain;
+				vertical-align: middle;
+				opacity: 0.7;
+
+				@media #{$medium-up} {
+					width: 48px;
+					height: 48px;
+				}
+				@media #{$large-up} {
+					width: 68px;
+					height: 68px;
+				}
+			}
+			& + .button {
+				left: auto;
+				right: 0;
+			}
+			&.learn-more {
+				&:before {
+					background-image: url(../img/home/play-icon.png);
+				}
+				&:hover:before {
+					background-image: url(../img/home/play-icon-pressed.png);
+				}
+			}
+			&.get-started {
+				&:before {
+					background-image: url(../img/home/intro-check.png);
+				}
+				&:hover:before {
+					background-image: url(../img/home/intro-check-pressed.png);
+				}
+			}
+
+		}
+  }
+  .item {
+		display: block;
+		list-style: none;
+		position: absolute;
+		top: 0;
+		left: 150%;
+		width: 100%;
+		color: $dark-grey;
+		//transition: all 0.6s ease;
+		opacity: 0;
+		box-shadow: 0px 4px 10px 2px transparentize($black, 0.9);
+		pointer-events: none;
+
+		&.is-active {
+			position: relative;
+			left: 0;
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+	.backward .item {
+		left: -150%;
+	}
+}
+
+#cards-section .card {
+	padding: ($card-vertical-padding / 2) 0;
+	//min-height: ($card-height-min / 2);
+	background-color: white;
+
+	@media #{$medium-up} {
+		padding: ($card-vertical-padding) 0;
+		//min-height: $card-height-min;
+	}
+	h1 {
+		margin: 0;
+		margin-bottom: 50px;
+		line-height: 36px;
+		font-size: 2.3rem;
+		font-weight: 600;
+		text-align: center;
+		@media #{$small-only} {
+			font-size:1.6rem;
+			margin-bottom:0;
+		}
+	}
+	.example {
+		margin: ($card-vertical-margin / 2) ($card-horizontal-padding / 2);
+
+		@media #{$medium-up} {
+			margin: ($card-vertical-margin) ($card-horizontal-padding);
+		}
+		@media #{$small-only} {
+			font-size:0.8rem;
+			margin-top:10px;
+			margin-bottom:10px;
+		}
+	}
+	.description {
+		clear: both;
+		margin: 0 40px;
+		padding-top: ($card-vertical-padding / 2);
+
+		@media #{$medium-up} {
+			padding-top: $card-vertical-padding;
+		}
+		@media #{$small-only} {
+			padding-top:15px;
+		}
+	}
+
+	// Buttons
+	.upload-buttons,
+	.completion-buttons {
+		width: 50%;
+		margin: 14px 0;
+		height: $card-button-size;
+
+		& > div {
+			height: 100%;
+		}
+		a,
+		.dz-success {
+			position: relative;
+			display: block;
+			padding-top: ($card-button-size * 0.6);
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			color: $grey;
+			font-weight: 300;
+			background-color: $light-grey;
+
+			&:hover {
+				background: darken($light-grey, 5);
+			}
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 50%;
+				bottom: ($card-button-size * 0.25);
+				margin-left: -($card-icon-size / 2);
+				width: $card-icon-size;
+				height: $card-icon-size;
+				background: transparent none scroll no-repeat 50% 50%;
+				z-index: 2;
+				@include ease-item(250ms);
+			}
+			&:hover:before {
+				bottom: ($card-button-size * 0.4);
+			}
+		}
+	}
+	.upload-buttons {
+		float: left;
+		position: relative;
+
+		a:before {
+			background-image: url(../img/home/upload-photo.png);
+		}
+		.done-state,
+		.dz-success {
+			color: $success-green;
+
+			&:before {
+				background-image: url(../img/home/upload-photo-success.png);
+				bottom: ($card-button-size * 0.4);
+			}
+		}
+		&.dz-started {
+			.ready-state span {
+				display: none;
+			}
+		}
+		.dz-preview {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			padding-top: ($card-button-size * 0.6);
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			pointer-events: none;
+
+			&:last-child {
+				display: block;
+				z-index: 2;
+			}
+			.dz-details {
+				display: none
+			}
+			.dz-progress {
+				margin: 0 10%;
+				width: 80%;
+				height: 16px;
+				background: $grey;
+
+				.dz-upload {
+					display: block;
+					height: 100%;
+					color: $dark-grey;
+				}
+			}
+			&.dz-error {
+				.dz-error-message {
+					display: block;
+					color: $error-red;
+				}
+				.dz-progress {
+					display: none;
+				}
+			}
+			&.dz-success {
+				.dz-progress {
+					display: none;
+				}
+				.dz-success-mark {
+					display: block;
+
+					&:before {
+						content: "Captured!";
+					}
+					span {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	.completion-buttons {
+		float: right;
+		border-left: 1px solid $white;
+
+		a:before {
+			background-image: url(../img/home/card-mark-complete.png);
+		}
+		.done-state {
+			color: $success-green;
+
+			&:before {
+				background-image: url(../img/home/card-mark-complete-green.png);
+				bottom: ($card-button-size * 0.4);
+			}
+		}
+	}
+	.ready-state {
+		span {
+			opacity: 0;
+		}
+		&:hover span {
+			opacity: 1;
+		}
+	}
+	.dz-drag-hover {
+		.ready-state:after {
+			content: "";
+			position: absolute;
+			top: 4%;
+			left: 2%;
+			display: block;
+			width: 96%;
+			height: 92%;
+			border: 2px dashed transparentize($dark-grey, 0.5);
+			border-radius: 8px;
+			pointer-events: none;
+			z-index: 2;
+		}
+	}
+}
+
+// Age selector
+.age-selector {
+	@media #{$medium-up} {
+		position: relative;
+		margin: 0 $card-navigation-width;
+		width: auto;
+		height: $age-selector-height;
+		line-height: $age-selector-height;
+		margin-top:25px;
+
+		.selector {
+			margin: 0 auto;
+			padding-left: ($age-selector-label-width + ($age-selector-height / 2));
+			padding-right: ($age-selector-height / 2);
+			max-width: $card-width-max;
+			color: $white;
+			background: transparentize($white, 0.7);
+			border-radius: ($age-selector-height / 2);
+
+			span {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: ($age-selector-height / 2);
+				height: 100%;
+				width: $age-selector-label-width;
+				font-size:16px;
+			}
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					display: inline-block;
+					width: ($age-selector-item-width / 2);
+					height: $age-selector-height;
+					text-align: right;
+
+					a:hover{
+						background-color:rgba(255,255,255,0.3);
+						border-radius: 50%;
+						z-index:1;
+						-webkit-transition: background-color .25s ease;
+					}
+					&.is-selected {
+						a {
+							color: $grey;
+							font-weight: bold;
+							border: 1px solid $white;
+							border-radius: 50%;
+							z-index: 1;
+
+							&:hover{
+								background-color: transparent;
+							}
+
+							&:before {
+								content: "";
+								display: block;
+								position: absolute;
+								top: 3px;
+								left: 3px;
+								width: ($age-selector-height - ((3px + 1) * 2));
+								height: ($age-selector-height - ((3px + 1) * 2));
+								background: $white;
+								border-radius: 50%;
+								z-index: -1;
+							}
+						}
+					}
+					& + li {
+						width: $age-selector-item-width;
+					}
+					a {
+						position: relative;
+						display: inline-block;
+						width: $age-selector-height;
+						text-align: center;
+						font-weight: 400;
+						line-height: $age-selector-height;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+
+	// Normal <select> element
+	select {
+		display: none !important; // Testing
+		margin-bottom: 0;
+		border: none;
+		color: $white;
+		background: $blue;
+	}
+}
+.domain-creative .age-selector .selector .is-selected a {
+	color: lighten($color-creative, 10);
+}
+.domain-language .age-selector .selector .is-selected a {
+	color: lighten($color-language, 10);
+}
+.domain-math .age-selector .selector .is-selected a {
+	color: lighten($color-math, 10);
+}
+.domain-health .age-selector .selector .is-selected a {
+	color: lighten($color-health, 10);
+}
+.domain-family .age-selector .selector .is-selected a {
+	color: lighten($color-family, 10);
+}
+.domain-executive .age-selector .selector .is-selected a {
+	color: lighten($color-executive, 10);
+}
+.domain-social .age-selector .selector .is-selected a {
+	color: lighten($color-social, 10);
+}
+.domain-science .age-selector .selector .is-selected a {
+	color: lighten($color-science, 10);
+}
+
+// Rotate while uploading -- dead?
+/*
+@keyframes rotating {
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes rotating {
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+	}
+}
+
+.is-active .dz-started.upload-buttons .ready-state:before {
+	-webkit-animation: rotating 2s linear infinite;
+	-moz-animation: rotating 2s linear infinite;
+	-ms-animation: rotating 2s linear infinite;
+	-o-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite;
+}
+*/

@@ -1,0 +1,95 @@
+<aside class="right-off-canvas-menu" ng-include="'cardfolio/menus.html'"></aside>
+<div id="cardfolio">
+  <header id="header-bar" class="row">
+    <h1><span>Progress Timeline</span></h1>
+    <ul id="filters">
+      <li class="show-for-medium-up"
+        ng-click="isMediaOnly = !isMediaOnly">
+        <label class="checkbox" for="filter-by-media"
+          ng-class="{ 'is-checked': isMediaOnly }">
+          <input type="checkbox" ng-model="isMediaOnly" />
+          <span>Show <b>items with media</b> only</span>
+        </label>
+      </li>
+      <li class="media-selector hide-for-medium-up">
+        <div class="single-selector hide-for-medium-up">
+          <a class="right-off-canvas-toggle"
+            ng-click="$root.offCanvasMenu = 'media-selector'">
+            <span ng-show="!isMediaOnly">Show All</span>
+            <span ng-show="isMediaOnly">Show <b>items with media</b> only</span>
+          </a>
+        </div>
+      </li>
+      <li class="domain-selector">
+        <div class="selector show-for-medium-up">
+          <a class="selected-option" data-dropdown="domain-selector">
+            <span>{{selectedDomain.title || "All Domains"}}</span>
+          </a>
+          <div id="domain-selector" class="f-dropdown" data-dropdown-content>
+            <ul>
+              <li ng-class="{ 'is-selected': !selectedDomain }">
+                <a ng-click="selectedDomain = ''">All Domains</a>
+              </li>
+              <li ng-repeat="domain in domains"
+                ng-class="{ 'is-selected': domain === $parent.selectedDomain }">
+                <a ng-class="'domain-' + domain.name"
+                  ng-click="$parent.selectedDomain = domain">
+                  <span>{{domain.title}}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="single-selector hide-for-medium-up">
+          <a class="right-off-canvas-toggle"
+            ng-click="$root.offCanvasMenu = 'domain-selector'">{{selectedDomain.title || "All Domains"}}</a>
+        </div>
+      </li>
+      <li class="sorting-selector">
+        <div class="selector show-for-medium-up"
+          ng-init="selectedSorting = sorting[0]">
+          <a class="selected-option" data-dropdown="sorting-selector">
+            <span>{{selectedSorting.title}}</span>
+          </a>
+          <div id="sorting-selector" class="f-dropdown" data-dropdown-content>
+            <ul>
+              <li ng-repeat="sortingOption in sorting"
+                ng-class="{ 'is-selected': sortingOption === $parent.selectedSorting }">
+                <a ng-click="$parent.selectedSorting = sortingOption">
+                  <span>{{sortingOption.title}}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="single-selector hide-for-medium-up">
+          <a class="right-off-canvas-toggle"
+            ng-click="$root.offCanvasMenu = 'sorting-selector'">{{selectedSorting.title}}</a>
+        </div>
+      </li>
+    </ul>
+  </header>
+  <ol id="timeline"
+    ng-class="'domain-' + selectedDomain.name">
+    <li id="timeline-event-{{$index}}"
+      ng-show="userInfo.isLoggedIn()"
+      ng-class="'domain-' + event.item.domain.name"
+      ng-repeat="event in (filteredEvents = (events | filter: filter | orderBy: selectedSorting.value))"
+      ng-include="'cardfolio/single-event.html'">
+    </li>
+    <li id="empty-timeline"
+      ng-hide="userInfo.isLoggedIn() || (timeline && !timeline.length)">
+      <section id="default-timeline-event" class="row">
+        <div class="timeline-event">
+          <span class="domain-bubble"></span>
+          <h1>Start tracking your kid's progress!</h1>
+          <div class="description">
+            <p ng-show="userInfo.isLoggedIn()">Complete cards on the <a href="/">Home</a> page to start tracking your kid's progress! Cardfolio is always private. Only you can see this page.</p>
+            <p ng-hide="userInfo.isLoggedIn()">In order to start your Cardfolio, you must first <a data-reveal-id="create-account-modal">create an account</a>. If you already have an account, <a data-reveal-id="sign-in-modal">sign in</a> to view your Cardfolio.</p>
+          </div>
+        </div>
+      </section>
+    </li>
+  </ol>
+</div>
+<footer ng-include="'main/footer.html'"></footer>

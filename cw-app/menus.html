@@ -1,0 +1,31 @@
+<div id="categories-off-canvas" class="off-canvas-selector"
+  ng-class="{ 'short-list': ($parent.categories.length + 1) < 8 }"
+  ng-show="$root.offCanvasMenu === 'category-selector'">
+  <h1 class="title">Select a category:</h1>
+  <ul>
+    <li ng-class="{ 'is-selected': !$parent.selectedCategory }">
+      <a ng-click="$parent.selectedCategory = ''">All Categories</a>
+    </li>
+    <li ng-repeat="category in $parent.categories"
+      ng-class="{ 'is-selected': category === $parent.selectedCategory }">
+      <a ng-click="$parent.$parent.selectedCategory = category">
+        <span>{{category.title}}</span>
+      </a>
+    </li>
+    <li class="dummy"></li>
+  </ul>
+</div>
+<div id="sorting-off-canvas" class="off-canvas-selector"
+  ng-class="{ 'short-list': $parent.sorting.length < 8 }"
+  ng-show="$root.offCanvasMenu === 'sorting-selector'">
+  <h1 class="title">Select sorting type:</h1>
+  <ul>
+    <li ng-repeat="sortingOption in $parent.sorting"
+      ng-class="{ 'is-selected': sortingOption === $parent.selectedSorting }">
+      <a ng-click="$parent.$parent.selectedSorting = sortingOption">
+        <span>{{sortingOption.title}}</span>
+      </a>
+    </li>
+    <li class="dummy"></li>
+  </ul>
+</div>

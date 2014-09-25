@@ -1,0 +1,55 @@
+<aside class="right-off-canvas-menu" ng-include="'home/menus.html'"></aside>
+<div id="domain-viewer" ng-class="'domain-' + (selectedDomain || domains[0]).name">
+  <div id="cards" class="row" ng-include="'home/cards.html'"></div>
+  <section id="domains" class="row" ng-include="'home/domains.html'"></section>
+</div>
+<section class="more-info" ng-init="doctorExplainsIsOpen = false" ng-class="{ 'is-open': doctorExplainsIsOpen }">
+  <h3 ng-click="doctorExplainsIsOpen = !doctorExplainsIsOpen">
+    <a>
+      <img class="avatar" src="img/home/about-icon.png" />
+      <span><span>About Curious World</span></span>
+      <img class="arrow" src="img/down-arrow-white.png" />
+    </a>
+  </h3>
+  <div class="explanation-info slide row" ng-show="doctorExplainsIsOpen">
+    <div class="small-10 medium-6 columns small-centered end">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, tenetur rerum quod ut in exercitationem praesentium nam ea cum aliquid repellat laborum ipsum sint ab provident nihil cumque tempore ullam.</p>
+      <div class="row video">
+        <div class="video-wrapper">
+          <iframe src="//player.vimeo.com/video/20732587?color=969696" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quo, facilis tenetur sequi eveniet repellat atque iure quidem optio id vel recusandae cum esse ducimus earum cumque totam autem dolorem? Ut rem accusantium dolorum optio! Veniam,
+        repellat voluptatum natus error obcaecati maxime explicabo distinctio laudantium ut maiores id unde dolorum aut rem consequatur esse beatae et veritatis rerum accusantium accusamus.</p>
+    </div>
+    <div id="domain-key-modal"
+      class="reveal-modal domain-key-modal medium"
+      ng-include="'partials/modals/domain-key-modal.html'"
+      data-reveal>
+    </div>
+    <section class="show-for-small-only">
+      <div class="row">
+        <div class="domain-key small-10 medium-6 small-centered columns">
+          <ul>
+            <li ng-repeat="domain in domains" ng-class="'domain-' + domain.name" ng-click="selectKeyDomain(domain.title);">
+              <a>
+                <span class="title">{{domain.title}}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="domain-description small-10 medium-6 small-centered columns">
+          <ul>
+            <li ng-repeat="domain in domains" ng-class="'domain-' + domain.name" ng-show="keyDomain == domain.title || isMobile">
+              <p><span>{{domain.title}}: </span>{{domain.description}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<section class="community row" ng-include="'home/community.html'"></section>
+<footer ng-include="'main/footer.html'"></footer>

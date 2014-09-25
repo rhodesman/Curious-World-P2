@@ -1,0 +1,8 @@
+<h1><span>Community</span></h1>
+<ul id="challenges">
+  <li class="large-4 medium-6 columns"
+    ng-repeat="challenge in challenges">
+    <h2>{{challenge.award}}</h2>
+    <section ng-include="'community/single-challenge.html'"></section>
+  </li>
+</ul>

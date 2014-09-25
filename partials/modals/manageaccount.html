@@ -1,0 +1,55 @@
+<h1 class="title">Manage Account</h1>
+<form novalidate>
+  <!--change display name-->
+  <div class="text-inputs row input-group">
+    <div class="small-12 columns">
+      <input class="better-placeholder" type="text" name="firstName" placeholder="First Name"
+        ng-model="signUpFormData.firstName"
+        required />
+    </div>
+    <div class="small-12 columns">
+      <input class="better-placeholder" type="text" name="lastName" placeholder="Last Name"
+        ng-model="signUpFormData.lastName"
+        required />
+    </div>
+  </div>
+
+  <!--change email-->
+  <div class="text-inputs row input-group">
+   <div class="small-12 columns">
+      <input class="better-placeholder" type="text" name="currentEmail" placeholder="Current Email"
+        ng-model="signUpFormData.currentEmail"
+        required />
+    </div>
+    <div class="small-12 columns">
+      <input class="better-placeholder" type="text" name="newEmail" placeholder="New Email"
+        ng-model="signUpFormData.newEmail"
+        required />
+    </div>
+  </div>
+
+  <!--change password-->
+  <div class="text-inputs row input-group last">
+     <div class="small-12 columns">
+      <input class="better-placeholder" type="password" name="currentPassword" placeholder="Current Password"
+        ng-model="signUpFormData.currentPassword"
+        required />
+    </div>
+    <div class="small-12 columns">
+      <input class="better-placeholder" type="password" name="newPassword" placeholder="New Password"
+        ng-model="signUpFormData.newPassword"
+        required />
+    </div>
+    <div class="small-12 columns">
+      <input class="better-placeholder" type="password" name="newPasswordConfirm" placeholder="Confirm New Password"
+        ng-model="signUpFormData.newPasswordConfirm"
+        required />
+    </div>
+  </div>
+  <div class="row">
+      <button class="button secondary small-12">Cancel</button>
+  </div>
+  <div class="row">
+      <button class="button small-12" type="submit">Save Changes</button>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>

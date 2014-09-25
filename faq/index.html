@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="app" ng-init="$root.pageTitle = 'Privacy Policy'">
+<head>
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+(function(){var e=document.getElementsByTagName("base")[0];e.href=e.href})()
+</script><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Frequently Asked Questions - Curious World</title>
+<link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+<div id="wrapper" class="off-canvas-wrap" data-offcanvas>
+  <header id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
+  <div id="content" class="inner-wrap" ng-controller="FaqController" ng-class="$root.contentClass">
+    <div>
+
+      <div class="faq">
+        <div class="row">
+          <div class="small-11 small-centered columns">
+            <header id="header-bar">
+              <h1><span>Frequently Asked Questions</span></h1>
+            </header>
+            <!--general-->
+            <ul>
+              <li ng-repeat="question in general">
+                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
+                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
+              </li>
+            </ul>
+            <!--cards-->
+            <h3>Cards</h3>
+            <ul>
+              <li ng-repeat="question in cards">
+                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
+                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
+              </li>
+            </ul>
+
+            <!--community-->
+            <h3>Community</h3>
+            <ul>
+              <li ng-repeat="question in community">
+                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
+                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
+              </li>
+            </ul>
+
+            <!--shop-->
+            <h3>Shop</h3>
+            <ul>
+              <li ng-repeat="question in shop">
+                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
+                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
+              </li>
+            </ul>
+
+            <!--apps-->
+            <h3>Apps</h3>
+            <ul>
+              <li ng-repeat="question in apps">
+                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
+                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
+              </li>
+            </ul>
+
+            <!--manage-->
+            <h3>Managing Your Account</h3>
+            <ul>
+              <li ng-repeat="question in manage">
+                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
+                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
+              </li>
+            </ul>
+
+            <!--technical-->
+            <h3>Technical Requirements</h3>
+            <ul>
+              <li ng-repeat="question in technical">
+                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
+                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <footer ng-include="'main/footer.html'"></footer>
+    </div>
+  </div>
+</div>
+<script src="js/vendor/modernizr.js"></script>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/foundation.min.js"></script>
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/vendor/angular-route.min.js"></script>
+<script src="js/vendor/angular-animate.min.js"></script>
+<script src="js/vendor/angular-better-placeholder.js"></script>
+<script src="js/modules/authenticate.js"></script>
+<script src="js/modules/auth-check.js"></script>
+<script src="main/main.js"></script>
+<script src="faq/faq-controller.js"></script>
+<script src="main/account-controller.js"></script>
+<script src="main/directives/free-shipping.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<script type="text/ng-template" id="left-kit-item">
+  <div class="kit-item">
+    <div class="image" skrollr
+      data--300-bottom="opacity: 0; top: 100%; right: 42%; -webkit-transform: rotate(180deg)"
+      data--400-bottom="opacity: 1; top: 0%; left: 40%; -webkit-transform: rotate(90deg)"
+      data--500-bottom="opacity: 1; top: 0%; left: 0%; -webkit-transform: rotate(-5deg)">
+      <img alt="" ng-src="{{item.image}}" />
+    </div>
+    <div class="description" skrollr
+      data--550-bottom="opacity: 0"
+      data--600-bottom="opacity: 1">
+      <strong class="title">{{item.title}}</strong>
+      <span class="author">{{item.author && "By " + item.author}}</span>
+      <div class="description">{{item.description}}</div>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="right-kit-item">
+  <div class="kit-item">
+    <div class="image" skrollr
+      data--300-bottom="opacity: 0; top: 100%; right: 42%; -webkit-transform: rotate(-180deg)"
+      data--400-bottom="opacity: 1; top: 0%; right: 40%; -webkit-transform: rotate(-90deg)"
+      data--500-bottom="opacity: 1; top: 0%; right: 0%; -webkit-transform: rotate(5deg)">
+      <img alt="" ng-src="{{item.image}}" />
+    </div>
+    <div class="description" skrollr
+      data--550-bottom="opacity: 0"
+      data--600-bottom="opacity: 1">
+      <strong class="title">{{item.title}}</strong>
+      <span class="author">{{item.author && "By " + item.author}}</span>
+      <div class="description">{{item.description}}</div>
+    </div>
+  </div>
+</script>
+
+<div id="store-kit">
+  <div class="group-container">
+    <div class="left">
+      <div id="grouping" class="">
+        <!--<ul id="covers" class="small-block-grid-2">-->
+        <ul id="covers" class="cstm_sm_block_grid_2 small-block-grid-2 medium-block-grid-2">
+          <li><img src="http://www.houghtonmifflinbooks.com/assets/product/9780152380212_lres.jpg"></li>
+          <li><img src="http://www.houghtonmifflinbooks.com/assets/product/0618663770_lres.jpg"></li>
+          <li><img src="http://www.houghtonmifflinbooks.com/assets/product/9780547905730_lres.jpg"></li>
+          <li><img src="http://www.houghtonmifflinbooks.com/assets/product/0899194028_lres.jpg"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="right">
+      <section id="product">
+        <div id="info">
+          <h1>{{kit.title}}</h1>
+          <strong class="price">{{kit.price | currency: "$"}}</strong>
+          <a class="button">Buy on HMHco.com</a>
+          <div class="description">{{kit.description}}</div>
+          <ul class="domains">
+            <li ng-repeat="domain in kit.domains"
+              ng-class="'domain-' + domain.name">
+              <span>{{domain.title}}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  <header id="header-bar" class="row">
+    <h1><span>What's in the Box</span></h1>
+  </header>
+  <section id="unboxing">
+    <ul id="items" class="row">
+      <li class="small-12 columns"
+        ng-repeat="item in kit.items"
+        ng-class-even="'right-item'"
+        ng-class-odd="'left-item'"
+        ng-include
+        src="($index % 2) ? 'right-kit-item' : 'left-kit-item'">
+      </li>
+    </ul>
+    <span id="empty-item"></span>
+    <div class="the-box front skrollable skrollable-after" style="background-position-y: -3003px;" skrollr
+      data-anchor-target="#unboxing"
+      data--429-bottom-top
+      data--430-bottom-top="background-position-y:!0"
+      data--440-bottom-top="background-position-y:!-429px"
+      data--450-bottom-top="background-position-y:!-858px"
+      data--460-bottom-top="background-position-y:!-1287px"
+      data--470-bottom-top="background-position-y:!-1716px"
+      data--480-bottom-top="background-position-y:!-2145px"
+      data--490-bottom-top="background-position-y:!-2574px"
+      data--500-bottom-top="background-position-y:!-3003px"
+      data-0-bottom-bottom></div>
+    <div class="the-box back skrollable skrollable-after" style="background-position-y: -3003px;" skrollr
+      data-anchor-target="#unboxing"
+      data--429-bottom-top
+      data--430-bottom-top="background-position-y:!0"
+      data--440-bottom-top="background-position-y:!-429px"
+      data--450-bottom-top="background-position-y:!-858px"
+      data--460-bottom-top="background-position-y:!-1287px"
+      data--470-bottom-top="background-position-y:!-1716px"
+      data--480-bottom-top="background-position-y:!-2145px"
+      data--490-bottom-top="background-position-y:!-2574px"
+      data--500-bottom-top="background-position-y:!-3003px"
+      data-0-bottom-bottom></div>
+  </section>
+</div>
+<a id="bottom"></a>
+<footer ng-include="'main/footer.html'"></footer>

@@ -1,0 +1,91 @@
+<div id="generic-prompt-example">
+	<form id="login-form" name="loginForm" action="" method="post"
+		ng-submit="$event.preventDefault()"
+		novalidate>
+		<!--large instruction text-->
+		<div class="row">
+			<div class="small-12 columns">
+				<p class="large-instruction">Large Instruction Text</p>
+			</div>
+		</div>
+		
+		<!--basic input-->
+		<div class="text-inputs row">
+			<div class="small-12 columns">
+				<input class="better-placeholder" type="text" name="example" placeholder="Label &#38; Placeholder Text"
+				ng-model="example"
+				required />
+			</div>
+			<!--error input-->
+			<div class="small-12 columns" ng-class="{ 'has-error': (true) }">
+				<input class="better-placeholder" type="text" name="error" placeholder="Error"
+				ng-model="error"
+				required />
+			</div>
+		</div>
+		
+		<!--small instruction text-->
+		<p class="instruction">Small Instructions Text</p>
+		<div class="text-inputs row">
+			<div class="small-12 columns">
+				<input class="better-placeholder" type="text" name="singleExample" placeholder="Separate Input Field"
+				ng-model="singleExample"
+				required />
+			</div>
+		</div>
+		
+		<!--standalone link text-->
+		<div class="row">
+			<div class="small-12 forgot-password">
+				<a>Link Text</a>
+			</div>
+		</div>
+		
+		<!--checkbox-->
+		<div class="row">
+			<div class="small-12">
+				<label for="agree-terms" class="checkbox">
+					<input id="agree-terms" type="checkbox" name="agreeTerms"
+					ng-model="signUpFormData.agreeTerms"
+					required />
+					<span>Checkbox Example</span>
+				</label>
+			</div>
+		</div>
+		
+		<!--radio buttons-->
+		<div class="radio-inputs row" ng-class="{ 'has-error': submitted && createAccountFormTwo.storyVisibility.$error.required }">
+			 <p>Radio Button Instructions text:</p>
+			<div class="small-12" ng-init="signUpFormData.storyVisibility = 'Public'">
+				<label for="create-account-visibility-public" class="radio-button"
+					ng-class="{ 'is-checked': signUpFormData.storyVisibility === 'Public' }">
+					<input id="create-account-visibility-public" type="radio" name="storyVisibility" value="Public"
+					ng-model="signUpFormData.storyVisibility"
+					required />
+					<span>Radio Button 1</span>
+				</label>
+			</div>
+			<div class="small-12">
+				<label for="create-account-visibility-community" class="radio-button"
+					ng-class="{ 'is-checked': signUpFormData.storyVisibility === 'Community' }">
+					<input id="create-account-visibility-community" type="radio" name="storyVisibility" value="Community"
+					ng-model="signUpFormData.storyVisibility"
+					required />
+					<span>Radio Button 2</span>
+				</label>
+			</div>
+		</div>
+		
+		<!--button types-->
+		<div class="row">
+			<button class="button secondary small-12" type="submit">Cancel Button</button>
+		</div>
+		<div class="row">
+			<button class="button small-12" type="submit">Success Button</button>
+		</div>
+		<div class="row">
+			<button class="button destructive small-12" type="submit">Destructive Button</button>
+		</div>
+	</form>
+	<a class="close-reveal-modal" ng-click="submitted=false;">&#215;</a>
+</div>

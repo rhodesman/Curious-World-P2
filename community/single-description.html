@@ -1,0 +1,14 @@
+<strong class="name">{{completion.user.name || "Dr. Tracy"}}</strong>
+<time datetime="{{completion.date}}" am-time-ago="completion.date"></time>
+<div class="comment">{{completion.description}}</div>
+<div class="managing" ng-init="this.isDeleting = false" ng-if="completion.user.name === 'You'">
+	<span ng-hide="this.isDeleting">
+		<a class="first" data-reveal-id="edit-{{$index}}">Edit Caption</a>
+		<a class="confirm" ng-click="this.isDeleting = true">Delete Post</a>
+	</span>
+	<span class="confirm" ng-show="this.isDeleting">
+		Are you sure?
+		<a ng-click="this.isDeleting = false">Yes</a>
+		<a ng-click="this.isDeleting = false">No</a>
+	</span>
+</div>

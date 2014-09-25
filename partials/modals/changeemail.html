@@ -1,0 +1,28 @@
+<a href="#" data-reveal-id="manage-account-modal" ng-click="submitted = false;">Back</a>
+<div class="title">
+    <h2>Change Email</h2>
+</div>
+<form class="base-form" name="manageEmailAccountForm" novalidate ng-submit="$event.preventDefault()" action="#" method="post">
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" name="currentEmail" placeholder="Current Email Address" readonly ng-model="userInfo.getUser().email"/>
+            <input ng-class="{error: (submitted && manageEmailAccountForm.newEmail.$error.required)}" type="email" id="newEmail" name="newEmail" placeholder="New Email Address" ng-required="true" ng-model="newEmail" pw-check="newEmailConfirm"/>
+            <span class="error" ng-show="submitted && manageEmailAccountForm.newEmail.$error.required">Please enter your new email address.</span>
+            <span class="error" ng-show="submitted && manageEmailAccountForm.newEmail.$error.email">Please enter your email address in the form account@domain.com</span>
+            <input ng-class="{error: (submitted && manageEmailAccountForm.newEmailConfirm.$error.required)}" type="email" id="newEmailConfirm" name="newEmailConfirm" placeholder="Confirm Email Address" ng-required="true" ng-model="newEmailConfirm"/>
+            <span class="error" ng-show="manageEmailAccountForm.newEmail.$error.pwmatch">Emails don't match.</span>
+            <span class="error" ng-show="submitted && errorStatus">{{errorStatus}}</span>
+        </div>
+    </div>
+    <div class="row changeEmail">
+        <div class="small-12 columns">
+            <input id="checkbox2" type="checkbox" ng-model="signUpFormData.receiveNews" checked><label for="checkbox2"><span class="custom"></span>Yes, I want to receive news and updates.</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns pill-button">
+            <input type="submit" class="button" value="Save Changes" ng-click="submitted = true; updateUserEmail()">
+        </div>
+    </div>
+</form>
+<a class="close-reveal-modal" ng-click="submitted = false;">&#215;</a>

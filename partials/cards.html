@@ -1,0 +1,222 @@
+<div class="row">
+  <div class="small-12 columns">
+    <div class="tab-content">
+      <section id="cards-section"
+        ng-traversable-list="cards"
+        item-template="'partials/single-card.html'"
+        active-item="selectedCard">
+        <div id="default-card" ng-show="!isLoading && !(cards && cards.length)">
+          <p>There are 1,000 small ways you can helps kids get school-ready.</p>
+          <a class="button" ng-show="defaultDomain" ng-href="#/{{defaultDomain.name}}">Here's one...</a>
+        </div>
+      </section>
+      <div class="age-selector small-12">
+        <div class="selector show-for-medium-up">
+          <span>My kid is:</span>
+          <ul>
+            <li ng-repeat="age in ages"
+              ng-class="{ 'is-selected': selectedAge === age }">
+              <a ng-click="selectAge(age)">{{age}}</a>
+            </li>
+          </ul>
+        </div>
+        <select class="small-12 hide-for-medium-up"
+          ng-model="selectedAge"
+          ng-init="selectedAge = 4"
+          ng-options="'My kid is ' + age for age in ages">
+        </select>
+        <div class="single-selector hide-for-medium-up">
+          <a data-reveal-id="ages-modal">My kid is {{selectedAge}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="domain-lists">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="domain-selector show-for-small-only"
+        ng-class="'domain-' + (selectedDomain || defaultDomain).name">
+        <a data-reveal-id="domains-modal">
+          <span class="title">{{(selectedDomain || defaultDomain).title}}</span>
+          <span class="count">0</span>
+        </a>
+      </div>
+      <ul class="domain-tabs show-for-medium-up">
+        <li ng-repeat="domain in domains"
+          ng-class="{ 'is-selected': domain === selectedDomain }">
+          <a ng-href="#/{{domain.name}}/?age={{selectedAge}}"
+            ng-class="'domain-' + domain.name">
+            <span class="title">{{domain.title}}</span>
+            <span class="count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<doctor-explains></doctor-explains>
+<section class="my-kid-did">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>My Kid Did!</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 medium-6 columns">
+      <h4>Newest</h4>
+      <div class="challenge">
+        <div class="h5-container" dotdotdot><h5>Can I peas have some more? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, nemo, voluptate, praesentium, corporis neque quibusdam tempore asperiores accusantium enim vitae qui quo ratione commodi natus laborum sit eos totam! Quis.</h5></div>
+        <div class="img-wrap">
+          <img src="http://placehold.it/340x340"/>
+        </div>
+        <p class="caption">Ask your kid to draw how he or she
+        feels after trying a new food.</p>
+        <div class="row">
+          <div class="small-7 columns">
+            <div class="domain domain-circle-executive"></div>
+            <p>4 kids did!</p>
+          </div>
+          <div class="small-5 columns">
+            <div class="social-icons right">
+              <ul>
+                <li><img src="img/twitter-icon.png"/></li>
+                <li><img src="img/facebook-icon.png"/></li>
+                <li><img src="img/pinterest-icon.png"/></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="large-4 medium-6 columns">
+      <h4>Funniest</h4>
+      <div class="challenge">
+        <h5>ZZZzzzzzz Little Bo peep fell
+        fast asleep...</h5>
+        <div class="img-wrap">
+          <img src="http://placehold.it/340x340"/>
+        </div>
+        <p class="caption">What’s the funniest sleeping posture
+        you’ve seen your kid use?</p>
+        <div class="row">
+          <div class="small-7 columns">
+            <div class="domain domain-circle-creative"></div>
+            <p>6 kids did!</p>
+          </div>
+          <div class="small-5 columns">
+            <div class="social-icons right">
+              <ul>
+                <li><img src="img/twitter-icon.png"/></li>
+                <li><img src="img/facebook-icon.png"/></li>
+                <li><img src="img/pinterest-icon.png"/></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="large-4 medium-6 columns">
+      <h4>Popular</h4>
+      <div class="challenge">
+        <h5>Hop, skip, jump</h5>
+        <div class="img-wrap">
+          <img src="http://placehold.it/340x340"/>
+        </div>
+        <p class="caption">Who’s the best at hopscotch?</p>
+        <div class="row">
+          <div class="small-7 columns">
+            <div class="domain domain-circle-health"></div>
+            <p>23 kids did!</p>
+          </div>
+          <div class="small-5 columns">
+            <div class="social-icons right">
+              <ul>
+                <li><img src="img/twitter-icon.png"/></li>
+                <li><img src="img/facebook-icon.png"/></li>
+                <li><img src="img/pinterest-icon.png"/></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="show-for-medium-only medium-6 columns">
+      <h4>Popular</h4>
+      <div class="challenge">
+        <h5>Challenge 4</h5>
+        <div class="img-wrap">
+          <img src="http://placehold.it/340x340"/>
+        </div>
+        <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <div class="row">
+          <div class="small-7 columns">
+            <div class="domain domain-circle-family"></div>
+            <p>4 kids did!</p>
+          </div>
+          <div class="small-5 columns">
+            <div class="social-icons right">
+              <ul>
+                <li><img src="img/twitter-icon.png"/></li>
+                <li><img src="img/facebook-icon.png"/></li>
+                <li><img src="img/pinterest-icon.png"/></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="email-subscribe-mobile hide-for-large-up">
+<div class="row">
+  <div class="small-9 columns">
+    <label class="inline">Sign up for weekly ready-for-school-cards.</label>
+  </div>
+  <div class="small-3 columns">
+    <a href="" class="pill-button button medium" data-reveal-id="subscribeModal">Yes, please!</a>
+  </div>
+</section>
+<section class="email-subscribe text-center show-for-large-up">
+  <form>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="message">
+          <span>I want to help my</span>
+          <select>
+            <option value="3-year-old">3 year-old</option>
+            <option value="4-year-old">4 year-old</option>
+            <option value="5-year-old">5 year-old</option>
+            <option value="6-year-old">6 year-old</option>
+            <option value="7-year-old">7 year-old</option>
+          </select>
+        </label>
+        <span>get school-ready. Send a free weekly card to</span>
+        <input id="email" type="email" name="email" placeholder="email address"><input id="submit" type="submit" class="pill-button button medium" value="Subscribe">
+        <span class="close">&#215;</span>
+      </div>
+    </div>
+  </div>
+</form>
+</section>
+<div id="ages-modal" class="reveal-modal options-modal" data-reveal>
+  <strong>My Kid is</strong>
+  <ul>
+    <li ng-repeat="age in ages"
+      ng-class="{ 'is-selected': selectedAge === age }">
+      <a ng-click="selectAge(age)">{{age}}</a>
+    </li>
+  </ul>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="domains-modal" class="reveal-modal" data-reveal>
+  <h2>Domain List</h2>
+  <ul class="domain-tabs">
+    <li ng-repeat="domain in domains">
+      <a ng-href="#/{{domain.name}}"
+        ng-class="'domain-' + domain.name">{{domain.title}}</a>
+    </li>
+  </ul>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

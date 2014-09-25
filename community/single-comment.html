@@ -1,0 +1,34 @@
+<strong class="author">{{comment.author}}</strong>
+<time datetime="{{comment.date}}" am-time-ago="comment.date"></time>
+<div class="comment" ng-hide="this.isEditing">{{comment.content}}</div>
+<form class="comment"
+  ng-show="this.isEditing"
+  ng-submit="this.isEditing = false; $event.preventDefault()">
+  <textarea ng-model="comment.content"></textarea>
+  <button type="submit">Done Editing</button>
+</form>
+<div class="managing flagging"
+  ng-hide="comment.author === 'You'"
+  ng-init="this.isFlagging = false">
+	<a ng-hide="this.isFlagging"
+		ng-click="this.isFlagging = true">Mark as inappropriate?</a>
+	<span class="confirm" ng-show="this.isFlagging">
+		Are you sure?
+		<a ng-click="this.isFlagging = false">Yes</a>
+		<a ng-click="this.isFlagging = false">No</a>
+	</span>
+</div>
+<div class="managing"
+  ng-show="comment.author === 'You' && !this.isEditing"
+  ng-init="this.isEditing = false; this.isDeleting = false">
+  <a class="first"
+    ng-hide="this.isDeleting"
+    ng-click="this.isEditing = true">Edit Comment</a>
+	<a class="confirm" ng-hide="this.isDeleting"
+		ng-click="this.isDeleting = true">Delete Comment</a>
+	<span class="confirm" ng-show="this.isDeleting">
+		Are you sure?
+		<a ng-click="this.isDeleting = false">Yes</a>
+		<a ng-click="this.isDeleting = false">No</a>
+	</span>
+</div>

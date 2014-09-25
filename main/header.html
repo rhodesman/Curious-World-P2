@@ -1,0 +1,180 @@
+<div class="row">
+	<div class="small-12 columns">
+		<h1 id="logo"><a href="./">Curious World</a></h1>
+		<span id="mobile-back">Back</span>
+		<strong id="mobile-title" class="show-for-small-only">{{$root.pageTitle || "Untitled"}}</strong>
+		<nav id="mobile-nav" class="show-for-small-only">
+			<a class="mobile-button" data-reveal-id="nav-modal"></a>
+			<div id="nav-modal" class="reveal-modal options-modal" data-reveal>
+				<ul>
+					<li ng-if="!userInfo.isLoggedIn()" class="sign-in">
+						<a data-reveal-id="sign-in-modal">Sign In / Create Account</a>
+					</li>
+					<li ng-if="!userInfo.isLoggedIn()" class="create-account">
+						<a data-reveal-id="create-account-modal">Create Account</a>
+					</li>
+					<li class="user-mobile" ng-if="userInfo.isLoggedIn()">
+            <label>Hi, {{userInfo.getUser().displayName}}</label>
+            <ul class="submenu">
+              <li>
+                <a data-reveal-id="manage-account-modal">Manage Profile</a>
+              </li>
+              <li>
+                <a data-reveal-id="manage-account-modal">Manage Account</a>
+              </li>
+              <li>
+                <a data-reveal-id="create-account-modal">Get Help</a>
+              </li>
+              <li>
+                <a ng-click="userInfo.logout()">Sign Out</a>
+              </li>
+            </ul>
+					</li>
+					<li class="home"
+						ng-class="{ 'is-active': $root.activeNav === 'home' }">
+						<a href="./">Home</a>
+					</li>
+					<li class="cardfolio"
+						ng-class="{ 'is-active': $root.activeNav === 'cardfolio' }">
+						<a href="cardfolio">Cardfolio</a>
+					</li>
+					<li class="community"
+						ng-class="{ 'is-active': $root.activeNav === 'community' }">
+						<a href="community">Community</a>
+					</li>
+					<li class="curiosity-kits"
+						ng-class="{ 'is-active': $root.activeNav === 'curiosity-kits' }">
+						<a href="curiosity-kits">Store</a>
+					</li>
+					<li class="beans-world"
+						ng-class="{ 'is-active': $root.activeNav === 'cw-app' }">
+						<a href="cw-app">Curious World App</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<nav id="navigation" class="show-for-medium-up">
+			<ul id="account-navigation">
+				<li id="account-menu" ng-if="userInfo.isLoggedIn()">
+					<a class="show-for-touch"
+						data-dropdown="account-menu-dropdown">
+						<span>{{userInfo.getUser().displayName}}</span>
+					</a>
+					<a class="hide-for-touch"
+						data-dropdown="account-menu-dropdown"
+						data-options="is_hover:true">
+						<span>{{userInfo.getUser().displayName}}</span>
+					</a>
+					<div id="account-menu-dropdown" class="f-dropdown" data-dropdown-content>
+						<ul>
+							<li><a data-reveal-id="manage-profile-modal">Manage Profile</a></li>
+							<li><a data-reveal-id="manage-account-modal">Manage Account</a></li>
+							<li><a data-reveal-id="create-account-modal">Get Help</a></li>
+							<li><a ng-click="userInfo.logout()">Sign Out</a></li>
+						</ul>
+					</div>
+				</li>
+				<li ng-if="!userInfo.isLoggedIn()" class="sign-in">
+					<a data-reveal-id="sign-in-modal">Sign In <span>/ Create Account</span></a>
+				</li>
+			</ul>
+			<ul id="main-navigation">
+				<li class="home"
+					ng-class="{ 'is-active': $root.activeNav === 'home' }">
+					<a href="./">Home</a>
+				</li>
+				<li class="cardfolio"
+					ng-class="{ 'is-active': $root.activeNav === 'cardfolio' }">
+					<a href="cardfolio">Cardfolio</a>
+				</li>
+				<li class="community"
+					ng-class="{ 'is-active': $root.activeNav === 'community' }">
+					<a href="community">Community</a>
+				</li>
+				<li class="curiosity-kits"
+					ng-class="{ 'is-active': $root.activeNav === 'curiosity-kits' }">
+					<div free-shipping></div>
+					<a href="curiosity-kits">Store</a>
+				</li>
+				<li class="beans-world"
+					ng-class="{ 'is-active': $root.activeNav === 'cw-app' }">
+					<a href="cw-app">Curious World App</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<div id="sign-in-modal"
+		class="reveal-modal account-modal small"
+		authenticate-login-form
+		template-url="partials/modals/signin.html"
+	data-reveal></div>
+	<div id="create-account-modal"
+		class="reveal-modal account-modal small"
+		ng-include="'partials/modals/signup.html'"
+	data-reveal></div>
+	<div id="create-account-next-modal"
+		class="reveal-modal account-modal small"
+		ng-include="'partials/modals/signuptwo.html'"
+	data-reveal></div>
+	<div id="create-account-success-modal"
+		class="reveal-modal account-modal small"
+		ng-include="'partials/modals/signupsuccess.html'"
+	data-reveal></div>
+	<div id="manage-profile-modal"
+		class="reveal-modal account-modal small"
+		ng-include="'partials/modals/manageprofile.html'"
+	data-reveal></div>
+	<div id="manage-account-modal"
+		class="reveal-modal account-modal small"
+		ng-include="'partials/modals/manageaccount.html'"
+	data-reveal></div>
+	<div id="change-email-modal"
+		class="reveal-modal account-modal small"
+		change-email-form
+		ng-include="'partials/modals/changeemail.html'"
+	data-reveal></div>
+	<div id="change-password-modal"
+		class="reveal-modal account-modal small"
+		change-password-form
+		ng-include="'partials/modals/changepassword.html'"
+	data-reveal></div>
+	<div id="remove-content-modal"
+		class="reveal-modal account-modal small"
+		ng-include="'partials/modals/removecontent.html'"
+	data-reveal></div>
+	<div id="reset-cards-modal"
+		class="reveal-modal account-modal small"
+		ng-include="'partials/modals/resetcards.html'"
+	data-reveal></div>
+	<div id="delete-account-modal"
+		class="reveal-modal account-modal small"
+		ng-include="'partials/modals/deleteaccount.html'"
+	data-reveal></div>
+
+	<div id="before-action-modal"
+		class="reveal-modal account-modal small"
+		data-reveal>
+		<div class="row">
+			<button class="button small-12" data-reveal-id="sign-in-modal">Sign In</button>
+		</div>
+		<p class="large-instruction">Don't have an account, yet?</p>
+		<div class="row">
+			<button class="button secondary small-12" data-reveal-id="create-account-modal">Create an Account</button>
+		</div>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+</div>
+
+<!--remove from live project-->
+<div id="generic-modal-example"
+	class="reveal-modal account-modal small"
+	ng-include="'partials/modals/generic-modal.html'"
+	data-reveal>
+</div>
+
+<!--remove from live project-->
+<div id="generic-prompt-example"
+	class="reveal-modal account-modal small"
+	ng-include="'partials/modals/generic-prompt.html'"
+	data-reveal>
+</div>
