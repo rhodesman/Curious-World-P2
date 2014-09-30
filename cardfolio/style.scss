@@ -552,6 +552,13 @@ $timeline-grey: #58595b;
 					background-image: url(../img/social-icons/instagram-hover.png);
 				}
 			}
+			&.email a {
+				background-image: url(../img/social-icons/send-icon.png);
+
+				&:hover {
+					background-image: url(../img/social-icons/send-icon-pressed.png);
+				}
+			}
 		}
 	}
 }
