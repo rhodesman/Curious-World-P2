@@ -56,4 +56,5 @@ module.exports = function (grunt) {
   grunt.registerTask('heroku', ['sass', 'autoprefixer']);
 	grunt.registerTask('build', ['sass', 'autoprefixer']);
 	grunt.registerTask('default', ['build', 'watch']);
+  grunt.registerTask('heroku:development', 'clean less mincss');
 };
