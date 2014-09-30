@@ -65,6 +65,9 @@
                     .when('/faq', {
                         title: "Frequently Asked Questions"
                     })
+                    .when('/landing', {
+                        title: "Landing"
+                    })
                     .when('/:domainName', {
                         templateUrl: 'partials/cards.html',
                         controller: 'CardsController',
