@@ -24,10 +24,10 @@
             "$routeParams",
             "domains",
             "authCheck",
-            function ($scope, $routeParams, AuthCheck) {
-                ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
+            function ($scope, $routeParams, Auth) {
 
                 //controller
+
             }
         ]);
 }(window.angular));
