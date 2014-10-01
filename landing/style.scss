@@ -1,0 +1,23 @@
+.carousel{
+  background: gray;
+  overflow:hidden;//because slider is float:left;
+}
+
+
+
+
+//modified slick styles
+
+.slick-track{
+  position:relative;
+}
+
+.slick-slide{
+  float:left;
+}
+
+.slick-dots{
+  position:absolute;
+  top:60px;
+  right:60px;
+}

@@ -1,7 +1,7 @@
 (function (ng) {
     "use strict";
 
-    ng.module("app", ["authCheck", "ngRoute", "angularBetterPlaceholder", "slick"])
+    ng.module("app", ["authCheck", "ngRoute", "slick"])
         .config([
             "$routeProvider",
             function ($routeProvider) {
