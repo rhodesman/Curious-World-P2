@@ -1,7 +1,7 @@
 (function (ng) {
     "use strict";
 
-    ng.module("app", ["authCheck", "ngRoute", "angularBetterPlaceholder"])
+    ng.module("app", ["authCheck", "ngRoute", "angularBetterPlaceholder", "slick"])
         .config([
             "$routeProvider",
             function ($routeProvider) {
@@ -24,9 +24,10 @@
             "$routeParams",
             "domains",
             "authCheck",
-            function ($scope, $routeParams, Auth) {
+            function ($scope, $rootScope, $routeParams, AuthCheck, slick) {
+              ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
-                //controller
+              //controller
 
             }
         ]);
