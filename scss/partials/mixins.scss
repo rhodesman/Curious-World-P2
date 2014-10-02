@@ -1,0 +1,105 @@
+@mixin hide-text() {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin undo-hide-text() {
+  text-indent: 0;
+  white-space: normal;
+  overflow: auto;
+}
+
+@mixin prevent-selection() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@mixin transform-me($rotation) {
+  -moz-transform: scale(1) rotate($rotation);
+  -webkit-transform: scale(1) rotate($rotation);
+  -o-transform: scale(1) rotate($rotation);
+  -ms-transform: scale(1) rotate($rotation);
+  transform: scale(1) rotate($rotation);
+}
+
+@mixin ease-item($expression) {
+	-webkit-transition: all $expression ease;
+	-moz-transition: all $expression ease;
+	-o-transition: all $expression ease;
+	-ms-transition: all $expression ease;
+	transition: all $expression ease;
+}
+
+@mixin vertical-gradient($from, $to) {
+	background: $from;
+	background: -moz-linear-gradient(top, $from 0%, $to 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+	background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+	background: -o-linear-gradient(top, $from 0%,$to 100%);
+	background: -ms-linear-gradient(top, $from 0%,$to 100%);
+	background: linear-gradient(to bottom, $from 0%,$to 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}', GradientType=0);
+}
+
+@mixin horizontal-gradient($from, $to) {
+	background: $from;
+	background: -moz-linear-gradient(left, $from 0%, $to 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop(100%, $to));
+	background: -webkit-linear-gradient(left, $from 0%, $to 100%);
+	background: -o-linear-gradient(left, $from 0%, $to 100%);
+	background: -ms-linear-gradient(left, $from 0%, $to 100%);
+	background: linear-gradient(to right, $from 0%, $to 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}', GradientType=1);
+}
+
+@mixin page-curl($position:12px) {
+	position:relative;
+	-webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		left: 12px;
+		bottom: $position;
+		width: 40%;
+		height: 10px;
+		background: none;
+		-webkit-transform: skew(-4deg) rotate(-4deg);
+		-moz-transform: skew(-4deg) rotate(-4deg);
+		-ms-transform: skew(-4deg) rotate(-4deg);
+		-o-transform: skew(-4deg) rotate(-4deg);
+		transform: skew(-4deg) rotate(-4deg);
+		-webkit-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.4);
+		box-shadow: 0 7px 10px rgba(0, 0, 0, 0.4);
+		z-index: -1;
+
+		@media #{$medium-up} {
+			bottom: ($position + ($position * 0.15));
+		}
+		@media #{$large-up} {
+			bottom: ($position + ($position * 0.65));
+		}
+		@media #{$xlarge-up} {
+			bottom: ($position + ($position * 0.75));
+		}
+	}
+
+	&:after {
+		left: auto;
+		right: 12px;
+		-webkit-transform: skew(4deg) rotate(4deg);
+		-moz-transform: skew(4deg) rotate(4deg);
+		-ms-transform: skew(4deg) rotate(4deg);
+		-o-transform: skew(4deg) rotate(4deg);
+		transform: skew(4deg) rotate(4deg);
+	}
+}

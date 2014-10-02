@@ -1,0 +1,1052 @@
+$modal-padding: 58px;
+$input-height: $modal-padding;
+$input-padding: 16px;
+$checkbox-height: 22px;
+$input-border: #ddd;
+$label-color: #b3b3b3;
+$close-button-size: 45px;
+$more-info-height: 68px;
+$modal-unlock-icon: 26px;
+
+// General modal definition
+.reveal-modal {
+	position: fixed;
+	padding: 0 ($modal-padding / 4) ($modal-padding / 2);
+	width: 100%;
+	max-height: calc(100% - 50px);
+	border: none;
+	box-shadow: none;
+	background: $light-grey;
+	overflow: hidden;
+	overflow-y: auto;
+
+	@media #{$small-only} { // Overwrite Foundation's style
+		top: $mobile-header-height !important;
+		min-height: 0;
+	}
+	@media #{$medium-up} {
+		position: absolute;
+		//top: 10% !important;
+		margin-top: -40px;
+		padding: $modal-padding;
+		padding-top: 0;
+		width: 80%;
+		max-height: none;
+		border: none;
+		overflow: visible;
+	}
+	.close-reveal-modal {
+		display: none;
+
+		@media #{$medium-up} {
+			display: block;
+			right: 0;
+			top: -($close-button-size + 12px);
+			width: $close-button-size;
+			height: $close-button-size;
+			text-align: center;
+			font-size: 1.90rem;
+			font-weight: 200;
+			line-height: 40px;
+			color: white;
+			border-radius: 50%;
+			border: 1px solid white;
+
+			&:hover{
+				background-color:white;
+				color:black;
+			}
+		}
+	}
+	.title {
+		position: relative;
+		margin: 0 (-$modal-padding) $modal-padding;
+		height: 80px;
+		line-height: 80px;
+		text-align: center;
+		color: $white;
+		background-color: $blue;
+		background: url('../img/modals/mobile-modal-top-bar.png') top left;
+		zoom: 1;
+
+
+		@media #{$medium-up} {
+			height: 150px;
+			line-height: 160px;
+			font-size: 2.5rem;
+			background-color: $blue;
+			background: url('../img/modals/modal-top-bar.png') top left;
+		}
+	}
+
+	p.instruction{
+		color: $instruction;
+		font-weight:600;
+		font-size:15px;
+		line-height:1.3;
+		margin-bottom:20px;
+	}
+
+	p{
+		font-size:18px;
+		color: #808080;
+	}
+
+	// Form controls
+	.text-inputs {
+		padding-left: $input-padding;
+		background: $white;
+
+		& > div {
+			padding: 0;
+
+			input {
+				margin: 0;
+				border: none;
+				box-shadow: none;
+			}
+			& + div {
+				border-top: 1px solid $input-border;
+			}
+		}
+	}
+	.radio-inputs {
+		margin-bottom: ($modal-padding / 2);
+
+		& > div {
+			padding: 0;
+
+			.checkbox,
+			.radio-button {
+				padding-top: 0;
+				padding-bottom: 0;
+				margin: $input-padding 0;
+
+				&:before {
+					top: 0;
+				}
+			}
+		}
+	}
+	.checkbox,
+	.radio-button {
+		position: relative;
+		padding: $input-padding 0;
+		padding-left: 40px;
+		line-height: $checkbox-height;
+		color: $grey;
+		font-size: 1.1rem;
+		@include prevent-selection();
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: $input-padding;
+			width: $checkbox-height;
+			height: $checkbox-height;
+			border: 1px solid $grey;
+		}
+		&.is-checked {
+			color: $success-green;
+
+			&:before {
+				border-color: $success-green;
+				background: url('../img/modals/agree-check-icon.png') 0 0;
+			}
+		}
+		&.has-error {
+			color: $error-red;
+
+			&:before {
+				border-color: $error-red;
+			}
+		}
+	}
+
+	.radio-button{
+		&.is-checked {
+
+			&:before {
+				background: url('../img/modals/radio-dot.png') -1px -1px;
+			}
+		}
+	}
+
+	.checkbox {
+		input[type=checkbox] {
+			display: none;
+		}
+	}
+	.radio-button {
+		&:before {
+			border-radius: 50%;
+		}
+		input[type=radio] {
+			display: none;
+		}
+	}
+
+	button{
+		margin-top:20px;
+	}
+
+	button.secondary{
+		background-color: #999;
+		color:white;
+
+		&:hover{
+			background-color: lighten(#999, 10);
+			color:white;
+		}
+	}
+
+	button.destructive{
+		background-color: #F54828;
+		color:white;
+
+		&:hover{
+			background-color: darken(#F54828, 10);
+			color:white;
+		}
+	}
+
+	.better-placeholder {
+		padding: 0;
+		padding-top: $input-padding;
+		height: $input-height;
+		font-size: 1.375rem;
+		color: $dark-grey;
+		background: $white;
+		-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+
+		.better-placeholder-active {
+			//padding: 18px 12px 6px 12px;
+			//height: auto;
+		}
+		&:focus {
+			background: $white;
+			box-shadow: none;
+
+			&::-webkit-input-placeholder { display: none; opacity: 0 }
+			&::-moz-placeholder          { display: none; opacity: 0 }
+			&:-ms-input-placeholder      { display: none; opacity: 0 }
+			&::placeholder               { display: none; opacity: 0 }
+		}
+	}
+	.has-error {
+		.better-placeholder {
+			&::-webkit-input-placeholder { color: $error-red }
+			&::-moz-placeholder          { color: $error-red }
+			&:-ms-input-placeholder      { color: $error-red }
+			&::placeholder               { color: $error-red }
+		}
+		.better-placeholder-text {
+			color: $error-red;
+
+			&.active {
+				color: $error-red;
+			}
+		}
+	}
+	.has-success .better-placeholder-text {
+		color: #3c763d;
+
+		&.active {
+			color: #3c763d;
+		}
+	}
+	.has-warning .better-placeholder-text {
+		color: #8a6d3b;
+
+		&.active {
+			color: #8a6d3b;
+		}
+	}
+	.better-placeholder-text {
+		position: absolute;
+		left: 0;
+		top: 12px;
+		font-size: 0.75rem;
+		font-weight: bold;
+		color: $label-color;
+		opacity: 0;
+		transition: all 0.2s ease;
+
+		&.active {
+			top: 9px;
+			opacity: 1;
+		}
+	}
+}
+.no-indexeddb .better-placeholder-text {
+	top: 9px !important;
+	opacity: 1 !important;
+}
+
+.reveal-modal-bg {
+	margin-top: $mobile-header-height;
+	background: transparentize($black, 0.15);
+
+	@media #{$medium-up} {
+		margin-top: 0;
+	}
+}
+
+.reveal-modal.small {
+	@media #{$medium-up} {
+		width: 480px;
+		left: 50%;
+		margin-left: -(480px / 2);
+	}
+}
+
+// Acount modals
+.account-modal {
+	//font-size: 1.25rem;
+}
+
+// Login modal
+#login-form {
+
+	.social-login{
+		p{
+			text-align:center;
+		}
+	}
+
+	.no-account{
+		p{
+			font-size: rem-calc(19);
+			font-weight: 400;
+		}
+		a{
+			text-decoration:underline;
+			color: darken(gray, 20%);
+		}
+	}
+
+	.forgot-password {
+		margin: 16px 0 40px 0;
+
+		a{
+			text-decoration:underline;
+			font-size:18px;
+		}
+	}
+	button{
+		margin:0 0 20px 0;
+	}
+
+	.create-new-account{
+		background: #26ade4;
+		margin-bottom:0;
+		&:hover{
+			background: lighten(#26ade4, 10%);
+		}
+	}
+
+	.instruction{
+		text-align:center;
+		font-size: rem-calc(16);
+		margin-bottom:10px;
+	}
+}
+
+// Sign up (step two) modal
+#create-account-form-two {
+	p {
+		margin: 30px 0 15px 0;
+		padding: 0;
+	}
+}
+
+#create-account-modal {
+	.terms-and-privacy {
+		margin: 0px 0 30px 0;
+
+		span {
+			a {
+				color: inherit;
+				text-decoration: underline;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.success-modal,.reset-cards-modal{
+
+	.success-message, .reset-messsage{
+		padding:0;
+	}
+
+		span{
+			font-weight:600;
+		}
+
+		p:last-child{
+			margin-bottom:50px;
+		}
+}
+
+.large-instruction{
+	text-align:center;
+}
+
+.modal-back-button{
+	background: url('../img/modals/modal-back-button.png') 0 0;
+	width: 20px;
+	height:36px;
+	position:absolute;
+	top:60px;
+	left:30px;
+	z-index:10;
+	float:left;
+}
+
+.input-group{
+	margin-bottom: 32px;
+}
+
+.input-group.last{
+	margin-bottom:65px;
+}
+
+.create-account-steps{
+
+	position:absolute;
+	list-style:none;
+	top:110px;
+	left:50%;
+	-webkit-transform: translateX(-85%);
+
+	li{
+		float:left;
+		margin-right:10px;
+
+		.step{
+			width:10px;
+			height:10px;
+			display:block;
+			border-radius: 50%;
+			background-color:white;
+			cursor: default;
+
+			&.active{
+				opacity:0.5
+			}
+		}
+
+
+	}
+}
+
+span.error {
+	display: block;
+	color: #999;
+	font-size: 0.75em;
+	font-weight: 300;
+	margin-bottom: 1em;
+	padding: 0;
+	line-height: 1.3;
+	font-style: normal;
+}
+
+#before-action-modal{
+	padding: ($modal-padding / 2) $modal-padding;
+	background: transparent url(../img/go-cards/background.png) scroll no-repeat 50% 0;
+	background-size: cover;
+
+	.large-instruction{
+		color: $white;
+	}
+
+	.button{
+		margin: 0;
+	}
+
+}
+
+
+//Generic Modal
+#generic-modal-example{
+
+	.instruction{
+		margin-top:30px;
+	}
+
+	.text-inputs + .text-inputs{
+		margin-top:20px;
+	}
+
+}
+
+//Generic Prompt
+#generic-prompt-example{
+	background: transparent url(../img/go-cards/background.png) scroll no-repeat 50% 0;
+	background-size: cover;
+	color:$white;
+
+	a{
+		color:$white;
+	}
+
+	.radio-button:before, .checkbox:before{
+		border: 1px solid $white;
+	}
+
+	.checkbox,
+	.radio-button {
+		&.is-checked {
+			color: $white;
+
+			&:before {
+				border-color: $white;
+				background: url('../img/modals/agree-check-icon-white.png') 0 0;
+			}
+		}
+	}
+
+	.radio-button{
+		&.is-checked {
+			&:before {
+				background: url('../img/modals/radio-dot-white.png') -1px -1px;
+			}
+		}
+	}
+	.large-instruction{
+		margin-top:30px;
+		color:$white;
+	}
+
+	.instruction{
+		margin-top:30px;
+		color:$white;
+	}
+
+	label{
+		color: $white;
+	}
+
+	p{
+		color:$white;
+	}
+
+	.text-inputs + .text-inputs{
+		margin-top:20px;
+	}
+
+}
+
+
+
+
+
+
+// Account-related modals
+/*
+.account-modal {
+	@media #{$small-only} {
+		padding-bottom: 10px;
+	}
+
+	.forgot-password{
+		margin-bottom:10px;
+		text-decoration:underline;
+
+		a{
+			color:#b0afaf;
+		}
+	}
+
+	.keep-sign-in{
+		margin:10px 0 0 0;
+	}
+
+	.manageComments{
+		margin-bottom: 20px;
+	}
+
+	.changeEmail{
+		margin-bottom: 20px;
+
+		input[type="checkbox"]{
+			margin: 0 10px 0 0;
+			position:relative;
+			display:block;
+			left:-20px;
+			top:15px;
+		}
+
+		label{
+			text-align:left;
+			margin-left:20px;
+
+		}
+	}
+
+	.deleteAccount{
+		margin-bottom: 20px;
+
+		input[type="radio"]{
+		margin: 0 10px 0 0;
+		position:relative;
+		display:block;
+		left:-20px;
+		top:15px;
+		}
+
+		label{
+			text-align:left;
+			margin-left:20px;
+		}
+
+		.disclaimer{
+			margin: 20px 0 20px 0;
+		}
+
+		.leaving{
+			margin-left: 0;
+		}
+	}
+
+	.base-form{
+		background-color:white;
+
+		input[type="text"],
+		input[type="password"]{
+			height:42px;
+			background-color:#ededed;
+			-webkit-box-shadow: inset 0 3px 10px #B3B3B3;
+			border-radius: 5px;
+			font-size:1rem;
+		}
+
+		&:first-of-type{
+			padding-top:20px;
+		}
+		input[type="checkbox"],
+		input[type="radio"] {
+			display:none;
+		}
+
+		input[type="checkbox"] + label span.custom {
+			display:inline-block;
+			width:40px;
+			height:40px;
+			margin:0px 0px 0 0px;
+			vertical-align:middle;
+			background: url('../img/check-sprite.png') 0 0;
+			cursor:pointer;
+			position:relative;
+			left:-10px;
+			top:-5px;
+			float:left;
+		}
+
+		input[type="checkbox"]:checked + label span.custom {
+			background: url('../img/check-sprite.png')0 40px;
+		}
+
+		input[type="radio"] + label span.custom{
+			display:inline-block;
+			width:40px;
+			height:40px;
+			margin:0px 0px 0 0px;
+			vertical-align:middle;
+			background: url('../img/radio-sprite.png') 0 0;
+			cursor:pointer;
+			position:relative;
+			left:-10px;
+			top:-5px;
+			float:left;
+		}
+
+		input[type="radio"]:checked + label span.custom {
+			background: url('../img/radio-sprite.png')0 40px;
+		}
+
+		label{
+			text-align:left;
+			font-size:1rem;
+			color:#b0afaf;
+			padding-top:10px;
+
+			a{
+				color: #b0afaf;
+				text-decoration:underline;
+			}
+		}
+
+		span.error{
+			background-color:transparent;
+			font-size:1rem;
+			border-radius: 5px;
+			margin-top:3px;
+			font-style:normal;
+			color:#c50505;
+		}
+	}
+
+	input.error{
+		border: 2px solid #c50505;
+	}
+
+	.pill-button{
+		text-align:center;
+
+		.button{
+			background-color:#4abadf;
+			border-radius:30px;
+			text-transform: uppercase;
+			font-weight:100;
+			padding-top: 0.8rem;
+			padding-bottom: 0.8rem;
+			letter-spacing: 2px;
+			min-width:80%;
+
+			&:hover{
+				background-color:#53cdf5;
+			}
+		}
+	}
+
+	label.share-settings{
+		margin-left: 0;
+		line-height:1.3;
+		margin-bottom: 10px;
+	}
+
+	.form-divider{
+		margin:20px 0 25px 0;
+	}
+
+	.terms{
+		margin-bottom: 2rem;
+	}
+}
+*/
+
+#reset-kidfolio, #remove-shared-content{
+	margin-top:20px;
+}
+
+// Modals with a list of options
+.options-modal {
+	padding: 0;
+	text-align: left;
+	color: $dark-grey;
+	background: transparentize($white, 0.1);
+
+	strong {
+		color: $white;
+		background: $dark-blue;
+
+		@media #{$medium-up} {
+			border-radius: 8px 8px 0 0;
+		}
+	}
+	strong,
+	li {
+		display: block;
+		padding: 0 20px;
+		font-weight: 600;
+		font-size: 1.3rem;
+
+		& > a,
+		& > label {
+			height: 50px;
+			line-height: 50px;
+		}
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+
+		li {
+			border-top: 1px solid lighten($grey, 15);
+
+			@media #{$medium-up} {
+				&:first-child {
+					border-radius: 8px 8px 0 0;
+				}
+				&:last-child {
+					border-radius: 0 0 8px 8px;
+				}
+			}
+			&.is-selected, &.is-active {
+				color: $link-blue;
+			}
+			a,
+			label {
+				display: block;
+				height: 100%;
+				font-weight: inherit;
+				color: inherit;
+			}
+		}
+	}
+	strong {
+		color: $blue;
+		background: $light-grey;
+	}
+}
+
+#take-a-look{
+	position:relative;
+}
+
+.welcome-modal{
+	height:250px;
+
+	.pill-button{
+		position:absolute;
+		-webkit-transform: translateX(-50%);
+		top:180px;
+		z-index:10;
+		width:50%;
+	}
+
+	.characters{
+		background: url('../img/two-characters.png') 0 0;
+		width: 341px;
+		height: 250px;
+		float:left;
+		display:block;
+		position:absolute;
+	}
+
+}
+
+// Pre-sign in modal
+#before-action-modal {
+	p {
+		margin: 2rem 0 1rem;
+		text-align: center;
+	}
+}
+
+// Unlock Go!Cards modal
+#unlock-modal {
+	padding: ($modal-padding / 2) $modal-padding;
+	color: $white;
+	background: transparent url(../img/go-cards/background.png) scroll no-repeat 50% 0;
+	background-size: cover;
+
+	& > * {
+		color: inherit;
+	}
+	h1 {
+		font-size: 2.3rem;
+		text-align: center;
+	}
+	ul {
+		list-style: none;
+		margin-left: 0;
+		padding: 0;
+
+		li {
+			position: relative;
+			padding-left: ($modal-unlock-icon + 8px);
+
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: $modal-unlock-icon;
+				height: 100%;
+				background: transparent none scroll no-repeat 50% 50%;
+			}
+			& + li {
+				margin-top: 4px;
+			}
+			&.can-has-cards:before {
+				background-image: url(../img/go-cards/card-icon.png);
+			}
+			&.dat-tracking:before {
+				background-image: url(../img/go-cards/star-icon.png);
+			}
+		}
+	}
+	button + p {
+		padding-top: 1rem;
+		text-align: center;
+	}
+	a {
+		color: inherit;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	button.unlock {
+		font-weight: 600;
+	}
+	button.sign-in {
+		font-weight: normal;
+		background-color: $dark-button-blue;
+
+		&:hover {
+			background-color: lighten($dark-button-blue, 10);
+		}
+	}
+}
+
+// Slide down information
+.more-info {
+	color: $white;
+	@include horizontal-gradient(#333333, #424242);
+	overflow: hidden;
+
+	img {
+		position: absolute;
+		top: 50%;
+
+		&.avatar {
+			right: auto;
+			left: 0;
+			width: 36px;
+			height: 36px;
+			margin-top: -(36px / 2);
+		}
+		&.arrow {
+			right: 0;
+			width: 14px;
+			margin-top: -(8px / 2);
+		}
+	}
+	h3 {
+		margin: 0;
+		height: $more-info-height;
+		font-size: 1.2rem;
+		text-align: center;
+		color: inherit;
+		cursor: pointer;
+		line-height: $more-info-height;
+		white-space: nowrap;
+		overflow: hidden;
+
+		@media #{$xsmall-only} {
+			font-size: 1rem;
+		}
+		a {
+			display: inline-block;
+			position: relative;
+			padding-left: 36px + 15px;
+			padding-right: 26px + 15px;
+			height: 100%;
+			color: inherit;
+
+			& > span {
+				display: table;
+				height: 100%;
+
+				span {
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+	p {
+		font-weight: 300;
+		color: $light-grey;
+	}
+
+	&.is-open {
+		.arrow {
+			-webkit-transform: scale(-1);
+		}
+	}
+	.video {
+		margin: 2rem 0;
+	}
+}
+
+// Flexible videos
+.video {
+	position: relative;
+
+	.video-wrapper {
+		position: relative;
+		padding-bottom: 56.25%;
+		height: 0;
+
+		iframe,
+		video {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.facebook-login{
+	background: #3b5998;
+	&:hover{
+		background: lighten(#3b5998, 10%);
+	}
+	span{
+		position:relative;
+		&:before{
+			content: '';
+			background: url('../img/modals/fb-login-logo.png') transparent 0px 50% no-repeat;
+			background-size: 75%;
+			width:31px;
+			height:31px;
+			display:block;
+			position:absolute;
+			top:50%;
+			transform: translateY(-50%);
+			left:-40px;
+		}
+	}
+}
+
+#customBtn {
+  display: inline-block;
+  background: #dd4b39;
+  color: white;
+  width: 100%;
+  white-space: nowrap;
+	&.button{
+		padding-bottom: 1.35rem;
+	}
+}
+#customBtn:hover {
+  background: lighten(#dd4b39,10%);
+  cursor: hand;
+}
+
+span.label {
+  font-weight: bold;
+}
+
+span.buttonText {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 1.3rem;
+	position:relative;
+	&:before{
+		content: '';
+		background: url('../img/modals/btn_red_32.png') transparent 0px 50% no-repeat;
+		width:40px;
+		height:40px;
+		display:block;
+		position:absolute;
+		top:50%;
+		transform: translateY(-50%);
+		left:-18px;
+	}
+}

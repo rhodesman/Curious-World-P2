@@ -50,9 +50,9 @@ $footer-height: 80px;
 $number-of-domains: 8;
 
 html, body{
-  height: 100%;
-  background: $footer-color;
-  font-family: "Open Sans", sans-serif;
+	height: 100%;
+	background: $footer-color;
+	font-family: "Open Sans", sans-serif;
 }
 
 h1, h2, h3, button, .button {
@@ -60,42 +60,42 @@ h1, h2, h3, button, .button {
 }
 
 a {
-  color: $link-blue;
-  cursor: pointer;
+	color: $link-blue;
+	cursor: pointer;
 }
 
 *:focus {
-  outline: 0;
+	outline: 0;
 }
 
 #wrapper {
-  height: 100%;
-  position: relative;
+	height: 100%;
+	position: relative;
   -webkit-transition: -webkit-filter 0.2s;
   background: $white;
 
-  #content {
-    height: 100%;
+	#content {
+		height: 100%;
 
-    @media #{$medium-up} {
-      position: absolute;
-      top: 0;
-      padding-top: $header-height;
-      width: 100%;
-      height: auto;
-      min-height: 100%;
-    }
-    & > div {
-      height: 100%;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
+		@media #{$medium-up} {
+			position: absolute;
+			top: 0;
+			padding-top: $header-height;
+			width: 100%;
+			height: auto;
+			min-height: 100%;
+		}
+		& > div {
+			height: 100%;
+			overflow-y: scroll;
+			-webkit-overflow-scrolling: touch;
 
-      @media #{$medium-up} {
-        height: auto;
-        overflow-y: visible;
-      }
-    }
-  }
+			@media #{$medium-up} {
+				height: auto;
+				overflow-y: visible;
+			}
+		}
+	}
 }
 
 ul.columns, ol.columns {
@@ -108,53 +108,53 @@ hr{
 }
 
 .ng-hide { // Make sure ng-hide is king over foundation
-  &.show-for-small-only,
-  &.hide-for-small-only,
-  &.show-for-medium-up,
-  &.hide-for-medium-up,
-  &.show-for-medium-only,
-  &.hide-for-medium-only,
-  &.show-for-large-up,
-  &.hide-for-large-up,
-  &.show-for-large-up,
-  &.hide-for-large-only,
-  &.show-for-large-only,
-  &.hide-for-xlarge-up,
-  &.show-for-xlarge-up,
-  &.hide-for-xlarge-only,
-  &.show-for-xlarge-only,
-  &.hide-for-xxlarge-up,
-  &.show-for-xxlarge-up {
-    display: none !important;
-  }
+	&.show-for-small-only,
+	&.hide-for-small-only,
+	&.show-for-medium-up,
+	&.hide-for-medium-up,
+	&.show-for-medium-only,
+	&.hide-for-medium-only,
+	&.show-for-large-up,
+	&.hide-for-large-up,
+	&.show-for-large-up,
+	&.hide-for-large-only,
+	&.show-for-large-only,
+	&.hide-for-xlarge-up,
+	&.show-for-xlarge-up,
+	&.hide-for-xlarge-only,
+	&.show-for-xlarge-only,
+	&.hide-for-xxlarge-up,
+	&.show-for-xxlarge-up {
+		display: none !important;
+	}
 }
 
 .button.pill-button{
-  float:right;
-  font-size:16px;
-  font-weight:300;
-  text-align:center;
-  background-color:$light-blue;
-  height:40px;
-  border-radius:20px;
-  text-transform: uppercase;
-  font-weight:100;
-  padding-top: 0.6rem;
-  letter-spacing: 2px;
+	float:right;
+	font-size:16px;
+	font-weight:300;
+	text-align:center;
+	background-color:$light-blue;
+	height:40px;
+	border-radius:20px;
+	text-transform: uppercase;
+	font-weight:100;
+	padding-top: 0.6rem;
+	letter-spacing: 2px;
 
-  &:hover{
-    background-color: lighten(#30a4ca, 20%);
-  }
+	&:hover{
+		background-color: lighten(#30a4ca, 20%);
+	}
 }
 
 
 button,
 .button {
-  background-color: $success-green;
-  font-size: 1.3rem;
+	background-color: $success-green;
+	font-size: 1.3rem;
 
-  &:hover,
-  &:focus {
-    background-color: lighten($success-green, 10);
-  }
+	&:hover,
+	&:focus {
+		background-color: lighten($success-green, 10);
+	}
 }
