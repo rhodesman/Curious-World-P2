@@ -1,6 +1,15 @@
 $font-family: 'Montserrat', sans-serif;
 $white: #fff;
 $orange: #f2a900;
+$icon-gray: #f7f7f7;
+$green: #adc800;
+$text-gray: #898989;
+$black: #3b4656;
+$heading-gray: #a6abad;
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $font-family;
+}
 
 .button.cta{
   background: $orange;
@@ -94,5 +103,57 @@ $orange: #f2a900;
       font-size:0;//to remove number (per docs)
       margin-bottom:10px;
     }
+  }
+}
+
+.explanation{
+  padding: 155px 0;
+  @media #{$small-only}{
+    text-align:center;
+  }
+  h2{
+    font-size: rem-calc(42);
+    text-align:center;
+    color:$black;
+  }
+  h4{
+    font-weight:700;
+    font-size: rem-calc(17);
+    color: $heading-gray;
+    width:70%;
+    text-align:center;
+    margin: 0 auto 70px auto;
+  }
+  .icon-container{
+    border-radius:50%;
+    width:210px;
+    height:210px;
+    margin: 0 auto 60px auto;
+    @media #{$medium-up}{
+      margin-bottom:60px;
+    }
+    &.how-it-works-1{
+      background: url('../img/landing/how-it-works-1.svg') $icon-gray center center no-repeat;
+      background-size:170px auto;
+    }
+    &.how-it-works-2{
+      background: url('../img/landing/how-it-works-2.svg') $icon-gray center center no-repeat;
+      background-size:contain;
+    }
+    &.how-it-works-3{
+      background: url('../img/landing/how-it-works-3.svg') $icon-gray center center no-repeat;
+      background-size:150px auto;
+    }
+  }
+  h3{
+    font-size:rem-calc(30);
+    color:$green;
+    width:90%;
+    line-height:1.1;
+    margin-bottom:30px;
+  }
+  p{
+    color:$text-gray;
+    line-height:1.5;
   }
 }
