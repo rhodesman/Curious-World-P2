@@ -6,6 +6,7 @@ $green: #adc800;
 $text-gray: #898989;
 $black: #3b4656;
 $heading-gray: #a6abad;
+$opacity-blue: rgba(#4bb9e9, 0.57);
 
 h1,h2,h3,h4,h5,h6{
   font-family: $font-family;
@@ -22,6 +23,7 @@ h1,h2,h3,h4,h5,h6{
 .carousel{
   position:relative;
   overflow:hidden;//because slider is float:left;
+  padding-top:70px;
   @include vertical-gradient(#62CAEC, #41ACE2);
   &:before{
     content:'';
@@ -108,8 +110,9 @@ h1,h2,h3,h4,h5,h6{
 
 .explanation{
   padding: 155px 0;
-  @media #{$small-only}{
-    text-align:center;
+  text-align:center;
+  @media #{$medium-up}{
+    text-align:left;
   }
   h2{
     font-size: rem-calc(42);
@@ -155,5 +158,58 @@ h1,h2,h3,h4,h5,h6{
   p{
     color:$text-gray;
     line-height:1.5;
+  }
+}
+
+.featured-benefits{
+  article{
+    overflow:hidden;
+    position:relative;
+    width:100%;
+    min-height:519px;
+    display:block;
+    margin-bottom:50px;
+    &.feature-one{
+      background: url('../img/landing/feature-one.jpg') center center no-repeat;
+    }
+    &.feature-two{
+      background: url('../img/landing/feature-two.jpg') center center no-repeat;
+    }
+    &.feature-three{
+      background: url('../img/landing/feature-three.jpg') center center no-repeat;
+    }
+  }
+  .benefit{
+    background: $opacity-blue;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 80px 30px;
+    h5{
+      color:$white;
+      font-weight:700;
+      font-size: rem-calc(20);
+      text-transform: uppercase;
+      text-decoration: underline;
+      margin:0;
+    }
+    h2{
+      color:$white;
+      font-size: rem-calc(35);
+      line-height:1;
+      font-weight:400;
+      margin: 30px 0;
+      @media #{$medium-up}{
+        font-size: rem-calc(42);
+        width:80%;
+      }
+    }
+    h4{
+      color:$white;
+      font-size: rem-calc(17);
+      font-weight:400;
+      line-height:1.5;
+    }
   }
 }

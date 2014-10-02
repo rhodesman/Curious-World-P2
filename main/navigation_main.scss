@@ -1,5 +1,5 @@
 // Main Navigation
-$p2-nav-link-margin-r: 20px; 
+$p2-nav-link-margin-r: 20px;
 #p2-logo-wrapper{
 	@media #{$medium-up}{
 		display: inline-block;
@@ -15,7 +15,7 @@ $p2-nav-link-margin-r: 20px;
 	max-width: 302px;
 	height: $mobile-hitbox;
 	*/
-	
+
 	font-size: 1rem;
 	color: $white;
 	background: transparent url(../img/curious-world-logo.png) scroll no-repeat 0 50%;
@@ -66,7 +66,7 @@ $p2-nav-link-margin-r: 20px;
 }//end #header
 .p2-navigation-wrapper{
 	@media #{$medium-up}{
-		text-align: center;			
+		text-align: center;
 		a{
 			display: block;
 			height: 50px;
@@ -80,7 +80,7 @@ $p2-nav-link-margin-r: 20px;
 }
 #navigation{
 	@media #{$medium-up}{
-		
+
 	}
 	ul{
 		list-style: none;
@@ -103,7 +103,7 @@ $p2-nav-link-margin-r: 20px;
 				margin-right: $p2-nav-link-margin-r;
 				font-weight: bold;
 			}
-				
+
 			&.p2-nav-link-sign-up{
 				margin-right: 0;
 			}
@@ -203,7 +203,7 @@ $p2-nav-link-margin-r: 20px;
 					top:-20px;
 					left:50%;
 					transform: translateX(-50%);
-				} 
+				}
 				*/
 			}//end &.curiosity-kits
 			&.beans-world{
