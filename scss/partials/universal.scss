@@ -1,0 +1,160 @@
+// Colors
+$color-creative: #7499f6;
+$color-language: #6e5cbf;
+$color-math: #975ccf;
+$color-health: #1dcd99;
+$color-family: #f87500;
+$color-executive: #f3ac01;
+$color-social: #a8d236;
+$color-science: #e94c4c;
+
+$color-twitter: #55acee;
+$color-facebook: #3664a2;
+$color-pinterest: #cb2128;
+
+$white: #fff;
+$light-grey: #f2f2f2;
+$grey: #999;
+$dark-grey: #4d4d4d;
+$black: #000;
+$light-blue: #5ccef4;
+$blue: #4abadf;
+$dark-blue: #30a4ca;
+$dark-button-blue: #0071bc;
+$bg-blue: #cde8f1;
+$instruction: #B3B3B3;
+$link-blue: #26ade4;
+$link-grey: #666;
+$link-grey-hover: #333;
+$border-blue: #91cbdf;
+$dropdown-border-blue: #90cce0;
+$filter-border-blue: #76cae6;
+$error-red: #ed1c24;
+$success-green: #39b54a;
+$footer-color: $white;
+$footer-border-color: #e6e6e6;
+$app-background: #874ebd;
+
+// Media queries
+$xsmall-up: "only screen and (min-width:#{upper-bound($small-range) * 0.75})";
+$xsmall-only: "only screen and (max-width:#{upper-bound($small-range) * 0.75})";
+$portrait-only: "only screen and (max-width:#{upper-bound($medium-range)}) and (orientation: portrait)";
+
+// Sizes
+$header-height: 200px;
+$mobile-hitbox: 44px;
+$mobile-header-height: $mobile-hitbox + 8px;
+$footer-height: 80px;
+
+// Variables
+$number-of-domains: 8;
+
+html, body{
+  height: 100%;
+  background: $footer-color;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, button, .button {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  color: $link-blue;
+  cursor: pointer;
+}
+
+*:focus {
+  outline: 0;
+}
+
+#wrapper {
+  height: 100%;
+  position: relative;
+  -webkit-transition: -webkit-filter 0.2s;
+  background: $white;
+
+  #content {
+    height: 100%;
+
+    @media #{$medium-up} {
+      position: absolute;
+      top: 0;
+      padding-top: $header-height;
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+    }
+    & > div {
+      height: 100%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+
+      @media #{$medium-up} {
+        height: auto;
+        overflow-y: visible;
+      }
+    }
+  }
+}
+
+ul.columns, ol.columns {
+  margin-left: 0;
+  list-style: none;
+}
+
+hr{
+  margin: 0 0 20px 0;
+}
+
+.ng-hide { // Make sure ng-hide is king over foundation
+  &.show-for-small-only,
+  &.hide-for-small-only,
+  &.show-for-medium-up,
+  &.hide-for-medium-up,
+  &.show-for-medium-only,
+  &.hide-for-medium-only,
+  &.show-for-large-up,
+  &.hide-for-large-up,
+  &.show-for-large-up,
+  &.hide-for-large-only,
+  &.show-for-large-only,
+  &.hide-for-xlarge-up,
+  &.show-for-xlarge-up,
+  &.hide-for-xlarge-only,
+  &.show-for-xlarge-only,
+  &.hide-for-xxlarge-up,
+  &.show-for-xxlarge-up {
+    display: none !important;
+  }
+}
+
+.button.pill-button{
+  float:right;
+  font-size:16px;
+  font-weight:300;
+  text-align:center;
+  background-color:$light-blue;
+  height:40px;
+  border-radius:20px;
+  text-transform: uppercase;
+  font-weight:100;
+  padding-top: 0.6rem;
+  letter-spacing: 2px;
+
+  &:hover{
+    background-color: lighten(#30a4ca, 20%);
+  }
+}
+
+
+button,
+.button {
+  background-color: $success-green;
+  font-size: 1.3rem;
+
+  &:hover,
+  &:focus {
+    background-color: lighten($success-green, 10);
+  }
+}
