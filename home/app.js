@@ -1,7 +1,7 @@
 (function (ng) {
     "use strict";
 
-    ng.module("app", ["authCheck", "ngRoute", "slick"])
+    ng.module("app", ["authCheck", "ngRoute", "slick", "duParallax"])
         .config([
             "$routeProvider",
             function ($routeProvider) {
@@ -24,10 +24,10 @@
             "$routeParams",
             "domains",
             "authCheck",
-            function ($scope, $rootScope, $routeParams, AuthCheck, slick) {
+            function ($scope, $rootScope, $routeParams, AuthCheck, slick, parallaxHelper) {
               ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
-              //controller
+              $scope.background = parallaxHelper.createAnimator(-0.3);
 
             }
         ]);

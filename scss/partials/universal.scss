@@ -12,6 +12,19 @@ $color-twitter: #55acee;
 $color-facebook: #3664a2;
 $color-pinterest: #cb2128;
 
+$font-family: 'Montserrat', sans-serif;
+$white: #fff;
+$orange: #f2a900;
+$icon-gray: #f7f7f7;
+$green: #adc800;
+$light-green: #aacb00;
+$text-gray: #898989;
+$black: #3b4656;
+$heading-gray: #a6abad;
+$opacity-blue: rgba(#4bb9e9, 0.57);
+$blue-bg: #5dc9ee;
+
+
 $white: #fff;
 $light-grey: #f2f2f2;
 $grey: #999;
@@ -52,10 +65,10 @@ $number-of-domains: 8;
 html, body{
 	height: 100%;
 	background: $footer-color;
-	font-family: "Open Sans", sans-serif;
+	font-family: $font-family;
 }
 
-h1, h2, h3, button, .button {
+h1, h2, h3, h4, h5, h6, button, .button {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -98,13 +111,13 @@ a {
 	}
 }
 
-ul.columns, ol.columns {
-  margin-left: 0;
-  list-style: none;
-}
-
-hr{
-  margin: 0 0 20px 0;
+ul.columns,
+ol.columns,
+ul,
+li {
+	list-style:none;
+	margin:0;
+	padding:0;
 }
 
 .ng-hide { // Make sure ng-hide is king over foundation
@@ -128,25 +141,6 @@ hr{
 		display: none !important;
 	}
 }
-
-.button.pill-button{
-	float:right;
-	font-size:16px;
-	font-weight:300;
-	text-align:center;
-	background-color:$light-blue;
-	height:40px;
-	border-radius:20px;
-	text-transform: uppercase;
-	font-weight:100;
-	padding-top: 0.6rem;
-	letter-spacing: 2px;
-
-	&:hover{
-		background-color: lighten(#30a4ca, 20%);
-	}
-}
-
 
 button,
 .button {
