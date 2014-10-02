@@ -1,0 +1,49 @@
+// Mobile Navigation
+.mobile-button{
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: transparent url(../img/nav-mobile.png) scroll no-repeat 50% 50%;
+	width: 68px;
+	height: $mobile-header-height;
+	&.close-reveal-modal{
+		display: block;
+		//top: -$mobile-header-height;
+		right: 0;
+	}
+}
+#mobile-title{
+	display: block;
+	position: absolute;
+	right: 68px + 8px;
+	top: 0;
+	height: $mobile-header-height;
+	line-height: $mobile-header-height;
+	font-weight: normal;
+	font-size: 1.5rem;
+	color: $dark-grey;
+}
+#mobile-back{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-left: 40px;
+	width: 50%;
+	height: $mobile-header-height;
+	line-height: $mobile-header-height;
+	color: $dark-grey;
+	cursor: pointer;
+	background: $white;
+	&:before{
+		content: "";
+		display: block;
+		position: absolute;
+		left: (((40px / 2) + (20px / 2)) / 2);
+		width: (20px / 2);
+		height: 100%;
+		background: transparent url(../img/mobile-back.png) scroll no-repeat 50% 50%;
+		background-size: contain;
+	}
+}
