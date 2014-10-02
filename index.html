@@ -11,13 +11,12 @@
 <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-<div id="wrapper" class="off-canvas-wrap" data-offcanvas>
-  <header id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
-  <div id="content" class="inner-wrap" ng-class="$root.contentClass">
-    <div ng-view></div>
-    <footer ng-include="'main/footer.html'"></footer>
-  </div>
+
+<header id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
+<div id="content" class="inner-wrap" ng-class="$root.contentClass">
+  <div ng-view></div>
 </div>
+
 <script src="js/vendor/modernizr.js"></script>
 <script src="js/vendor/jquery.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -34,6 +33,8 @@
 <script src="js/modules/wookmark.js"></script>
 <script src="js/modules/authenticate.js"></script>
 <script src="js/modules/auth-check.js"></script>
+<script src="bower_components/slick-carousel/slick/slick.js"></script>
+<script src="bower_components/angular-slick/dist/slick.js"></script>
 <script src="home/app.js"></script>
 <script src="main/main.js"></script>
 <script src="main/account-controller.js"></script>

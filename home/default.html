@@ -1,55 +1,85 @@
-<aside class="right-off-canvas-menu" ng-include="'home/menus.html'"></aside>
-<div id="domain-viewer" ng-class="'domain-' + (selectedDomain || domains[0]).name">
-  <div id="cards" class="row" ng-include="'home/cards.html'"></div>
-  <section id="domains" class="row" ng-include="'home/domains.html'"></section>
+<div class="landing">
+  <!--hero slider section-->
+  <section class="carousel">
+    <slick dots="true" arrows="false">
+      <div class="slick-slide">
+        <div class="row">
+          <div class="small-12 columns">
+              <div class="hero">
+                <h1>Welcome&nbsp;to Curious&nbsp;World</h1>
+                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at leo et libero fermentum bibendum non nec mauris. Vestibulum sed sodales odio. Aliquam pellentesque euismod nisi et euismod. Cras a hendrerit turpis. Suspendisse.</h4>
+                <a href="#" class="button cta">CTA Button</a>
+              </div>
+              <img src="img/landing/top-characters.png" alt="Curious World Characters"/>
+          </div>
+          </div>
+        </div>
+      <div class="slick-slide">Slider content two</div>
+    </slick>
+  </section>
+  <!--domain bg divider-->
+  <div class="domain-divider"></div>
+  <!--how this works section-->
+  <section class="explanation row">
+    <h2>How This Works</h2>
+    <h4>The activities in curious world are simple and quick but their impact is powerful. Do these activities at home or on the go.</h4>
+    <div class="large-4 columns large-uncentered small-centered small-6">
+      <div class="icon-container how-it-works-1"></div>
+      <h3>Eight Learning Areas</h3>
+      <p>Did you know there are 8 key Learning Areas that your child needs to know to be School Ready? Click on the Learning Areas tab to learn more from our Early Learning Specialists.</p>
+    </div>
+    <div class="large-4 columns large-uncentered small-centered small-6">
+      <div class="icon-container how-it-works-2"></div>
+      <h3>Progress sharing and&nbsp;tracking</h3>
+      <p>Over 14400 real ways to make your kid school ready while you track their progress and learning.</p>
+    </div>
+    <div class="large-4 columns large-uncentered small-centered small-6">
+      <div class="icon-container how-it-works-3"></div>
+      <h3>Hundreds of Flash&nbsp;Cards</h3>
+      <p>Use our simple Flash Card Activities for anytime learning. Do these activities at home or on the go.</p>
+    </div>
+  </section>
+  <section class="featured-benefits">
+    <article class="feature-one">
+      <div class="benefit row">
+        <div class="small-12">
+          <h5>Simple Yet Powerful</h3>
+          <h2>Easy-to-use interface works for both parent and early learner.</h5>
+          <h4>The activities in curious world are simple and quick but their impact is powerful.</h4>
+        </div>
+      </div>
+    </article>
+    <article class="feature-two">
+      <div class="benefit row">
+        <div class="small-12">
+          <h5>On The Go Or At Home</h5>
+          <h2>Your child is learning all the time. What they learn is up to you.</h2>
+          <h4>Do these activities at home or on the go. For Anywhere anytime learning experiences that strengthen the connection between you and your child.</h4>
+        </div>
+      </div>
+    </article>
+    <article class="feature-three">
+      <div class="benefit row">
+        <div class="small-12">
+          <h5>Proven Results</h5>
+          <h2>Curious World is based on the most recent research about how children learn.</h5>
+          <h4>The activities in curious world are simple and quick but their impact is powerful. Do these activities at home or on the go. For Anywhere anytime learning experiences that strengthen the connection between you and your child.</h4>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="subscribe-newsletter">
+    <article class="row">
+      <div class="subscribe large-9 large-centered columns">
+        <h2>Subscribe To Our Newsletter</h2>
+        <h4>The activities in curious world are simple and quick but their impact is powerful. Do these activities at home or on the go.</h4>
+        <form>
+          <input type="text" placeholder="Enter Your Email Address"/>
+          <a class="button">Sign In</a>
+        </form>
+      </div>
+    </article>
+  </section>
 </div>
-<section class="more-info" ng-init="doctorExplainsIsOpen = false" ng-class="{ 'is-open': doctorExplainsIsOpen }">
-  <h3 ng-click="doctorExplainsIsOpen = !doctorExplainsIsOpen">
-    <a>
-      <img class="avatar" src="img/home/about-icon.png" />
-      <span><span>About Curious World</span></span>
-      <img class="arrow" src="img/down-arrow-white.png" />
-    </a>
-  </h3>
-  <div class="explanation-info slide row" ng-show="doctorExplainsIsOpen">
-    <div class="small-10 medium-6 columns small-centered end">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, tenetur rerum quod ut in exercitationem praesentium nam ea cum aliquid repellat laborum ipsum sint ab provident nihil cumque tempore ullam.</p>
-      <div class="row video">
-        <div class="video-wrapper">
-          <iframe src="//player.vimeo.com/video/20732587?color=969696" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quo, facilis tenetur sequi eveniet repellat atque iure quidem optio id vel recusandae cum esse ducimus earum cumque totam autem dolorem? Ut rem accusantium dolorum optio! Veniam,
-        repellat voluptatum natus error obcaecati maxime explicabo distinctio laudantium ut maiores id unde dolorum aut rem consequatur esse beatae et veritatis rerum accusantium accusamus.</p>
-    </div>
-    <div id="domain-key-modal"
-      class="reveal-modal domain-key-modal medium"
-      ng-include="'partials/modals/domain-key-modal.html'"
-      data-reveal>
-    </div>
-    <section class="show-for-small-only">
-      <div class="row">
-        <div class="domain-key small-10 medium-6 small-centered columns">
-          <ul>
-            <li ng-repeat="domain in domains" ng-class="'domain-' + domain.name" ng-click="selectKeyDomain(domain.title);">
-              <a>
-                <span class="title">{{domain.title}}</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="domain-description small-10 medium-6 small-centered columns">
-          <ul>
-            <li ng-repeat="domain in domains" ng-class="'domain-' + domain.name" ng-show="keyDomain == domain.title || isMobile">
-              <p><span>{{domain.title}}: </span>{{domain.description}}</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </div>
-</section>
-<section class="community row" ng-include="'home/community.html'"></section>
+
 <footer ng-include="'main/footer.html'"></footer>
