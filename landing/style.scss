@@ -3,6 +3,7 @@ $white: #fff;
 $orange: #f2a900;
 $icon-gray: #f7f7f7;
 $green: #adc800;
+$light-green: #aacb00;
 $text-gray: #898989;
 $black: #3b4656;
 $heading-gray: #a6abad;
@@ -133,7 +134,7 @@ h1,h2,h3,h4,h5,h6{
     height:210px;
     margin: 0 auto 60px auto;
     @media #{$medium-up}{
-      margin-bottom:60px;
+      margin: 0 0 60px 0;
     }
     &.how-it-works-1{
       background: url('../img/landing/how-it-works-1.svg') $icon-gray center center no-repeat;
@@ -171,12 +172,15 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom:50px;
     &.feature-one{
       background: url('../img/landing/feature-one.jpg') center center no-repeat;
+      background-size: cover;
     }
     &.feature-two{
       background: url('../img/landing/feature-two.jpg') center center no-repeat;
+      background-size: cover;
     }
     &.feature-three{
       background: url('../img/landing/feature-three.jpg') center center no-repeat;
+      background-size: cover;
     }
   }
   .benefit{
@@ -210,6 +214,55 @@ h1,h2,h3,h4,h5,h6{
       font-size: rem-calc(17);
       font-weight:400;
       line-height:1.5;
+    }
+  }
+}
+
+.subscribe-newsletter{
+  background: url('../img/landing/subscribe-bg.jpg') center center no-repeat;
+  background-size: cover;
+  width:100%;
+  min-height:507px;
+  display:block;
+  text-align:center;
+  padding:95px 0;
+  h2{
+    color:$white;
+    margin-bottom:30px;
+  }
+  h4{
+    color:$white;
+    font-size: rem-calc(17);
+    margin-bottom:100px;
+  }
+  form{
+    margin: 0 auto;
+    padding: 0 60px;
+    width:100%;
+    input{
+      width:60%;
+      display:inline;
+      height:60px;
+      border:none;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      padding-left:20px;
+      font-size: rem-calc(17);
+
+    }
+    a.button{
+      position:relative;
+      top:1px;
+      left:-5px;
+      display:inline;
+      width:40%;
+      height:60px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background: $light-green;
+      &:hover{
+        background: lighten($light-green, 5%);
+      }
     }
   }
 }
