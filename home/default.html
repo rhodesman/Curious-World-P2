@@ -13,7 +13,7 @@
       </div>
       <div class="slick-slide">
         <div class="slick-bg video">
-          <a class="play-button"></a>
+          <a data-reveal-id="video-modal" class="play-button"></a>
         </div>
       </div>
       <div class="slick-slide">
@@ -99,5 +99,5 @@
     </article>
   </section>
 </div>
-
+<div id="video-modal" class="reveal-modal video-modal" ng-include="'partials/modals/video.html'" data-reveal></div>
 <footer ng-include="'main/footer.html'"></footer>

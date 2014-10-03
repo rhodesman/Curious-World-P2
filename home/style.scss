@@ -62,6 +62,13 @@
   }
  }
 
+.reveal-modal{
+  &.video-modal{
+    padding:0;
+  }
+}
+
+
 .hero {
   width:100%;
   position:absolute;
