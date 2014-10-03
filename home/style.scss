@@ -337,7 +337,6 @@
 }
 
 .promotion-footer{
-  z-index:999!important;
   background: $blue-bg;
   height: 80px;
   width: 100%;
@@ -358,11 +357,11 @@
     font-size:rem-calc(28);
     color:$white;
     display:inline;
-    margin-right:40px;
   }
   .footer-friends{
     position:absolute;
     top:-190px;
+    right:200px;
   }
   .app-store{
     width:150px;
