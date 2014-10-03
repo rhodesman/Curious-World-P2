@@ -1,108 +1,86 @@
 <div class="row">
-	<div class="small-12 columns p2-navigation-wrapper">
-		<!-- "logo mobile/screen using css" -->
-		<div id="p2-logo-wrapper">
-			<h1 id="logo"><a href="./">Curious World</a></h1>
-		</div>
-		<!-- "main/screen navigation" -->
-		<nav id="navigation" class="show-for-medium-up p2-navigation">
-			<ul id="main-navigation">
-				<li class="p2-nav-link" ng-class="{ 'is-active': $root.activeNav === 'cardfolio' }"><a href="cardfolio">Learning Areas</a></li>
-				<li class="p2-nav-link" ng-class="{ 'is-active': $root.activeNav === 'community' }"><a href="community">Flashcards</a></li>
-				<li class="p2-nav-link" ng-class="{ 'is-active': $root.activeNav === 'curiosity-kits' }"><a href="curiosity-kits">Shop</a></li>
-				<!-- "sign in" -->
-				<li ng-if="!userInfo.isLoggedIn()" class="p2-nav-link"><a data-reveal-id="sign-in-modal">Sign In<span class="p2-btn-sign-up">Sign Up</span></a></li>
-				
-				<!-- "modal menu" -->
-				<ul id="account-navigation">
-					<!-- ? -->
-					<li id="account-menu" ng-if="userInfo.isLoggedIn()">
-						<!-- ? -->
-						<a class="show-for-touch" data-dropdown="account-menu-dropdown"><span>{{userInfo.getUser().displayName}}</span></a>
-						<a class="hide-for-touch" data-dropdown="account-menu-dropdown" data-options="is_hover:true"><span>{{userInfo.getUser().displayName}}</span></a>
-						<!-- ? -->
-						<div id="account-menu-dropdown" class="f-dropdown" data-dropdown-content>
-							<!-- ? -->
-							<ul>
-								<li><a data-reveal-id="manage-profile-modal">Manage Profile</a></li>
-								<li><a data-reveal-id="manage-account-modal">Manage Account</a></li>
-								<li><a data-reveal-id="create-account-modal">Get Help</a></li>
-								<li><a ng-click="userInfo.logout()">Sign Out</a></li>
-							</ul><!-- end ? -->	
-						</div><!-- end ? -->
-					</li><!-- end ? -->
-				</ul><!-- end "modal menu" -->
-			</ul><!-- end "main nav links" -->
-		</nav><!-- end #navigation -->
-		<div class="show-for-medium-up p2-clear"></div>
-		
-		<!-- "mobile nav" -->
-		<span id="mobile-back">Back</span>
+	<div class="small-4 columns">
+		<h1 id="logo"><a href="./">Curious World</a></h1>
+	</div>
+	<div class="small-8 columns last">
 		<strong id="mobile-title" class="show-for-small-only">{{$root.pageTitle || "Untitled"}}</strong>
 		<nav id="mobile-nav" class="show-for-small-only">
-			<!-- ? -->
 			<a class="mobile-button" data-reveal-id="nav-modal"></a>
-			<!-- #nav-modal -->
 			<div id="nav-modal" class="reveal-modal options-modal" data-reveal>
-				<!-- "ul wrapper" -->
 				<ul>
-					<li ng-if="!userInfo.isLoggedIn()" class="sign-in"><a data-reveal-id="sign-in-modal">Sign In / Create Account</a></li>
-					<li ng-if="!userInfo.isLoggedIn()" class="create-account"><a data-reveal-id="create-account-modal">Create Account</a></li>
+					<li ng-if="!userInfo.isLoggedIn()" class="sign-in">
+						<a href="#">Sign In</a>
+					</li>
+					<li ng-if="!userInfo.isLoggedIn()" class="create-account">
+						<a href="#">Sign Up</a>
+					</li>
 					<li class="user-mobile" ng-if="userInfo.isLoggedIn()">
-						<label>Hi, {{userInfo.getUser().displayName}}</label>
-						<ul class="submenu">
-							<li><a data-reveal-id="manage-account-modal">Manage Profile</a></li>
-							<li><a data-reveal-id="manage-account-modal">Manage Account</a></li>
-							<li><a data-reveal-id="create-account-modal">Get Help</a></li>
-							<li><a ng-click="userInfo.logout()">Sign Out</a></li>
-						</ul>
-					</li><!-- end ? -->
-					<!-- ? -->
-					<li class="home" ng-class="{ 'is-active': $root.activeNav === 'home' }"><a href="./">Home</a></li>
-					<li class="cardfolio" ng-class="{ 'is-active': $root.activeNav === 'cardfolio' }"><a href="cardfolio">Cardfolio</a></li>
-					<li class="community" ng-class="{ 'is-active': $root.activeNav === 'community' }"><a href="community">Community</a></li>
-					<li class="curiosity-kits" ng-class="{ 'is-active': $root.activeNav === 'curiosity-kits' }"><a href="curiosity-kits">Store</a></li>
-					<li class="beans-world" ng-class="{ 'is-active': $root.activeNav === 'cw-app' }"><a href="cw-app">Curious World App</a></li>
-					<!-- end ? -->
-				</ul><!-- end "ul wrapper"-->				
-			</div><!-- end #nav-modal -->
-		</nav><!-- end #mobile-nav -->		
-		<!--end mobile nav-->
-	</div><!-- end .small-12 columns -->
-	<!-- ? -->
-	<div id="sign-in-modal" class="reveal-modal account-modal small" authenticate-login-form template-url="partials/modals/signin.html" data-reveal></div>
-	<div id="create-account-modal" class="reveal-modal account-modal small" ng-include="'partials/modals/signup.html'" data-reveal></div>
-	<div id="create-account-next-modal" class="reveal-modal account-modal small" ng-include="'partials/modals/signuptwo.html'" data-reveal></div>
-	<div id="create-account-success-modal" class="reveal-modal account-modal small" ng-include="'partials/modals/signupsuccess.html'" data-reveal></div>
-	<div id="manage-profile-modal" class="reveal-modal account-modal small" ng-include="'partials/modals/manageprofile.html'" data-reveal></div>
-	<div id="manage-account-modal" class="reveal-modal account-modal small" ng-include="'partials/modals/manageaccount.html'" data-reveal></div>
-	<div id="change-email-modal" class="reveal-modal account-modal small" change-email-form ng-include="'partials/modals/changeemail.html'" data-reveal></div>
-	<div id="change-password-modal" class="reveal-modal account-modal small" change-password-form ng-include="'partials/modals/changepassword.html'" data-reveal></div>
-	<div id="remove-content-modal" class="reveal-modal account-modal small" ng-include="'partials/modals/removecontent.html'" data-reveal></div>
-	<div id="reset-cards-modal" class="reveal-modal account-modal small" ng-include="'partials/modals/resetcards.html'" data-reveal></div>
-	<div id="delete-account-modal" class="reveal-modal account-modal small" ng-include="'partials/modals/deleteaccount.html'" data-reveal></div>
-	<!-- end ? -->
-	<!-- ? -->
-	<div id="before-action-modal" class="reveal-modal account-modal small" data-reveal>
-		<div class="row"><button class="button small-12" data-reveal-id="sign-in-modal">Sign In</button></div>
-		<p class="large-instruction">Don't have an account, yet?</p>
-		<div class="row"><button class="button secondary small-12" data-reveal-id="create-account-modal">Create an Account</button></div>
-		<a class="close-reveal-modal">&#215;</a>
-	</div><!-- end ? -->
-</div><!--end .row-->
-<!--dev only-->
-<!--remove from live project-->
-<div id="generic-modal-example" class="reveal-modal account-modal small" ng-include="'partials/modals/generic-modal.html'" data-reveal></div>
-<!--remove from live project-->
-<div id="generic-prompt-example" class="reveal-modal account-modal small" ng-include="'partials/modals/generic-prompt.html'" data-reveal></div>
-<!--end dev only-->
-
-
-<script>/*
-//goes in footer now
-<li class="beans-world" ng-class="{ 'is-active': $root.activeNav === 'cw-app' }"><a href="cw-app">Curious World App</a></li>		
-*/</script>
-
-<script>/*
-<!-- "main nav links" -->
-*/</script>
+            <label>Hi, {{userInfo.getUser().displayName}}</label>
+            <ul class="submenu">
+              <li>
+                <a href="#">Manage Profile</a>
+              </li>
+              <li>
+                <a href="#">Manage Account</a>
+              </li>
+              <li>
+                <a href="#">Get Help</a>
+              </li>
+              <li>
+                <a ng-click="userInfo.logout()">Sign Out</a>
+              </li>
+            </ul>
+					</li>
+					<li class="home"
+						ng-class="{ 'is-active': $root.activeNav === 'home' }">
+						<a href="./">Home</a>
+					</li>
+					<li class="learning-area"
+						ng-class="{ 'is-active': $root.activeNav === 'learning-area' }">
+						<a href="cardfolio">Learning Areas</a>
+					</li>
+					<li class="flashcards"
+						ng-class="{ 'is-active': $root.activeNav === 'flashcards' }">
+						<a href="#">Flashcards</a>
+					</li>
+					<li class="shop"
+						ng-class="{ 'is-active': $root.activeNav === 'shop' }">
+						<a href="#">Shop</a>
+					</li>
+					<li class="sign-in"
+						ng-class="{ 'is-active': $root.activeNav === 'sign-in' }">
+						<a href="#">Sign In</a>
+					</li>
+					<li class="sign-up"
+						ng-class="{ 'is-active': $root.activeNav === 'sign-up' }">
+						<a href="#">Sign Up</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<nav id="navigation" class="show-for-medium-up">
+			<ul id="main-navigation">
+				<li class="learning-area"
+					ng-class="{ 'is-active': $root.activeNav === 'learning-area' }">
+					<a href="cardfolio">Learning Areas</a>
+				</li>
+				<li class="flashcards"
+					ng-class="{ 'is-active': $root.activeNav === 'flashcards' }">
+					<a href="#">Flashcards</a>
+				</li>
+				<li class="shop"
+					ng-class="{ 'is-active': $root.activeNav === 'shop' }">
+					<a href="#">Shop</a>
+				</li>
+				<li class="sign-in"
+					ng-class="{ 'is-active': $root.activeNav === 'sign-in' }">
+					<a href="#">Sign In</a>
+				</li>
+				<li class="sign-up"
+					ng-class="{ 'is-active': $root.activeNav === 'sign-up' }">
+					<a href="#">Sign Up</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
