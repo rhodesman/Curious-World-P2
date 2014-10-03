@@ -1,20 +1,38 @@
-<div-container="{}" class="landing">
+<div class="landing">
   <!--hero slider section-->
   <section class="carousel">
-    <slick dots="true" arrows="false">
+    <slick id="#slick" dots="true" arrows="false" autoplay="false">
       <div class="slick-slide">
-        <div class="row">
-          <div class="small-12 columns">
-              <div class="hero">
-                <h1>Welcome&nbsp;to Curious&nbsp;World</h1>
-                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at leo et libero fermentum bibendum non nec mauris. Vestibulum sed sodales odio. Aliquam pellentesque euismod nisi et euismod. Cras a hendrerit turpis. Suspendisse.</h4>
-                <a href="#" class="button cta">CTA Button</a>
-              </div>
-              <img src="img/landing/top-characters.png" alt="Curious World Characters"/>
-          </div>
+        <div class="slick-bg one">
+          <div class="hero">
+            <h1>Welcome&nbsp;to Curious&nbsp;World</h1>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at leo et libero fermentum bibendum non nec mauris. Vestibulum sed sodales odio. Aliquam pellentesque euismod nisi et euismod. Cras a hendrerit turpis. Suspendisse.</h4>
+            <a href="#" class="button cta">CTA Button</a>
           </div>
         </div>
-      <div class="slick-slide">Slider content two</div>
+      </div>
+      <div class="slick-slide">
+        <div class="slick-bg video">
+          <a data-reveal-id="video-modal" class="play-button"></a>
+        </div>
+      </div>
+      <div class="slick-slide">
+        <div class="slick-bg two">
+          <div class="hero">
+            <h1>Introducing Curious&nbsp;World for&nbsp;Parents</h1>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit orci, dictum in mauris vel, facilisis luctus urna. In iaculis massa nibh.</h4>
+            <a href="#" class="button cta">Call to Action</a>
+          </div>
+        </div>
+      </div>
+      <div class="slick-slide">
+        <div class="slick-bg three">
+          <div class="hero">
+            <h1>Curious&nbsp;World is the curious app your kids love to play</h1>
+            <a href="#" class="button cta">Call to Action</a>
+          </div>
+        </div>
+      </div>
     </slick>
   </section>
   <!--domain bg divider-->
@@ -81,3 +99,16 @@
     </article>
   </section>
 </div>
+<!--promotional footer-->
+<div class="promotion-footer">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>Get the Curious World App for Kids!</h2>
+      <img class="footer-friends" src="img/landing/footer-characters.png" alt="Curious World Characters">
+      <a href=""><img class="app-store" src="img/landing/appstore.svg" alt=""></a>
+    </div>
+  </div>
+</div>
+
+<!--video modal-->
+<div id="video-modal" class="reveal-modal video-modal" ng-include="'partials/modals/video.html'" data-reveal></div>

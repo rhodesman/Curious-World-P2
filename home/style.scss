@@ -1,3 +1,5 @@
+
+
 .button.cta {
   background: $orange;
   border-radius: 30px;
@@ -6,25 +8,76 @@
   }
 }
 
-.carousel {
-  background: $blue-bg;
-  position: relative;
-  padding-top: 70px;
-  overflow: hidden;//because slider is float:left;
-  &:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: url('../img/landing/feature.svg');
-    background-size: cover;
+  #slick{
+    position:relative;
+  }
+
+ .carousel{
+   overflow:hidden;
+ }
+
+ .slick-slide{
+   position:relative;
+   float:left;
+  .slick-bg{
+    width:100%;
+    min-height:730px;
+    &.one{
+      background: url('../img/landing/feature-background.jpg') center center no-repeat;
+      background-size:cover;
+      position:relative;
+      &:after{
+        content: '';
+        background: url('../img/landing/top-characters.png') center center no-repeat;
+        width: 940px;
+        height:636px;
+        display:block;
+        position:absolute;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+      }
+    }
+    &.two{
+      background: url('../img/landing/feature-four.jpg') center center no-repeat;
+      background-size:cover;
+    }
+    &.three{
+      background: url('../img/landing/feature-five.jpg') center center no-repeat;
+      background-size:cover;
+    }
+    &.video{
+      background: url('../img/landing/feature-video.png') center center no-repeat;
+      background-size:cover;
+      .play-button{
+        background: url('http://placehold.it/100x100') center center no-repeat;
+        width:286px;
+        height:286px;
+        display:block;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        background: url('../img/landing/play-button.png') center center no-repeat;
+      }
+    }
+  }
+ }
+
+.reveal-modal{
+  &.video-modal{
+    padding:0;
   }
 }
 
 .hero {
-  position: absolute;
-  bottom: 50px;
+  width:100%;
+  position:absolute;
+  bottom:40px;
   text-align: center;
+  z-index:1;
+  left:50%;
+  transform: translateX(-50%);
   @media #{$small-only} {
     bottom: 25px;
   }
@@ -35,6 +88,11 @@
     font-weight: 400;
     text-shadow: 0 0 25px rgba(0,0,0,0.25);
     line-height: 1.1;
+    width:80%;
+    text-align:center;
+    position:relative;
+    left:50%;
+    transform: translateX(-50%);
     @media #{$medium-up} {
       font-size: rem-calc(63);
     }
@@ -44,7 +102,7 @@
     font-size: rem-calc(17);
     text-shadow: 0 0 8px rgba(0,0,0,0.42);
     color: $white;
-    width: 72%;
+    width: 55%;
     margin: 0 auto 25px auto;
     @media #{$small-only}{
       display: none;
@@ -62,10 +120,9 @@
 }
 .slick-dots {
   position: absolute;
-  top: 50%;
-  right: 60px;
-  bottom: initial;
-  transform: translateY(-50%);
+  top:8%;
+  right:60px;
+  z-index:999!important;
   @media #{$small-only} {
     display: none;
   }
@@ -92,14 +149,12 @@
     }
   }
 }
-
 .domain-divider {
   background: $blue-bg;
   height: 80px;
   width: 100%;
   border-top: solid $black 6px;
-  position: relative;
-  top: -1px;//temporary until image is adjusted. relax!
+  position:relative;
   &:before {
     content: '';
     width: 100%;
@@ -182,15 +237,15 @@
     margin-bottom: 50px;
     transform: translate3d(0,0,0);
   &.feature-one {
-    background: url('http://lorempixel.com/1500/800') no-repeat;
+    background: url('../img/landing/feature-one.jpg') no-repeat;
     background-size:cover;
   }
   &.feature-two {
-    background: url('http://lorempixel.com/1501/801') no-repeat;
+    background: url('../img/landing/feature-two.jpg') no-repeat;
     background-size:cover;
   }
   &.feature-three {
-    background: url('http://lorempixel.com/1502/802') no-repeat;
+    background: url('../img/landing/feature-three.jpg') no-repeat;
     background-size:cover;
   }
 }
@@ -278,5 +333,39 @@
         background: lighten($light-green, 5%);
       }
     }
+  }
+}
+
+.promotion-footer{
+  z-index:999!important;
+  background: $blue-bg;
+  height: 80px;
+  width: 100%;
+  position:fixed;
+  bottom:0;
+  left:0;
+  padding-top:20px;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url('../img/landing/feature.svg');
+    background-size: cover;
+  }
+  h2{
+    line-height:40px;
+    font-size:rem-calc(28);
+    color:$white;
+    display:inline;
+    margin-right:40px;
+  }
+  .footer-friends{
+    position:absolute;
+    top:-190px;
+  }
+  .app-store{
+    width:150px;
+    float:right;
   }
 }
