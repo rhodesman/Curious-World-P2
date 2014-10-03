@@ -1,95 +1,80 @@
-$footer-item-padding: 16px;
+$footer-padding:145px;
+$footer-gray-h1: #a6abad;
+$footer-gray-h2: #36393c;
+$footer-gray-copy: #888e8e;
+$marg-bott:20px;
+$double-marg-bott:($marg-bott * 2);
 
-#content {
-	@media #{$medium-up} {
-		padding-bottom: $footer-height;
+footer {
+	padding-top:$footer-padding;
+	padding-bottom:$footer-padding;
+	h1,h2,ul,.copyright,.hmh-logo,.social-links {
+		display:block;
+		margin:auto;
+		font-family:$font-family;
+		text-align:center;
+		margin-bottom:$marg-bott;
 	}
-	footer {
-		position: relative;
-		padding: ($footer-height / 10) 0.9375rem;
-		width: 100%;
-		line-height: $footer-height;
-		text-align: center;
-		color: $grey;
-		background: $white;
-		
-		@media #{$xsmall-up} {
-			display: table;
-			padding-top: 0;
-			padding-bottom: 0;
-			height: $footer-height;
-			text-align: left;
+	ul {
+		li{
+			display: inline-block;
+			text-align: center;
+			position: relative;
 		}
-		@media #{$medium-up} {
-			position: absolute;
-			left: 0;
-			bottom: 0;
+		li + li:before {
+	    content: " | ";
+			color:$footer-gray-h1;
 		}
+		&.hmh-assets {
+			font-weight:400;
+		}
+		&.cw-foot-links {
+			font-weight:700;
+			margin-bottom:$double-marg-bott;
+		}
+	}
+	h1,.copyright {
+		text-transform: uppercase;
+		font-size:1rem;
+	}
+	h1 {
+		color:$footer-gray-h1;
+	}
+	h2 {
+		color:$footer-gray-h2;
+		margin-bottom:$double-marg-bott;
+	}
+	.hmh-logo {
+		margin-bottom:$double-marg-bott;
+	}
+	.copyright {
+		color:$footer-gray-copy;
+	}
+	.copyright {
 		&:before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 1%;
-			width: (100% - (1% * 2));
-			height: 0;
-			border-top: 1px solid $footer-border-color;
+			content:'\00a9';
 		}
-		div {
-			height: 100%;
-			
-			@media #{$xsmall-up} {
-				display: table-row;
-			}
-			& > * {
-				height: auto;
-				line-height: 1.3rem;
-				font-size: 0.8rem;
-				
-				@media #{$xsmall-up} {
-					display: table-cell;
-					line-height: inherit;
-					white-space: nowrap;
-				}
-				@media #{$medium-up} {
-					font-size: 1rem;
+	}
+	.social-links {
+		a {
+			@include hide-text();
+			text-indent: 200%;
+			display: inline-block;
+			width:30px;
+			height:30px;
+			&.facebook {
+				background: transparent url(../img/social-icons/social-facebook.png) no-repeat 50% 50%;
+				&:hover {
+					background:url(../img/social-icons/social-facebook-hover.png) no-repeat 50% 50%;
 				}
 			}
-			& > div {
-				
-			}
-			& > ul {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				
-				@media #{$xsmall-up} {
-					text-align: right;
-				}
-				li {
-					display: inline-block;
-					height: 100%;
-					
-					a {
-						display: block;
-						height: 100%;
-						line-height: inherit;
-						color: $dark-grey;
-						white-space: nowrap;
-						
-						&:hover {
-							color: $link-grey-hover;
-						}
-					}
-					
-					& + li {
-						padding-left: ($footer-item-padding / 4);
-						
-						@media #{$medium-up} {
-							padding-left: $footer-item-padding;
-						}
-					}
+			&.twitter {
+				background: transparent url(../img/social-icons/social-twitter.png) no-repeat 50% 50%;
+				&:hover {
+					background:url(../img/social-icons/social-twitter-hover.png) no-repeat 50% 50%;
 				}
 			}
 		}
+
 	}
 }
