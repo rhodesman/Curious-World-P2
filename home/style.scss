@@ -293,6 +293,7 @@
   display: block;
   padding: 95px 0;
   text-align: center;
+  transition: opacity .2s ease-in-out;
   h2 {
     color: $white;
     margin-bottom: 30px;
