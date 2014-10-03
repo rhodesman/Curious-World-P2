@@ -20,14 +20,22 @@
             }
         ])
         .controller("DefaultController", [
+            "parallaxHelper",
             "$scope",
+            "$rootScope",
             "$routeParams",
-            "domains",
             "authCheck",
-            function ($scope, $rootScope, $routeParams, AuthCheck, slick, parallaxHelper) {
+            function (parallaxHelper, $scope, $rootScope, $routeParams, AuthCheck, slick) {
               ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
-              $scope.background = parallaxHelper.createAnimator(-0.3);
+              $scope.positionBackground = function(elementPosition) {
+                var factor = -0.3;
+                var pos = elementPosition.elemY*factor;
+                return {
+                   backgroundPosition: '0px ' + pos + 'px'
+                };
+              };
+
 
             }
         ]);
