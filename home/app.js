@@ -30,7 +30,7 @@
 
               //parallax background-position scroll custom setup
               $scope.positionBackground = function(elementPosition) {
-                var factor = -0.3;
+                var factor = -0.4;
                 var pos = elementPosition.elemY*factor;
                 return {
                    backgroundPosition: '0px ' + pos + 'px'

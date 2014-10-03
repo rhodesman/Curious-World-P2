@@ -120,7 +120,7 @@
     font-size: rem-calc(42);
     text-align: center;
     color: $black;
-    transition: 0.2s all;
+    transition: opacity .2s ease-in-out;
   }
   h4 {
     font-weight: 700;
@@ -129,14 +129,14 @@
     text-align: center;
     width: 70%;
     margin: 0 auto 70px auto;
-    transition: 0.2s all;
+    transition: opacity .2s ease-in-out;
   }
   .icon-container {
     border-radius: 50%;
     width: 210px;
     height: 210px;
     margin: 0 auto 60px auto;
-    transition: 0.2s all;
+    transition: opacity .2s ease-in-out;
 
     @media #{$medium-up} {
       margin: 0 0 60px 0;
@@ -163,13 +163,13 @@
     line-height: 1.1;
     width: 90%;
     margin-bottom: 30px;
-    transition: 0.2s all;
+    transition: opacity .2s ease-in-out;
 
   }
   p {
     color: $text-gray;
     line-height: 1.5;
-    transition: 0.2s all;
+    transition: opacity .2s ease-in-out;
 
   }
 }
@@ -201,7 +201,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 80px 30px;
-  transition: 0.2s all;
+  transition: opacity .2s ease-in-out;
   h5 {
     color: $white;
     font-weight: 700;
