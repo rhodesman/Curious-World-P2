@@ -37,6 +37,7 @@ $dark-button-blue: #0071bc;
 $bg-blue: #cde8f1;
 $instruction: #B3B3B3;
 $link-blue: #26ade4;
+$link-orange: #f4a904;
 $link-grey: #666;
 $link-grey-hover: #333;
 $border-blue: #91cbdf;
@@ -73,7 +74,7 @@ h1, h2, h3, h4, h5, h6, button, .button {
 }
 
 a {
-	color: $link-blue;
+	color: $link-orange;
 	cursor: pointer;
 }
 

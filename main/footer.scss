@@ -1,0 +1,80 @@
+$footer-padding:145px;
+$footer-gray-h1: #a6abad;
+$footer-gray-h2: #36393c;
+$footer-gray-copy: #888e8e;
+$marg-bott:20px;
+$double-marg-bott:($marg-bott * 2);
+
+footer {
+	padding-top:$footer-padding;
+	padding-bottom:$footer-padding;
+	h1,h2,ul,.copyright,.hmh-logo,.social-links {
+		display:block;
+		margin:auto;
+		font-family:$font-family;
+		text-align:center;
+		margin-bottom:$marg-bott;
+	}
+	ul {
+		li{
+			display: inline-block;
+			text-align: center;
+			position: relative;
+		}
+		li + li:before {
+	    content: " | ";
+			color:$footer-gray-h1;
+		}
+		&.hmh-assets {
+			font-weight:400;
+		}
+		&.cw-foot-links {
+			font-weight:700;
+			margin-bottom:$double-marg-bott;
+		}
+	}
+	h1,.copyright {
+		text-transform: uppercase;
+		font-size:1rem;
+	}
+	h1 {
+		color:$footer-gray-h1;
+	}
+	h2 {
+		color:$footer-gray-h2;
+		margin-bottom:$double-marg-bott;
+	}
+	.hmh-logo {
+		margin-bottom:$double-marg-bott;
+	}
+	.copyright {
+		color:$footer-gray-copy;
+	}
+	.copyright {
+		&:before {
+			content:'\00a9';
+		}
+	}
+	.social-links {
+		a {
+			@include hide-text();
+			text-indent: 200%;
+			display: inline-block;
+			width:30px;
+			height:30px;
+			&.facebook {
+				background: transparent url(../img/social-icons/social-facebook.png) no-repeat 50% 50%;
+				&:hover {
+					background:url(../img/social-icons/social-facebook-hover.png) no-repeat 50% 50%;
+				}
+			}
+			&.twitter {
+				background: transparent url(../img/social-icons/social-twitter.png) no-repeat 50% 50%;
+				&:hover {
+					background:url(../img/social-icons/social-twitter-hover.png) no-repeat 50% 50%;
+				}
+			}
+		}
+
+	}
+}
