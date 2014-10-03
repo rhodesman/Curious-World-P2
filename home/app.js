@@ -1,29 +1,6 @@
 (function (ng) {
     "use strict";
 
-    $(function(){
-
-    var $window = $(window);
-    var scrollTime = 0.5;
-    var scrollDistance = 170;
-
-    $window.on("mousewheel DOMMouseScroll", function(event){
-
-    event.preventDefault();
-
-    var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
-    var scrollTop = $window.scrollTop();
-    var finalScroll = scrollTop - parseInt(delta*scrollDistance);
-
-    TweenMax.to($window, scrollTime, {
-      scrollTo : { y: finalScroll, autoKill:true },
-      ease: Power1.easeOut,
-      overwrite: 5
-    });
-
-    });
-    });
-
     ng.module("app", ["authCheck", "ngRoute", "slick", "duParallax"])
         .config([
             "$routeProvider",
@@ -73,6 +50,18 @@
               } else {
                 //outside of view
                 element.css('opacity', 0);
+              }
+              scope.$apply();
+            });
+          };
+        })
+        .directive("magicFooter", function($window) {
+          return function(scope, element, attrs) {
+            angular.element($window).bind("scroll", function() {
+              var scroll = $(window).scrollTop();
+              console.log(scroll);
+              if (scroll > 50) {
+                element.css('bottom', 0);
               }
               scope.$apply();
             });
