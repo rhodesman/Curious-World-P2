@@ -54,5 +54,17 @@
               scope.$apply();
             });
           };
+        })
+        .directive("magicFooter", function($window) {
+          return function(scope, element, attrs) {
+            angular.element($window).bind("scroll", function() {
+              var scroll = $(window).scrollTop();
+              console.log(scroll);
+              if (scroll > 50) {
+                element.css('bottom', 0);
+              }
+              scope.$apply();
+            });
+          };
         });
 }(window.angular));

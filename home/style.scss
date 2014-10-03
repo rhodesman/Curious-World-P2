@@ -341,8 +341,9 @@
   min-height: 80px;
   width: 100%;
   position:fixed;
-  bottom:0;
+  bottom:-270px;
   left:0;
+  transition: 1s all ease-in-out;
   &:before {
     content: '';
     width: 100%;
