@@ -338,12 +338,11 @@
 
 .promotion-footer{
   background: $blue-bg;
-  height: 80px;
+  min-height: 80px;
   width: 100%;
   position:fixed;
   bottom:0;
   left:0;
-  padding-top:20px;
   &:before {
     content: '';
     width: 100%;
@@ -353,18 +352,35 @@
     background-size: cover;
   }
   h2{
-    line-height:40px;
-    font-size:rem-calc(28);
-    color:$white;
-    display:inline;
+    display:none;
+    @media #{$large-up}{
+      margin-top:20px;
+      line-height:40px;
+      color:$white;
+      display:inline;
+      font-size:rem-calc(28);
+      position:absolute;
+      top:0px;
+    }
   }
   .footer-friends{
     position:absolute;
-    top:-190px;
-    right:200px;
+    top:-168px;
+    left:0;
+    @media #{$medium-only}{
+      left:50px;
+    }
+    @media #{$large-up}{
+      left:500px;
+    }
   }
   .app-store{
     width:150px;
-    float:right;
+    position:absolute;
+    right:8px;
+    top:14px;
+    @media #{$medium-up}{
+      right:50px;
+    }
   }
 }
