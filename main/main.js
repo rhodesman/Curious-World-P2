@@ -59,7 +59,10 @@
             .ready(function () {
                 wrapper = $("#wrapper");
 
-                
+                // iPhone detection until we figure out what the issue is
+                if (navigator.userAgent.match(/iPhone|iPod/i)) {
+                    $(document.body).addClass("iphone");
+                }
             });
 
     });
