@@ -60,7 +60,7 @@
               var scroll = $(window).scrollTop();
               console.log(scroll);
               if (scroll > 50) {
-                // element.css('bottom', 0);
+                element.css('bottom', 0);
               }
               scope.$apply();
             });
