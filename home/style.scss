@@ -12,6 +12,7 @@
 
  .carousel{
    overflow:hidden;
+   position:relative;
  }
 
  .slick-slide{
@@ -118,7 +119,8 @@
 }
 .slick-dots {
   position: absolute;
-  top:8%;
+  top:50%;
+  transform: translateY(-50%);
   right:60px;
   z-index:999!important;
   @media #{$small-only} {
