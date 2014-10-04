@@ -45,7 +45,6 @@
               var bottom_of_window = $(window).scrollTop() + $(window).height();
               if (bottom_of_object < bottom_of_window) {
                 //in view
-                // element.css('opacity', 1);
                 element.css('opacity', 1);
               } else {
                 //outside of view
@@ -61,7 +60,7 @@
               var scroll = $(window).scrollTop();
               console.log(scroll);
               if (scroll > 50) {
-                element.css('bottom', 0);
+                // element.css('bottom', 0);
               }
               scope.$apply();
             });
