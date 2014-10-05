@@ -28,10 +28,10 @@
             function (parallaxHelper, $scope, $rootScope, $routeParams, AuthCheck, slick) {
               ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
-              //parallax background-position scroll custom setup
+              // parallax background-position scroll custom setup
               $scope.positionBackground = function(elementPosition) {
                 var factor = -0.4;
-                var pos = elementPosition.elemY*factor;
+                var pos = (elementPosition.elemY*factor).toFixed();
                 return {
                    backgroundPosition: '0px ' + pos + 'px'
                 };
@@ -40,25 +40,36 @@
         ])
         .directive("scrollFade", function($window) {
           return function(scope, element, attrs) {
-            angular.element($window).bind("scroll", function() {
-              var bottom_of_object = $(element).offset().top + $(element).outerHeight();
-              var bottom_of_window = $(window).scrollTop() + $(window).height();
-              if (bottom_of_object < bottom_of_window) {
-                //in view
-                element.css('opacity', 1);
-              } else {
-                //outside of view
-                element.css('opacity', 0);
-              }
-              scope.$apply();
-            });
+
+          var ngWindow = angular.element($window);
+          var offset = 100;
+
+
+          function scrollAndFade(){
+
+            var top_of_element = element.offset().top + offset;
+            var bottom_of_window = ngWindow.scrollTop() + $window.innerHeight;
+
+            if (top_of_element < bottom_of_window) {
+              element[0].style.opacity = 1;
+            } else {
+              element[0].style.opacity = 0;
+            }
+            scope.$apply();
+          }
+
+          var betterScroll = _.debounce(scrollAndFade, 50);
+
+          ngWindow.bind("scroll", function(){
+            window.requestAnimationFrame(betterScroll);
+          });
+
           };
         })
         .directive("magicFooter", function($window) {
           return function(scope, element, attrs) {
             angular.element($window).bind("scroll", function() {
               var scroll = $(window).scrollTop();
-              console.log(scroll);
               if (scroll > 50) {
                 element.css('bottom', 0);
               }
