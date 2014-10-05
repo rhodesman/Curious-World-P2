@@ -1,4 +1,5 @@
 $header-height:70px;
+$mobile-header-height:55px;
 $header-logo-height:54px;
 
 $header-padding: 24px;
@@ -86,8 +87,11 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 	position: fixed;
 	width: 100%;
 	height: $header-height;
-	background: rgba(255,255, 255, 0.7);
+	background: rgba(255,255, 255, 0.8);
 	z-index: 2;
+	@media #{$small-only} {
+		height:	$mobile-header-height;
+	}
 }
 #logo {
 	@include hide-text();
@@ -114,48 +118,64 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 }
 #navigation {
 	ul {
-		display:inline;
-		//list-style: none;
+		display:block;
+		width:100%;
 		margin: 0;
 		padding: 0;
+		text-align: right;
 	}
 	#main-navigation {
 		height: $header-height;
 		li {
-			//float: left;
 			display:inline-block;
-			padding:0 25px;
-			text-align: center;
+			padding:0;
 			position:relative;
-			height: $header-height;
 			a {
 				position: relative;
-				display: table-cell;
+				display: inline-block;
 				width: 100%;
 				height: $header-height;
 				color: $link-grey;
-				vertical-align:middle;
+				text-align:center;
+				line-height:$header-height;
 				&:hover {
 					color: $link-grey-hover;
 				}
 			}
 			&.is-active {
-				padding:10px 0;
 				a {
 					font-weight: bold;
 					color: $link-grey !important;
 				}
 			}
 			&.sign-up {
-				padding:10px 0;
+				padding:0;
 				a {
-					height:50px;
-					margin:10px 0;
-					padding:10px 20px;
+					display:inline;
+
+					padding:10px 25px;
 					color:white;
 					background-color:$orange;
 					-webkit-border-radius: 18px;
 					border-radius: 18px;
+				}
+			}
+			@media #{$medium-only} {
+				padding-right: 10px;
+				a {
+					font-size: 1rem;
+				}
+				&.sign-up {
+					a {
+						font-size:0.8rem;
+						padding:10px;
+					}
+				}
+			}
+			@media #{$large-up} {
+				padding-right: 25px;
+				a {
+					font-size: 1.2rem;
 				}
 			}
 		}
