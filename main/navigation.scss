@@ -118,11 +118,11 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 }
 #navigation {
 	ul {
-		display:inline-block;
+		display:block;
 		width:100%;
 		margin: 0;
 		padding: 0;
-		text-align: center;
+		text-align: right;
 	}
 	#main-navigation {
 		height: $header-height;
@@ -130,7 +130,6 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 			display:inline-block;
 			padding:0;
 			position:relative;
-
 			a {
 				position: relative;
 				display: inline-block;
@@ -138,22 +137,23 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 				height: $header-height;
 				color: $link-grey;
 				text-align:center;
+				line-height:$header-height;
 				&:hover {
 					color: $link-grey-hover;
 				}
 			}
 			&.is-active {
-				padding:10px 0;
 				a {
 					font-weight: bold;
 					color: $link-grey !important;
 				}
 			}
 			&.sign-up {
-				padding:10px 0;
+				padding:0;
 				a {
-					height:50px;
-					margin:10px 0;
+					display:inline;
+
+					padding:10px 25px;
 					color:white;
 					background-color:$orange;
 					-webkit-border-radius: 18px;
@@ -161,13 +161,9 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 				}
 			}
 			@media #{$medium-only} {
-				width:19%;
-				&.learning-area {
-					//width:80px;
-				}
+				padding-right: 10px;
 				a {
 					font-size: 1rem;
-					line-height:1.3rem;
 				}
 				&.sign-up {
 					a {
