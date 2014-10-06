@@ -261,6 +261,10 @@
   padding: 80px 30px;
   transition: opacity .2s ease-in-out;
   transform: translate3d(-50%,-50%,0);
+  @media #{$small-only} {
+    height:100%;
+    width:100%;
+  }
   h5 {
     color: $white;
     font-weight: 700;
@@ -271,7 +275,7 @@
   }
   h2 {
     color:$white;
-    font-size: rem-calc(35);
+    font-size: rem-calc(28);
     line-height: 1;
     font-weight: 400;
     margin: 30px 0;
@@ -282,9 +286,12 @@
   }
   h4 {
     color:$white;
-    font-size: rem-calc(17);
+    font-size: rem-calc(14);
     font-weight: 400;
     line-height: 1.5;
+    @media #{$medium-up}{
+      font-size: rem-calc(17);
+    }
   }
 }
 }
@@ -322,6 +329,9 @@
       border-bottom-left-radius: 15px;
       padding: 0 0 0 20px;
       font-size: rem-calc(17);
+      @media #{$xsmall-only} {
+        font-size: rem-calc(13);
+      }
     }
     a.button {
       display: inline;
@@ -334,6 +344,10 @@
       border-top-right-radius: 15px;
       border-bottom-right-radius: 15px;
       background: $light-green;
+      @media #{$xsmall-only} {
+        font-size: rem-calc(13);
+        line-height: rem-calc(31);
+      }
       &:hover {
         background: lighten($light-green, 5%);
       }
