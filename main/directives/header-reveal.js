@@ -8,8 +8,9 @@
             ngWindow.bind("scroll", function() {
               var scroll = ngWindow.scrollTop();
               if (scroll > 50) {
-              // element.animate({opacity:1}, 500);
-              element[0].style.opacity = 1;
+                element[0].style.opacity = 1;
+              } else{
+                element[0].style.opacity = 0.5;
               }
             });
           };
