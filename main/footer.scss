@@ -7,7 +7,10 @@ $double-marg-bott:($marg-bott * 2);
 
 footer {
 	padding-top:$footer-padding;
-	padding-bottom:$footer-padding;
+	padding-bottom:0;
+	@media #{$medium-up}{
+		padding-bottom:$footer-padding;
+	}
 	h1,h2,ul,.copyright,.hmh-logo,.social-links {
 		display:block;
 		margin:auto;

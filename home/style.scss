@@ -344,13 +344,18 @@
 
 .promotion-footer{
   background: $blue-bg;
-  min-height: 80px;
+  min-height: 60px;
   width: 100%;
-  position:fixed;
-  bottom:-270px;
+  position:relative;
+  bottom:0px;
   left:0;
   z-index:2;//sit over footer
   transition: 1s all ease-in-out;
+  @media #{$medium-up}{
+    min-height: 80px;
+    position:fixed;
+    bottom:-270px;
+  }
   &:before {
     content: '';
     width: 100%;
@@ -373,22 +378,28 @@
   }
   .footer-friends{
     position:absolute;
-    top:-168px;
-    left:0;
+    top:-106px;
+    left:-60px;
+    @include tansform-scale(.5);
     @media #{$medium-only}{
       left:50px;
+      top:-119px;
+      @include tansform-scale(.8);
     }
     @media #{$large-up}{
-      left:500px;
+      left:520px;
+      top:-141px;
+      @include tansform-scale(1.0);
     }
   }
   .app-store{
-    width:150px;
+    width:100px;
     position:absolute;
     right:8px;
     top:14px;
     @media #{$medium-up}{
       right:50px;
+      width:150px;
     }
   }
 }
