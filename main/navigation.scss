@@ -89,10 +89,9 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 	height: $header-height;
 	background: rgba(255,255, 255, 0.8);
 	z-index: 2;
-	opacity:0.5;
-	transition: .5s opacity ease;
+	transition: .5s background ease;
 	&:hover{
-		opacity:1;
+		background: rgba(255,255, 255, 1);
 	}
 	@media #{$small-only} {
 		height:	$mobile-header-height;
