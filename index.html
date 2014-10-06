@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <header id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
+  <header header-reveal id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
 
   <div ng-view></div>
   <!-- regular footer -->
@@ -47,5 +47,6 @@
 <script src="js/vendor/angular-mocks.js"></script>
 <script src="js/services/fake-api-service.js"></script>
 <script src="main/directives/free-shipping.js"></script>
+<script src="main/directives/header-reveal.js"></script>
 </body>
 </html>
