@@ -44,7 +44,6 @@
           var ngWindow = angular.element($window);
           var offset = 100;
 
-
           function scrollAndFade(){
             var top_of_element = element.offset().top + offset;
             var bottom_of_window = ngWindow.scrollTop() + $window.innerHeight;
@@ -54,7 +53,6 @@
             } else {
               element[0].style.opacity = 0;
             }
-            scope.$apply();
           }
 
           var betterScroll = _.debounce(scrollAndFade, 50);
@@ -64,16 +62,16 @@
           });
 
           };
+        })
+        .directive("magicFooter", function($window) {
+          return function(scope, element, attrs) {
+            var ngWindow = angular.element($window);
+            ngWindow.bind("scroll", function() {
+              var scroll = ngWindow.scrollTop();
+              if (scroll > 50) {
+              element[0].style.bottom = 0;
+              }
+            });
+          };
         });
-        // .directive("magicFooter", function($window) {
-        //   return function(scope, element, attrs) {
-        //     angular.element($window).bind("scroll", function() {
-        //       var scroll = $(window).scrollTop();
-        //       if (scroll > 50) {
-        //         element.css('bottom', 0);
-        //       }
-        //       scope.$apply();
-        //     });
-        //   };
-        // });
 }(window.angular));
