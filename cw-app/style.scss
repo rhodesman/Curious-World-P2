@@ -1,0 +1,246 @@
+$store-banner-height: 88px;
+$store-banner-line-height: 60px;
+$store-video-margin: 180px;
+$store-character-width: $store-video-margin - 16px;
+
+#apps {
+	h1 {
+		margin-bottom: 0;
+	}
+	h2 {
+		@include big-title;
+		margin-bottom: 32px;
+	}
+	h1,
+	h2 {
+		color: $success-green;
+		
+		&:before,
+		&:after {
+			border-color: $success-green;
+		}
+	}
+	#header-bar {
+		margin-top: 32px;
+	}
+	#filters {
+		.category-selector {
+			@include filter-min-width(151px); // Defined in navigation.scss
+		}	
+		.sorting-selector {
+			@include filter-min-width(136px); // Defined in navigation.scss
+		}
+	}
+	#video {
+		@media #{$medium-up} {
+			padding: (60px / 2) ($store-video-margin * 0.75);
+		}
+		@media #{$large-up} {
+			padding: 60px $store-video-margin;
+		}
+		.video-wrapper {
+			&:before,
+			&:after {
+				@media #{$medium-up} {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					width: ($store-character-width * 0.75);
+					height: 100%;
+					background: transparent none scroll no-repeat 0 0;
+					background-size: contain;
+				}
+				@media #{$large-up} {
+					width: $store-character-width;
+				}
+			}
+			&:before {
+				@media #{$medium-up} {
+					left: -($store-character-width * 0.75);
+					background-image: url(../img/beans-world/izzy.png);
+					background-position: 100% 100%;
+				}
+				@media #{$large-up} {
+					left: -($store-character-width);
+				}
+			}
+			&:after {
+				@media #{$medium-up} {
+					right: -($store-character-width * 0.75);
+					background-image: url(../img/beans-world/mac.png);
+					background-position: 0% 100%;
+				}
+				@media #{$large-up} {
+					right: -($store-character-width);
+				}
+			}
+			.shadow {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				box-shadow: 0 0 30px 3px transparentize($black, 0.5);
+			}
+		}
+	}
+	#app-packs,
+	#apps {
+		position: relative;
+		list-style: none;
+		
+		& > li {
+			text-align: center;
+			color: $grey;
+			
+			&.large-2 {
+				@media #{$large-up} {
+					width: (100% / 8);
+				}
+			}
+			strong {
+				display: block;
+				padding: 6px;
+				font-weight: normal;
+			}
+			.price {
+				display: block;
+				font-weight: bold;
+				font-size: 1.2rem;
+				color: $success-green;
+			}
+		}
+	}
+	.app {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		color: inherit;
+		text-align: center;
+	}
+	#app-packs {
+		max-width: 600px;
+		
+		@media #{$large-up} {
+			max-width: none;
+		}
+		.app {
+			margin-left: 0;
+			
+			@media #{$medium-up} {
+				max-width: 260px;
+			}
+		}
+	}
+	#apps {
+		text-align: center;
+		
+		li {
+			float: none;
+			display: inline-block;
+		}
+		.app {
+			padding-bottom: 1rem;
+			font-size: 0.8rem;
+			
+			@media #{$medium-up} {
+				max-width: 132px;
+				font-size: 0.9rem;
+			}
+			strong {
+				display: block;
+				height: 4rem;
+				overflow: hidden;
+			}
+		}
+	}
+	.get-app {
+		display: table;
+		padding: (($store-banner-height - $store-banner-line-height) / 2) 16px;
+		width: 100%;
+		text-align: center;
+		color: $white;
+		font-weight: 300;
+		font-size: 1.5rem;
+		line-height: ($store-banner-line-height * 0.6);
+		background-color: $app-background;
+		
+		@media #{$medium-up} {
+			min-height: $store-banner-height;
+			line-height: $store-banner-line-height;
+		}
+		a {
+			display: table-row;
+			color: inherit;
+			
+			span {
+				display: table-cell;
+				height: 100%;
+				vertical-align: middle;
+				
+				@media #{$medium-up} {
+					white-space: nowrap;
+				}
+				&:after {
+					content: "";
+					display: block;
+					margin: 8px auto 0;
+					width: 169px;
+					height: 50px;
+					vertical-align: middle;
+					background: transparent url(../img/App_Store_Badge.png) scroll no-repeat 50% 50%;
+					
+					@media #{$medium-up} {
+						display: inline-block;
+						margin: -4px 0 0 0;
+						margin-left: 16px;
+					}
+				}
+				strong {
+					font-weight: normal;
+				}
+			}
+		}
+	}
+	
+	.more-info {
+		background: $success-green;
+
+		.avatar.kid{
+			border: 2px solid white;
+			border-radius: 50%;
+			width:60px;
+			height:60px;
+			left: -20px;
+			top:22px;
+		}
+
+		@media #{$small-only} {
+			.avatar.kid{
+				left: -20px;
+			}
+			img {
+				&.avatar {
+					left: 10px;
+				}
+				&.arrow {
+					right: 10px;
+					width: 14px;
+					height: 9px;
+				}
+			}
+		}
+		h3 {
+			@media #{$small-only} {
+				font-size: 0.9rem;
+				line-height: 1.4rem;
+			}
+		}
+		& > a {
+			height: $store-banner-height;
+		}
+	}
+}

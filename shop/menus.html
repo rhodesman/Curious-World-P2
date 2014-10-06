@@ -1,0 +1,34 @@
+<div id="categories-off-canvas" class="off-canvas-selector"
+  ng-class="{ 'short-list': ($parent.categories.length + 1) < 8 }"
+  ng-show="$root.offCanvasMenu === 'category-selector'">
+  <h1 class="title">Select a category:</h1>
+  <ul>
+    <li ng-class="{ 'is-selected': !$parent.selectedCategory }">
+      <a ng-click="$parent.selectedCategory = ''">All Categories</a>
+    </li>
+    <li ng-repeat="category in $parent.categories"
+      ng-class="{ 'is-selected': category === $parent.selectedCategory }">
+      <a ng-click="$parent.$parent.selectedCategory = category">
+        <span>{{category.title}}</span>
+      </a>
+    </li>
+    <li class="dummy"></li>
+  </ul>
+</div>
+<div id="domains-off-canvas" class="off-canvas-domains"
+  ng-class="{ 'short-list': ($parent.domains.length + 1) < 8 }"
+  ng-show="$root.offCanvasMenu === 'domain-selector'">
+  <h1 class="title">Select a domain:</h1>
+  <ul>
+    <li ng-class="{ 'is-selected': !$parent.selectedDomain }">
+      <a ng-click="$parent.selectedDomain = ''">All Domains</a>
+    </li>
+    <li ng-repeat="domain in $parent.domains"
+      ng-class="{ 'is-selected': domain === $parent.selectedDomain }">
+      <a ng-class="'domain-' + domain.name"
+        ng-click="$parent.$parent.selectedDomain = domain">
+        <span>{{domain.title}}</span>
+      </a>
+    </li>
+  </ul>
+</div>
