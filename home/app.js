@@ -45,23 +45,23 @@
           var offset = 100;
 
 
-          // function scrollAndFade(){
-          //   var top_of_element = element.offset().top + offset;
-          //   var bottom_of_window = ngWindow.scrollTop() + $window.innerHeight;
-          //
-          //   if (top_of_element < bottom_of_window) {
-          //     element[0].style.opacity = 1;
-          //   } else {
-          //     element[0].style.opacity = 0;
-          //   }
-          //   scope.$apply();
-          // }
-          //
-          // var betterScroll = _.debounce(scrollAndFade, 50);
-          //
-          // ngWindow.bind("scroll", function(){
-          //   window.requestAnimationFrame(betterScroll);
-          // });
+          function scrollAndFade(){
+            var top_of_element = element.offset().top + offset;
+            var bottom_of_window = ngWindow.scrollTop() + $window.innerHeight;
+
+            if (top_of_element < bottom_of_window) {
+              element[0].style.opacity = 1;
+            } else {
+              element[0].style.opacity = 0;
+            }
+            scope.$apply();
+          }
+
+          var betterScroll = _.debounce(scrollAndFade, 50);
+
+          ngWindow.bind("scroll", function(){
+            window.requestAnimationFrame(betterScroll);
+          });
 
           };
         });
