@@ -59,6 +59,10 @@ footer {
 		}
 	}
 	.social-links {
+		margin-bottom: 50px;
+		@media #{medium-up} {
+			margin-bottom:0;
+		}
 		a {
 			@include hide-text();
 			text-indent: 200%;
