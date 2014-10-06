@@ -8,9 +8,9 @@
             ngWindow.bind("scroll", function() {
               var scroll = ngWindow.scrollTop();
               if (scroll > 50) {
-                element[0].style.opacity = 1;
+                element[0].style.backgroundColor = "rgba(255, 255, 255, 1)";
               } else{
-                element[0].style.opacity = null;
+                element[0].style.backgroundColor = "rgba(255, 255, 255, 0.8)";
               }
             });
           };
