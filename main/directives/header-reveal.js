@@ -10,7 +10,7 @@
               if (scroll > 50) {
                 element[0].style.opacity = 1;
               } else{
-                element[0].style.opacity = 0.5;
+                element[0].style.opacity = null;
               }
             });
           };
