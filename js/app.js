@@ -74,6 +74,9 @@
                         title: "Learn",
                         reloadOnSearch: false
                     })
+                    .when('/learning-areas', {
+                        title: "Learning"
+                    })
                     .otherwise({
                         redirectTo: '/'
                     });

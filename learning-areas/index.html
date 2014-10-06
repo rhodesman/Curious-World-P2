@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="app">
+<head>
+<base href="../" />
+<!--[if IE]><script type="text/javascript">
+(function(){var e=document.getElementsByTagName("base")[0];e.href=e.href})()
+</script><![endif]-->
+<meta charset="utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<title>Home - Curious World</title>
+<link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+
+  <header header-reveal id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
+
+  <div ng-view></div>
+  <!-- regular footer -->
+  <footer ng-include="'main/footer.html'"></footer>
+
+
+
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/vendor/foundation.min.js"></script>
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/vendor/angular-route.min.js"></script>
+<script src="js/modules/cw-utilities.js"></script>
+<script src="js/modules/dropzone.js"></script>
+<script src="js/modules/wookmark.js"></script>
+<script src="js/modules/authenticate.js"></script>
+<script src="js/modules/auth-check.js"></script>
+<script src="learning-areas/app.js"></script>
+<!-- <script src="main/main.js"></script> -->
+<script src="main/account-controller.js"></script>
+</body>
+</html>
