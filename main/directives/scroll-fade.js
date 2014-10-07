@@ -1,4 +1,4 @@
-(function (ng, $) {
+(function (ng) {
     "use strict";
 
     ng.module("app")
@@ -27,4 +27,4 @@
 
           };
         });
-}(window.angular, window.jQuery));
+}(window.angular));

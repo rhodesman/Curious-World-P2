@@ -3,7 +3,7 @@
     ng.module("app")
       .directive("revealFooter", function($window) {
           return function(scope, element, attrs) {
-            var ngWindow = angular.element($window);
+            var ngWindow = angular.element('body');
             ngWindow.bind("scroll", function() {
               var scroll = ngWindow.scrollTop();
               if (scroll > 50) {

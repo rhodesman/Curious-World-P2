@@ -25,58 +25,58 @@
             "$routeProvider",
             function ($routeProvider) {
                 $routeProvider
-                    .when('/', {
-                        templateUrl: 'partials/cards.html',
-                        controller: 'CardsController',
-                        title: "Home",
-                        reloadOnSearch: false
-                    })
-                    .when('/kidfolio/:domainName?', {
-                        templateUrl: 'partials/kidfolio.html',
-                        controller: "KidfolioController",
-                        title: "Kidfolio"
-                    })
-                    .when('/mykiddid', {
-                        templateUrl: 'partials/mykiddid.html',
-                        title: "My Kid Did"
-                    })
-                    .when('/curiositykits', {
-                        templateUrl: 'partials/curiosity-kits.html',
-                        controller: "CuriosityKitsController",
-                        title: "Curiosity Kits"
-                    })
-                    .when('/curiositykits/:kit', {
-                        templateUrl: 'partials/single-curiosity-kit.html',
-                        controller: "SingleCuriosityKitController",
-                        title: "Curiosity Kits"
-                    })
-                    .when('/curiousworldapp', {
-                        templateUrl: 'partials/curiousworldapp.html',
-                        title: "Curious World App"
-                    })
-                    .when('/privacy-policy', {
-                        templateUrl: 'partials/privacy.html',
-                        title: "Privacy Policy"
-                    })
-                    .when('/terms', {
-                        templateUrl: 'partials/terms.html',
-                        title: "Terms"
-                    })
-                    .when('/faq', {
-                        title: "Frequently Asked Questions"
-                    })
-                    .when('/landing', {
-                        title: "Landing"
-                    })
-                    .when('/:domainName', {
-                        templateUrl: 'partials/cards.html',
-                        controller: 'CardsController',
-                        title: "Learn",
-                        reloadOnSearch: false
-                    })
-                    .when('/learning-areas', {
-                        title: "Learning"
-                    })
+                    // .when('/', {
+                    //     templateUrl: 'partials/cards.html',
+                    //     controller: 'CardsController',
+                    //     title: "Home",
+                    //     reloadOnSearch: false
+                    // })
+                    // .when('/kidfolio/:domainName?', {
+                    //     templateUrl: 'partials/kidfolio.html',
+                    //     controller: "KidfolioController",
+                    //     title: "Kidfolio"
+                    // })
+                    // .when('/mykiddid', {
+                    //     templateUrl: 'partials/mykiddid.html',
+                    //     title: "My Kid Did"
+                    // })
+                    // .when('/curiositykits', {
+                    //     templateUrl: 'partials/curiosity-kits.html',
+                    //     controller: "CuriosityKitsController",
+                    //     title: "Curiosity Kits"
+                    // })
+                    // .when('/curiositykits/:kit', {
+                    //     templateUrl: 'partials/single-curiosity-kit.html',
+                    //     controller: "SingleCuriosityKitController",
+                    //     title: "Curiosity Kits"
+                    // })
+                    // .when('/curiousworldapp', {
+                    //     templateUrl: 'partials/curiousworldapp.html',
+                    //     title: "Curious World App"
+                    // })
+                    // .when('/privacy-policy', {
+                    //     templateUrl: 'partials/privacy.html',
+                    //     title: "Privacy Policy"
+                    // })
+                    // .when('/terms', {
+                    //     templateUrl: 'partials/terms.html',
+                    //     title: "Terms"
+                    // })
+                    // .when('/faq', {
+                    //     title: "Frequently Asked Questions"
+                    // })
+                    // .when('/landing', {
+                    //     title: "Landing"
+                    // })
+                    // .when('/:domainName', {
+                    //     templateUrl: 'partials/cards.html',
+                    //     controller: 'CardsController',
+                    //     title: "Learn",
+                    //     reloadOnSearch: false
+                    // })
+                    // .when('/learning-areas', {
+                    //     title: "Learning"
+                    // })
                     .otherwise({
                         redirectTo: '/'
                     });
