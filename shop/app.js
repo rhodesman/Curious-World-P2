@@ -7,11 +7,11 @@
             function ($routeProvider) {
                 $routeProvider
                     .when("/", {
-                        templateUrl: "curiosity-kits/default.html",
+                        templateUrl: "shop/default.html",
                         controller: "DefaultController"
                     })
                     .when("/:id", {
-                        templateUrl: "curiosity-kits/single.html",
+                        templateUrl: "shop/single.html",
                         controller: "DefaultController"
                     });
             }
@@ -19,8 +19,8 @@
         .run([
             "$rootScope",
             function ($rootScope) {
-                $rootScope.activeNav = "curiosity-kits";
-                $rootScope.pageTitle = "Curiosity Kits";
+                $rootScope.activeNav = "shop";
+                $rootScope.pageTitle = "Shop";
             }
         ])
         .controller("DefaultController", [

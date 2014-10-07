@@ -101,6 +101,9 @@ $headline-black: #36393c;
   }
   &.science{
     background:$color-science;
+    img{
+      width:80px;
+    }
   }
   &.family-and-community{
     background:$color-family;

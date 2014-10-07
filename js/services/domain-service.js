@@ -35,27 +35,27 @@
                 }, {
                     id: 4,
                     name: "science",
-                    title:  "Science"
+                    title:  "Science",
                     description:"Science: Children learn to ask questions, analyze data, solve problems, and try new solutions."
                 }, {
                     id: 5,
                     name: "family",
-                    title:  "Family & Community"
+                    title:  "Family & Community",
                     description:"Family & Community: Children learn to appreciate differences, accept other perspectives, and develop strong relationships."
                 }, {
                     id: 6,
                     name: "executive",
-                    title:  "Executive Function"
+                    title:  "Executive Function",
                     description:"Executive Function: Children learn to regulate emotions, recall details and memories, follow directions, and work with others."
                 }, {
                     id: 7,
                     name: "social",
-                    title:  "Social & Emotional"
+                    title:  "Social & Emotional",
                     description:"Social & Emotional:  Increase children’s sense of self-awareness and their ability to share and develop relationships with others."
                 }, {
                     id: 8,
                     name: "health",
-                    title:  "Health & Well-Being"
+                    title:  "Health & Well-Being",
                     description:"Health & Well-Being: Children learn and practice good nutrition, physical exercise, and fine motor development."
                 }]);
             }
