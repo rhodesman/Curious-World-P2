@@ -2,7 +2,7 @@
   background: $orange;
   border-radius: 30px;
   &:hover {
-    background: lighten($orange, 10%);
+    background: $orange-hover;
   }
 }
 

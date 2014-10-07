@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				options: {
-					outputStyle: 'compressed'
+					outputStyle: 'expanded'
 				},
 				files: {
 					'css/build/app.css': 'scss/app.scss'
@@ -56,5 +56,5 @@ module.exports = function (grunt) {
   grunt.registerTask('heroku', ['sass', 'autoprefixer']);
 	grunt.registerTask('build', ['sass', 'autoprefixer']);
 	grunt.registerTask('default', ['build', 'watch']);
-  
+
 };
