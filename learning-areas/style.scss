@@ -59,6 +59,9 @@ $headline-black: #36393c;
   @media #{$medium-up}{
     padding: 0;
   }
+  li{
+    transition: opacity .2s ease-in-out;
+  }
 }
 
 .domain-areas{
@@ -67,14 +70,12 @@ $headline-black: #36393c;
     line-height:1;
     color:$green;
     margin-bottom:35px;
-    transition: opacity .2s ease-in-out;
     @media #{$medium-only}{
       font-size: rem-calc(24);
     }
   }
   ul.domain-list{
     margin-bottom:50px;
-    transition: opacity .2s ease-in-out;
     & > li{
       color: $p-gray;
       font-size: 16px;
