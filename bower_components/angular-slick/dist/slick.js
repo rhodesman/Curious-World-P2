@@ -49,7 +49,7 @@ angular.module('slick', []).directive('slick', [
               accessibility: scope.accessibility !== 'false',
               arrows: scope.arrows !== 'false',
               autoplay: scope.autoplay === 'true',
-              autoplaySpeed: scope.autoplaySpeed != null ? parseInt(scope.autoplaySpeed, 10) : 3000,
+              autoplaySpeed: scope.autoplaySpeed != null ? parseInt(scope.autoplaySpeed, 10) : 5000,
               centerMode: scope.centerMode === 'true',
               centerPadding: scope.centerPadding || '50px',
               cssEase: scope.cssEase || 'ease',
@@ -80,7 +80,8 @@ angular.module('slick', []).directive('slick', [
                 }
               },
               onReInit: scope.onReInit || null,
-              pauseOnHover: scope.pauseOnHover !== 'false',
+              // pauseOnHover: scope.pauseOnHover !== 'false',
+              pauseOnHover: false,
               responsive: scope.responsive() || null,
               slide: scope.slide || 'div',
               slidesToShow: scope.slidesToShow != null ? parseInt(scope.slidesToShow, 10) : 1,
