@@ -9,7 +9,7 @@ footer {
 	padding-top:$footer-padding;
 	padding-bottom:0;
 	@media #{$medium-up}{
-		padding-bottom:$footer-padding;
+		/* padding-bottom:\$footer-padding; */
 	}
 	h1,h2,ul,.copyright,.hmh-logo,.social-links {
 		display:block;
@@ -85,20 +85,20 @@ footer {
 
 	}
 }
+
 .promotion-footer{
-	background: $blue-bg;
-	min-height: 60px;
-	width: 100%;
-	position:relative;
-	bottom:0px;
-	left:0;
-	z-index:2;//sit over footer
-	transition: 0.5s all ease-in-out;
-	@media #{$medium-up}{
-		min-height: 80px;
+	&.home{
 		position:fixed;
 		bottom:-270px;
 	}
+	margin-top:150px;
+	background: $blue-bg;
+	min-height: 80px;
+	width: 100%;
+	z-index:2;//sit over footer
+	transition: 0.5s all ease-in-out;
+	position:relative;
+	bottom:-1px;
 	&:before {
 		content: '';
 		width: 100%;
@@ -111,6 +111,7 @@ footer {
 		display:none;
 		@media #{$large-up}{
 			margin-top:20px;
+			margin-bottom:0;
 			line-height:40px;
 			color:$white;
 			display:inline;
@@ -121,9 +122,9 @@ footer {
 	}
 	.footer-friends{
 		position:absolute;
-		top:-106px;
-		left:-60px;
-		@include tansform-scale(.5);
+		top:-96px;
+		left:-40px;
+		@include tansform-scale(.6);
 		@media #{$medium-only}{
 			left:50px;
 			top:-119px;
@@ -136,13 +137,12 @@ footer {
 		}
 	}
 	.app-store{
-		width:100px;
+		width:150px;
 		position:absolute;
 		right:8px;
 		top:14px;
 		@media #{$medium-up}{
 			right:50px;
-			width:150px;
 		}
 	}
 }

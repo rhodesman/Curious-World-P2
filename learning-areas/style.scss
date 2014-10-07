@@ -55,13 +55,7 @@ $headline-black: #36393c;
 }
 
 .domains-list{
-  padding: 0 25%;
-  @media #{$medium-only}{
-    padding: 0 12%;
-  }
-  @media #{$large-up}{
-    padding: 0;
-  }
+
 }
 
 .domain-areas{
