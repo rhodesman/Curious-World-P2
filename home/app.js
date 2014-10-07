@@ -29,13 +29,13 @@
               ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
               // parallax background-position scroll custom setup
-              $scope.positionBackground = function(elementPosition) {
-                var factor = -0.4;
-                var pos = Math.round(elementPosition.elemY*factor);
-                return {
-                   backgroundPosition: '0px ' + pos + 'px'
-                };
-              };
+              // $scope.positionBackground = function(elementPosition) {
+              //   var factor = -0.4;
+              //   var pos = Math.round(elementPosition.elemY*factor);
+              //   return {
+              //      backgroundPosition: '0px ' + pos + 'px'
+              //   };
+              // };
             }
         ]);
 }(window.angular));
