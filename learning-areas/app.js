@@ -1,7 +1,7 @@
 (function (ng) {
     "use strict";
 
-    ng.module("app", ["authCheck", "ngRoute"])
+    ng.module("app", ["authCheck", "ngRoute", "duParallax"])
         .config([
             "$routeProvider",
             function ($routeProvider) {
@@ -20,14 +20,22 @@
             }
         ])
         .controller("DefaultController", [
+            "parallaxHelper",
             "$scope",
             "$rootScope",
             "$routeParams",
             "authCheck",
-            function ($scope, $rootScope, $routeParams, AuthCheck) {
+            function (parallaxHelper, $scope, $rootScope, $routeParams, AuthCheck) {
               ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
-              //controller
+              // parallax background-position scroll custom setup
+              $scope.positionBackground = function(elementPosition) {
+                var factor = -0.4;
+                var pos = (elementPosition.elemY*factor);
+                return {
+                   backgroundPosition: '0px ' + pos + 'px'
+                };
+              };
 
             }
         ]);
