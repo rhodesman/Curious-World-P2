@@ -31,25 +31,11 @@
               // parallax background-position scroll custom setup
               $scope.positionBackground = function(elementPosition) {
                 var factor = -0.4;
-                var pos = (elementPosition.elemY*factor);
+                var pos = Math.round(elementPosition.elemY*factor);
                 return {
                    backgroundPosition: '0px ' + pos + 'px'
                 };
               };
             }
-        ])
-        .directive("magicFooter", function($window) {
-          return function(scope, element, attrs) {
-            var ngWindow = angular.element($window);
-            ngWindow.bind("scroll", function() {
-              var scroll = ngWindow.scrollTop();
-              if (scroll > 50) {
-              element[0].style.bottom = 0;
-              }
-              else {
-              element[0].style.bottom = null;
-              }
-            });
-          };
-        });
+        ]);
 }(window.angular));
