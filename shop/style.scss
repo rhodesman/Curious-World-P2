@@ -8,6 +8,8 @@ $kit-item-image-height: 300px;
 $kit-box-width: 530px;
 $kit-box-height: 429px;
 
+
+
 // Domain coloring mixins
 @mixin store-domain($color, $image: none) {
 	background-color: $color;
@@ -48,7 +50,7 @@ $kit-box-height: 429px;
 		font-size: 2rem;
 	}
 	h2 {
-		@include big-title;
+		/* @include big-title; */
 		margin-bottom: 32px;
 		font-size: 2rem;
 	}
