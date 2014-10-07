@@ -71,6 +71,9 @@
               if (scroll > 50) {
               element[0].style.bottom = 0;
               }
+              else {
+              element[0].style.bottom = null;
+              }
             });
           };
         });
