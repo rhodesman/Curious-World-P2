@@ -4,6 +4,11 @@ $p-gray: #898989;
 $cream-blue: #a0d3e3;
 $headline-black: #36393c;
 
+.learning-areas{
+  opacity:0;
+  transition: .25s opacity ease-in;
+}
+
 .featured-learning {
   article {
     overflow: hidden;
