@@ -11,6 +11,9 @@ footer {
 	@media #{$medium-up}{
 		/* padding-bottom:\$footer-padding; */
 	}
+	.footer-home {
+		padding-bottom:$footer-padding;
+	}
 	h1,h2,ul,.copyright,.hmh-logo,.social-links {
 		display:block;
 		margin:auto;
