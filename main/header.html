@@ -9,10 +9,10 @@
 			<div id="nav-modal" class="reveal-modal options-modal" data-reveal>
 				<ul>
 					<li ng-if="!userInfo.isLoggedIn()" class="sign-in">
-						<a href="#">Sign In</a>
+						<a href="account/sign-in">Sign In</a>
 					</li>
 					<li ng-if="!userInfo.isLoggedIn()" class="create-account">
-						<a href="#">Sign Up</a>
+						<a href="account/sign-up">Sign Up</a>
 					</li>
 					<li class="user-mobile" ng-if="userInfo.isLoggedIn()">
             <label>Hi, {{userInfo.getUser().displayName}}</label>
@@ -67,11 +67,11 @@
 				</li>
 				<li class="sign-in"
 					ng-class="{ 'is-active': $root.activeNav === 'sign-in' }">
-					<a href="#">Sign In</a>
+					<a href="account/#/sign-in">Sign In</a>
 				</li>
 				<li class="sign-up"
 					ng-class="{ 'is-active': $root.activeNav === 'sign-up' }">
-					<a href="#">Sign Up</a>
+					<a href="account/#/sign-up">Sign Up</a>
 				</li>
 			</ul>
 		</nav>
