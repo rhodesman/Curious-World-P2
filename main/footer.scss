@@ -12,7 +12,10 @@ footer {
 		/* padding-bottom:\$footer-padding; */
 	}
 	.footer-home {
-		padding-bottom:$footer-padding;
+		padding-bottom:70px;
+		@media #{$medium-up}{
+			padding-bottom:$footer-padding;
+		}
 	}
 	h1,h2,ul,.copyright,.hmh-logo,.social-links {
 		display:block;
@@ -94,7 +97,7 @@ footer {
 		position:fixed;
 		bottom:-270px;
 	}
-	margin-top:150px;
+	margin-top:0px;
 	background: $blue-bg;
 	min-height: 80px;
 	width: 100%;
@@ -102,6 +105,9 @@ footer {
 	transition: 0.5s all ease-in-out;
 	position:relative;
 	bottom:-1px;
+	@media #{$medium-up}{
+		margin-top:150px;
+	}
 	&:before {
 		content: '';
 		width: 100%;

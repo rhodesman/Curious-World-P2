@@ -43,7 +43,7 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 	height: $mobile-header-height;
 	line-height: $mobile-header-height;
 	font-weight: normal;
-	font-size: 1.5rem;
+	font-size: rem-calc(16);
 	color: $dark-grey;
 }
 #mobile-back {
@@ -103,7 +103,7 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 	max-width: 302px;
 	height: $header-logo-height;
 	line-height: $header-logo-height;
-	font-size: 1rem;
+	font-size: rem-calc(16);
 	color: $white;
 	background: transparent url(../img/curious-world-logo.png) scroll no-repeat 0 50%;
 	background-size: contain;
@@ -170,11 +170,11 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 			@media #{$medium-only} {
 				padding-right: 10px;
 				a {
-					font-size: 1rem;
+					font-size: rem-calc(16);
 				}
 				&.sign-up {
 					a {
-						font-size:0.8rem;
+						font-size:rem-calc(14);
 						padding:10px;
 					}
 				}
@@ -182,7 +182,7 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 			@media #{$large-up} {
 				padding-right: 25px;
 				a {
-					font-size: 1.2rem;
+					font-size: rem-calc(18);
 				}
 			}
 		}

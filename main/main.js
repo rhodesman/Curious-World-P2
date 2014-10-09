@@ -1,6 +1,64 @@
 (function (ng, $) {
     "use strict";
 
+    // Prepare Foundation to handle extra dropdown and modal logic
+    $(function () {
+        var wrapper,
+            activeClassName = "reveal-is-open",
+            revealEvents = ["open", "close"];
+
+        $(document)
+            .foundation({
+                offcanvas: {
+                    close_on_click: false
+                }
+            })
+            .on(revealEvents.join(" "), "[data-reveal]", function (e) { // Handle blurring
+                wrapper.toggleClass(activeClassName, e && e.type === revealEvents[0]);
+            })
+            .on("click", "[data-reveal-id='nav-modal']", function () {
+                var $this = $(".mobile-button"),
+                    modal = $("#nav-modal"),
+                    events = modal.data("events");
+
+                if (!(events && events.hasOwnProperty("close"))) {
+                    modal.on(revealEvents.join(" ") + " closed", function (e) {
+                        $this.toggleClass("close-reveal-modal", e && e.type === revealEvents[0]);
+                    });
+                }
+            })
+            .on("click", ".selector .f-dropdown.open > *", function () { // Handle re-closing dropdowns
+                var $this = $(this).parent(),
+                    events = $this.data("events"),
+                    id = $this.attr("id");
+
+                // Handle bug where closing a dropdown inside of a modal breaks the modal
+                if (!(events && events.hasOwnProperty("closed"))) {
+                    $this.on("closed", function () {
+                        return false;
+                    });
+                }
+
+                // If open, click the controlling element
+                if (id) {
+                    $("[data-dropdown='" + id + "']").trigger("click");
+                }
+            })
+            .on("click", ".selector-modal > ul a", function () { // Handle closing modals
+                $(this).parents("[data-reveal]").foundation("reveal", "close");
+            })
+            .on("click", "#mobile-back, .right-off-canvas-menu li:not(.is-locked) a", function () { // Global close button
+                $(".open[data-reveal]").foundation("reveal", "close");
+                $(".move-left, .move-right").removeClass("move-left move-right");
+            })
+            .on("click", "#nav-modal label", function () {
+                $(this)
+                    .toggleClass("is-open")
+                    .siblings(".submenu").slideToggle();
+            });
+
+    });
+
     var app;
 
     // Create an app module if one doesn't exist, yet
