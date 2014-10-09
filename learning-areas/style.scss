@@ -129,12 +129,6 @@ $action-border: 1px solid #e1e1e1;
   }
   &.science{
     background:$color-science;
-    img{
-      width:45px;
-      @media #{$large-up}{
-        width:80px;
-      }
-    }
   }
   &.family-and-community{
     background:$color-family;
