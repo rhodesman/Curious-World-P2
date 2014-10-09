@@ -55,6 +55,14 @@
                 $(this)
                     .toggleClass("is-open")
                     .siblings(".submenu").slideToggle();
+            })
+            .ready(function () {
+                wrapper = $("#wrapper");
+
+                // iPhone detection until we figure out what the issue is
+                if (navigator.userAgent.match(/iPhone|iPod/i)) {
+                    $(document.body).addClass("iphone");
+                }
             });
 
     });
@@ -79,8 +87,20 @@
             { name: "executive", title: "Executive Function", description: "Children learn to regulate emotions, recall details and memories, follow directions, and work with others."  },
             { name: "social",    title: "Social & Emotional", description: "Increase children’s sense of self-awareness and their ability to share and develop relationships with others."  },
             { name: "health",    title: "Health & Well\u2011Being", description: "Children learn and practice good nutrition, physical exercise, and fine motor development." }
-        ]);
+        ])
+        .run([
+            "$rootScope",
+            "$interval",
+            function ($rootScope, $interval) {
+                // Reflow Foundation when view is loaded
+                $rootScope.$on("$viewContentLoaded", function () {
+                    $(document).foundation();
+                });
 
+                // Add global class for usage in maintaining the sticky footer illusion
+                $rootScope.contentClass = "";
+            }
+        ]);
 
 
 }(window.angular, window.jQuery));
