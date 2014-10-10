@@ -11,6 +11,7 @@ $color-science: #e94c4c;
 $color-twitter: #55acee;
 $color-facebook: #3664a2;
 $color-pinterest: #cb2128;
+$color-google: #fd5c4f;
 
 $font-family: 'Montserrat', sans-serif;
 $white: #fff;
@@ -145,11 +146,12 @@ li {
 
 button,
 .button {
-	background-color: $success-green;
-	font-size: 1.3rem;
+	background-color: $orange;
+	border-radius: 30px;
+	/* font-size: 1.3rem; */
 
 	&:hover,
 	&:focus {
-		background-color: lighten($success-green, 10);
+		background-color: $orange-hover;
 	}
 }
