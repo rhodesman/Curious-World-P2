@@ -9,6 +9,8 @@ $input-gray-placeholder: rgba(#36393c, 0.3);
 $input-gray: #36393c;
 $light-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $checkbox-color: #36393c;
+$modal-title: #3c4457;
+
 
 section{
   &.account{
@@ -69,6 +71,10 @@ form{
     padding:0;
     li{
       display:inline-block;
+      margin-right:10px;
+      + li{
+        margin-left:10px;
+      }
       a{
         &.social-button{
           font-size:14px;
@@ -219,7 +225,38 @@ input[type="checkbox"]:checked:before{
   background: url('../img/account/checkmark.png') center center no-repeat $checkbox-color;
 }
 
-
+.success-modal{
+  &.reveal-modal{
+    padding:0;
+  }
+  text-align:center;
+  h2{
+    font-size:rem-calc(35);
+    color:$black;
+    line-height:1.1;
+    margin: 100px 0 25px 0;
+  }
+  .title-bar{
+    background: $modal-title;
+    height:60px;
+    a{
+      top:0;
+      border:none;
+      border-radius:none;
+      padding-top:10px;
+      padding-right:10px;
+      font-weight:400;
+      &:hover{
+        border:none;
+        background:transparent;
+        color:white;
+      }
+    }
+  }
+  a.button{
+    margin-bottom:100px;
+  }
+}
 
 
 
