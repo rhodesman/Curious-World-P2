@@ -5,8 +5,10 @@ $heading-gray: #5c5e62;
 $span-color: #3f4244;
 $link-blue: #19b0ff;
 $legal-gray: #898989;
+$input-gray-placeholder: rgba(#36393c, 0.3);
+$input-gray: #36393c;
 $light-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-
+$checkbox-color: #36393c;
 
 section{
   &.account{
@@ -45,6 +47,19 @@ section{
 a.button{
   color:white;
   text-decoration:none;
+  &:hover{
+    color:white;
+  }
+}
+
+form{
+  .text-inputs{
+    .columns,
+    .column{
+      padding-left:0.75rem!important;
+      padding-right:0.75rem!important;
+    }
+  }
 }
 
 .social-login{
@@ -113,15 +128,54 @@ a.button{
     border-radius: 5px;
     margin: 0 0 20px 0;
     padding-left:30px;
+    color:$input-gray;
     &:focus{
       border: 1px solid $orange;
       box-shadow: inset 0 0 7px $orange;
       transition: 0.25s all ease-in-out;
     }
   }
+  ::-webkit-input-placeholder {
+     color: $input-gray-placeholder;
+  }
+  ::-moz-placeholder {
+     color: $input-gray-placeholder
+  }
+  :-ms-input-placeholder {
+     color: $input-gray-placeholder
+  }
 }
 
-.sign-in{
+.text-inputs{
+  .email{
+    background: url('../img/account/email-icon.png') no-repeat white;
+    background-position: 12px center;
+    &:focus{
+      background: url('../img/account/email-icon-selected.png') no-repeat white;
+      background-position: 12px center;
+    }
+  }
+  .password{
+    background: url('../img/account/lock-icon.png') no-repeat white;
+    background-position:12px center;
+    &:focus{
+      background: url('../img/account/lock-icon-selected.png') no-repeat white;
+      background-position:12px center;
+    }
+  }
+  .person{
+    background: url('../img/account/person-icon.png') no-repeat white;
+    background-position:12px center;
+    &:focus{
+      background: url('../img/account/person-icon-selected.png') no-repeat white;
+      background-position:12px center;
+    }
+  }
+}
+
+
+.sign-in,
+.save-changes{
   text-align:center;
   .button{
     margin: 50px 0 30px 0;
@@ -136,42 +190,34 @@ a.button{
   }
 }
 
-
-
-.checkbox,
-	.radio-button {
-		position: relative;
-		padding: 16px 0;//input padding
-		padding-left: 40px;
-		line-height: 16px;//checkbox height
-		color: gray;
-		font-size: 1.1rem;
-		/* @include prevent-selection(); */
-
-		&:before {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 16px 0;//input-padding
-			width: 16px;//checkbox-height
-			height:16px;//checkbox-height
-			border: 1px solid gray;
-		}
-		&.is-checked {
-			color: green;
-
-			&:before {
-				border-color: green;
-				/* background: url('../img/modals/agree-check-icon.png') 0 0; */
-			}
-		}
+.save-changes{
+  a.reset{
+    display:block;
+    margin-bottom:70px;
   }
+}
 
-  .checkbox {
-		input[type=checkbox] {
-			display: none!important;
-		}
-	}
+
+input[type="checkbox"]{
+  position:relative;
+  margin-right:17px;
+  top:-5px;
+}
+
+
+input[type=checkbox]:before {
+  content:"";
+  display:block;
+  width:20px;
+  height:20px;
+  background:$checkbox-color;
+  position:absolute;
+  border-radius:5px;
+}
+
+input[type="checkbox"]:checked:before{
+  background: url('../img/account/checkmark.png') center center no-repeat $checkbox-color;
+}
 
 
 
