@@ -9,36 +9,23 @@
     ng-submit="$event.preventDefault()"
     novalidate>
     <div class="text-inputs row">
-      <div class="small-offset-1 small-5 columns" ng-class="{ 'has-error': submitted && createAccountForm.firstName.\$error.required }">
-        <input class="better-placeholder person" type="text" name="firstName" placeholder="First Name"
-          ng-model="signUpFormData.firstName"
-          required />
+      <div class="small-offset-1 small-5 columns">
+        <input class="better-placeholder person" type="text" name="firstName" placeholder="First Name" required />
       </div>
-      <div class="small-5 columns" ng-class="{ 'has-error': submitted && createAccountForm.lastName.\$error.required }">
-        <input class="better-placeholder person" type="text" name="lastName" placeholder="Last Name"
-          ng-model="signUpFormData.lastName"
-          required />
+      <div class="small-5 columns">
+        <input class="better-placeholder person" type="text" name="lastName" placeholder="Last Name" required />
       </div>
-      <div class="small-offset-1 small-10 columns" ng-class="{ 'has-error': submitted && (createAccountForm.email.\$error.required || createAccountForm.email.\$error.email) }">
-        <input class="better-placeholder email" type="email" name="email" placeholder="Email"
-          ng-model="signUpFormData.email"
-          required />
+      <div class="small-offset-1 small-10 columns">
+        <input class="better-placeholder email" type="email" name="email" placeholder="Email" required />
       </div>
-      <div class="small-offset-1 small-10 columns" ng-class="{ 'has-error': submitted && (createAccountForm.email.\$error.required || createAccountForm.email.\$error.email) }">
-        <input class="better-placeholder password" type="password" name="currentPassword" placeholder="Current Password"
-          ng-model="currentPassword"
-          required />
+      <div class="small-offset-1 small-10 columns">
+        <input class="better-placeholder password" type="password" name="currentPassword" placeholder="Current Password" required />
       </div>
-      <div class="small-offset-1 small-5 columns" ng-class="{ 'has-error': submitted && createAccountForm.password.\$error.required }">
-        <input class="better-placeholder password" type="password" name="password" placeholder="Password"
-          ng-model="password"
-          pw-check="passwordAgain"
-          required />
+      <div class="small-offset-1 small-5 columns">
+        <input class="better-placeholder password" type="password" name="password" placeholder="Password" required />
       </div>
-      <div class="small-pull-1 small-5 columns" ng-class="{ 'has-error': submitted && (createAccountForm.passwordAgain.\$error.required || createAccountForm.password.\$error.pwmatch) }">
-        <input class="better-placeholder password" type="password" name="passwordAgain" placeholder="Confirm Password"
-          ng-model="passwordAgain"
-          required />
+      <div class="small-pull-1 small-5 columns">
+        <input class="better-placeholder password" type="password" name="passwordAgain" placeholder="Confirm Password" required />
       </div>
     </div>
   </form>
@@ -49,48 +36,3 @@
     </div>
   </div>
 </section>
-
-<!-- <h1 class="title">Manage Profile</h1>
-<form id="create-account-form-two" name="createAccountFormTwo" action="" method="post"
-  ng-submit="\$event.preventDefault()"
-  novalidate>
-    <p class="instruction">Choose a display name. It will be displayed with your comments and stories.</p>
-
-  <div class="text-inputs row">
-    <div class="small-12 columns" ng-class="{ 'has-error': submitted && createAccountFormTwo.displayName.\$error.required }">
-      <input class="better-placeholder" type="text" name="displayName" placeholder="Display name" ng-model="signUpFormData.displayName" required />
-    </div>
-  </div>
-  <div class="radio-inputs row" ng-class="{ 'has-error': submitted && createAccountFormTwo.storyVisibility.\$error.required }">
-    <p>Make my comments or stories visible to:</p>
-    <div class="small-12" ng-init="signUpFormData.storyVisibility = 'Public'">
-      <label for="create-account-visibility-public" class="radio-button"
-        ng-class="{ 'is-checked': signUpFormData.storyVisibility === 'Public' }"
-        ng-click="signUpFormData.storyVisibility = 'Public'; \$event.preventDefault()">
-        <input id="create-account-visibility-public" type="radio" name="storyVisibility" value="Public"
-          ng-model="signUpFormData.storyVisibility"
-          required />
-        <span>Public</span>
-      </label>
-    </div>
-    <div class="small-12">
-      <label for="create-account-visibility-community" class="radio-button"
-        ng-class="{ 'is-checked': signUpFormData.storyVisibility === 'Community' }"
-        ng-click="signUpFormData.storyVisibility = 'Community'; \$event.preventDefault()">
-        <input id="create-account-visibility-community" type="radio" name="storyVisibility" value="Community"
-          ng-model="signUpFormData.storyVisibility"
-          required />
-        <span>Curious World community only</span>
-      </label>
-    </div>
-  </div>
-
-  <div class="row">
-    <button class="button secondary small-12" type="submit" data-reveal-id="reset-cards-modal">Reset Cards</button>
-  </div>
-  <div class="row">
-    <button class="button small-12" type="submit">Save Changes</button>
-  </div>
-</form>
-<a class="close-reveal-modal" ng-click="submitted=false;">&#215;</a>
- -->
