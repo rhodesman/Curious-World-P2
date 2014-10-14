@@ -54,6 +54,10 @@ section{
       color: darken($link-blue, 10%);
     }
   }
+  label{
+    display:initial;
+    font-size:rem-calc(16);
+  }
 }
 
 a.button{
@@ -210,6 +214,12 @@ form{
   h3{
     margin: 80px 0 50px 0;
   }
+}
+
+
+#login-keep-signed-in{
+  float:left;
+  margin-top:5px;
 }
 
 .save-changes{

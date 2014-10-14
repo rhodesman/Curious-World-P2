@@ -45,6 +45,7 @@
                 $scope.signUp = function () {
                     if ($scope.createAccountForm.$valid)
                     {
+                      $scope.submitted = false;
                         //this is the method that is called after the form has validated (api url needs to be configured in app.js)
                         AuthenticateJS.createAccount(
                             $scope.signUpFormData.email,
@@ -56,8 +57,7 @@
                             $scope.signUpFormData.receiveNews // true or false
                         ).then(function () {
                             //if anything needs to happen besides logging in
-                                $('a.close-reveal-modal').trigger('click');
-                                $('#create-account-success-modal').foundation('reveal', 'open');
+                                $('#successModal').foundation('reveal', 'open');
                             }, function (error) {
                             $scope.errorStatus = error;
                         });
@@ -78,7 +78,7 @@
                     $scope.passwordAgain = '';
                     if (user.created === true) {
                         user.created = false;
-                        $('#create-account-success-modal').foundation('reveal', 'open');
+                        $('#successModal').foundation('reveal', 'open');
                     } else {
                         $('#sign-in-modal').foundation('reveal', 'close');
                     }
