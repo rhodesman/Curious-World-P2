@@ -29,7 +29,8 @@
             'AuthenticateJS',
             "$scope",
             "$timeout",
-            function (AuthenticateJS, $scope, $timeout) {
+            "$location",
+            function (AuthenticateJS, $scope, $timeout, $location) {
 
                 $scope.signUpFormData = {};
                 $scope.userInfo = AuthenticateJS;
@@ -174,7 +175,15 @@
 
                 //Reset Cards
                 $scope.resetCards = function () {
+                };
 
+                //Get Started
+                $scope.getStarted = function(){
+                  $timeout(function () {
+                    $location.path('/');
+                      //https://docs.angularjs.org/error/$rootScope/inprog?p0=$digest
+                      $('a.close-reveal-modal').trigger('click');
+                  }, 0, false);
                 };
 
                 //Delete Account
