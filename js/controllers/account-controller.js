@@ -45,7 +45,7 @@
                         console.log(e);
                         $scope.password = '';
                         $scope.passwordAgain = '';
-                        $('a.close-reveal-modal').trigger('click');
+                        // $('a.close-reveal-modal').trigger('click');
                 });
 
                 /*Profile Management*/
