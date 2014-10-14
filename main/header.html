@@ -65,15 +65,41 @@
 					ng-class="{ 'is-active': $root.activeNav === 'shop' }">
 					<a href="shop">Shop</a>
 				</li>
-				<li class="sign-in"
+				<li class="sign-in" ng-if="!userInfo.isLoggedIn()"
 					ng-class="{ 'is-active': $root.activeNav === 'sign-in' }">
 					<a href="account/#/sign-in">Sign In</a>
 				</li>
-				<li class="sign-up"
+				<li class="sign-up" ng-if="!userInfo.isLoggedIn()"
 					ng-class="{ 'is-active': $root.activeNav === 'sign-up' }">
 					<a href="account/#/sign-up">Sign Up</a>
 				</li>
 			</ul>
+		<!-- 	<ul id="account-navigation">
+		<li id="account-menu" ng-if="userInfo.isLoggedIn()">
+			<a class="show-for-touch"
+				data-dropdown="account-menu-dropdown">
+				<span>{{userInfo.getUser().displayName}}</span>
+			</a>
+			<a class="hide-for-touch"
+				data-dropdown="account-menu-dropdown"
+				data-options="is_hover:true">
+				<span>{{userInfo.getUser().displayName}}</span>
+			</a>
+			<div id="account-menu-dropdown" class="f-dropdown" data-dropdown-content>
+				<ul>
+					<li><a data-reveal-id="manage-profile-modal">Manage Profile</a></li>
+					<li><a data-reveal-id="manage-account-modal">Manage Account</a></li>
+					<li><a data-reveal-id="create-account-modal">Get Help</a></li>
+					<li><a ng-click="userInfo.logout()">Sign Out</a></li>
+				</ul>
+			</div>
+		</li>
+		<li ng-if="!userInfo.isLoggedIn()" class="sign-in">
+			<a data-reveal-id="sign-in-modal">Sign In <span>/ Create Account</span></a>
+		</li>
+				</ul> -->
 		</nav>
 	</div>
 </div>
+
+<div id="sign-in-modal" class="reveal-modal account-modal small" authenticate-login-form template-url="partials/modals/signin.html" data-reveal></div>

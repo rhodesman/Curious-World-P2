@@ -9,11 +9,12 @@
 // Router
 angular.module('authenticate.js', ['ngRoute']);
 
-// Handling Authorisations
+// Handling Authorizations
 angular.module('authenticate.js').run(['$rootScope', '$location', 'AuthenticateJS', 'Referer',
   function ($rootScope, $location, AuthenticateJS, Referer) {
   $rootScope.$on("$routeChangeStart", function (event, next) {
-    if (!AuthenticateJS.authorize(next.security)) {
+    console.log(next);
+  if (!AuthenticateJS.authorize(next.security)) {
       if (AuthenticateJS.isLoggedIn()) {
         $location.path(AuthenticateJS.unauthorizedPage);
       } else {

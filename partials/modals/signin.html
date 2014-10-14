@@ -1,0 +1,56 @@
+<h1 class="title">Sign In</h1>
+<form id="login-form" name="loginForm" action="" method="post"
+  ng-submit="$event.preventDefault()"
+  novalidate>
+  <p class="instruction">You can sign in with your HMHco.com account.</p>
+	<div class="text-inputs row">
+		<div class="small-12 columns" ng-class="{ 'has-error': (submitted && loginForm.email.$error.required) }">
+			<input class="better-placeholder" type="text" name="email" placeholder="Email"
+        ng-model="username"
+        required />
+    </div>
+    <div class="small-12 columns" ng-class="{ 'has-error': (submitted && loginForm.password.$error.required) }">
+			<input class="better-placeholder" type="password" name="password" placeholder="Password"
+        ng-model="password"
+        required />
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12 forgot-password">
+			<a>Forgot your password?</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12">
+			<label for="login-keep-signed-in" class="checkbox"
+        ng-class="{ 'is-checked': signInFormData.keepSignedIn }"
+        ng-click="signInFormData.keepSignedIn = !signInFormData.keepSignedIn; $event.preventDefault">
+        <input id="login-keep-signed-in" type="checkbox"
+          ng-model="signInFormData.keepSignedIn" />
+        <span>Keep me signed in</span>
+      </label>
+		</div>
+	</div>
+  <div class="social-login">
+  	<div class="row">
+  		<button class="button small-12" type="submit" ng-click="error = false; submitted=true; submit()">Sign In</button>
+  	</div>
+    <p>Or</p>
+    <div class="row">
+      <button class="button facebook-login small-12"><span>Sign In with Facebook</span></button>
+    </div>
+  </div>
+  <div class="row">
+    <div id="socialButtonWrapper">
+      <div id="customBtn" class="customGPlusSignIn button">
+        <span class="icon"></span>
+        <span class="buttonText">Sign In with Google</span>
+      </div>
+    </div>
+  </div>
+  <div class="row no-account">
+    <p class="instruction">Don't have an account? <a href data-reveal-id="create-account-modal">Create on now.</a></p>
+    <!-- <button class="button small-12 create-new-account" data-reveal-id="create-account-modal">Create an Account</button> -->
+  </div>
+</form>
+<a class="close-reveal-modal" ng-click="submitted=false;">&#215;</a>

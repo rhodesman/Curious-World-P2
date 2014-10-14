@@ -69,7 +69,7 @@
                     }, function (error) {
                         $scope.errorStatus = error;
                     });
-                }
+                };
 
                 //Update Email
                 $scope.updateUserEmail = function() {

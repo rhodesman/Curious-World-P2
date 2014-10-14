@@ -1,0 +1,47 @@
+<section class="account">
+  <form action="" name="loginForm" action="" method="post"
+        ng-submit="$event.preventDefault()"
+        novalidate>
+    <div class="row">
+      <div class="small-10 columns small-centered">
+        <h2>Sign in and track your child’s progress toward school readiness</h2>
+        <div class="social-login">
+          <ul>
+            <li><a class="button social-button facebook">Login with Facebook</a></li>
+            <li><a class="button social-button google">Login with Google</a></li>
+          </ul>
+        </div>
+        <h3>Or sign in with email</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-offset-2 small-8 columns end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.email.$error.required) }">
+      <input class="email better-placeholder" type="text" name="email" placeholder="Email"
+        ng-model="username"
+        required />
+    </div>
+    <div class="small-offset-2 small-8 columns end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.password.$error.required) }">
+      <input class="password better-placeholder" type="password" name="password" placeholder="Password"
+        ng-model="password"
+        required />
+    </div>
+    </div>
+    <div class="row password-options">
+      <div class="small-offset-2 small-8 columns last">
+        <input id="login-keep-signed-in" class="checkbox" type="checkbox"/>
+        <span>Keep me logged in</span>
+        <span><a href="#">Forgot password</a></span>
+      </div>
+    </div>
+    <div class="row sign-in">
+      <div class="small-8 columns small-centered">
+        <a class="button" ng-click="error = false; submitted=true; submit()">Sign In</a>
+        <p class="terms">
+          By signing up or using Curious World services
+           you agree to the Curious World <a href="#">Terms of Use</a>
+            and <a href="#">Privacy Policy.</a></p>
+        <h3>Don't have an account yet? <a href="#">Sign up</a></h3>
+      </div>
+    </div>
+  </form>
+</section>

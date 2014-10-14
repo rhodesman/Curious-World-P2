@@ -19,6 +19,7 @@ $dropdown-shadow-position: 2px;
 $dropdown-shadow-size: 4px;
 $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparentize($black, 0.7);
 
+
 // Mobile Navigation
 .mobile-button {
 	display: block;
@@ -184,6 +185,141 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 				padding-right: 25px;
 				a {
 					font-size: rem-calc(18);
+				}
+			}
+		}
+	}
+}
+
+#account-navigation {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin-right: 30px;
+		height: $account-item-height;
+		line-height: $account-item-height;
+		z-index: 2;
+
+		li {
+			display: inline-block;
+			margin-right: $account-item-padding;
+
+			/* &.sign-in{
+				span{
+					font-weight:normal;
+				}
+			} */
+
+			&.sign-in a {
+				font-weight: bold;
+			}
+		}
+		#account-menu {
+			margin: 0;
+			min-width: $account-menu-width;
+
+			& > a {
+				position: relative;
+				display: block;
+				padding: 0 $account-menu-item-padding;
+				width: 100%;
+				height: $account-item-height;
+				line-height: $account-item-height;
+				color: $link-grey-hover;
+				text-align: right;
+				font-weight: bold;
+				overflow: visible;
+				z-index: 2;
+
+				&.open {
+					text-align: left;
+
+					span {
+						height: $account-menu-item-height;
+						line-height: $account-menu-item-height;
+						font-size: 1.25rem;
+
+						&:after {
+							-moz-transform: scaleY(-1);
+							-o-transform: scaleY(-1);
+							-webkit-transform: scaleY(-1);
+							transform: scaleY(-1);
+							filter: FlipV;
+							-ms-filter: "FlipV";
+						}
+					}
+				}
+				span {
+					position: relative;
+					display: inline-block;
+					padding-right: 24px;
+					height: 100%;
+
+					&:after {
+						content: "";
+						display: block;
+						position: absolute;
+						right: 0;
+						top: 0;
+						width: 24px;
+						height: 100%;
+						background: transparent url(../img/modals/user-down.png) scroll no-repeat 50% 50%;
+					}
+				}
+			}
+			.f-dropdown {
+				margin: 0;
+				max-width: none;
+				font-size: 1.25rem;
+				border: none;
+				background: transparent;
+				pointer-events: none;
+				z-index: 1;
+
+				&:before,
+				&:after {
+					content: none;
+					display: none;
+				}
+				ul {
+					position: absolute;
+					top: (-$account-item-height);
+					list-style: none;
+					margin: 0;
+					padding: ($account-menu-item-height) 0 ($account-menu-item-padding / 2);
+					font-size: inherit;
+					background: $white;
+					pointer-events: auto;
+					box-shadow: 0 0 20px transparentize($black, 0.5);
+					-webkit-box-sizing: content-box;
+					-moz-box-sizing: content-box;
+					box-sizing: content-box;
+				}
+				li {
+					margin: 0;
+					padding: 0;
+					width: 100%;
+					min-width: $account-menu-width;
+					font-size: inherit;
+					cursor: default;
+
+					&:hover {
+						background: none;
+					}
+				}
+				a {
+					display: block;
+					padding: 0 $account-menu-item-padding;
+					height: $account-menu-item-height;
+					line-height: $account-menu-item-height;
+					font-size: inherit;
+					font-weight: 300;
+					white-space: nowrap;
+					cursor: pointer;
+
+					&:hover {
+						background: $light-grey;
+					}
 				}
 			}
 		}

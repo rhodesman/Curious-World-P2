@@ -11,37 +11,44 @@
       <h3>Or sign up with email</h3>
     </div>
   </div>
-  <form id="create-account-form" name="createAccountForm" action="" method="post"
-    ng-submit="$event.preventDefault()"
-    novalidate>
+  <form name="createAccountForm"
+        ng-submit="$event.preventDefault()"
+        novalidate>
     <div class="text-inputs row">
       <div class="medium-offset-1 medium-5 columns">
-        <input class="person" type="text" name="firstName" placeholder="First Name" required />
+        <input class="person" type="text" name="firstName" placeholder="First Name"
+               ng-model="user.firstName"
+               ng-class="{ 'has-error' : createAccountForm.firstName.$invalid && !createAccountForm.firstName.$pristine && submitted}"
+               ng-minlength=2
+               required />
       </div>
       <div class="medium-5 columns">
         <input class="person" type="text" name="lastName" placeholder="Last Name" required />
       </div>
       <div class="medium-offset-1 medium-10 columns">
-        <input class="email" type="email" name="email" placeholder="Email" required />
+        <input class="email" type="email" name="email" placeholder="Email"
+               ng-class="{ 'has-error' : createAccountForm.email.$invalid && !createAccountForm.email.$pristine && submitted}"
+               ng-model="user.email"
+               required />
       </div>
       <div class="medium-offset-1 medium-5 columns">
-        <input class="password" type="password" name="password" placeholder="Password" required />
+        <input class="password" type="password" name="password" placeholder="Password" ng-model="user.password" required/>
       </div>
       <div class="medium-pull-1 medium-5 columns">
-        <input class="password" type="password" name="passwordAgain" placeholder="Confirm Password" required />
+        <input class="password" type="password" name="passwordAgain" placeholder="{{placeholder}}" ng-model="user.passConfirm" required />
+      </div>
+    </div>
+    <div class="row sign-in">
+      <div class="small-8 columns small-centered">
+        <button ng-click="submitted = true; signUp()" type="submit" class="button">Sign Up</button>
+        <p class="terms">
+          By signing up or using Curious World services
+           you agree to the Curious World <a href="#">Terms of Use</a>
+            and <a href="#">Privacy Policy.</a></p>
+        <h3>Already have an account? <a href="#">Sign in</a></h3>
       </div>
     </div>
   </form>
-  <div class="row sign-in">
-    <div class="small-8 columns small-centered">
-      <a class="button">Sign Up</a>
-      <p class="terms">
-        By signing up or using Curious World services
-         you agree to the Curious World <a href="#">Terms of Use</a>
-          and <a href="#">Privacy Policy.</a></p>
-      <h3>Already have an account? <a href="#">Sign in</a></h3>
-    </div>
-  </div>
 </section>
 
 <!-- <a href="#" data-reveal-id="successModal">success modal</a> -->

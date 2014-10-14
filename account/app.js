@@ -8,15 +8,15 @@
                 $routeProvider
                     .when("/sign-in", {
                         templateUrl: "account/sign-in.html",
-                        controller: "DefaultController"
+                        controller: "AccountController"
                     })
                     .when("/sign-up", {
                         templateUrl: "account/sign-up.html",
-                        controller: "DefaultController"
+                        controller: "AccountController"
                     })
                     .when("/manage", {
                         templateUrl: "account/manage.html",
-                        controller: "DefaultController"
+                        controller: "AccountController"
                     });
             }
         ])
@@ -35,16 +35,23 @@
             "authCheck",
             function (parallaxHelper, $scope, $rootScope, $routeParams, AuthCheck) {
               ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
+            }
+        ]).config([
+            'AuthenticateJSProvider',
+            function (AuthenticateJSProvider) {
+                AuthenticateJSProvider.setConfig({
+                    host: 'api/',                  // your base api url
+                    loginUrl: 'auth/login',        // login api url
+                    logoutUrl: 'auth/logout',      // logout api url
+                    loggedinUrl: 'auth/loggedin',  // api to get the user profile and roles
 
-              // parallax background-position scroll custom setup
-              $scope.positionBackground = function(elementPosition) {
-                var factor = -0.4;
-                var pos = (elementPosition.elemY*factor);
-                return {
-                   backgroundPosition: '0px ' + pos + 'px'
-                };
-              };
-
+                    unauthorizedPage: '/unauthorized',  // url (frontend) of the unauthorized page
+                    targetPage: '/',           // url (frontend) of the target page on login success
+                    loginPage: '/login',                 // url (frontend) of the login page
+                    signupUrl: 'auth/signup',       // signup api url
+                    deleteAccountUrl: 'auth/deleteAccount', //deleteaccount api url
+                    updateAccountUrl: 'auth/updateProfile' //updateprofile api url
+                });
             }
         ]);
 }(window.angular));
