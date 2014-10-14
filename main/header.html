@@ -2,26 +2,23 @@
 	<div class="small-4 medium-3 columns">
 		<h1 id="logo"><a href="./">Curious World</a></h1>
 	</div>
-	<div class="small-8 columns last">
+	<div>
 		<strong id="mobile-title" class="show-for-small-only">{{$root.pageTitle || "Untitled"}}</strong>
 		<nav id="mobile-nav" class="show-for-small-only">
 			<a class="mobile-button" data-reveal-id="nav-modal"></a>
 			<div id="nav-modal" class="reveal-modal options-modal" data-reveal>
 				<ul>
 					<li ng-if="!userInfo.isLoggedIn()" class="sign-in">
-						<a href="account/sign-in">Sign In</a>
+						<a href="account/#/sign-in">Sign In</a>
 					</li>
 					<li ng-if="!userInfo.isLoggedIn()" class="create-account">
-						<a href="account/sign-up">Sign Up</a>
+						<a href="account/#/sign-up">Sign Up</a>
 					</li>
 					<li class="user-mobile" ng-if="userInfo.isLoggedIn()">
             <label>Hi, {{userInfo.getUser().displayName}}</label>
             <ul class="submenu">
               <li>
-                <a href="#">Manage Profile</a>
-              </li>
-              <li>
-                <a href="#">Manage Account</a>
+                <a href="account/#/manage">Manage</a>
               </li>
               <li>
                 <a href="#">Get Help</a>
@@ -52,6 +49,29 @@
 			</div>
 		</nav>
 		<nav id="navigation" class="show-for-medium-up">
+			<ul id="account-navigation">
+				<li id="account-menu" ng-if="userInfo.isLoggedIn()">
+					<a class="show-for-touch"
+						data-dropdown="account-menu-dropdown">
+						<span>{{userInfo.getUser().displayName}}</span>
+					</a>
+					<a class="hide-for-touch"
+						data-dropdown="account-menu-dropdown"
+						data-options="is_hover:true">
+						<span>{{userInfo.getUser().displayName}}</span>
+					</a>
+					<div id="account-menu-dropdown" class="f-dropdown" data-dropdown-content>
+						<ul>
+							<li><a href="account/#/manage">Manage</a></li>
+							<li><a href="http://hmhco.com">Get Help</a></li>
+							<li><a ng-click="userInfo.logout()">Sign Out</a></li>
+						</ul>
+					</div>
+				</li>
+				<li ng-if="!userInfo.isLoggedIn()" class="sign-in-old">
+					<a data-reveal-id="sign-in-modal">Sign In <span>/ Create Account</span></a>
+				</li>
+			</ul>
 			<ul id="main-navigation">
 				<li class="learning-areas-nav"
 					ng-class="{ 'is-active': $root.activeNav === 'learning-areas' }">
@@ -74,30 +94,6 @@
 					<a href="account/#/sign-up">Sign Up</a>
 				</li>
 			</ul>
-		<!-- 	<ul id="account-navigation">
-		<li id="account-menu" ng-if="userInfo.isLoggedIn()">
-			<a class="show-for-touch"
-				data-dropdown="account-menu-dropdown">
-				<span>{{userInfo.getUser().displayName}}</span>
-			</a>
-			<a class="hide-for-touch"
-				data-dropdown="account-menu-dropdown"
-				data-options="is_hover:true">
-				<span>{{userInfo.getUser().displayName}}</span>
-			</a>
-			<div id="account-menu-dropdown" class="f-dropdown" data-dropdown-content>
-				<ul>
-					<li><a data-reveal-id="manage-profile-modal">Manage Profile</a></li>
-					<li><a data-reveal-id="manage-account-modal">Manage Account</a></li>
-					<li><a data-reveal-id="create-account-modal">Get Help</a></li>
-					<li><a ng-click="userInfo.logout()">Sign Out</a></li>
-				</ul>
-			</div>
-		</li>
-		<li ng-if="!userInfo.isLoggedIn()" class="sign-in">
-			<a data-reveal-id="sign-in-modal">Sign In <span>/ Create Account</span></a>
-		</li>
-				</ul> -->
 		</nav>
 	</div>
 </div>

@@ -10,7 +10,7 @@ $navigation-mobile-icon-size: ($mobile-hitbox / 2);
 $domain-mobile-icon-size: ($mobile-hitbox / 2);
 $account-item-height: 36px;
 $account-item-padding: 16px;
-$account-menu-width: 180px;
+/* \$account-menu-width: 190px; */
 $account-menu-item-padding: 20px;
 $account-menu-item-height: 50px;
 $header-bar-height: 50px;
@@ -101,15 +101,11 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 }
 #logo {
 	@include hide-text();
-	margin: (($header-height - $header-logo-height) / 2) 0;
-	max-width: 302px;
-	height: $header-logo-height;
-	line-height: $header-logo-height;
-	font-size: rem-calc(16);
-	color: $white;
-	background: transparent url(../img/curious-world-logo.png) scroll no-repeat 0 50%;
-	background-size: contain;
-
+	margin: 0;
+	background: url(../img/curious-world-logo.png) center center no-repeat;
+	background-size:contain;
+	height:$header-height;
+	line-height:$header-height;
 	@media #{$small-only} {
 		margin: ($mobile-header-height - $mobile-hitbox) 0;
 		background: transparent url("../img/curious-world-logo-sml.png")  no-repeat;
@@ -123,50 +119,42 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 	}
 }
 
-#navigation {
-	ul {
-		display:block;
-		width:100%;
-		margin: 0;
-		padding: 0;
-		text-align: right;
-	}
-	#main-navigation {
-		height: $header-height;
-		li {
+//todo: don't forget to delete me
+.sign-in-old{
+	position:fixed;
+	bottom:0;
+	left:0;
+}
+
+#navigation{
+	ul{
+		float:right;
+		li{
 			display:inline-block;
-			padding:0;
-			position:relative;
-			a {
-				position: relative;
-				display: inline-block;
-				width: 100%;
-				height: $header-height;
-				color: $link-grey;
-				text-align:center;
-				line-height:$header-height;
-				&:hover {
-					color: $link-grey-hover;
+			line-height:$header-height;
+			padding-right:10px;
+			white-space:nowrap;
+			&.is-active{
+				a{
+					font-weight:bold;
 				}
 			}
-			&.is-active {
-				a {
-					font-weight: bold;
-					color: $link-grey !important;
-				}
-			}
-			&.sign-up {
-				padding:0;
-				a {
-					display:inline;
+			&.sign-up{
+				a{
+					border-radius:18px;
+					background: $orange;
 					padding:10px 25px;
 					color:white;
-					background-color:$orange;
-					-webkit-border-radius: 18px;
-					border-radius: 18px;
 					&:hover{
-						background-color: $orange-hover;
+						background: $orange-hover;
+						color: white;
 					}
+				}
+			}
+			a{
+				color: $link-grey;
+				&:hover {
+					color: $link-grey-hover;
 				}
 			}
 			@media #{$medium-only} {
@@ -191,136 +179,76 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 	}
 }
 
-#account-navigation {
-		position: absolute;
-		right: 0;
-		top: 0;
-		margin-right: 30px;
-		height: $account-item-height;
-		line-height: $account-item-height;
-		z-index: 2;
+#account-navigation{
+	margin-right:30px;//to make room for the dropdown
+	span {
+		position: relative;
+		display: inline-block;
+		padding-right: 24px;
+		height: 100%;
 
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 24px;
+			height: 100%;
+			background: transparent url(../img/account/user-dropdown.png) no-repeat 50% 50%;
+		}
+	}
+	.f-dropdown {
+		margin: 0;
+		max-width: none;
+		font-size: 1.25rem;
+		border: none;
+		background: transparent;
+		pointer-events: none;
+		z-index: 1;
+
+		&:before,
+		&:after {
+			content: none;
+			display: none;
+		}
+		ul {
+			position: absolute;
+			top: -59px;
+			list-style: none;
+			margin: 0;
+			font-size: inherit;
+			background: $white;
+			pointer-events: auto;
+			box-shadow: 0 0 20px transparentize($black, 0.5);
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
+		}
 		li {
-			display: inline-block;
-			margin-right: $account-item-padding;
-
-			/* &.sign-in{
-				span{
-					font-weight:normal;
-				}
-			} */
-
-			&.sign-in a {
-				font-weight: bold;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			/* min-width: \$account-menu-width; */
+			font-size: inherit;
+			cursor: default;
+			display:block;
+			&:hover {
+				background: none;
 			}
 		}
-		#account-menu {
-			margin: 0;
-			min-width: $account-menu-width;
+		a {
+			display: block;
+			padding: 0 $account-menu-item-padding;
+			height: $account-menu-item-height;
+			line-height: $account-menu-item-height;
+			font-size: inherit;
+			font-weight: 300;
+			white-space: nowrap;
+			cursor: pointer;
 
-			& > a {
-				position: relative;
-				display: block;
-				padding: 0 $account-menu-item-padding;
-				width: 100%;
-				height: $account-item-height;
-				line-height: $account-item-height;
-				color: $link-grey-hover;
-				text-align: right;
-				font-weight: bold;
-				overflow: visible;
-				z-index: 2;
-
-				&.open {
-					text-align: left;
-
-					span {
-						height: $account-menu-item-height;
-						line-height: $account-menu-item-height;
-						font-size: 1.25rem;
-
-						&:after {
-							-moz-transform: scaleY(-1);
-							-o-transform: scaleY(-1);
-							-webkit-transform: scaleY(-1);
-							transform: scaleY(-1);
-							filter: FlipV;
-							-ms-filter: "FlipV";
-						}
-					}
-				}
-				span {
-					position: relative;
-					display: inline-block;
-					padding-right: 24px;
-					height: 100%;
-
-					&:after {
-						content: "";
-						display: block;
-						position: absolute;
-						right: 0;
-						top: 0;
-						width: 24px;
-						height: 100%;
-						background: transparent url(../img/modals/user-down.png) scroll no-repeat 50% 50%;
-					}
-				}
-			}
-			.f-dropdown {
-				margin: 0;
-				max-width: none;
-				font-size: 1.25rem;
-				border: none;
-				background: transparent;
-				pointer-events: none;
-				z-index: 1;
-
-				&:before,
-				&:after {
-					content: none;
-					display: none;
-				}
-				ul {
-					position: absolute;
-					top: (-$account-item-height);
-					list-style: none;
-					margin: 0;
-					padding: ($account-menu-item-height) 0 ($account-menu-item-padding / 2);
-					font-size: inherit;
-					background: $white;
-					pointer-events: auto;
-					box-shadow: 0 0 20px transparentize($black, 0.5);
-					-webkit-box-sizing: content-box;
-					-moz-box-sizing: content-box;
-					box-sizing: content-box;
-				}
-				li {
-					margin: 0;
-					padding: 0;
-					width: 100%;
-					min-width: $account-menu-width;
-					font-size: inherit;
-					cursor: default;
-
-					&:hover {
-						background: none;
-					}
-				}
-				a {
-					display: block;
-					padding: 0 $account-menu-item-padding;
-					height: $account-menu-item-height;
-					line-height: $account-menu-item-height;
-					font-size: inherit;
-					font-weight: 300;
-					white-space: nowrap;
-					cursor: pointer;
-
-					&:hover {
-						background: $light-grey;
-					}
-				}
+			&:hover {
+				background: $light-grey;
 			}
 		}
 	}

@@ -95,6 +95,11 @@
                 // Reflow Foundation when view is loaded
                 $rootScope.$on("$viewContentLoaded", function () {
                     $(document).foundation();
+
+                    // Periodically reflow Foundation until a real solution is in place
+                    $interval(function () {
+                        $(document).foundation();
+                    }, 1000);
                 });
 
                 // Add global class for usage in maintaining the sticky footer illusion
