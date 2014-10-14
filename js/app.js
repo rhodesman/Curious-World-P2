@@ -54,11 +54,9 @@
                         title: "Curious World App"
                     })
                     .when('/privacy-policy', {
-                        templateUrl: 'partials/privacy.html',
                         title: "Privacy Policy"
                     })
-                    .when('/terms', {
-                        templateUrl: 'partials/terms.html',
+                    .when('/terms-of-use', {
                         title: "Terms"
                     })
                     .when('/faq', {
