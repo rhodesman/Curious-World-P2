@@ -1,7 +1,7 @@
 (function (ng) {
     "use strict";
 
-    ng.module("app", ["authCheck", "ngRoute", "slick", "duParallax"])
+    ng.module("app", ["authCheck", "ngRoute", "slick", "duParallax", "angularBetterPlaceholder"])
         .config([
             "$routeProvider",
             function ($routeProvider) {
@@ -9,6 +9,18 @@
                     .when("/", {
                         templateUrl: "home/default.html",
                         controller: "DefaultController"
+                    })
+                    .when("/sign-in", {
+                        templateUrl: "home/sign-in.html",
+                        controller: "AccountController"
+                    })
+                    .when("/sign-up", {
+                        templateUrl: "home/sign-up.html",
+                        controller: "AccountController"
+                    })
+                    .when("/manage", {
+                        templateUrl: "home/manage.html",
+                        controller: "AccountController"
                     });
             }
         ])

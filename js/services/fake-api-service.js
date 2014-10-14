@@ -25,9 +25,18 @@
                     displayName: 'Jim Test',
                     firstName: 'Jim',
                     lastName: 'Test',
-                    storyVisibility: 'Public',
-                    receiveNews: true
-                });
+                    storyVisibility: 'Public'
+                  });
+                //
+                // $httpBackend.whenGET("api/auth/loggedin").respond({
+                //     id: 454,
+                //     email: 'jim@test.cob',
+                //     displayName: 'Jim Test',
+                //     firstName: 'Jim',
+                //     lastName: 'Test',
+                //     storyVisibility: 'Public',
+                //     receiveNews: true
+                // });
 
                 // Send all other requests forth
                 requestTypes.forEach(function (type) {

@@ -1,0 +1,68 @@
+<section class="account">
+  <div class="row">
+    <div class="small-10 columns small-centered">
+      <h2>Sign up and track your child’s progress toward school readiness</h2>
+      <div class="social-login">
+        <ul>
+          <li><a class="button social-button facebook">Login with Facebook</a></li>
+          <li><a class="button social-button google">Login with Google</a></li>
+        </ul>
+      </div>
+      <h3>Or sign up with email</h3>
+    </div>
+  </div>
+  <form id="create-account-form" name="createAccountForm" action="" method="post"
+        ng-submit="$event.preventDefault()"
+        novalidate>
+    <div class="text-inputs row">
+      <div class="medium-offset-1 medium-5 columns" ng-class="{ 'has-error': submitted && createAccountForm.firstName.$error.required }">
+        <input class="person better-placeholder" type="text" name="firstName" placeholder="First Name"
+               ng-model="signUpFormData.firstName"
+               required />
+      </div>
+      <div class="medium-5 columns" ng-class="{ 'has-error': submitted && createAccountForm.lastName.$error.required }">
+        <input class="person better-placeholder" type="text" name="lastName" placeholder="Last Name"
+        ng-model="signUpFormData.lastName"
+        required />
+      </div>
+      <div class="medium-offset-1 medium-10 columns" ng-class="{ 'has-error': submitted && (createAccountForm.email.$error.required || createAccountForm.email.$error.email) }">
+        <input class="email better-placeholder" type="email" name="email" placeholder="Email"
+               ng-model="signUpFormData.email"
+               required />
+      </div>
+      <div class="medium-offset-1 medium-5 columns" ng-class="{ 'has-error': submitted && createAccountForm.password.$error.required }">
+        <input class="password better-placeholder" type="password" name="password" placeholder="Password"
+               ng-model="password"
+               pw-check="passwordAgain"
+               required/>
+      </div>
+      <div class="medium-pull-1 medium-5 columns" ng-class="{ 'has-error': submitted && (createAccountForm.passwordAgain.$error.required || createAccountForm.password.$error.pwmatch) }">
+        <input class="password better-placeholder" type="password" name="passwordAgain" placeholder="Confirm Password"
+               ng-model="passwordAgain"
+               required />
+      </div>
+    </div>
+    <div class="row sign-in">
+      <div class="small-8 columns small-centered">
+        <button ng-click="submitted = true; signUp()" type="submit" class="button">Sign Up</button>
+        <p class="terms">
+          By signing up or using Curious World services
+           you agree to the Curious World <a href="#">Terms of Use</a>
+            and <a href="#">Privacy Policy.</a></p>
+        <h3>Already have an account? <a href="#">Sign in</a></h3>
+      </div>
+    </div>
+  </form>
+</section>
+
+<div id="successModal" class="reveal-modal success-modal medium" data-reveal>
+  <div class="title-bar">
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+  <div class="row">
+    <div class="small-10 small-centered columns">
+      <h2>Welcome to CuriousWorld.com, firstName</h2>
+      <a href="./" class="button">Get Started</a>
+    </div>
+  </div>
+</div>

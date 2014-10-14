@@ -18,7 +18,7 @@
             <label>Hi, {{userInfo.getUser().displayName}}</label>
             <ul class="submenu">
               <li>
-                <a href="account/#/manage">Manage</a>
+                <a href="/#/manage">Manage</a>
               </li>
               <li>
                 <a href="#">Get Help</a>
@@ -62,7 +62,7 @@
 					</a>
 					<div id="account-menu-dropdown" class="f-dropdown" data-dropdown-content>
 						<ul>
-							<li><a href="account/#/manage">Manage</a></li>
+							<li><a href="#/manage">Manage</a></li>
 							<li><a href="http://hmhco.com">Get Help</a></li>
 							<li><a ng-click="userInfo.logout()">Sign Out</a></li>
 						</ul>
@@ -87,11 +87,11 @@
 				</li>
 				<li class="sign-in" ng-if="!userInfo.isLoggedIn()"
 					ng-class="{ 'is-active': $root.activeNav === 'sign-in' }">
-					<a href="account/#/sign-in">Sign In</a>
+					<a href="#/sign-in">Sign In</a>
 				</li>
 				<li class="sign-up" ng-if="!userInfo.isLoggedIn()"
 					ng-class="{ 'is-active': $root.activeNav === 'sign-up' }">
-					<a href="account/#/sign-up">Sign Up</a>
+					<a href="#/sign-up">Sign Up</a>
 				</li>
 			</ul>
 		</nav>
