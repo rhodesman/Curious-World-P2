@@ -13,8 +13,7 @@ angular.module('authenticate.js', ['ngRoute']);
 angular.module('authenticate.js').run(['$rootScope', '$location', 'AuthenticateJS', 'Referer',
   function ($rootScope, $location, AuthenticateJS, Referer) {
   $rootScope.$on("$routeChangeStart", function (event, next) {
-    console.log(next);
-  if (!AuthenticateJS.authorize(next.security)) {
+    if (!AuthenticateJS.authorize(next.security)) {
       if (AuthenticateJS.isLoggedIn()) {
         $location.path(AuthenticateJS.unauthorizedPage);
       } else {
@@ -76,7 +75,7 @@ angular.module('authenticate.js').directive('authenticateLoginForm', function ()
     }],
 
     templateUrl: function(element, attr) {
-      return attr.templateUrl ? attr.templateUrl : 'partials/authenticateJS/login.html';
+      return attr.templateUrl ? attr.templateUrl : 'account/sign-in.html';
     }
   };
 });

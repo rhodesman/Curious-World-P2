@@ -1,7 +1,7 @@
 (function (ng) {
     "use strict";
 
-    ng.module("app", ["authCheck", "ngRoute", "duParallax"])
+    ng.module("app", ["authCheck", "ngRoute", "duParallax", "angularBetterPlaceholder"])
         .config([
             "$routeProvider",
             function ($routeProvider) {

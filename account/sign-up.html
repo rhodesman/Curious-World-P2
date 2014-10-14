@@ -11,31 +11,35 @@
       <h3>Or sign up with email</h3>
     </div>
   </div>
-  <form name="createAccountForm"
+  <form name="createAccountForm" action="" method="post"
         ng-submit="$event.preventDefault()"
         novalidate>
     <div class="text-inputs row">
-      <div class="medium-offset-1 medium-5 columns">
-        <input class="person" type="text" name="firstName" placeholder="First Name"
-               ng-model="user.firstName"
-               ng-class="{ 'has-error' : createAccountForm.firstName.$invalid && !createAccountForm.firstName.$pristine && submitted}"
-               ng-minlength=2
+      <div class="medium-offset-1 medium-5 columns" ng-class="{ 'has-error': submitted && createAccountForm.firstName.$error.required }">
+        <input class="person better-placeholder" type="text" name="firstName" placeholder="First Name"
+               ng-model="signUpFormData.firstName"
                required />
       </div>
-      <div class="medium-5 columns">
-        <input class="person" type="text" name="lastName" placeholder="Last Name" required />
+      <div class="medium-5 columns" ng-class="{ 'has-error': submitted && createAccountForm.lastName.$error.required }">
+        <input class="person better-placeholder" type="text" name="lastName" placeholder="Last Name"
+        ng-model="signUpFormData.lastName"
+        required />
       </div>
-      <div class="medium-offset-1 medium-10 columns">
-        <input class="email" type="email" name="email" placeholder="Email"
-               ng-class="{ 'has-error' : createAccountForm.email.$invalid && !createAccountForm.email.$pristine && submitted}"
-               ng-model="user.email"
+      <div class="medium-offset-1 medium-10 columns" ng-class="{ 'has-error': submitted && (createAccountForm.email.$error.required || createAccountForm.email.$error.email) }">
+        <input class="email better-placeholder" type="email" name="email" placeholder="Email"
+               ng-model="signUpFormData.email"
                required />
       </div>
-      <div class="medium-offset-1 medium-5 columns">
-        <input class="password" type="password" name="password" placeholder="Password" ng-model="user.password" required/>
+      <div class="medium-offset-1 medium-5 columns" ng-class="{ 'has-error': submitted && createAccountForm.password.$error.required }">
+        <input class="password better-placeholder" type="password" name="password" placeholder="Password"
+               ng-model="password"
+               pw-check="passwordAgain"
+               required/>
       </div>
-      <div class="medium-pull-1 medium-5 columns">
-        <input class="password" type="password" name="passwordAgain" placeholder="{{placeholder}}" ng-model="user.passConfirm" required />
+      <div class="medium-pull-1 medium-5 columns" ng-class="{ 'has-error': submitted && (createAccountForm.passwordAgain.$error.required || createAccountForm.password.$error.pwmatch) }">
+        <input class="password better-placeholder" type="password" name="passwordAgain" placeholder="Confirm Password"
+               ng-model="passwordAgain"
+               required />
       </div>
     </div>
     <div class="row sign-in">
