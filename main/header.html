@@ -9,16 +9,16 @@
 			<div id="nav-modal" class="reveal-modal options-modal" data-reveal>
 				<ul>
 					<li ng-if="!userInfo.isLoggedIn()" class="sign-in">
-						<a href="account/#/sign-in">Sign In</a>
+						<a href="#/sign-in">Sign In</a>
 					</li>
 					<li ng-if="!userInfo.isLoggedIn()" class="create-account">
-						<a href="account/#/sign-up">Sign Up</a>
+						<a href="#/sign-up">Sign Up</a>
 					</li>
 					<li class="user-mobile" ng-if="userInfo.isLoggedIn()">
             <label>Hi, {{userInfo.getUser().displayName}}</label>
             <ul class="submenu">
               <li>
-                <a href="/#/manage">Manage</a>
+                <a href="#/manage">Manage</a>
               </li>
               <li>
                 <a href="#">Get Help</a>
@@ -67,9 +67,6 @@
 							<li><a ng-click="userInfo.logout()">Sign Out</a></li>
 						</ul>
 					</div>
-				</li>
-				<li ng-if="!userInfo.isLoggedIn()" class="sign-in-old">
-					<a data-reveal-id="sign-in-modal">Sign In <span>/ Create Account</span></a>
 				</li>
 			</ul>
 			<ul id="main-navigation">
