@@ -61,28 +61,26 @@
   </section>
   <section class="row completed-cards">
     <div id="cardfolio" class="small-12 columns">
-      <ol id="timeline"
-        ng-class="'domain-' + selectedDomain.name">
-        <li id="timeline-event-{{$index}}"
-          ng-show="userInfo.isLoggedIn()"
-          ng-class="'domain-' + event.item.domain.name"
-          ng-repeat="event in (filteredEvents = (events | filter: filter | orderBy: selectedSorting.value))"
-          ng-include="'cardfolio/single-event.html'">
+      <ul class="small-block-grid-5">
+        <li class="empty-card">
+          <a href="#"></a>
         </li>
-        <li id="empty-timeline"
-          ng-hide="userInfo.isLoggedIn() || (timeline && !timeline.length)">
-          <section id="default-timeline-event" class="row">
-            <div class="timeline-event">
-              <span class="domain-bubble"></span>
-              <h1>Start tracking your kid's progress!</h1>
-              <div class="description">
-                <p ng-show="userInfo.isLoggedIn()">Complete cards on the <a href="/">Home</a> page to start tracking your kid's progress! Cardfolio is always private. Only you can see this page.</p>
-                <p ng-hide="userInfo.isLoggedIn()">In order to start your Cardfolio, you must first <a data-reveal-id="create-account-modal">create an account</a>. If you already have an account, <a data-reveal-id="sign-in-modal">sign in</a> to view your Cardfolio.</p>
-              </div>
-            </div>
-          </section>
+        <li class="completed-card">
+          <a href="#"><img src="http://placehold.it/200x130"></a>
         </li>
-      </ol>
+        <li class="completed-card">
+          <a href="#"><img src="http://placehold.it/200x130"></a>
+        </li>
+        <li class="completed-card">
+          <a href="#"><img src="http://placehold.it/200x130"></a>
+        </li>
+        <li class="completed-card">
+          <a href="#"><img src="http://placehold.it/200x130"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="small-3 columns">
+      <a href="#" class="expand-milestones">View All</a>
     </div>
   </section>
 </div>
