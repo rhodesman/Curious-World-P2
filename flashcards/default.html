@@ -28,55 +28,31 @@
       </div>
     </div>
     <div id="cards" class="row">
-      <div class="small-12 columns">
-        <div class="tab-content">
-          <section id="cards-section">
-            <ul class="items">
-              <li id="current-card" class="item is-active" ng-hide="displayDefault">
-                <div class="card">
-                  <h1 ng-click="currentCard.hasMedia = true" class="ng-binding"> Color Mixer </h1>
-                  <div class="example ng-binding"> Let your child mix paints to make new colors (e.g. blue and yellow make green). </div>
-
-                  <div class="upload-buttons uploader ng-scope" ng-class="{'dz-started': uploadInProgress}">
-                    <form name="uploadMediaForm" method="post" enctype="multipart/form-data" class="ng-pristine ng-valid">
-                      <div class="anchor ready-state" ng-click="isAuthenticated()" ng-hide="currentCard.hasMedia">
-                        <!-- ngIf: authState.isAuthenticated -->
-                        <span class="ng-binding">Capture it</span>
-                      </div>
-                      <a class="done-state ng-hide" ng-show="currentCard.hasMedia">
-                        <span>Captured!</span>
-                      </a>
-                      <div class="progress-bar">
-                        <div class="progress">
-                        </div>
-                      </div>
-                      <input type="hidden" name="ath" class="form-control" value="">
-                      <input type="hidden" name="galleryKey" class="form-control" value="">
-                    </form>
-                  </div>
-
-                  <div class="completion-buttons small-12 medium-6 ng-pristine ng-valid" ng-model="hover">
-                    <a class="ready-state" ng-click="completeBtnClicked()" ng-hide="currentCard.isComplete">
-                      <span class="ng-binding">Mark complete</span>
-                    </a>
-                    <a class="done-state ng-hide" ng-click="completeBtnClicked()" ng-mouseover="hover = true" ng-mouseleave="hover = false" ng-show="currentCard.isComplete">
-                      <span ng-hide="hover" class="ng-binding">Did it!</span>
-                      <span ng-show="hover" class="ng-binding ng-hide">Reset card</span>
-                    </a>
-                  </div>
-
-                  <div class="description ng-binding">Identifies and creates simple shapes and designs.</div>
-
-                </div>
-              </li>
-            </ul>
-
-            <div class="item-navigation" ng-hide="displayDefault">
-              <a cycle-card="" class="prev" ng-click="cardBackwardAnimation()">Previous</a>
-              <a cycle-card="" class="next" ng-click="cardForwardAnimation()">Next</a>
+      <div class="small-1 columns item-navigation prev" ng-hide="displayDefault">
+        <a cycle-card="" class="prev" ng-click="cardBackwardAnimation()">Prev Card</a>
+      </div>
+      <section class="small-10 small-offset-1 columns">
+        <div class="row">
+          <div class="small-2 small-push-10 columns">
+            <div class="domain-container science">
+              <img src="img/learning-areas/domain-icons/science.svg" alt="">
             </div>
-          </section>
+          </div>
         </div>
+        <div class="row">
+          <div class="small-4 columns card-buttons">
+            <a href="#" class="complete-btn">Completed</a>
+            <a href="#" class="media-upload">Upload Media</a>
+          </div>
+          <div class="small-8 columns card-copy">
+            <h1>Card Title</h1>
+            <p>Card Copy here Card Copy here Card Copy here Card Copy here Card Copy here Card Copy here </p>
+            <p><strong>Skill:</strong>Skill copy here Skill copy here Skill copy here</p>
+          </div>
+        </div>
+      </section>
+      <div class="small-1 columns item-navigation next" ng-hide="displayDefault">
+        <a cycle-card="" class="next" ng-click="cardForwardAnimation()">Next Card</a>
       </div>
     </div>
   </section>

@@ -1,6 +1,7 @@
 $dropdown-border: #8a8d8f;
 $dropdown-bg: #3c4456;
 $dropdown-select-bg: #798893;
+$card-border: #c9c9c9;
 
 .flashcards-page {
   margin-top:70px;
@@ -10,7 +11,8 @@ $dropdown-select-bg: #798893;
   .card-drop-dwn {
     padding:8px 10px;
     padding-right:15px;
-    color: white;
+    line-height:50px;
+    color: $white;
     border:1px solid $dropdown-border;
     background-color: #3c4456;
     @include border-radius(8px, 8px, 8px, 8px);
@@ -18,15 +20,58 @@ $dropdown-select-bg: #798893;
       content:'';
       display:inline;
       position:absolute;
-      top: -8px;
+      top: 6px;
       margin-left:8px;
-      height:38px;
+      height:37px;
       width:45px;
       background:$dropdown-select-bg url("../img/small-arrow-dwn.png") no-repeat 40% 50%;
       @include border-radius(0, 8px, 8px, 0);
     }
   }
   #cards {
-    margin:0 20px;
+    position:relative;
+    margin:20px 0;
+    .item-navigation {
+      position:absolute;
+      height:100%;
+      &.next {
+        right:0;
+      }
+      & a {
+        @include vertical-align;
+      }
+    }
+    & section {
+      @include border-radius(25px,25px,25px,25px);
+      border: 1px solid $card-border;
+      background: $white;
+      position: relative;
+      z-index:10;
+      &:before, &:after {
+        @include border-radius(25px,25px,25px,25px);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        bottom: 13px;
+        left: 17px;
+        width: 45%;
+        height: 12%;
+        box-shadow: 0 14px 21px rgba(0, 0, 0, 0.38);
+        transform: rotate(-6deg) skew(-0deg);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        bottom: 13px;
+        right: 17px;
+        width: 45%;
+        height: 12%;
+        box-shadow: 0 14px 21px rgba(0, 0, 0, 0.38);
+        transform: rotate(6deg) skew(0deg);
+      }
+    }
   }
 }
