@@ -37,7 +37,7 @@
                   <h1 ng-click="currentCard.hasMedia = true" class="ng-binding"> Color Mixer </h1>
                   <div class="example ng-binding"> Let your child mix paints to make new colors (e.g. blue and yellow make green). </div>
 
-                  <div class="upload-buttons uploader ng-scope" ng-controller="MediaUploadController" ng-class="{'dz-started': uploadInProgress}">
+                  <div class="upload-buttons uploader ng-scope" ng-class="{'dz-started': uploadInProgress}">
                     <form name="uploadMediaForm" method="post" enctype="multipart/form-data" class="ng-pristine ng-valid">
                       <div class="anchor ready-state" ng-click="isAuthenticated()" ng-hide="currentCard.hasMedia">
                         <!-- ngIf: authState.isAuthenticated -->
