@@ -2,60 +2,81 @@
   <section class="row view-cards">
     <div class="row dropdowns">
       <div class="small-4 columns">
-        <a href="#" data-dropdown="hover1" data-options="is_hover:true">Has Hover Dropdown</a>
+        <a href="#" data-dropdown="hover1" data-options="is_hover:true" class="card-drop-dwn">Select Child's Age</a>
 
         <ul id="hover1" class="f-dropdown" data-dropdown-content>
-          <li><a href="#">This is a link</a></li>
-          <li><a href="#">This is another</a></li>
-          <li><a href="#">Yet another</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">6</a></li>
+          <li><a href="#">7</a></li>
         </ul>
       </div>
       <div class="small-4 columns end">
-        <a href="#" data-dropdown="hover2" data-options="is_hover:true">Has Hover Dropdown</a>
+        <a href="#" data-dropdown="hover2" data-options="is_hover:true" class="card-drop-dwn">Choose Learning Area</a>
 
         <ul id="hover2" class="f-dropdown" data-dropdown-content>
-          <li><a href="#">This is a link</a></li>
-          <li><a href="#">This is another</a></li>
-          <li><a href="#">Yet another</a></li>
+          <li><a href="#">Creative Expression</a></li>
+          <li><a href="#">Mathmatics</a></li>
+          <li><a href="#">Language & Literacy</a></li>
+          <li><a href="#">Science</a></li>
+          <li><a href="#">Health & Well-Being</a></li>
+          <li><a href="#">Executive Function</a></li>
+          <li><a href="#">Family & Community</a></li>
+          <li><a href="#">Social & Emotional</a></li>
         </ul>
       </div>
     </div>
-    <div class="row the-cards">
+    <div id="cards" class="row">
       <div class="small-12 columns">
-      	<div class="tab-content">
-      		<section id="cards-section">
-            <ul class="items"
-              ng-class="{ 'is-empty': !cards.length, 'backward': !isForward, 'forward': isForward }">
-              <li id="default-card" class="item"
-                ng-init="isForward = true; selectedCard = -1"
-                ng-class="{ 'is-active': selectedCard < 0, 'is-last': lastCard < 0 }">
-                <p>There are 1,000 small ways you can help your kids get school-ready.</p>
-                <a class="learn-more button" data-reveal-id="learn-more">Learn more</a>
-                <a class="get-started button" ng-click="isForward = true; lastCard = -1; selectedCard = 0">Get started</a>
-                <div id="learn-more" class="reveal-modal image-modal" data-reveal>
-                  <div class="row video">
-                    <div class="video-wrapper">
-                      <iframe src="//player.vimeo.com/video/20732587?color=969696"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
+        <div class="tab-content">
+          <section id="cards-section">
+            <ul class="items">
+              <li id="current-card" class="item is-active" ng-hide="displayDefault">
+                <div class="card">
+                  <h1 ng-click="currentCard.hasMedia = true" class="ng-binding"> Color Mixer </h1>
+                  <div class="example ng-binding"> Let your child mix paints to make new colors (e.g. blue and yellow make green). </div>
+
+                  <div class="upload-buttons uploader ng-scope" ng-controller="MediaUploadController" ng-class="{'dz-started': uploadInProgress}">
+                    <form name="uploadMediaForm" method="post" enctype="multipart/form-data" class="ng-pristine ng-valid">
+                      <div class="anchor ready-state" ng-click="isAuthenticated()" ng-hide="currentCard.hasMedia">
+                        <!-- ngIf: authState.isAuthenticated -->
+                        <span class="ng-binding">Capture it</span>
+                      </div>
+                      <a class="done-state ng-hide" ng-show="currentCard.hasMedia">
+                        <span>Captured!</span>
+                      </a>
+                      <div class="progress-bar">
+                        <div class="progress">
+                        </div>
+                      </div>
+                      <input type="hidden" name="ath" class="form-control" value="">
+                      <input type="hidden" name="galleryKey" class="form-control" value="">
+                    </form>
                   </div>
-                  <a class="close-reveal-modal">&#215;</a>
+
+                  <div class="completion-buttons small-12 medium-6 ng-pristine ng-valid" ng-model="hover">
+                    <a class="ready-state" ng-click="completeBtnClicked()" ng-hide="currentCard.isComplete">
+                      <span class="ng-binding">Mark complete</span>
+                    </a>
+                    <a class="done-state ng-hide" ng-click="completeBtnClicked()" ng-mouseover="hover = true" ng-mouseleave="hover = false" ng-show="currentCard.isComplete">
+                      <span ng-hide="hover" class="ng-binding">Did it!</span>
+                      <span ng-show="hover" class="ng-binding ng-hide">Reset card</span>
+                    </a>
+                  </div>
+
+                  <div class="description ng-binding">Identifies and creates simple shapes and designs.</div>
+
                 </div>
               </li>
-              <li class="item"
-                ng-repeat="card in cards track by $index"
-                ng-class="{ 'is-active': $parent.selectedCard === $index, 'is-last': $parent.lastCard === $index }"
-                ng-include="'home/single-card.html'"></li>
             </ul>
-            <div class="item-navigation" ng-show="selectedCard >= 0">
-              <a class="prev"
-                ng-show="selectedCard >= 0"
-                ng-click="isForward = false; lastCard = selectedCard; selectedCard = Math.max(selectedCard - 1, -1)">Previous</a>
-              <a class="next"
-                ng-show="(selectedCard + 1) < cards.length"
-                ng-click="isForward = true; lastCard = selectedCard; selectedCard = Math.min(selectedCard + 1, cards.length - 1)">Next</a>
+
+            <div class="item-navigation" ng-hide="displayDefault">
+              <a cycle-card="" class="prev" ng-click="cardBackwardAnimation()">Previous</a>
+              <a cycle-card="" class="next" ng-click="cardForwardAnimation()">Next</a>
             </div>
-      		</section>
-      	</div>
+          </section>
+        </div>
       </div>
     </div>
   </section>

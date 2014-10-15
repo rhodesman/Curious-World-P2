@@ -1,4 +1,32 @@
+$dropdown-border: #8a8d8f;
+$dropdown-bg: #3c4456;
+$dropdown-select-bg: #798893;
+
 .flashcards-page {
   margin-top:70px;
-
+  padding-top:50px;
+  background-color: $icon-gray;
+  border-top: 2px solid #dfdfdf;
+  .card-drop-dwn {
+    padding:8px 10px;
+    padding-right:15px;
+    color: white;
+    border:1px solid $dropdown-border;
+    background-color: #3c4456;
+    @include border-radius(8px, 8px, 8px, 8px);
+    &:after {
+      content:'';
+      display:inline;
+      position:absolute;
+      top: -8px;
+      margin-left:8px;
+      height:38px;
+      width:45px;
+      background:$dropdown-select-bg url("../img/small-arrow-dwn.png") no-repeat 40% 50%;
+      @include border-radius(0, 8px, 8px, 0);
+    }
+  }
+  #cards {
+    margin:0 20px;
+  }
 }
