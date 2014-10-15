@@ -88,24 +88,11 @@
             { name: "social",    title: "Social & Emotional", description: "Increase children’s sense of self-awareness and their ability to share and develop relationships with others."  },
             { name: "health",    title: "Health & Well\u2011Being", description: "Children learn and practice good nutrition, physical exercise, and fine motor development." }
         ])
-        .run([
-            "$rootScope",
-            "$interval",
-            function ($rootScope, $interval) {
-                // Reflow Foundation when view is loaded
-                $rootScope.$on("$viewContentLoaded", function () {
-                    $(document).foundation();
-
-                    // Periodically reflow Foundation until a real solution is in place
-                    $interval(function () {
-                        $(document).foundation();
-                    }, 1000);
-                });
-
-                // Add global class for usage in maintaining the sticky footer illusion
-                $rootScope.contentClass = "";
-            }
-        ]);
+        .run(function ($rootScope) {
+            $rootScope.$on('$routeChangeSuccess', function () {
+                $(document).foundation('reflow');
+            });
+        });
 
 
 }(window.angular, window.jQuery));
