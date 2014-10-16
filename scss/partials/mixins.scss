@@ -70,6 +70,31 @@
   border-radius: $tL $tR $bR $bL;
 }
 
+@mixin border-gradient($borStartColor, $borEndColor)  {
+  position: relative;
+  border-top: 1px solid $borStartColor;
+
+  &:before,
+  &:after {
+  content: "";
+  position: absolute;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($borStartColor), to($borEndColor));
+  background-image: -webkit-linear-gradient($borStartColor, $borEndColor);
+  background-image: -moz-linear-gradient($borStartColor, $borEndColor);
+  background-image: -o-linear-gradient($borStartColor, $borEndColor);
+  background-image: linear-gradient($borStartColor, $borEndColor);
+  top: -1px;
+  bottom: -1px;
+  width: 1px;
+  }
+  &:before {
+    left: -1px;
+  }
+  &:after {
+  right: -1px;
+  }
+}
+
 @mixin vertical-align {
   position: relative;
   top: 50%;
