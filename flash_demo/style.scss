@@ -2,6 +2,7 @@
   background: black;
   position:relative;
   top:0;
+  bottom:0;
   left:0;
   right:0;
   height:600px;
@@ -22,14 +23,13 @@
 
 .bottom{
   transition: 1s all ease-in-out;
-  background: gray;
-  position:fixed;
-  height:100%;
   overflow-y: scroll;
-  top:600px;
+  background: gray;
+  position:relative;
+  height:100%;
+  top:0;
   left:0;
   right:0;
-  bottom:0;
   text-align:center;
   > .content{
     width:100%;
@@ -61,4 +61,10 @@
     margin: 10px;
   }
 
+}
+
+footer{
+  position:relative;
+  width:100%;
+  background:white;
 }

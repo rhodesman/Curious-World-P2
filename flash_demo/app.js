@@ -36,25 +36,41 @@
 
                 var ngWindow = angular.element($window);
 
-                ngWindow.bind("scroll", function() {
-                  var scroll = ngWindow.scrollTop();
-                  console.log(scroll);
-
-                  if(scope.open === true){
-                    element[0].style.top = 0;
-                  } else{
-                    element[0].style.top = (600 - scroll) + 'px';
-                  }
-
-                });
+                // ngWindow.bind("scroll", function() {
+                //   var scroll = ngWindow.scrollTop();
+                //   console.log(scroll);
+                //
+                //   element[0].style.top = (600 - scroll) + 'px';
+                //
+                //   if(scope.open === true){
+                //     element[0].style.top = 0;
+                //   } else{
+                //     console.log(element[0].style.top = (600 - scroll) + 'px');
+                //   }
+                //
+                // });
 
                 scope.moveUp = function(){
-                  element[0].style.top = 0;
+                  element[0].style.top = -600 + 'px';
+                  element[0].style.marginBottom = -600 + 'px';
                   scope.open = true;
+                  // document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+                //   function scrollToTop(scrollDuration) {
+                //     var scrollStep = -window.scrollY / (scrollDuration / 15),
+                //         scrollInterval = setInterval(function(){
+                //         if ( window.scrollY !== 0 ) {
+                //             window.scrollBy( 0, scrollStep );
+                //         }
+                //         else clearInterval(scrollInterval);
+                //     },15);
+                //   }
+                //   scrollToTop(1000);
                 };
 
                 scope.moveDown = function(){
-                  element[0].style.top = null;
+                  element[0].style.top = 0 + 'px';
+                  element[0].style.marginBottom = null;
                   scope.open = false;
                 };
 
