@@ -259,7 +259,6 @@ $no-media-color: #92989b;
 
         & a {
           border: 1px dashed $no-media-color;
-          //&:hover {} //bug fix for pseudo animations
           &:before {
             content:'';
             display:block;
