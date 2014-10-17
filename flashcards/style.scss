@@ -7,6 +7,7 @@ $card-btn-bg: #fbfbfb;
 $card-btn: #d5dce0;
 $card-btn-hvr: #798794;
 $card-btn-act: #f2a904;
+$no-media-color: #92989b;
 
 .flashcards-page {
   position:relative;
@@ -222,7 +223,125 @@ $card-btn-act: #f2a904;
   p + p {
     margin-top:40px;
   }
+  .completed-cards {
+    background-color: $white;
+  }
   .milestones {
     background-color:$dropdown-select-bg;
+    & a {
+      display: block;
+      margin-top:10px;
+      padding:10px 20px;
+      background-color: $white;
+      @include border-radius(25px,25px,0,0);
+      text-align:center;
+      color:$card-btn-hvr;
+    }
+  }
+  #cardfolio {
+    padding-top:20px;
+    & li {
+      position:relative;
+      width:200px;
+      height:130px;
+      a {
+        position:relative;
+        display:block;
+        width:100%;
+        height:100%;
+        z-index:2;
+        & img {
+          width:100%;
+          height:100%;
+        }
+      }
+      &.empty-card {
+
+        & a {
+          border: 1px dashed $no-media-color;
+          //&:hover {} //bug fix for pseudo animations
+          &:before {
+            content:'';
+            display:block;
+            position:absolute;
+            z-index:1;
+            top:50%;
+            left:50%;
+            width:80px;
+            height:80px;
+            border-radius:50%;
+            transform: translate(-50%, -50%);
+            background-color:$card-nav-bg;
+            background-position:center;
+            background-repeat:no-repeat;
+            transition: background-color .2s ease-in-out;
+          }
+          &.creative-expression{
+            &:before{
+              background-image:url(../img/domains/creative-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-creative;
+            }
+          }
+          &.language-and-literacy{
+            &:before{
+              background-image:url(../img/domains/language-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-language;
+            }
+          }
+          &.mathematics{
+            &:before{
+              background-image:url(../img/domains/math-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-math;
+            }
+          }
+          &.science {
+            &:before{
+              background-image:url(../img/domains/science-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-science;
+            }
+          }
+          &.family-and-community{
+            &:before{
+              background-image:url(../img/domains/family-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-family;
+            }
+          }
+          &.executive-function{
+            &:before{
+              background-image:url(../img/domains/executive-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-executive;
+            }
+          }
+          &.social-and-emotional{
+            &:before{
+              background-image:url(../img/domains/social-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-social;
+            }
+          }
+          &.health-and-well-being{
+            &:before{
+              background-image:url(../img/domains/health-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-health;
+            }
+          }
+        }
+      }
+    }
   }
 }
