@@ -1,4 +1,4 @@
-(function (ng) {
+(function (ng, $) {
     "use strict";
 
     ng.module("app", ["authCheck", "ngRoute", "duParallax"])
@@ -53,6 +53,8 @@
                 scope.moveUp = function(){
                   element[0].style.top = -600 + 'px';
                   element[0].style.marginBottom = -600 + 'px';
+                  element[0].animate({height: '100%'}, 500);
+                  // element[0].style.height = 100 + '%';
                   scope.open = true;
                   // document.body.scrollTop = document.documentElement.scrollTop = 0;
 
@@ -71,6 +73,8 @@
                 scope.moveDown = function(){
                   element[0].style.top = 0 + 'px';
                   element[0].style.marginBottom = null;
+                  // element[0].style.height = null;
+                  element[0].animate({height: 280}, 500);
                   scope.open = false;
                 };
 
@@ -87,7 +91,7 @@
             };
 
         });
-}(window.angular));
+}(window.angular, window.jQuery));
 
 
 // var ngWindow = angular.element($window);
