@@ -1,0 +1,402 @@
+$dropdown-border: #8a8d8f;
+$dropdown-bg: #3c4456;
+$dropdown-select-bg: #798893;
+$card-border: #c9c9c9;
+$card-nav-bg: #c7cdd1;
+$card-btn-bg: #fbfbfb;
+$card-btn: #d5dce0;
+$card-btn-hvr: #798794;
+$card-btn-act: #19b0ff;
+$no-media-color: #92989b;
+
+.flashcards-page {
+  position:relative;
+  z-index:1;
+  margin-top:70px;
+  padding-top:50px;
+  background-color: $icon-gray;
+  border-top: 2px solid #dfdfdf;
+
+  p{
+    font-weight:rem-calc(16);
+    font-weight:400;
+  }
+
+  .dropdowns{
+    margin-bottom:42px;
+    .card-drop-down {
+      display:inline-block;
+      line-height:40px;
+      padding: 0 60px 0 16px;
+      height:40px;
+      margin: 0 40px 0 0;
+      color: $white;
+      border:1px solid $dropdown-border;
+      background-color: #3c4456;
+      position:relative;
+      @include border-radius(8px, 8px, 8px, 8px);
+      @media #{$small-only}{
+        display:block;
+        margin: 10px 8.333%;
+      }
+      &:after {
+        content:'';
+        position:absolute;
+        top:-1px;
+        right:0;
+        height:40px;
+        width:45px;
+        border:1px solid $dropdown-border;
+        background:$dropdown-select-bg url("../img/small-arrow-dwn.png") no-repeat 4px center;
+        @include border-radius(0, 8px, 8px, 0);
+      }
+    }
+  }
+
+  .f-dropdown{
+    width:100%;
+    background-color: $card-btn-hvr;
+    li{
+      &:hover{
+        background-color: $card-btn-act;
+      }
+      a{
+        color:$white;
+      }
+    }
+    &:before{
+      margin-top:30px;
+      border-color: transparent transparent $card-btn-hvr transparent;
+    }
+  }
+
+  .view-cards {
+    padding-bottom:70px;
+  }
+  #cards {
+    margin:0 0 20px 0;
+    .item-navigation {
+      padding:0;
+      position:absolute;
+      width:70px;
+      top:50%;
+      &.prev{
+        left:-70px;
+      }
+      &.next {
+        right:-70px;
+      }
+      & a {
+        @include vertical-align;
+        top:50%;
+        transform: translate(0, -40%);
+        display:block;
+        font-size:rem-calc(12);
+        line-height:rem-calc(14);
+        text-align:center;
+        color:$card-nav-bg;
+        &:before {
+          content:'';
+          display:inline-block;
+          width:100%;
+          height:80px;
+          background-color:$card-nav-bg;
+        }
+        &:after {
+          content:'';
+          display:block;
+          position:relative;
+          top:-75px;
+          left:20px;
+          width:23px;
+          height:35px;
+          background: url("../img/flashcards/card-Arrows.png") no-repeat 0 0;
+        }
+        &.next:after {
+          background-position:0 -37px;
+        }
+        &:hover {
+          color:$link-blue;
+          &:before {
+            background-color:$link-blue;
+          }
+        }
+      }
+    }
+    & section {
+      @include border-radius(25px,25px,25px,25px);
+      border: 1px solid $card-border;
+      height:425px;
+      background: $white;
+      position: relative;
+      &:before, &:after {
+        @include border-radius(25px,25px,25px,25px);
+        content: '';
+        position: absolute;
+        z-index: -1;
+        bottom: 17px;
+        box-shadow: 0 14px 21px rgba(0, 0, 0, 0.38);
+        width: 45%;
+        height: 12%;
+      }
+      &:before {
+        left: 17px;
+        transform: rotate(-6deg) skew(-0deg);
+      }
+      &:after {
+        right: 17px;
+        transform: rotate(6deg) skew(0deg);
+      }
+    }
+  }
+  .card-domain {
+    display:block;
+    float:right;
+    position:relative;
+    width:90px;
+    height:90px;
+    margin:10px;
+    &:before, &:after {
+      content:'';
+      display:block;
+      position:absolute;
+      top:50%;
+      left:50%;
+      border-radius:50%;
+      transform: translate(-50%, -50%);
+      transition: opacity .2s ease-in-out;
+    }
+    &:after{
+      border:1px solid $card-btn-hvr;
+      width:70px;
+      height:70px;
+      -webkit-box-shadow:inset 0 0 0 5px $white;
+      box-shadow:inset 0 0 0 5px $white;
+    }
+    &:before {
+      border:1px solid $card-btn-bg;
+      @include vertical-gradient(#ced1d3, #fcfdfe);
+      width:85px;
+      height:85px;
+      -webkit-box-shadow:inset 0 0 0 1px $white;
+      box-shadow:inset 0 0 0 1px $white;
+    }
+    img{
+      height:45%;
+      position:absolute;
+      top:50%;
+      left:50%;
+      z-index:10;
+      transform: translate(-50%, -50%);
+      @media #{$medium-only}{
+        width:60px;
+      }
+    }
+    &.creative-expression:after{
+      background:$color-creative;
+    }
+    &.language-and-literacy:after{
+      background:$color-language;
+    }
+    &.mathematics:after{
+      background:$color-math;
+    }
+    &.science:after{
+      background:$color-science;
+    }
+    &.family-and-community:after{
+      background:$color-family;
+    }
+    &.executive-function:after{
+      background:$color-executive;
+    }
+    &.social-and-emotional:after{
+      background:$color-social;
+    }
+    &.health-and-well-being:after{
+      background:$color-health;
+    }
+  }
+  .card-buttons {
+    clear:both;
+    & a {
+      display:block;
+      position:relative;
+      margin:10px 0 10px 20px;
+      padding-left:80px;
+      border:1px solid rgba(222,222,222,0.6);
+      background-color:$card-btn-bg;
+      @include border-radius(25px,25px,25px,25px);
+      color:$card-btn;
+      &:before {
+        content:'';
+        display:inline-block;
+        position:absolute;
+        top:50%;
+        left:20px;
+        width:48px;
+        height:48px;
+        transform: translate(0, -50%);
+      }
+      &.complete-btn:before {
+        background: url("../img/flashcards/check-complete.png") no-repeat 0 0;
+      }
+      &.media-btn:before {
+        background: url("../img/flashcards/upload-media.png") no-repeat 0 0;
+      }
+      &:hover {
+        color: $card-btn-hvr;
+        border-color:rgba(222,222,222,1.0);
+        &:before {
+          background-position:0 -48px;
+        }
+      }
+      &.selected, &.selected:hover {
+        color:$card-btn-act;
+        &:before {
+          background-position:0 -96px;
+        }
+      }
+    }
+  }
+  p + p {
+    margin-top:40px;
+  }
+  .completed-cards {
+    background-color: $white;
+  }
+  .milestones {
+    background-color:$dropdown-select-bg;
+    & a {
+      display: block;
+      margin-top:10px;
+      padding:10px 20px;
+      background-color: $white;
+      @include border-radius(25px,25px,0,0);
+      text-align:center;
+      color:$card-btn-hvr;
+    }
+  }
+  #cardfolio {
+    padding-top:20px;
+    .expand-milestones{
+      float:right;
+      padding-right: 3rem;
+      text-decoration:underline;
+      position:relative;
+      &:after{
+        content: '';
+        background: url('../img/flashcards/down-arrow-orange.png') no-repeat center center;
+        width:15px;
+        height:10px;
+        display:block;
+        position:absolute;
+        top:50%;
+        transform: translate(0,-50%);
+        right:20px;
+      }
+    }
+    & li {
+      position:relative;
+      width:200px;
+      height:130px;
+      a {
+        position:relative;
+        display:block;
+        width:100%;
+        height:100%;
+        z-index:2;
+        & img {
+          width:100%;
+          height:100%;
+        }
+      }
+      &.empty-card {
+
+        & a {
+          border: 1px dashed $no-media-color;
+          &:before {
+            content:'';
+            display:block;
+            position:absolute;
+            z-index:1;
+            top:50%;
+            left:50%;
+            width:80px;
+            height:80px;
+            border-radius:50%;
+            transform: translate(-50%, -50%);
+            background-color:$card-nav-bg;
+            background-position:center;
+            background-repeat:no-repeat;
+            transition: background-color .2s ease-in-out;
+          }
+          &.creative-expression{
+            &:before{
+              background-image:url(../img/domains/creative-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-creative;
+            }
+          }
+          &.language-and-literacy{
+            &:before{
+              background-image:url(../img/domains/language-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-language;
+            }
+          }
+          &.mathematics{
+            &:before{
+              background-image:url(../img/domains/math-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-math;
+            }
+          }
+          &.science {
+            &:before{
+              background-image:url(../img/domains/science-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-science;
+            }
+          }
+          &.family-and-community{
+            &:before{
+              background-image:url(../img/domains/family-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-family;
+            }
+          }
+          &.executive-function{
+            &:before{
+              background-image:url(../img/domains/executive-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-executive;
+            }
+          }
+          &.social-and-emotional{
+            &:before{
+              background-image:url(../img/domains/social-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-social;
+            }
+          }
+          &.health-and-well-being{
+            &:before{
+              background-image:url(../img/domains/health-icon-white.png);
+            }
+            &:hover:before {
+              background-color:$color-health;
+            }
+          }
+        }
+      }
+    }
+  }
+}

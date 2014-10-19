@@ -1,89 +1,36 @@
 <div class="flashcards-page" on-load-fade>
-  <section class="row view-cards">
-    <!--top dropdowns-->
-    <div class="row">
-      <div class="small-12 columns dropdowns">
-        <a href="#" data-dropdown="hover1" data-options="is_hover:true" class="card-drop-down">Select Child's Age</a>
-          <ul id="hover1" class="f-dropdown" data-dropdown-content>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href="">5</a></li>
-            <li><a href="">6</a></li>
-            <li><a href="">7</a></li>
-          </ul>
-        <a href="#" data-dropdown="hover2" data-options="is_hover:true" class="card-drop-down">Choose Learning Area</a>
-          <ul id="hover2" class="f-dropdown" data-dropdown-content>
-            <li><a href="#">Creative Expression</a></li>
-            <li><a href="#">Mathmatics</a></li>
-            <li><a href="#">Language & Literacy</a></li>
-            <li><a href="#">Science</a></li>
-            <li><a href="#">Health & Well-Being</a></li>
-            <li><a href="#">Executive Function</a></li>
-            <li><a href="#">Family & Community</a></li>
-            <li><a href="#">Social & Emotional</a></li>
-          </ul>
-      </div>
+
+  <!--top dropdowns-->
+  <div class="row">
+    <div class="small-12 columns dropdowns">
+      <a href="#" data-dropdown="hover1" data-options="is_hover:true" class="card-drop-down">Select Child's Age</a>
+        <ul id="hover1" class="f-dropdown" data-dropdown-content>
+          <li ng-repeat="age in ages"
+            ng-class="{ 'is-selected': $parent.$parent.selectedAge === age }">
+            <a ng-click="$parent.$parent.selectedAge = age">{{age}}</a>
+          </li>
+        </ul>
+      <a href="#" data-dropdown="hover2" data-options="is_hover:true" class="card-drop-down">Choose Learning Area</a>
+        <ul id="hover2" class="f-dropdown" data-dropdown-content>
+          <li ng-class="{ 'is-selected': domains[0] === $parent.selectedDomain || !$parent.selectedDomain }">
+            <a ng-class="'domain-' + domains[0].name"
+              ng-click="$parent.selectedDomain = domains[0]">
+              <span class="title">{{domains[0].title}}</span>
+            </a>
+          </li>
+          <li ng-repeat="domain in domains"
+            ng-hide="$first"
+            ng-class="{ 'is-selected': domain === $parent.selectedDomain }">
+            <a ng-class="'domain-' + domain.name"
+              ng-click="$parent.selectedDomain = domain">
+              <span class="title">{{domain.title}}</span>
+            </a>
+          </li>
+        </ul>
     </div>
-    <!--cards slider-->
-    <div id="cards" class="row">
+  </div>
 
-      <section class="small-10 small-centered columns">
+  <div id="cards" class="row" ng-include="'flashcards/cards.html'"></div>
+  <section class="completed-cards" ng-include="'flashcards/completed-milestones.html'"></section>
 
-        <div class="small-1 columns item-navigation prev" ng-hide="displayDefault">
-          <a cycle-card="" class="prev" ng-click="cardBackwardAnimation()">Prev Card</a>
-        </div>
-
-        <div class="small-1 columns item-navigation next" ng-hide="displayDefault">
-          <a cycle-card="" class="next" ng-click="cardForwardAnimation()">Next Card</a>
-        </div>
-
-        <div id="card">
-          <div class="card-domain science">
-            <img src="img/learning-areas/domain-icons/science.svg" alt="">
-          </div>
-          <div class="row">
-            <div class="small-4 columns card-buttons">
-              <a href="#" class="complete-btn">Complete</a>
-              <a href="#" class="media-btn">Upload Media</a>
-            </div>
-            <div class="small-8 columns card-copy">
-              <h1>Card Title</h1>
-              <p>Card Copy here Card Copy here Card Copy here Card Copy here Card Copy here Card Copy here </p>
-              <p><strong>Skill: </strong>Skill copy here Skill copy here Skill copy here</p>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-    </div>
-  </section>
-  <!--completed milestones-->
-  <section class="completed-cards">
-    <nav class="milestones">
-      <div class="row">
-        <a href="#" class="small-3 columns">Completed Milestones</a>
-      </div>
-    </nav>
-    <div id="cardfolio" class="row">
-      <ul class="small-block-grid-5 ">
-        <li class="empty-card">
-          <a href="#" class="science"></a>
-        </li>
-        <li class="empty-card">
-          <a href="#" class="mathematics"></a>
-        </li>
-        <li class="empty-card">
-          <a href="#" class="health-and-well-being"></a>
-        </li>
-        <li class="completed-card">
-          <a href="#"><img src="http://placehold.it/200x130"></a>
-        </li>
-        <li class="completed-card">
-          <a href="#"><img src="http://placehold.it/200x130"></a>
-        </li>
-      </ul>
-      <a href="#" class="expand-milestones">View All</a>
-    </div>
-  </section>
 </div>

@@ -1,0 +1,50 @@
+<div class="single-selector domain-selector show-for-small-only"
+  ng-class="'domain-' + (selectedDomain || domains[0]).name">
+  <a class="right-off-canvas-toggle"
+    ng-click="$root.offCanvasMenu = 'domain-selector'">
+    <span class="title">{{(selectedDomain || domains[0]).title}}</span>
+    <span class="count">0</span>
+  </a>
+</div>
+<a id="domain-key-modal-trigger" data-reveal-id="domain-key-modal" class="show-for-medium-up"></a>
+<div id="domain-scroller">
+  <ul id="domain-tabs" class="show-for-medium-up">
+    <li ng-class="{ 'is-selected': domains[0] === $parent.selectedDomain || !$parent.selectedDomain }">
+      <a ng-class="'domain-' + domains[0].name"
+        ng-click="$parent.selectedDomain = domains[0]">
+        <span class="title">{{domains[0].title}}</span>
+        <span class="count">0</span>
+      </a>
+    </li
+    ><li ng-repeat="domain in domains"
+      ng-class="{ 'is-selected': domain === $parent.selectedDomain, 'is-locked': !userInfo.isLoggedIn() && $index > 0 }"
+      ng-hide="$first">
+      <a ng-class="'domain-' + domain.name"
+        ng-click="auth(['$parent.$parent.selectedDomain = domain', '$parent.lockCheck = true'], this)">
+        <span class="title">{{domain.title}}</span>
+        <span class="count">0</span>
+      </a>
+    </li>
+  </ul>
+  <div class="unlock-domains"
+    ng-hide="userInfo.isLoggedIn()"
+    ng-class="{ 'is-locked': !userInfo.isLoggedIn(), 'perma-locked': !userInfo.isLoggedIn() && lockCheck }">
+    <div class="unlock-wrapper">
+      <a class="button" data-reveal-id="unlock-modal"></a>
+      <p ng-hide="userInfo.isLoggedIn()">Already purchased? <a data-reveal-id="sign-in-modal">Sign in</a>.</p>
+    </div>
+  </div>
+  <div id="unlock-modal" class="reveal-modal small" data-reveal>
+    <h1>Unlock Go!Cards</h1>
+    <p>Ages 3-7 are key developmental years for kids. On average, they encounter 200 new mental and physical milestones per year.</p>
+    <p><strong>Go!Cards</strong> were developed by child experts to support whole-child development. These micro-activities are based on 8 learning domains.</p>
+    <ul>
+      <li class="can-has-cards">Instant access to 1,000+ cards.</li>
+      <li class="dat-tracking">Track progress from any device.</li>
+    </ul>
+    <p>Got a minute? Pick a card &mdash; play at home, in the park, or a restaurant!</p>
+    <button class="unlock small-12">Unlock for $7.99/year</button>
+    <button class="sign-in small-12" data-reveal-id="sign-in-modal">Sign In</button>
+    <p>Don't have an account? <a data-reveal-id="create-account-modal">Create one!</a></p>
+  </div>
+</div>

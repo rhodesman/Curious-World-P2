@@ -1,0 +1,59 @@
+<div class="card" id="card-{{card.id}}">
+  <div class="card-domain" ng-class="card.domain.name">
+    <img ng-src="img/learning-areas/domain-icons/{{card.domain.name}}.svg" alt="">
+  </div>
+  <div class="row">
+    <div class="small-4 columns card-buttons" ng-init="card.event = false">
+      <a ng-click="card.event = true" class="ready-state complete-btn" ng-show="!card.event">Complete</a>
+      <a ng-click="card.event = false" class="done-state complete-btn " ng-hide="!card.event">Complete</a>
+      <a href="#" class="media-btn">Upload a pic</a>
+    </div>
+    <div class="small-8 columns card-copy">
+      <h1>{{card.title}}</h1>
+      <p>{{card.description}}</p>
+      <p><strong>Skill: </strong>{{card.skill}}</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="card" id="card-{{card.id}}">
+  <h1>{{card.title}}</h1>
+  <div class="example">{{card.example}}</div>
+  <div class="upload-buttons" ng-hide="userInfo.isLoggedIn()">
+    <a class="ready-state" href=""
+      ng-click="auth('card.media = true', this)"
+      ng-hide="card.media">
+      <span>Upload file to your private Kidfolio</span>
+    </a>
+    <a class="done-state" href=""
+      ng-show="card.media">
+      <span>Captured!</span>
+    </a>
+  </div>
+  <form class="upload-buttons">
+    <a class="ready-state" href=""
+      ng-click="auth('card.media = true', this)"
+      ng-hide="card.media">
+      <span>Upload file to your private Kidfolio</span>
+    </a>
+    <a class="done-state" href=""
+      ng-show="card.media">
+      <span>Captured!</span>
+    </a>
+  </form>
+  <div class="completion-buttons" ng-init="card.event = false">
+    <a class="ready-state" href=""
+      ng-click="auth('card.event = true', this)"
+      ng-show="!card.event">
+      <span>Mark Complete</span>
+    </a>
+    <a class="done-state" href=""
+      ng-click="auth('card.event = false', this)"
+      ng-hide="!card.event">
+      <span>Completed!</span>
+    </a>
+  </div>
+  <div class="description">{{card.description}}</div>
+</div>
+ -->
