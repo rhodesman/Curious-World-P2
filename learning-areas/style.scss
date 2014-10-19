@@ -120,13 +120,13 @@ $action-border: 1px solid #e1e1e1;
       width:60px;
     }
   }
-  &.creative-expression{
+  &.creative{
     background:$color-creative;
   }
-  &.language-and-literacy{
+  &.language{
     background:$color-language;
   }
-  &.mathematics{
+  &.math{
     background:$color-math;
   }
   &.science{
@@ -135,16 +135,16 @@ $action-border: 1px solid #e1e1e1;
       width:50px;
     }
   }
-  &.family-and-community{
+  &.family{
     background:$color-family;
   }
-  &.executive-function{
+  &.executive{
     background:$color-executive;
   }
-  &.social-and-emotional{
+  &.social{
     background:$color-social;
   }
-  &.health-and-well-being{
+  &.health{
     background:$color-health;
   }
 }

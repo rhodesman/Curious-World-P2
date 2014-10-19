@@ -10,19 +10,20 @@
             <a ng-click="$parent.$parent.selectedAge = age">{{age}}</a>
           </li>
         </ul>
+
       <a href="#" data-dropdown="hover2" data-options="is_hover:true" class="card-drop-down">Choose Learning Area</a>
         <ul id="hover2" class="f-dropdown" data-dropdown-content>
-          <li ng-class="{ 'is-selected': domains[0] === $parent.selectedDomain || !$parent.selectedDomain }">
+          <li ng-class="{ 'is-selected': domains[0] === \\$parent.selectedDomain || !\\$parent.selectedDomain }">
             <a ng-class="'domain-' + domains[0].name"
-              ng-click="$parent.selectedDomain = domains[0]">
+              ng-click="\\$parent.selectedDomain = domains[0]">
               <span class="title">{{domains[0].title}}</span>
             </a>
           </li>
           <li ng-repeat="domain in domains"
-            ng-hide="$first"
-            ng-class="{ 'is-selected': domain === $parent.selectedDomain }">
+            ng-hide="\\$first"
+            ng-class="{ 'is-selected': domain === \\$parent.selectedDomain }">
             <a ng-class="'domain-' + domain.name"
-              ng-click="$parent.selectedDomain = domain">
+              ng-click="\\$parent.selectedDomain = domain">
               <span class="title">{{domain.title}}</span>
             </a>
           </li>
