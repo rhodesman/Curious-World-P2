@@ -36,6 +36,7 @@
                    backgroundPosition: '0px ' + pos + 'px'
                 };
               };
+              
 
             }
         ]);
