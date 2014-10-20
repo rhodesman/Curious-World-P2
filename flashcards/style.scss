@@ -312,15 +312,18 @@ $no-media-color: #92989b;
 			}
 		}
 		&.media-card {
+			a{
+				border: 1px dashed $no-media-color;
+			}
 			&.completed{
 				a{
+					border: none;
 					&:before{
 						display:none;
 					}
 				}
 			}
 			& a {
-				border: 1px dashed $no-media-color;
 				&:before {
 					content:'';
 					display:block;
@@ -332,7 +335,6 @@ $no-media-color: #92989b;
 					height:80px;
 					border-radius:50%;
 					transform: translate(-50%, -50%);
-					background-color:$card-nav-bg;
 					background-position:center;
 					background-repeat:no-repeat;
 					transition: background-color .2s ease-in-out;
