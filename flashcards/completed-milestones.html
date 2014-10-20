@@ -7,14 +7,14 @@
   </nav>
   <div class="row">
     <div class="small-12 columns">
-      <ul class="grid-list-toggle" ng-init="toggle = false"><!--change to true-->
-        <li><a class="list" ng-click="toggle = !toggle;">list</a></li>
-        <li><a class="gid" ng-click="toggle = !toggle;">grid</a></li>
+      <ul class="grid-list-toggle" ng-init="toggle = 'grid'">
+        <li><a class="grid" ng-class="{'active': toggle  == 'grid'}" ng-click="toggle = 'grid'"></a></li>
+        <li><a class="list" ng-class="{'active': toggle == 'list'}" ng-click="toggle = 'list'"></a></li>
       </ul>
     </div>
   </div>
   <div id="cardfolio" class="row">
-    <ul class="small-block-grid-5" ng-show="toggle">
+    <ul class="small-block-grid-5" ng-show="toggle == 'grid'">
       <li class="media-card"
         ng-class="{'completed': completed.isComplete === true}"
         ng-repeat="completed in milestones">
@@ -24,7 +24,7 @@
         <span>{{completed.brief}}</span>
       </li>
     </ul>
-    <ul class="list-view" ng-show="!toggle">
+    <ul class="list-view" ng-show="toggle == 'list'">
       <li class="media-card"
         ng-class="{'completed': completed.isComplete === true}"
         ng-repeat="completed in milestones">
@@ -35,7 +35,11 @@
             </div>
           </div>
           <div class="small-11 columns card-details">
-            <h4 ng-class="completed.domain.name">{{completed.domain.name}} {{completed.cardNo}} of 100  |  Completed {{completed.timestamp}}</h4>
+            <div class="card-details-status" ng-class="completed.domain.name">
+              <h4>{{completed.domain.name}} {{completed.cardNo}} of 100  |  Completed {{completed.timestamp}}</h4>
+              <span class="checked"></span>
+              <span ng-show="completed.image" class="media"></span>
+            </div>
             <h2>{{completed.brief}}</h2>
             <p>{{completed.description}}</p>
           </div>

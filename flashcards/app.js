@@ -36,13 +36,13 @@
                 $scope.ages = [3, 4, 5, 6, 7];
                 $scope.selectedDomain = null;
 
-                $scope.toggleView = function(view){
-                  if(view == 'list'){
-                    $scope.toggle = 'list';
-                  } else {
-                    $scope.toggle = 'grid';
-                  }
-                };
+                // $scope.toggleView = function(view){
+                //   if(view === 'list'){
+                //     $scope.toggle = 'list';
+                //   } else {
+                //     $scope.toggle = 'grid';
+                //   }
+                // };
 
                 $scope.cards = [{
                     id: 1,
