@@ -1,10 +1,10 @@
   <nav class="milestones">
     <div class="row">
-      <a href="flashcards/#/milestones">Completed Milestones</a>
+      <a href="flashcards/#/milestones#top">Completed Milestones</a>
     </div>
   </nav>
   <div id="cardfolio" class="row">
-    <ul class="small-block-grid-5">
+    <ul class="small-block-grid-1 medium-block-grid-5">
       <li class="media-card"
           ng-class="{'completed': completed.isComplete === true}"
           ng-repeat="completed in milestones | limitTo: 5">
@@ -13,7 +13,7 @@
         </a>
       </li>
     </ul>
-    <a href="flashcards/#/milestones" class="expand-milestones">View All</a>
+    <a href="flashcards/#/milestones#top" class="expand-milestones">View All</a>
   </div>
 
   <div ng-include="'partials/modals/milestone-modal.html'"></div>

@@ -185,8 +185,12 @@ $list-item-gray: #4e5055;
 			}
 		}
 	}
-	p + p {
-		margin-top:40px;
+	p {
+		font-size:rem-calc(14);
+		line-height:1.4;
+		& + p {
+			margin-top:25px;
+		}
 	}
 }
 

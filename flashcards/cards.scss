@@ -3,7 +3,7 @@ $card-icon-size: 66px;
 $card-navigation-width: 100px;
 $card-navigation-icon-width: 20px;
 $card-width-max: 830px;
-$card-height-min: 525px;
+$card-height-min: 425px;
 $card-vertical-padding: 60px;
 $card-horizontal-padding: 40px;
 $card-vertical-margin: 50px;
@@ -41,6 +41,7 @@ $card-nav-link: #c7cdd1;
 			top:50%;
 			transform: translate(0, -50%);
 			font-size:rem-calc(14);
+      text-align:center;
 			color:$card-nav-link;
 			&:before {
 				content:'';
@@ -60,10 +61,10 @@ $card-nav-link: #c7cdd1;
 			}
 			&.next:after {
 				background-position:0 -37px;
-				left: 23px;
+				left: 28px;
 			}
 			&.prev:after {
-				left: 23px;
+				left: 28px;
 			}
 			&:hover {
 				color:$link-blue;
@@ -76,7 +77,6 @@ $card-nav-link: #c7cdd1;
 			}
 			&.next{
 				right:-10px;
-				text-align:right;
 			}
     }
 	}
@@ -234,7 +234,7 @@ $card-nav-link: #c7cdd1;
 		content: '';
 		position: absolute;
 		z-index: -1;
-		bottom: 17px;
+		bottom: 19px;
 		box-shadow: 0 14px 21px rgba(0, 0, 0, 0.38);
 		width: 45%;
 		height: 12%;
@@ -253,9 +253,9 @@ $card-nav-link: #c7cdd1;
 	}
 	h1 {
 		margin: 0;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 		line-height: 36px;
-		font-size: rem-calc(56);
+		font-size: rem-calc(38);
 		font-weight: 700;
 		line-height:1;
 		@media #{$small-only} {
