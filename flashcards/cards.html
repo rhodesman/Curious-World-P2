@@ -2,7 +2,7 @@
 	<div class="tab-content">
 		<section id="cards-section">
 
-      <ul class="items" ng-init="isForward = true; selectedCard = 1"
+      <ul class="items" ng-init="isForward = true; selectedCard = 0"
         ng-class="{ 'is-empty': !cards.length, 'backward': !isForward, 'forward': isForward }">
 
         <li class="item"
@@ -10,7 +10,6 @@
           ng-class="{ 'is-active': $parent.selectedCard === $index, 'is-last': $parent.lastCard === $index }"
           ng-include="'flashcards/single-card.html'">
         </li>
-
       </ul>
 
       <div class="item-navigation" ng-show="selectedCard >= 0">

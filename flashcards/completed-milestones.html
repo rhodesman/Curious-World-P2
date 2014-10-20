@@ -1,26 +1,21 @@
+<div class="completed-milestones-page">
 
   <nav class="milestones">
     <div class="row">
-      <a href="#" class="small-3 columns">Completed Milestones</a>
+      <a>Completed Milestones</a>
     </div>
   </nav>
   <div id="cardfolio" class="row">
     <ul class="small-block-grid-5 ">
-      <li class="empty-card">
-        <a href="#" class="science"></a>
-      </li>
-      <li class="empty-card">
-        <a href="#" class="mathematics"></a>
-      </li>
-      <li class="empty-card">
-        <a href="#" class="health-and-well-being"></a>
-      </li>
-      <li class="completed-card">
-        <a href="#"><img src="http://placehold.it/200x130"></a>
-      </li>
-      <li class="completed-card">
-        <a href="#"><img src="http://placehold.it/200x130"></a>
+      <li class="media-card"
+        ng-class="{'completed': completed.isComplete === true}"
+        ng-repeat="completed in milestones">
+        <a data-reveal-id="milestone-modal" ng-class="completed.domain.name">
+          <img ng-show="completed.image" ng-src="{{completed.image}}" alt="">
+        </a>
       </li>
     </ul>
-    <a href="#" class="expand-milestones">View All</a>
   </div>
+</div>
+
+<div ng-include="'partials/modals/milestone-modal.html'"></div>

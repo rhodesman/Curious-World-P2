@@ -3,3 +3,13 @@ $body-bg: white;
 $off-canvas-width: 100%;
 
 $include-xl-html-block-grid-classes: true;
+
+.reveal-modal{
+  .close-reveal-modal{
+    background: white;
+    color: black!important;
+    top: -20px!important;
+    right: -20px!important;
+    padding-top:2px!important;
+  }
+}

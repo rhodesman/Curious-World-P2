@@ -54,7 +54,8 @@ $card-nav-link: #c7cdd1;
 }
 
 // Card selector
-#cards-section {
+#cards-section,
+.cards-section {
   position: relative;
 	margin-bottom: 90px;
 
@@ -605,45 +606,73 @@ $card-nav-link: #c7cdd1;
 	color: lighten($color-science, 10);
 }
 
-// Rotate while uploading -- dead?
-/* @keyframes rotating {
-	from {
-		transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-	}
-}
-@-webkit-keyframes rotating {
-	from {
-		transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-	}
-}
 
-.is-active .dz-started.upload-buttons .ready-state:before {
-	-webkit-animation: rotating 2s linear infinite;
-	-moz-animation: rotating 2s linear infinite;
-	-ms-animation: rotating 2s linear infinite;
-	-o-animation: rotating 2s linear infinite;
-	animation: rotating 2s linear infinite;
+.reveal-modal{
+	@include border-radius(25px,25px,25px,25px);
+	padding:0;
+	.modal-card{
+		background-color: $white;
+		border: 1px solid $card-border;
+		background: $white;
+		padding: 35px;
+		@include border-radius(25px,25px,25px,25px);
+		&:before, &:after {
+			@include border-radius(25px,25px,25px,25px);
+			content: '';
+			position: absolute;
+			z-index: -1;
+			bottom: 17px;
+			box-shadow: 0 14px 21px rgba(0, 0, 0, 0.38);
+			width: 45%;
+			height: 12%;
+		}
+		&:before {
+			left: 17px;
+			transform: rotate(-6deg) skew(-0deg);
+		}
+		&:after {
+			right: 17px;
+			transform: rotate(6deg) skew(0deg);
+		}
+		.card-domain{
+			padding:0;
+			margin:0;
+			position:absolute;
+			right:35px;
+		}
+		.social-links {
+			a {
+				text-indent: 200%;
+				display: inline-block;
+				width:22px;
+				height:22px;
+				margin-right:10px;
+				&.facebook {
+					background: transparent url(../img/social-icons/modal/facebook-icon.png) no-repeat 50% 50%;
+					&:hover {
+						background:url(../img/social-icons/modal/facebook-hover.png) no-repeat 50% 50%;
+					}
+				}
+				&.email {
+					background: transparent url(../img/social-icons/modal/email-icon.png) no-repeat 50% 50%;
+					&:hover {
+						background:url(../img/social-icons/modal/email-hover.png) no-repeat 50% 50%;
+					}
+				}
+				&.pinterest {
+					background: transparent url(../img/social-icons/modal/pinterest-icon.png) no-repeat 50% 50%;
+					&:hover {
+						background:url(../img/social-icons/modal/pinterest-hover.png) no-repeat 50% 50%;
+					}
+				}
+				&.twitter {
+					background: transparent url(../img/social-icons/modal/twitter-icon.png) no-repeat 50% 50%;
+					&:hover {
+						background:url(../img/social-icons/modal/twitter-hover.png) no-repeat 50% 50%;
+					}
+				}
+
+			}
+		}
+	}
 }
- */

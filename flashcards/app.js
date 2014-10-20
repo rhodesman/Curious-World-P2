@@ -9,6 +9,10 @@
                     .when("/", {
                         templateUrl: "flashcards/default.html",
                         controller: "DefaultController"
+                    })
+                    .when("/milestones", {
+                        templateUrl: "flashcards/completed-milestones.html",
+                        controller: "DefaultController"
                     });
             }
         ])
@@ -31,6 +35,10 @@
                 $scope.domains = domains;
                 $scope.ages = [3, 4, 5, 6, 7];
                 $scope.selectedDomain = null;
+
+                $scope.uploadMedia = function(index, img){
+                  console.log(index, img);
+                };
 
                 $scope.cards = [{
                     id: 1,
@@ -97,27 +105,62 @@
                     ageRange: [3, 7]
                 }];
 
-                $scope.challenges = [{
-                    award: "Newest",
-                    title: "Paper Bag Puppet",
-                    image: "img/home/placeholder-1.jpg",
-                    description: "Make a funny character using a paper lunch bag.",
-                    domain: "executive",
-                    completions: new Array(4)
+                $scope.milestones = [{
+                  title: "Title of a Card",
+                  skill: "Specific card skill copy",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  domain: domains[0],
+                  image: 'http://placehold.it/200x130',
+                  isComplete: false
                 }, {
-                    award: "Funniest",
-                    title: "Feeding Fluffy",
-                    image: "img/home/placeholder-3.jpg",
-                    description: "Show one way you take care of your pet.",
-                    domain: "creative",
-                    completions: new Array(6)
+                  title: "Title of a Card",
+                  skill: "Specific card skill copy",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  domain: domains[1],
+                  image: 'http://placehold.it/200x130',
+                  isComplete: true
                 }, {
-                    award: "Popular",
-                    title: "Monster Cookies",
-                    image: "img/home/placeholder-2.jpg",
-                    description: "Make one big cookie with a crazy monster face.",
-                    domain: "health",
-                    completions: new Array(23)
+                  title: "Title of a Card",
+                  skill: "Specific card skill copy",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  domain: domains[2],
+                  image: 'http://placehold.it/200x130',
+                  isComplete: false
+                }, {
+                  title: "Title of a Card",
+                  skill: "Specific card skill copy",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  domain: domains[3],
+                  image: 'http://placehold.it/200x130',
+                  isComplete: true
+                }, {
+                  title: "Title of a Card",
+                  skill: "Specific card skill copy",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  domain: domains[4],
+                  image: 'http://placehold.it/200x130',
+                  isComplete: false
+                }, {
+                  title: "Title of a Card",
+                  skill: "Specific card skill copy",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  domain: domains[5],
+                  image: 'http://placehold.it/200x130',
+                  isComplete: false
+                }, {
+                  title: "Title of a Card",
+                  skill: "Specific card skill copy",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  domain: domains[6],
+                  image: 'http://placehold.it/200x130',
+                  isComplete: false
+                }, {
+                  title: "Title of a Card",
+                  skill: "Specific card skill copy",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  domain: domains[7],
+                  image: 'http://placehold.it/200x130',
+                  isComplete: true
                 }];
 
                 $scope.keyDomain = 'Creative Expression';
