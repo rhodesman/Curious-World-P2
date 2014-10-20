@@ -200,7 +200,8 @@ $no-media-color: #92989b;
 	position:relative;
 	width:90px;
 	height:90px;
-	margin:10px;
+	margin:20px 0px 10px 10px;
+	right:-20px;
 	&:before, &:after {
 		content:'';
 		display:block;
