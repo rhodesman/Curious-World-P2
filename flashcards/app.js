@@ -170,23 +170,6 @@
 
             }
         ])
-
-        .animation(".slide", function () { // "About Curious World" slide-down
-            var hideClassName = "ng-hide";
-
-            return {
-                beforeAddClass: function (element, className, done) {
-                    if (className === hideClassName) {
-                        $(element).slideUp(done);
-                    }
-                },
-                removeClass: function (element, className, done) {
-                    if (className === hideClassName) {
-                        $(element).hide().slideDown(done);
-                    }
-                }
-            };
-        })
         .animation(".item", function () { // Card caruosel
             var lastClass = "is-last",
                 activeClass = "is-active",
@@ -244,59 +227,6 @@
                     return done();
                 }
             };
-        })
-        .animation(".description", function () { // Community description slide-up
-            var shownClass = "is-showing",
-                speed = $.fx.speeds.fast,
-                getPositionPercentage = function (element) {
-                    return parseInt(element.css("bottom"), 10) / -element.outerHeight();
-                },
-                reset = function (element, callback) { // Remove "bottom" style and then run callback
-                    return function () {
-                        element.css({ bottom: "" });
-                        return callback();
-                    };
-                };
-
-            return {
-                addClass: function (element, className, done) {
-                    if (className === shownClass) {
-                        // Set initial position if not set
-                        if (!element[0].style.bottom) {
-                            element.css({ bottom: -element.outerHeight() });
-                        }
-
-                        // Animate to "bottom: 0"
-                        element
-                            .stop()
-                            .animate(
-                                { bottom: 0 },
-                                speed * getPositionPercentage(element),
-                                reset(element, done)
-                            );
-                    } else {
-                        return done();
-                    }
-                },
-                removeClass: function (element, className, done) {
-                    if (className === shownClass) {
-                        // Set initial position if not set
-                        if (!element[0].style.bottom) {
-                            element.css({ bottom: 0 });
-                        }
-
-                        // Animate to "bottom: initial"
-                        element
-                            .stop()
-                            .animate(
-                                { bottom: -element.outerHeight() },
-                                speed - (speed * getPositionPercentage(element)),
-                                reset(element, done)
-                            );
-                    } else {
-                        return done();
-                    }
-                }
-            };
         });
+
 }(window.angular, window.jQuery));
