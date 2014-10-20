@@ -271,7 +271,18 @@ $list-item-gray: #4e5055;
 		text-align:center;
 		color:$card-btn-hvr;
 		width:230px;
+		&.close-milestones{
+			float:right;
+			position:absolute;
+			right:0;
+			top:-2px;
+			background: transparent;
+			color:white;
+			font-size:rem-calc(18);
+			text-align:right;
+		}
 	}
+
 }
 
 .grid-list-toggle{
