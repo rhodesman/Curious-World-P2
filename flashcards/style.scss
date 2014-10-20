@@ -323,11 +323,13 @@ $list-item-gray: #4e5055;
 .completed-milestones-page{
 	margin-top:70px;
 	.list-view{
+		h2{
+			cursor:pointer;
+		}
 		.card-details{
 			padding-left:30px;
 		}
 		.card-details-status{
-
 			h4{
 				display:inline;
 			}
