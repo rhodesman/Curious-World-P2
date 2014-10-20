@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<header id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
+<header header-reveal id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
 <div ng-view></div>
 <footer ng-include="'main/footer.html'"></footer>
 
@@ -33,16 +33,13 @@
 <script src="js/modules/auth-check.js"></script>
 <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
 <script src="bower_components/ng-parallax/angular-parallax.min.js"></script>
-<script src="main/main.js"></script>
 <script src="flashcards/app.js"></script>
+<script src="main/main.js"></script>
 <script src="main/account-controller.js"></script>
 <script src="main/directives/scroll-fade.js"></script>
 <script src="main/directives/reveal-footer.js"></script>
 <script src="main/directives/header-reveal.js"></script>
 <script src="main/directives/on-load-fade.js"></script>
-
-
-
 
 </body>
 </html>
