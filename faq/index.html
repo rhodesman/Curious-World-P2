@@ -11,86 +11,218 @@
 <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-<div id="wrapper" class="off-canvas-wrap" data-offcanvas>
-  <header id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
-  <div id="content" class="inner-wrap" ng-controller="FaqController" ng-class="$root.contentClass">
-    <div>
+  <header header-reveal id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
+      <div ng-controller="FaqController">
+        <div class="faq">
+          <div class="row">
+            <div class="small-11 small-centered columns">
 
-      <div class="faq">
-        <div class="row">
-          <div class="small-11 small-centered columns">
-            <header id="header-bar">
-              <h1><span>Frequently Asked Questions</span></h1>
-            </header>
-            <!--general-->
-            <ul>
-              <li ng-repeat="question in general">
-                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
-                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
-              </li>
-            </ul>
-            <!--cards-->
-            <h3>Cards</h3>
-            <ul>
-              <li ng-repeat="question in cards">
-                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
-                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
-              </li>
-            </ul>
+              <header id="header-bar">
+                <h1 id="top"><span> Frequently Asked Questions </span></h1>
+              </header>
 
-            <!--community-->
-            <h3>Community</h3>
-            <ul>
-              <li ng-repeat="question in community">
-                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
-                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
-              </li>
-            </ul>
+              <ul class="faq-menu">
+                <li><a ng-click="scrollTo('cw')"> What is CuriousWorld.com? </a></li>
+                <li><a ng-click="scrollTo('cards')"> Cards </a></li>
+                <li><a ng-click="scrollTo('store')"> Store </a></li>
+                <li><a ng-click="scrollTo('apps')"> Apps </a></li>
+                <li><a ng-click="scrollTo('technical')"> Technical Requirements </a></li>
+              </ul>
 
-            <!--shop-->
-            <h3>Shop</h3>
-            <ul>
-              <li ng-repeat="question in shop">
-                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
-                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
-              </li>
-            </ul>
+              <h3 id="cw">What is CuriousWorld.com? <a class= "scroll-to-top" ng-click="scrollTo('top')">Back to Top &#8743;</a></h3>
+              <ul>
+                <li>
+                  <h4 ng-click="expand1 = !expand1" ng-class="{'active': expand1}">What is CuriousWorld.com?</h4>
+                  <p class="slide" ng-show="expand1">
+                    CuriousWorld.com informs parents about developmental milestones for kids, ages 3-7.
+                    In total, there are approximately 200 milestones that correspond to school readiness.
+                    CuriousWorld.com lets parents and kids practice these skills and track a child's growth across 8 key learning areas.
+                  </p>
+                </li>
+              </ul>
 
-            <!--apps-->
-            <h3>Apps</h3>
-            <ul>
-              <li ng-repeat="question in apps">
-                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
-                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
-              </li>
-            </ul>
+              <h3 id="cards">Cards <a class= "scroll-to-top" ng-click="scrollTo('top')">Back to Top &#8743;</a></h3>
+              <p style="opacity: 1">
+                These are micro-activities for anytime, anywhere learning. Try out the free cards to test the features of our site.
+                Purchase the entire set and you will get full coverage of all the skills your child needs for balanced growth and learning.
+              </p>
 
-            <!--manage-->
-            <h3>Managing Your Account</h3>
-            <ul>
-              <li ng-repeat="question in manage">
-                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
-                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
-              </li>
-            </ul>
+              <ul>
+                <li>
+                  <h4 ng-click="expand2 = !expand2" ng-class="{'active': expand2}">What’s the best way to use the Cards?</h4>
+                  <p class="slide" ng-show="expand2">
+                    We believe exploration of all domains leads to balanced learning, so we encourage you to sample cards from all domains.
+                  </p>
+                </li>
 
-            <!--technical-->
-            <h3>Technical Requirements</h3>
-            <ul>
-              <li ng-repeat="question in technical">
-                <h4 ng-click="expand = !expand">Q: {{question.title}}</h4>
-                <p class="slide" ng-show="expand">A: {{question.answer}}</p>
-              </li>
-            </ul>
+                <li>
+                  <h4 ng-click="expand3 = !expand3" ng-class="{'active': expand3}">How long will I have access to them?</h4>
+                  <p class="slide" ng-show="expand3">
+                    You will be able to access your cards for one year from the date of purchase.
+                  </p>
+                </li>
 
+                <li>
+                  <h4 ng-click="expand4 = !expand4" ng-class="{'active': expand4}">What is the Cardfolio?</h4>
+                  <p class="slide" ng-show="expand4">
+                    A digital scrapbook for tracking your child’s progress.
+                    Parents can attach visual proof, such as photos and videos, to demonstrate completion of a card.
+                  </p>
+                </li>
+
+                <li>
+                  <h4 ng-click="expand5 = !expand5" ng-class="{'active': expand5}">Will other users be able to see my Cardfolio content?</h4>
+                  <p class="slide" ng-show="expand5">
+                    No, only you can see the content contained within your Cardfolio.
+                  </p>
+                </li>
+
+                <li>
+                  <h4 ng-click="expand6 = !expand6" ng-class="{'active': expand6}">I have questions regarding the privacy of my content.  Who can I contact?</h4>
+                  <p class="slide" ng-show="expand6">
+                    Please contact <a href="mailto:privacy@hmhco.com">privacy@hmhco.com</a> with any questions regarding privacy.
+                  </p>
+                </li>
+              </ul>
+
+              <h3 id="store">Store <a class= "scroll-to-top" ng-click="scrollTo('top')">Back to Top &#8743;</a></h3>
+              <p>
+                Gift boxes are curated collections of new and timeless classics.
+                The book sets are aligned to eight key developmental areas and help target skills across a broad range of academic and social topics.
+              </p>
+
+              <ul>
+                <li>
+                  <h4 ng-click="expand7 = !expand7" ng-class="{'active': expand7}">Can I purchase Gift Boxes outside the United States?</h4>
+                  <p class="slide" ng-show="expand7">
+                    Sorry. We only ship products within the United States.
+                  </p>
+                </li>
+
+                <li>
+                  <h4 ng-click="expand8 = !expand8" ng-class="{'active': expand8}">Can I replace one book in a gift box with one from a different set?</h4>
+                  <p class="slide" ng-show="expand8">
+                    You cannot request replacements at this time.
+                  </p>
+                </li>
+
+                <li>
+                  <h4 ng-click="expand9 = !expand9" ng-class="{'active': expand9}">Can I return my gift box?</h4>
+                  <div class="slide" ng-show="expand9">
+                    <p> Yes. To receive a full refund, we require that: </p>
+
+                    <ul class="faq-list">
+                      <li>Credit card orders must be returned within 30 days of receipt</li>
+                      <li>Attach our label to your box for quick refund</li>
+                      <li><span>All</span> items in the gift box be returned</li>
+                      <li>Items must be in new condition</li>
+                      <li>Items must be returned with all original packaging and accessories</li>
+                      <li>Media items (for example, movies, music, video games and software) must be unopened and still in their plastic wrap</li>
+                    </ul>
+
+                    <p>
+                      <a target="_blank" href="http://www.hmhco.com/~/media/sites/home/CustomerCare/Files/WP Consumer ATR Form.pdf">Click Here</a>
+                      to print the label and paperwork needed to make your return.
+                      </br>
+                      Note: Return shipping may be deducted from the amount of your refund if the reason for your return is not due to HMH error.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+
+              <h3 id="apps">Apps <a class= "scroll-to-top" ng-click="scrollTo('top')">Back to Top &#8743;</a></h3>
+              <p>
+                The Curious World and HMH Apps encourage children to investigate, imagine, observe, and discover new things as they play.
+              </p>
+
+              <ul>
+                <li>
+                  <h4 ng-click="expand10 = !expand10" ng-class="{'active': expand10}">How can I purchase an App?</h4>
+                  <p class="slide" ng-show="expand10">
+                    Simply click on any of the App images and you will be directed to the iTunes Store to start your purchase.
+                  </p>
+                </li>
+              </ul>
+
+              <h3 id="technical">Technical Requirements <a class= "scroll-to-top" ng-click="scrollTo('top')">Back to Top &#8743;</a></h3>
+              <ul>
+                <li>
+                  <h4 ng-click="expand11 = !expand11" ng-class="{'active': expand11}">What browsers can I use to access Curious World.com?</h4>
+                  <div class="slide" ng-show="expand11">
+                    <p>PC (Windows 7 and 8):</p>
+                    <ul class="faq-list">
+                      <li>IE10</li>
+                      <li>IE11</li>
+                      <li>All items in the gift box be returned</li>
+                      <li>Firefox (any HTML5 capable version within last 2 years)</li>
+                      <li>Chrome (any HTML5 capable version within last 2 years)</li>
+                    </ul>
+
+                    <p>PC (Windows XP):</p>
+                    <ul class="faq-list">
+                      <li>Firefox</li>
+                      <li>Chrome</li>
+                    </ul>
+
+                    <p>Mac (OSX 10.7 and up):</p>
+                    <ul class="faq-list">
+                      <li>Safari (6.0 and up)</li>
+                      <li>Firefox</li>
+                      <li>Chrome</li>
+                    </ul>
+
+                    <p>If you do not have one of these browsers, Chrome and Firefox are available for free download.</p>
+                  </div>
+                </li>
+
+                <li>
+                  <h4 ng-click="expand12 = !expand12" ng-class="{'active': expand12}">Can I use CuriousWorld.com on a tablet?</h4>
+                  <div class="slide" ng-show="expand12">
+                    <p>Yes.</p>
+
+                    <p>iPad:</p>
+                    <ul class="faq-list">
+                      <li>2nd-4th Gen, Air</li>
+                      <li>iOS 6-7</li>
+                      <li>Safari (latest)</li>
+                      <li> Chrome (latest)</li>
+                    </ul>
+
+                    <p>iPad Mini:</p>
+                    <ul class="faq-list">
+                      <li>1st, 2nd Gen</li>
+                      <li>iOS 6-7</li>
+                      <li>Safari (latest)</li>
+                      <li>Chrome (latest)</li>
+                    </ul>
+
+                    <p>Android:</p>
+                    <ul class="faq-list">
+                      <li>v4.x+, 7" or larger screen</li>
+                      <li>Chrome (latest)</li>
+                    </ul>
+
+                    <p>Windows:</p>
+                    <ul class="faq-list">
+                      <li>Win 8.1 tablet, 7" or larger screen</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li>
+                  <h4 ng-click="expand13 = !expand13" ng-class="{'active': expand13}">Can I use CuriousWorld.com on my mobile phone? </h4>
+                  <p class="slide" ng-show="expand13">
+                    Yes. You can access Curious World via Android and iOS devices.
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
-      <footer ng-include="'main/footer.html'"></footer>
-    </div>
-  </div>
-</div>
+<footer ng-include="'main/footer.html'"></footer>
+
 <script src="js/vendor/modernizr.js"></script>
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/foundation.min.js"></script>
@@ -103,6 +235,6 @@
 <script src="main/main.js"></script>
 <script src="faq/faq-controller.js"></script>
 <script src="main/account-controller.js"></script>
-<script src="main/directives/free-shipping.js"></script>
+<script src="main/directives/header-reveal.js"></script>
 </body>
 </html>

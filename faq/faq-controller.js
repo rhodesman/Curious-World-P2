@@ -96,6 +96,6 @@
                 $(element).prev().addClass('active');
               }
             }
-          }
+          };
         });
 }(window.angular, window.jQuery));

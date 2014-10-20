@@ -11,21 +11,55 @@
 <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-<div id="wrapper" class="off-canvas-wrap" data-offcanvas>
-  <header id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
-  <div id="content" class="inner-wrap" ng-class="$root.contentClass">
-    <div>
+  <header header-reveal id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
       <div id="privacy" class="columns">
-        <header id="header-bar">
-          <h1><span>Privacy Policy</span></h1>
-        </header>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut blandit purus. Maecenas molestie leo id nibh fringilla, vitae tincidunt mi molestie. Mauris luctus a odio nec pharetra. Maecenas placerat pretium turpis. Ut varius massa elit, a mattis metus lobortis eget. Fusce et semper erat. Curabitur cursus interdum volutpat. Aenean condimentum velit eget turpis ultrices convallis. Mauris in malesuada quam, in hendrerit libero. Donec tincidunt molestie ante eu iaculis. Sed nisl tortor, hendrerit auctor vehicula vel, interdum nec leo. Integer rutrum, massa at porta sollicitudin, mi est pellentesque nisl, imperdiet euismod quam mauris sit amet nunc. In suscipit auctor velit, vitae eleifend elit vehicula quis. Etiam ut metus elementum lorem cursus ultricies eu non neque. Proin sed lacinia quam, quis tristique lorem.</p>
-        <p>Quisque velit lorem, ultrices sed consectetur nec, pulvinar vel lorem. Etiam auctor urna eu tellus hendrerit, vel bibendum ante rutrum. Proin ullamcorper tortor lectus, nec pretium elit consectetur in. Integer malesuada in enim at varius. Vivamus tempus congue sem. Nulla dui augue, pulvinar sit amet molestie sed, lobortis eu nisi. Donec lacus augue, pretium ut ante sit amet, vulputate semper tellus. Aliquam adipiscing tincidunt magna at blandit. Sed elementum dolor sed adipiscing tincidunt. Fusce gravida erat quis ultricies euismod. Praesent porta scelerisque urna, ac convallis leo elementum eget. Vestibulum tortor risus, laoreet non porttitor non, pellentesque id arcu. Aliquam erat volutpat. Sed eu nibh interdum, congue orci nec, aliquet lectus. Curabitur rhoncus, turpis et vulputate rutrum, nulla ipsum varius mauris, nec egestas ipsum urna sed quam.</p>
+        <div class="row">
+          <div class="small-9 small-centered columns">
+
+            <h1>Privacy Policy</h1>
+
+
+            <!--<p><a href="http://www.curiousgeorge.com/privacy-policy.aspx#toc" target="_blank"><u> click here</u> </a> for an index of topics covered below. You may click on any topic to go to the details.</p>-->
+            <h2 class="privacy-sub">Introduction</h2>
+            <p>Welcome! You have arrived at the Curious World website (“Site”) which is owned and/or operated by Houghton Mifflin Harcourt Publishing Company (collectively, "HMH," "we," "our" or "us").  This "Privacy Policy" governs your use of the Site.</p>
+            <p>The Site is a social sharing website that enables parents to memorialize and share developmental milestones regarding their young children.  It provides the opportunity to post and share photos and exchange comments in an online, public setting.  The Site is primarily directed to parents.  However, to the extent parts of the Site offer pages for children to use at the direction of their parents, we will comply with the Children’s Online Privacy Protection Act (“COPPA”) for those pages. </p>
+            <p>This Privacy Policy does not apply to the Curious World Mobile App or other HMH websites or services.  Nor does it apply to data we receive from third parties unless we combine such data with Personal Information (defined below) that we have ourselves collected under this Privacy Policy.  Except for any portion of the Site to which COPPA applies, our statements under this Privacy Policy only cover information collected by us directly, and not by third parties that may interact with our Site</p>
+            <p>Please also review the <a href="#terms">Curious World  Terms of Use</a> which governs your use of the Site. By using our Site, you consent to our Privacy Policy and Terms of Use and our collection, access, use and sharing of your information and data, and other activities, as described below</p>
+
+            <h2 class="privacy-sub">Linkable Table of Contents</h2>
+            <p>It is important that you read and understand the entire Privacy Policy before using the Site. This table of contents highlights key issues and points and you can click on the headings or the "More" buttons to be taken to the full explanation.</p>
+            <ul class="privacy-list">
+                <li><p><b>What Information Does the Site Collect?</b></p>
+                    <ul class="listlower">
+                        <li>Information You Provide to Us.  You may give us Personal Information and non-Personal Information, such as when you register or contact us.</li>
+                        <li>Usage Information We Collect As You Access and Use the Site.  We collect various categories of technical information which we use to analyze usage of the Site.</li>
+                    </ul>
+                </li>
+                <li><p><b>How Do We Use the Information Collected?</b></p> We use your Personal Information and Usage Information for a variety of purposes.</li>
+                <li><p><b>How and When Do We Disclose Information to Third Parties?</b></p>  We may provide your information to third parties under various circumstances. These may include:
+                    <ul class="listlower">
+                        <li>When You Request Information From or Provide Information to Third Parties.  If you request information from third parties, request that we send information to third parties or interact with third party services, content, ads or tools (including Facebook and other third party share functionality) we may share your information with such parties and/or they may collect your information directly.</li>
+                        <li>Third Parties Providing Services on Our Behalf.  Our vendors may collect your information or we may share it with them.</li>
+                        <li>Administrative and Legal Reasons.  There are a variety of administrative and legal reasons for which we may share your information.</li>
+                        <li>Affiliates and Business Transfer.  We may share your information with our Affiliates or in the event of a sale, merger or similar transaction.</li>
+                        <li>Sweepstakes, Contests and Promotions.  Promotions entrants may be required to consent to certain information sharing.</li>
+                    </ul>
+                </li>
+                <li><p><b>How Do I Change My Information and Communications Preferences?</b></p> You may change certain account information and preferences.</li>
+                <li><p><b>What About Transfer of Information to the United States?</b></p> Data may be transferred to the United States.</li>
+                <li><p><b>What Information Do We Collect On Pages Directed to Children?</b></p> The Site is primarily directed to parents.  Some limited portions of the Site, however, may be directed, at least in part, to children. Where COPPA applies to certain portions of the Site, we will comply with COPPA’s requirements by restricting the collection of personal information, other than for the limited purposes as may be allowed by COPPA without parental consent. If you think we have collected information beyond what is allowed by COPPA, please let us know by contacting us at  <u><a href="mailto:privacy@hmhco.com" target="_top">privacy@hmhco.com</a></u></li>
+                <li><p><b>This is a Social Sharing Website</b></p>Social Sharing is the Site’s Default Mode.</li>
+                <li><p><b>Does Our Site Change Its Behavior When Receiving A “Do-Not-Track” Request?</b></p> Our Site does not change its behavior when receiving the “Do Not Track” signal from browser or other software.</li>
+                <li><p><b>What About Security?</b></p> No data security is absolute, but we take reasonable technical, physical and administrative steps to secure sensitive data appropriately.</li>
+                <li><p><b>Do We Have Any Procedures In Place Surrounding The Retention And Disposal of Personal Information?</b></p> We have a retention structure in place that complies with applicable laws and regulations surrounding the disposal and retention of documents and files containing Personal Information.</li>
+                <li><p><b>What About Changes to the Privacy Policy?</b></p> We may change this Privacy Policy as explained. </li>
+                <li><p><b>What Is The Relationship Between This Document And The Terms of Use?</b></p> This Privacy Policy must be read together with our Terms of Use and the provisions of our Terms of Use are incorporated herein.</li>
+                <li><p><b>Who Can I Contact?</b></p> You can contact us for more information about the manner in which we collect, use, disclose and otherwise manage your Personal Information.</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <footer ng-include="'main/footer.html'"></footer>
-    </div>
-  </div>
-</div>
 <script src="js/vendor/modernizr.js"></script>
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/foundation.min.js"></script>
@@ -35,5 +69,6 @@
 <script src="js/modules/authenticate.js"></script>
 <script src="main/main.js"></script>
 <script src="main/account-controller.js"></script>
+<script src="main/directives/header-reveal.js"></script>
 </body>
 </html>
