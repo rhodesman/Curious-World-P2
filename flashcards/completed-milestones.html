@@ -1,8 +1,8 @@
-<div class="completed-milestones-page">
+<div class="completed-milestones-page" id="top">
   <nav class="milestones">
     <div class="row">
       <div class="small-12 columns">
-        <a class="close-milestones" href="flashcards">X</a>
+        <a class="close-milestones" href="flashcards">Back to Flashcards</a>
       </div>
       <a>Completed Milestones</a>
     </div>
@@ -16,7 +16,7 @@
     </div>
   </div>
   <div id="cardfolio" class="row">
-    <ul class="small-block-grid-5" ng-show="toggle == 'grid'">
+    <ul class="small-block-grid-2 medium-block-grid-5" ng-show="toggle == 'grid'">
       <li class="media-card"
         ng-class="{'completed': completed.isComplete === true}"
         ng-repeat="completed in milestones">
