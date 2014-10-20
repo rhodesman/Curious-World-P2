@@ -21,12 +21,12 @@ $card-btn: #d5dce0;
 $card-btn-hvr: #798794;
 $card-btn-act: #19b0ff;
 $no-media-color: #92989b;
+$list-item-gray: #4e5055;
 
 
 
-.completed-milestones-page{
-	margin-top:70px;
-}
+
+
 
 .flashcards-page {
 	position:relative;
@@ -278,6 +278,65 @@ $no-media-color: #92989b;
 	}
 }
 
+.grid-list-toggle{
+	float:right;
+	margin: 20px 0;
+		li{
+			display:inline;
+			margin-left:10px;
+		}
+}
+
+
+.completed-milestones-page{
+	margin-top:70px;
+	.list-view{
+		.card-details{
+			padding-left:30px;
+		}
+		li{
+			border-bottom: 1px solid lighten($list-item-gray, 60%);
+			width:95%;
+		}
+		h4{
+			font-size:rem-calc(13);
+			text-transform: capitalize;
+			&.creative{
+				color: $color-creative;
+			}
+			&.language{
+				color: $color-language;
+			}
+			&.math{
+				color: $color-math;
+			}
+			&.health{
+				color: $color-health;
+			}
+			&.family{
+				color: $color-family;
+			}
+			&.executive{
+				color: $color-executive;
+			}
+			&.social{
+				color: $color-social;
+			}
+			&.science{
+				color: $color-science;
+			}
+		}
+		h2{
+			font-size:rem-calc(24);
+			color:$list-item-gray;
+		}
+		p{
+			font-size: rem-calc(16);
+			color:$list-item-gray;
+		}
+	}
+}
+
 #cardfolio {
 	padding-top:20px;
 	.expand-milestones{
@@ -299,8 +358,9 @@ $no-media-color: #92989b;
 	}
 	& li {
 		position:relative;
-		width:200px;
+		/* width:200px; */
 		height:130px;
+		margin: 20px 0;
 		a {
 			position:relative;
 			display:block;

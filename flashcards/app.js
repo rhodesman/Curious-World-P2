@@ -36,8 +36,12 @@
                 $scope.ages = [3, 4, 5, 6, 7];
                 $scope.selectedDomain = null;
 
-                $scope.uploadMedia = function(index, img){
-                  console.log(index, img);
+                $scope.toggleView = function(view){
+                  if(view == 'list'){
+                    $scope.toggle = 'list';
+                  } else {
+                    $scope.toggle = 'grid';
+                  }
                 };
 
                 $scope.cards = [{
@@ -108,59 +112,83 @@
                 $scope.milestones = [{
                   title: "Title of a Card",
                   skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   domain: domains[0],
                   image: '',
-                  isComplete: false
+                  isComplete: false,
+                  brief: 'Name of Flashcard',
+                  cardNo: 2,
+                  timestamp: '10/2/14'
                 }, {
                   title: "Title of a Card",
                   skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   domain: domains[1],
                   image: 'http://placehold.it/200x130',
-                  isComplete: true
+                  isComplete: true,
+                  brief: 'Name of Flashcard',
+                  cardNo: 22,
+                  timestamp: '10/2/14'
                 }, {
                   title: "Title of a Card",
                   skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   domain: domains[2],
                   image: '',
-                  isComplete: false
+                  isComplete: false,
+                  brief: 'Name of Flashcard',
+                  cardNo: 4,
+                  timestamp: '10/2/14'
                 }, {
                   title: "Title of a Card",
                   skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   domain: domains[3],
                   image: 'http://placehold.it/200x130',
-                  isComplete: true
+                  isComplete: true,
+                  brief: 'Name of Flashcard',
+                  cardNo: 7,
+                  timestamp: '10/2/14'
                 }, {
                   title: "Title of a Card",
                   skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   domain: domains[4],
                   image: '',
-                  isComplete: false
+                  isComplete: false,
+                  brief: 'Name of Flashcard',
+                  cardNo: 33,
+                  timestamp: '10/2/14'
                 }, {
                   title: "Title of a Card",
                   skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   domain: domains[5],
                   image: '',
-                  isComplete: false
+                  isComplete: false,
+                  brief: 'Name of Flashcard',
+                  cardNo: 42,
+                  timestamp: '10/2/14'
                 }, {
                   title: "Title of a Card",
                   skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   domain: domains[6],
                   image: '',
-                  isComplete: false
+                  isComplete: false,
+                  brief: 'Name of Flashcard',
+                  cardNo: 65,
+                  timestamp: '10/2/14'
                 }, {
                   title: "Title of a Card",
                   skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   domain: domains[7],
                   image: 'http://placehold.it/200x130',
-                  isComplete: true
+                  isComplete: true,
+                  brief: 'Name of Flashcard',
+                  cardNo: 53,
+                  timestamp: '10/2/14'
                 }];
 
                 $scope.keyDomain = 'Creative Expression';
