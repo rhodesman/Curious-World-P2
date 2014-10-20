@@ -599,3 +599,34 @@ $list-item-gray: #4e5055;
 		}
 	}
 }
+
+.load-more{
+	font-size:rem-calc(21);
+	border-radius:18px;
+	margin-top:40px;
+	&.disabled{
+		background: gray;
+		opacity: 0.3;
+		&:hover{
+			background:gray;
+		}
+	}
+}
+
+  .animate-repeat.ng-move,
+  .animate-repeat.ng-enter,
+  .animate-repeat.ng-leave {
+    transition:opacity linear 0.5s;
+  }
+
+  .animate-repeat.ng-leave.ng-leave-active,
+  .animate-repeat.ng-move,
+  .animate-repeat.ng-enter {
+    opacity:0;
+  }
+
+  .animate-repeat.ng-leave,
+  .animate-repeat.ng-move.ng-move-active,
+  .animate-repeat.ng-enter.ng-enter-active {
+    opacity:1;
+  }

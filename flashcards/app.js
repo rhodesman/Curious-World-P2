@@ -1,7 +1,7 @@
 (function (ng, $) {
     "use strict";
 
-    ng.module("app", ["authCheck", "ngRoute", "ngAnimate", "ngDropzone", "angularBetterPlaceholder", "ngWookmark","cwUtilities"])
+    ng.module("app", ["authCheck", "ngRoute", "ngAnimate", "ngDropzone", "angularBetterPlaceholder", "ngWookmark"])
         .config([
             "$routeProvider",
             function ($routeProvider) {
@@ -23,26 +23,131 @@
                 $rootScope.pageTitle = "Flashcards";
             }
         ])
+        .factory('Milestones', function(domains){
+
+          var milestones = [{
+            title: "Title of a Card",
+            skill: "Specific card skill copy",
+            description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            domain: domains[0],
+            image: '',
+            isComplete: false,
+            brief: 'Name of Flashcard',
+            cardNo: 2,
+            timestamp: '10/2/14'
+          }, {
+            title: "Title of a Card",
+            skill: "Specific card skill copy",
+            description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            domain: domains[1],
+            image: 'http://placehold.it/200x130',
+            isComplete: true,
+            brief: 'Name of Flashcard',
+            cardNo: 22,
+            timestamp: '10/2/14'
+          }, {
+            title: "Title of a Card",
+            skill: "Specific card skill copy",
+            description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            domain: domains[2],
+            image: '',
+            isComplete: false,
+            brief: 'Name of Flashcard',
+            cardNo: 4,
+            timestamp: '10/2/14'
+          }, {
+            title: "Title of a Card",
+            skill: "Specific card skill copy",
+            description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            domain: domains[3],
+            image: 'http://placehold.it/200x130',
+            isComplete: true,
+            brief: 'Name of Flashcard',
+            cardNo: 7,
+            timestamp: '10/2/14'
+          }, {
+            title: "Title of a Card",
+            skill: "Specific card skill copy",
+            description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            domain: domains[4],
+            image: '',
+            isComplete: false,
+            brief: 'Name of Flashcard',
+            cardNo: 33,
+            timestamp: '10/2/14'
+          }, {
+            title: "Title of a Card",
+            skill: "Specific card skill copy",
+            description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            domain: domains[5],
+            image: '',
+            isComplete: false,
+            brief: 'Name of Flashcard',
+            cardNo: 42,
+            timestamp: '10/2/14'
+          }, {
+            title: "Title of a Card",
+            skill: "Specific card skill copy",
+            description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            domain: domains[6],
+            image: '',
+            isComplete: false,
+            brief: 'Name of Flashcard',
+            cardNo: 65,
+            timestamp: '10/2/14'
+          }, {
+            title: "Title of a Card",
+            skill: "Specific card skill copy",
+            description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            domain: domains[7],
+            image: 'http://placehold.it/200x130',
+            isComplete: true,
+            brief: 'Name of Flashcard',
+            cardNo: 53,
+            timestamp: '10/2/14'
+          }];
+
+            return {
+            get: function(offset, limit) {
+              return milestones.slice(offset, offset+limit);
+            },
+            total: function() {
+              return milestones.length;
+            }
+          };
+        })
         .controller("DefaultController", [
             "$scope",
             "domains",
             "authCheck",
-            "cwUtilities",
-            function ($scope, domains, AuthCheck) {
+            "Milestones",
+            function ($scope, domains, AuthCheck, Milestones) {
                 ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
+
+                //get milestone results and paginate
+                $scope.itemsPerPage = 5;
+                $scope.currentPage = 0;
+                $scope.total = Milestones.total();
+                $scope.pagedItems = Milestones.get($scope.currentPage*$scope.itemsPerPage, $scope.itemsPerPage);
+
+                $scope.loadMore = function() {
+                  $scope.currentPage++;
+                  var newItems = Milestones.get($scope.currentPage*$scope.itemsPerPage, $scope.itemsPerPage);
+                  $scope.pagedItems = $scope.pagedItems.concat(newItems);
+                };
+
+                $scope.nextPageDisabledClass = function() {
+                  return $scope.currentPage === $scope.pageCount()-1 ? "disabled" : "";
+                };
+
+                $scope.pageCount = function() {
+                  return Math.ceil($scope.total/$scope.itemsPerPage);
+                };
 
                 $scope.Math = window.Math; // Inject Math
                 $scope.domains = domains;
                 $scope.ages = [3, 4, 5, 6, 7];
                 $scope.selectedDomain = null;
-
-                // $scope.toggleView = function(view){
-                //   if(view === 'list'){
-                //     $scope.toggle = 'list';
-                //   } else {
-                //     $scope.toggle = 'grid';
-                //   }
-                // };
 
                 $scope.cards = [{
                     id: 1,
@@ -107,88 +212,6 @@
                     description: "Description of Card 2",
                     domain: domains[0],
                     ageRange: [3, 7]
-                }];
-
-                $scope.milestones = [{
-                  title: "Title of a Card",
-                  skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  domain: domains[0],
-                  image: '',
-                  isComplete: false,
-                  brief: 'Name of Flashcard',
-                  cardNo: 2,
-                  timestamp: '10/2/14'
-                }, {
-                  title: "Title of a Card",
-                  skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  domain: domains[1],
-                  image: 'http://placehold.it/200x130',
-                  isComplete: true,
-                  brief: 'Name of Flashcard',
-                  cardNo: 22,
-                  timestamp: '10/2/14'
-                }, {
-                  title: "Title of a Card",
-                  skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  domain: domains[2],
-                  image: '',
-                  isComplete: false,
-                  brief: 'Name of Flashcard',
-                  cardNo: 4,
-                  timestamp: '10/2/14'
-                }, {
-                  title: "Title of a Card",
-                  skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  domain: domains[3],
-                  image: 'http://placehold.it/200x130',
-                  isComplete: true,
-                  brief: 'Name of Flashcard',
-                  cardNo: 7,
-                  timestamp: '10/2/14'
-                }, {
-                  title: "Title of a Card",
-                  skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  domain: domains[4],
-                  image: '',
-                  isComplete: false,
-                  brief: 'Name of Flashcard',
-                  cardNo: 33,
-                  timestamp: '10/2/14'
-                }, {
-                  title: "Title of a Card",
-                  skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  domain: domains[5],
-                  image: '',
-                  isComplete: false,
-                  brief: 'Name of Flashcard',
-                  cardNo: 42,
-                  timestamp: '10/2/14'
-                }, {
-                  title: "Title of a Card",
-                  skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  domain: domains[6],
-                  image: '',
-                  isComplete: false,
-                  brief: 'Name of Flashcard',
-                  cardNo: 65,
-                  timestamp: '10/2/14'
-                }, {
-                  title: "Title of a Card",
-                  skill: "Specific card skill copy",
-                  description: "Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  domain: domains[7],
-                  image: 'http://placehold.it/200x130',
-                  isComplete: true,
-                  brief: 'Name of Flashcard',
-                  cardNo: 53,
-                  timestamp: '10/2/14'
                 }];
 
                 $scope.keyDomain = 'Creative Expression';
