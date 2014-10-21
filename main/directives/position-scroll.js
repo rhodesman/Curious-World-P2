@@ -10,20 +10,20 @@
             var ngWindow = angular.element($window);
 
             function scrollAndPosition(){
-              var offset = 50;
+              var offset = 240;
               var cards = document.getElementById("cards");
               var cardHeight = 515;//update this to element height
               var bottom_of_cards = cards.offsetTop + cardHeight + offset;
-              var top_of_element = element.offset().top;
+              var top_of_element = ngWindow.scrollTop() + element.offset().top;
 
-              // console.log('bottom of cards:' + bottom_of_cards);
-              // console.log('top of element:' + top_of_element);
+              console.log('bottom of cards:' + bottom_of_cards);
+              console.log('top of element:' + top_of_element);
 
-              if (top_of_element > bottom_of_cards) {
-                element[0].style.position = 'relative';
-                element[0].style.bottom = 0;
+              if (top_of_element >= bottom_of_cards) {
+                element[0].style.position = 'static';
               } else {
-                element[0].style.position = 'fixed';
+                element[0].style.position = null;
+                element[0].style.bottom = null;
               }
             }
 
@@ -33,7 +33,7 @@
               scrollAndPosition();
             });
 
-          });
+          }, 0);
 
 
 
