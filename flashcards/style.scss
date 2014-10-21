@@ -31,6 +31,7 @@ $list-item-gray: #4e5055;
 	padding-top:50px;
 	background-color: $icon-gray;
 	border-top: 2px solid #dfdfdf;
+	overflow:hidden;
 
 	.dropdowns{
 		margin-bottom:42px;
@@ -310,7 +311,7 @@ $list-item-gray: #4e5055;
 				}
 				&.grid{
 					background: url('../img/flashcards/grid-list-btns.png') no-repeat;
-					width: 20px;
+					width: 19px;
 					height:20px;
 					display:block;
 					background-position: 0px -20px;

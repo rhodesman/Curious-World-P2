@@ -90,7 +90,7 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 	width: 100%;
 	height: $header-height;
 	background: rgba(255,255, 255, 0.8);
-	z-index: 2;
+	z-index: 20;
 	transition: .5s background ease;
 	&:hover{
 		background: rgba(255,255, 255, 1);

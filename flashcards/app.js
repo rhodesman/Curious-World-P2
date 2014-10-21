@@ -257,7 +257,7 @@
                         }
 
                         // Initialize fading and position
-                        element.stop().css({ left: !isForward ? "-150%" : "150%", opacity: 0 });
+                        element.stop().css({ left: !isForward ? "-150%" : "150%", opacity: 1 });
 
                         $.when(
                             container.animate({ height: element.outerHeight() }, { duration: speed, queue: false }),
@@ -271,9 +271,9 @@
                 },
                 removeClass: function (element, className, done) {
                     // Handle fading
-                    if (className === activeClass) {
-                        element.css({ opacity: 1 }).animate({ opacity: 0 });
-                    }
+                    //if (className === activeClass) {
+                    //    element.css({ opacity: 1 }).animate({ opacity: 0 });
+                    //}
 
                     return done();
                 }
