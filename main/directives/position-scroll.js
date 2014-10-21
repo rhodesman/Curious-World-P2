@@ -12,8 +12,7 @@
             function scrollAndPosition(){
               var offset = 72;
               var cards = document.getElementById('cards');
-              var cardHeight = 515;//update this to element height
-              var bottom_of_cards = cards.offsetTop + cardHeight + offset;
+              var bottom_of_cards = cards.offsetTop + cards.offsetHeight + offset;
               var top_of_element = element.offset().top;
 
               console.log('bottom of cards:' + bottom_of_cards);
@@ -21,10 +20,9 @@
 
               if (top_of_element >= bottom_of_cards) {
                 element[0].style.position = 'static';
-                element[0].style.bottom = 0;
               } else {
-                element[0].style.position = null;
-                element[0].style.bottom = null;
+                element[0].style.position = 'fixed';
+                element[0].style.bottom = -195;
               }
             }
 
