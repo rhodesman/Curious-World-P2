@@ -42,7 +42,7 @@
 
               //create brightcover video in slider
               brightcove.createExperiences();
-
+              
               // parallax background-position scroll custom setup
               $scope.positionBackground = function(elementPosition) {
                 var factor = -0.4;
