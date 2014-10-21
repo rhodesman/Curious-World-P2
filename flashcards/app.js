@@ -271,9 +271,9 @@
                 },
                 removeClass: function (element, className, done) {
                     // Handle fading
-                    //if (className === activeClass) {
-                    //    element.css({ opacity: 1 }).animate({ opacity: 0 });
-                    //}
+                    if (className === activeClass) {
+                       element.css({ opacity: 1 });
+                    }
 
                     return done();
                 }
