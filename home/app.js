@@ -1,4 +1,4 @@
-(function (ng) {
+(function (ng, $) {
     "use strict";
 
     ng.module("app", ["authCheck", "ngRoute", "slick", "duParallax", "angularBetterPlaceholder"])
@@ -40,6 +40,9 @@
             function (parallaxHelper, $scope, $rootScope, $routeParams, AuthCheck, slick) {
               ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
+              //create brightcover video in slider
+              brightcove.createExperiences();
+
               // parallax background-position scroll custom setup
               $scope.positionBackground = function(elementPosition) {
                 var factor = -0.4;
@@ -50,4 +53,4 @@
               };
             }
         ]);
-}(window.angular));
+}(window.angular, window.jQuery));
