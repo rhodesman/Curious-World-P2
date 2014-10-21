@@ -122,6 +122,14 @@ $list-item-gray: #4e5055;
 
 	.completed-cards{
 		background-color: $white;
+		position:fixed;
+		bottom:-195px;
+		width:100%;
+		z-index:10;
+		transition: 0.25s all linear;
+		&:hover{
+			bottom:0;
+		}
 	}
 	.view-cards {
 		padding-bottom:70px;
