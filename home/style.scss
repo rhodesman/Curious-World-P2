@@ -51,10 +51,18 @@
       background-size:cover;
     }
     &.video{
-      background: url('../img/landing/feature-video.png') center center no-repeat;
-      background-size:cover;
+      .outer{
+        padding-bottom: 56.25%; /*16:9 ratio*/
+        display:block;
+        object{
+          position:absolute;
+          top:0;
+          bottom:0;
+          right:0;
+          left:0;
+        }
+      }
       .play-button{
-        background: url('http://placehold.it/100x100') center center no-repeat;
         width:286px;
         height:286px;
         display:block;
