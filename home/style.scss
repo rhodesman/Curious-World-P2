@@ -653,7 +653,6 @@ input[type=checkbox]:checked + label:before {
   background: url('../img/account/checkmark.png') center center no-repeat $checkbox-color;
 }
 
-
 /* input[type="checkbox"]{
   position:relative;
   margin-right:17px;
@@ -718,6 +717,7 @@ input[type="checkbox"]:checked:before{
     transition: all 0.5s ease-in-out;
 
     &:focus {
+      color: transparent;
       background: $white;
       box-shadow: none;
 
