@@ -11,12 +11,11 @@
 <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-<div id="wrapper" class="off-canvas-wrap" data-offcanvas>
-  <header id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
-  <div id="content" class="inner-wrap" ng-class="$root.contentClass">
-    <div ng-view></div>
-  </div>
-</div>
+
+  <header header-reveal id="header" ng-include="'main/header.html'" ng-controller="AccountController"></header>
+  <div ng-view></div>
+
+
 <footer ng-include="'main/footer.html'"></footer>
 <script src="js/vendor/modernizr.js"></script>
 <script src="js/vendor/jquery.min.js"></script>
@@ -28,9 +27,11 @@
 <script src="js/vendor/angular-better-placeholder.js"></script>
 <script src="js/vendor/angular-dotdotdot.js"></script>
 <script src="js/modules/authenticate.js"></script>
-<script src="beans-world/app.js"></script>
+<script src="cw-app/app.js"></script>
 <script src="main/main.js"></script>
 <script src="main/account-controller.js"></script>
-<script src="main/directives/free-shipping.js"></script>
+<script src="main/directives/header-reveal.js"></script>
+<script src="main/directives/on-load-fade.js"></script>
+
 </body>
 </html>

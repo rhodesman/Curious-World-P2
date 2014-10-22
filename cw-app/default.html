@@ -1,4 +1,3 @@
-<aside class="right-off-canvas-menu" ng-include="'beans-world/menus.html'"></aside>
 <div id="apps">
   <div class="get-app">
     <a>
@@ -16,7 +15,7 @@
     ng-class="{ 'is-open': curiousIsOpen }">
     <h3 ng-click="curiousIsOpen = !curiousIsOpen">
       <a>
-        <img class="avatar kid" src="img/beans-world/about-icon-kid.png" />
+        <img class="avatar kid" src="img/cw-app/about-icon-kid.png" />
         <span><span>Is your child curious about...everything?</span></span>
         <img class="arrow" src="img/down-arrow-white.png" />
       </a>
@@ -29,53 +28,55 @@
     </div>
   </section>
   <header id="header-bar" class="row">
-    <h1><span>Curious World App Packs</span></h1>
-    <ul id="filters">
-      <li class="category-selector">
-        <div class="selector show-for-medium-up"
-          ng-init="selectedCategory = categories[0]">
-          <a class="selected-option" data-dropdown="category-selector">
-            <span>{{selectedCategory.title}}</span>
-          </a>
-          <div id="category-selector" class="f-dropdown" data-dropdown-content>
-            <ul>
-              <li ng-repeat="category in categories"
-                ng-class="{ 'is-selected': category === $parent.selectedCategory }">
-                <a ng-click="$parent.selectedCategory = category">
-                  <span>{{category.title}}</span>
-                </a>
-              </li>
-            </ul>
+    <div class="small-12 columns">
+      <h1><span>Curious World App Packs</span></h1>
+      <ul id="filters">
+        <li class="category-selector">
+          <div class="selector show-for-medium-up"
+            ng-init="selectedCategory = categories[0]">
+            <a class="selected-option" data-dropdown="category-selector">
+              <span>{{selectedCategory.title}}</span>
+            </a>
+            <div id="category-selector" class="f-dropdown" data-dropdown-content>
+              <ul>
+                <li ng-repeat="category in categories"
+                  ng-class="{ 'is-selected': category === $parent.selectedCategory }">
+                  <a ng-click="$parent.selectedCategory = category">
+                    <span>{{category.title}}</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="single-selector hide-for-medium-up">
-          <a class="right-off-canvas-toggle"
-            ng-click="$root.offCanvasMenu = 'category-selector'">{{selectedCategory.title}}</a>
-        </div>
-      </li>
-      <li class="sorting-selector">
-        <div class="selector show-for-medium-up"
-          ng-init="selectedSorting = sorting[0]">
-          <a class="selected-option" data-dropdown="sorting-selector">
-            <span>{{selectedSorting.title}}</span>
-          </a>
-          <div id="sorting-selector" class="f-dropdown" data-dropdown-content>
-            <ul>
-              <li ng-repeat="sortingOption in sorting"
-                ng-class="{ 'is-selected': sortingOption === $parent.selectedSorting }">
-                <a ng-click="$parent.selectedSorting = sortingOption">
-                  <span>{{sortingOption.title}}</span>
-                </a>
-              </li>
-            </ul>
+          <div class="single-selector hide-for-medium-up">
+            <a class="right-off-canvas-toggle"
+              ng-click="$root.offCanvasMenu = 'category-selector'">{{selectedCategory.title}}</a>
           </div>
-        </div>
-        <div class="single-selector hide-for-medium-up">
-          <a class="right-off-canvas-toggle"
-            ng-click="$root.offCanvasMenu = 'sorting-selector'">{{selectedSorting.title}}</a>
-        </div>
-      </li>
-    </ul>
+        </li>
+        <li class="sorting-selector">
+          <div class="selector show-for-medium-up"
+            ng-init="selectedSorting = sorting[0]">
+            <a class="selected-option" data-dropdown="sorting-selector">
+              <span>{{selectedSorting.title}}</span>
+            </a>
+            <div id="sorting-selector" class="f-dropdown" data-dropdown-content>
+              <ul>
+                <li ng-repeat="sortingOption in sorting"
+                  ng-class="{ 'is-selected': sortingOption === $parent.selectedSorting }">
+                  <a ng-click="$parent.selectedSorting = sortingOption">
+                    <span>{{sortingOption.title}}</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="single-selector hide-for-medium-up">
+            <a class="right-off-canvas-toggle"
+              ng-click="$root.offCanvasMenu = 'sorting-selector'">{{selectedSorting.title}}</a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </header>
   <ul id="app-packs" class="row">
     <li class="small-6 large-3 columns"
@@ -88,9 +89,8 @@
     <li>
   </ul>
   <h2><span>Other HMH Apps</span></h2>
-  <ul id="apps" class="row">
-    <li class="small-4 large-2 columns"
-      ng-repeat="app in apps">
+  <ul id="apps" class="small-block-grid-3 medium-block-grid-4 large-block-grid-6">
+    <li ng-repeat="app in apps">
       <a class="app">
         <img ng-src="{{app.image}}" />
         <strong dotdotdot>{{app.title | fixAppTitle}}</strong>
@@ -98,4 +98,3 @@
     <li>
   </ul>
 </div>
-<footer ng-include="'main/footer.html'"></footer>

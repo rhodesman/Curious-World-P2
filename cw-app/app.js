@@ -7,7 +7,7 @@
             function ($routeProvider) {
                 $routeProvider
                     .when("/", {
-                        templateUrl: "beans-world/default.html",
+                        templateUrl: "cw-app/default.html",
                         controller: "DefaultController"
                     });
             }
@@ -15,7 +15,7 @@
         .run([
             "$rootScope",
             function ($rootScope) {
-                $rootScope.activeNav = "beans-world";
+                $rootScope.activeNav = "cw-app";
                 $rootScope.pageTitle = "App";
             }
         ])
@@ -39,48 +39,48 @@
                 $scope.appPacks = [{
                     title: "Dino Discovery",
                     price: 1.99,
-                    image: "img/beans-world/packs/dino-pack.png"
+                    image: "img/cw-app/packs/dino-pack.png"
                 }, {
                     title: "Favorite Things",
                     price: 1.99,
-                    image: "img/beans-world/packs/favorite-pack.png"
+                    image: "img/cw-app/packs/favorite-pack.png"
                 }, {
                     title: "Eyes",
                     price: 1.99,
-                    image: "img/beans-world/packs/eye-pack.png"
+                    image: "img/cw-app/packs/eye-pack.png"
                 }, {
                     title: "Animal Eyes",
                     price: 1.99,
-                    image: "img/beans-world/packs/animal-pack.png"
+                    image: "img/cw-app/packs/animal-pack.png"
                 }];
 
                 $scope.apps = [{
                     title: "Curious George's Town",
-                    image: "img/beans-world/other-apps/icon-7.png"
+                    image: "img/cw-app/other-apps/icon-7.png"
                 }, {
                     title: "Curious George's Town",
-                    image: "img/beans-world/other-apps/icon-6.png"
+                    image: "img/cw-app/other-apps/icon-6.png"
                 }, {
                     title: "HMH Fuse: Math",
-                    image: "img/beans-world/other-apps/icon-5.png"
+                    image: "img/cw-app/other-apps/icon-5.png"
                 }, {
                     title: "Nutrition and Healthy Eating ! Educational games to teach kids in Preschool and Kindergarten about balanced diet by i Learn With ",
-                    image: "img/beans-world/other-apps/icon-4.png"
+                    image: "img/cw-app/other-apps/icon-4.png"
                 }, {
                     title: "HMH Readers",
-                    image: "img/beans-world/other-apps/icon-3.png"
+                    image: "img/cw-app/other-apps/icon-3.png"
                 }, {
                     title: "Counting and Addition! Math educational games for kids in Preschool and Kindergarten by i Learn With ",
-                    image: "img/beans-world/other-apps/icon-2.png"
+                    image: "img/cw-app/other-apps/icon-2.png"
                 }, {
                     title: "Draw with Curious George",
-                    image: "img/beans-world/other-apps/icon-1.png"
+                    image: "img/cw-app/other-apps/icon-1.png"
                 }, {
                     title: "Sing. Math, Bar Models",
-                    image: "img/beans-world/other-apps/icon-8.png"
+                    image: "img/cw-app/other-apps/icon-8.png"
                 }, {
                     title: "Counting and Addition! Math educational games for kids in Preschool and Kindergarten by i Learn With ",
-                    image: "img/beans-world/other-apps/icon-2.png"
+                    image: "img/cw-app/other-apps/icon-2.png"
                 }];
             }
         ])
