@@ -28,6 +28,7 @@
     min-height:730px;
     &.one{
       background: url('../img/landing/feature-background.jpg') center center no-repeat;
+      height:730px;
       background-size:cover;
       position:relative;
       &:after{
@@ -45,25 +46,26 @@
     &.two{
       background: url('../img/landing/feature-four.jpg') center center no-repeat;
       background-size:cover;
+      height:730px;
     }
     &.three{
       background: url('../img/landing/feature-five.jpg') center center no-repeat;
       background-size:cover;
+      height:730px;
     }
     &.video{
-      .outer{
-        padding-bottom: 56.25%; /*16:9 ratio*/
-        display:block;
+      padding-bottom: 56.25%; /*16:9 ratio*/
+      display:block;
         object{
-          position:absolute;
+          position: absolute;
           top:0;
-          bottom:0;
-          right:0;
           left:0;
-          width:100%;
-          height:100%;
+          right: 0;
+          bottom: 0;
+          min-width: 100%;
+          min-height: auto;
         }
-      }
+
       .play-button{
         width:286px;
         height:286px;
@@ -616,8 +618,43 @@ form{
   }
 }
 
+input[type="checkbox"]+label{
+  margin-left:30px;
+}
 
-input[type="checkbox"]{
+label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 0;
+  padding-right:20px;
+}
+
+label:before {
+  content:"";
+  display:block;
+  width:20px;
+  height:20px;
+  background:$checkbox-color;
+  position:absolute;
+  border-radius:5px;
+  left:-30px;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.checkbox label:before {
+    border-radius: 3px;
+}
+
+input[type=checkbox]:checked + label:before {
+  background: url('../img/account/checkmark.png') center center no-repeat $checkbox-color;
+}
+
+
+/* input[type="checkbox"]{
   position:relative;
   margin-right:17px;
   top:-5px;
@@ -629,14 +666,14 @@ input[type=checkbox]:before {
   display:block;
   width:20px;
   height:20px;
-  background:$checkbox-color;
+  background:\$checkbox-color;
   position:absolute;
   border-radius:5px;
 }
 
 input[type="checkbox"]:checked:before{
-  background: url('../img/account/checkmark.png') center center no-repeat $checkbox-color;
-}
+  background: url('../img/account/checkmark.png') center center no-repeat \$checkbox-color;
+} */
 
 .success-modal{
   &.reveal-modal{
