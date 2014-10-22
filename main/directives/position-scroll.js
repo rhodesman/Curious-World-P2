@@ -15,11 +15,7 @@
               var bottom_of_cards = cards.offsetTop + 72;
               var top_of_element = element.offset().top;
 
-              console.log('bottom of cards:' + bottom_of_cards);
-              console.log('top of element:' + top_of_element);
-
               if (top_of_element >= bottom_of_cards) {
-                console.log('top of element greater');
                 element[0].style.opacity = 0;
               } else {
                 element[0].style.opacity = 1;
