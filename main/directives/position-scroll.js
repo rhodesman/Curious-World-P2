@@ -19,8 +19,10 @@
               console.log('top of element:' + top_of_element);
 
               if (top_of_element >= bottom_of_cards) {
+                console.log('top of element greater');
                 element[0].style.position = 'static';
               } else {
+                console.log('bottom of element greater');
                 element[0].style.position = 'fixed';
                 element[0].style.bottom = -195;
               }
