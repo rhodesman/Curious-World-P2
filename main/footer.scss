@@ -93,6 +93,13 @@ footer {
 }
 
 .promotion-footer{
+	.page-link{
+		position:absolute;
+		display:block;
+		width:100%;
+		height:100%;
+		z-index:100;
+	}
 	&.home{
 		position:fixed;
 		bottom:-270px;
@@ -150,6 +157,7 @@ footer {
 		position:absolute;
 		right:8px;
 		top:14px;
+		z-index:101;//1 higher than the .page-link
 		@media #{$medium-up}{
 			right:50px;
 		}

@@ -18,7 +18,7 @@ $checkbox-size: 16px;
 $dropdown-shadow-position: 2px;
 $dropdown-shadow-size: 4px;
 $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparentize($black, 0.7);
-
+$account-menu-width: 180px;
 
 // Mobile Navigation
 .mobile-button {
@@ -229,7 +229,7 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 			margin: 0;
 			padding: 0;
 			width: 100%;
-			/* min-width: \$account-menu-width; */
+			min-width: $account-menu-width;
 			font-size: inherit;
 			cursor: default;
 			display:block;
@@ -250,6 +250,14 @@ $dropdown-shadow: 0 $dropdown-shadow-position $dropdown-shadow-size transparenti
 			&:hover {
 				background: $light-grey;
 			}
+		}
+	}
+}
+
+@mixin filter-min-width($width) {
+	@media #{$medium-up} {
+		.f-dropdown ul {
+			min-width: $width;
 		}
 	}
 }
