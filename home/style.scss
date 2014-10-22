@@ -717,7 +717,6 @@ input[type="checkbox"]:checked:before{
     transition: all 0.5s ease-in-out;
 
     &:focus {
-      color: transparent;
       background: $white;
       box-shadow: none;
 
@@ -772,3 +771,7 @@ input[type="checkbox"]:checked:before{
       opacity: 1;
     }
   }
+
+[placeholder]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
