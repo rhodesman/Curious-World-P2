@@ -93,7 +93,7 @@ $color-link-active: #48b6e8;
 	width: 100%;
 	height: $header-height;
 	background: rgba(255,255, 255, 0.8);
-	z-index: 20;
+	z-index: 2000;
 	transition: .5s background ease;
 	&:hover{
 		background: rgba(255,255, 255, 1);
@@ -254,14 +254,6 @@ $color-link-active: #48b6e8;
 			&:hover {
 				background: $light-grey;
 			}
-		}
-	}
-}
-
-@mixin filter-min-width($width) {
-	@media #{$medium-up} {
-		.f-dropdown ul {
-			min-width: $width;
 		}
 	}
 }
