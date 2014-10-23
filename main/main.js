@@ -56,6 +56,9 @@
                     .toggleClass("is-open")
                     .siblings(".submenu").slideToggle();
             })
+            .on("click", "#nav-modal ul li a", function(){
+              $('#nav-modal').foundation("reveal", "close");
+            })
             .ready(function () {
                 wrapper = $("#wrapper");
 
