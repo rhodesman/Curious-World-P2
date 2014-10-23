@@ -17,6 +17,10 @@ $card-border: #c9c9c9;
 $card-nav-bg: #c7cdd1;
 $card-nav-link: #c7cdd1;
 
+#cards{
+  opacity:0;
+  transition: 0.25s opacity ease-in;
+}
 
 // Card selector
 #cards-section,
@@ -422,14 +426,6 @@ $card-nav-link: #c7cdd1;
 				background-image: url(../img/home/card-mark-complete-green.png);
 				bottom: ($card-button-size * 0.4);
 			}
-		}
-	}
-	.ready-state {
-		span {
-			opacity: 0;
-		}
-		&:hover span {
-			opacity: 1;
 		}
 	}
 	.dz-drag-hover {
