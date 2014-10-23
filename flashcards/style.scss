@@ -32,6 +32,8 @@ $list-item-gray: #4e5055;
 	background-color: $icon-gray;
 	border-top: 2px solid #dfdfdf;
 	overflow:hidden;
+	opacity:0;
+	transition: 1s opacity ease-in;
 
 	.dropdowns{
 		margin-bottom:42px;
