@@ -1050,3 +1050,36 @@ span.buttonText {
 		left:-18px;
 	}
 }
+
+.reveal-modal{
+	&.general-modal{
+		top:200px;
+		text-align:center;
+		padding: 70px;
+		h1{
+			font-size:rem-calc(50);
+			color: #3c4457;
+			margin-bottom:20px;
+			line-height:1;
+			&.error{
+				color: $error-red;
+			}
+		}
+		p{
+			font-size:rem-calc(14);
+		}
+		.secondary{
+			display:block;
+			text-decoration:underline;
+			&:hover{
+				color: $orange-hover;
+			}
+			&.error{
+				color:$error-red;
+				&:hover{
+					color: darken($error-red, 10%);
+				}
+			}
+		}
+	}
+}

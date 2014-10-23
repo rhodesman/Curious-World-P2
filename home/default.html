@@ -47,6 +47,7 @@
   </section>
   <!--domain bg divider-->
   <div class="domain-divider"></div>
+
   <!--how this works section-->
   <section class="explanation row">
     <h2 scroll-fade>How This Works</h2>
@@ -110,8 +111,7 @@
   </section>
 </div>
 
-
-
-<!--video modal-->
-<div id="video-modal" class="reveal-modal video-modal" ng-include="'partials/modals/video.html'" data-reveal></div>
-<footer ng-include="'main/home-footer.html'"></footer>
+<!--general modals-->
+<div ng-include="'partials/modals/alert-modal.html'"></div>
+<div ng-include="'partials/modals/account-modal.html'"></div>
+<div ng-include="'partials/modals/error-modal.html'"></div>
