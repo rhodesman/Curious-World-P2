@@ -17,11 +17,6 @@ $card-border: #c9c9c9;
 $card-nav-bg: #c7cdd1;
 $card-nav-link: #c7cdd1;
 
-#cards{
-  opacity:0;
-  transition: 0.25s opacity ease-in;
-}
-
 // Card selector
 #cards-section,
 .cards-section {
@@ -82,6 +77,9 @@ $card-nav-link: #c7cdd1;
 			&.next{
 				right:-10px;
 			}
+      span{
+        display:inline!important;
+      }
     }
 	}
 
