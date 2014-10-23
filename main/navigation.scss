@@ -85,6 +85,9 @@ $color-link-active: #48b6e8;
 			display: none;
 		}
 	}
+	#nav-modal {
+		@include border-radius(0px,0px,0px,0px);
+	}
 }
 // Main Navigation
 #header {
@@ -110,7 +113,9 @@ $color-link-active: #48b6e8;
 	height:$header-height;
 	line-height:$header-height;
 	@media #{$small-only} {
-		margin: ($mobile-header-height - $mobile-hitbox) 0;
+		margin-top: ($mobile-header-height - $mobile-hitbox);
+		height:auto;
+		line-height:40px;
 		background: transparent url("../img/curious-world-logo-sml.png")  no-repeat;
 		@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
 			background-image: url("../img/curious-world-logo-sml-2x.png");

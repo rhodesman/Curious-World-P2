@@ -443,12 +443,14 @@ $kit-box-height: 429px;
 		}
 	}
 	.left{
+
 		width:100%;
 		@media #{$large-up}{
 			width:65%;
 		}
 	}
 	.right{
+
 		width:100%;
 		@media #{$large-up}{
 			width:35%;
@@ -461,6 +463,9 @@ $kit-box-height: 429px;
 	}
 	#covers{
 		padding: 75px 100px;
+		@media #{$medium-up}{
+			padding-top:90px;
+		}
 		li{
 			img{
 				border: 5px white solid;
@@ -491,6 +496,9 @@ $kit-box-height: 429px;
 			padding: 44px 36px;
 			background: $light-grey;
 			min-height:900px;
+			@media #{$medium-up}{
+				padding-top:90px;
+			}
 			h1 {
 				font-weight: 600;
 			}
@@ -585,7 +593,7 @@ $kit-box-height: 429px;
 		position: relative;
 
 		#empty-item {
-			display: block;
+			display: none;
 			height: $kit-box-height;
 		}
 		#items {
@@ -659,6 +667,7 @@ $kit-box-height: 429px;
 			}
 		}
 		.the-box {
+			display:none;
 			position: absolute;
 			bottom: 0;
 			left: 50%;
