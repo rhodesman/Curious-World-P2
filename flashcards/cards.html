@@ -15,10 +15,10 @@
       <div class="item-navigation" ng-show="selectedCard >= 0">
         <a class="prev"
           ng-show="selectedCard >= 1"
-          ng-click="isForward = false; lastCard = selectedCard; selectedCard = Math.max(selectedCard - 1, -1)">Prev <span class="show-for-medium-up">card</span></a>
+          ng-click="isForward = false; lastCard = selectedCard; selectedCard = Math.max(selectedCard - 1, -1)">Prev card</a>
         <a class="next"
           ng-show="(selectedCard + 1) < cards.length"
-          ng-click="isForward = true; lastCard = selectedCard; selectedCard = Math.min(selectedCard + 1, cards.length - 1)">Next <span class="show-for-medium-up">card</span></a>
+          ng-click="isForward = true; lastCard = selectedCard; selectedCard = Math.min(selectedCard + 1, cards.length - 1)">Next card</a>
       </div>
 
     </section>
