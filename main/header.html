@@ -55,19 +55,15 @@
 						data-dropdown="account-menu-dropdown">
 						<span>{{userInfo.getUser().displayName}}</span>
 					</a>
-					<a class="hide-for-touch"
-						data-dropdown="account-menu-dropdown"
-						data-options="is_hover:true">
+					<a class="hide-for-touch" data-options="is_hover:true"
+						data-dropdown="account-menu-dropdown">
 						<span>{{userInfo.getUser().displayName}}</span>
 					</a>
-					<div id="account-menu-dropdown" class="f-dropdown" data-dropdown-content>
-						<ul>
-							<li><a>{{userInfo.getUser().displayName}}</a></li>
-							<li><a href="#/manage">Manage</a></li>
-							<li><a href="http://customercare.hmhco.com/contactus/customer_service/online_orders.html">Get Help</a></li>
-							<li><a ng-click="userInfo.logout()">Sign Out</a></li>
-						</ul>
-					</div>
+					<ul id="account-menu-dropdown" class="f-dropdown" data-dropdown-content>
+						<li><a href="#/manage">Manage</a></li>
+						<li><a href="http://customercare.hmhco.com/contactus/customer_service/online_orders.html">Get Help</a></li>
+						<li><a ng-click="userInfo.logout()">Sign Out</a></li>
+					</ul>
 				</li>
 			</ul>
 			<ul id="main-navigation">

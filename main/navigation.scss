@@ -208,13 +208,12 @@ $color-link-active: #48b6e8;
 		}
 	}
 	.f-dropdown {
-		margin: 0;
-		max-width: none;
+		width:100%;
 		font-size: 1.25rem;
-		border: none;
-		background: transparent;
-		pointer-events: none;
+		border:none;
+		background: $white;
 		z-index: 1;
+		box-shadow: 0 0 20px transparentize($black, 0.5);
 
 		&:before,
 		&:after {
@@ -223,7 +222,7 @@ $color-link-active: #48b6e8;
 		}
 		ul {
 			position: absolute;
-			top: -59px;
+			top: 70px;
 			list-style: none;
 			margin: 0;
 			font-size: inherit;
@@ -260,5 +259,11 @@ $color-link-active: #48b6e8;
 				background: $light-grey;
 			}
 		}
+	}
+}
+
+#account-menu{
+	a{
+		line-height:40px;
 	}
 }
