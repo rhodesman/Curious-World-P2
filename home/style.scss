@@ -25,10 +25,9 @@
    float:left;
   .slick-bg{
     width:100%;
-    min-height:730px;
+    height:800px;
     &.one{
       background: url('../img/landing/feature-background.jpg') center center no-repeat;
-      height:730px;
       background-size:cover;
       position:relative;
       &:after{
@@ -46,12 +45,10 @@
     &.two{
       background: url('../img/landing/feature-four.jpg') center center no-repeat;
       background-size:cover;
-      height:730px;
     }
     &.three{
       background: url('../img/landing/feature-five.jpg') center center no-repeat;
       background-size:cover;
-      height:730px;
     }
     &.video{
       padding-bottom: 56.25%; /*16:9 ratio*/
@@ -652,27 +649,6 @@ input[type=checkbox] {
 input[type=checkbox]:checked + label:before {
   background: url('../img/account/checkmark.png') center center no-repeat $checkbox-color;
 }
-
-/* input[type="checkbox"]{
-  position:relative;
-  margin-right:17px;
-  top:-5px;
-}
-
-
-input[type=checkbox]:before {
-  content:"";
-  display:block;
-  width:20px;
-  height:20px;
-  background:\$checkbox-color;
-  position:absolute;
-  border-radius:5px;
-}
-
-input[type="checkbox"]:checked:before{
-  background: url('../img/account/checkmark.png') center center no-repeat \$checkbox-color;
-} */
 
 .success-modal{
   &.reveal-modal{
