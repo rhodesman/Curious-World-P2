@@ -30,52 +30,6 @@
   <header id="header-bar" class="row">
     <div class="small-12 columns">
       <h1><span>Curious World App Packs</span></h1>
-      <ul id="filters">
-        <li class="category-selector">
-          <div class="selector show-for-medium-up"
-            ng-init="selectedCategory = categories[0]">
-            <a class="selected-option" data-dropdown="category-selector">
-              <span>{{selectedCategory.title}}</span>
-            </a>
-            <div id="category-selector" class="f-dropdown" data-dropdown-content>
-              <ul>
-                <li ng-repeat="category in categories"
-                  ng-class="{ 'is-selected': category === $parent.selectedCategory }">
-                  <a ng-click="$parent.selectedCategory = category">
-                    <span>{{category.title}}</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="single-selector hide-for-medium-up">
-            <a class="right-off-canvas-toggle"
-              ng-click="$root.offCanvasMenu = 'category-selector'">{{selectedCategory.title}}</a>
-          </div>
-        </li>
-        <li class="sorting-selector">
-          <div class="selector show-for-medium-up"
-            ng-init="selectedSorting = sorting[0]">
-            <a class="selected-option" data-dropdown="sorting-selector">
-              <span>{{selectedSorting.title}}</span>
-            </a>
-            <div id="sorting-selector" class="f-dropdown" data-dropdown-content>
-              <ul>
-                <li ng-repeat="sortingOption in sorting"
-                  ng-class="{ 'is-selected': sortingOption === $parent.selectedSorting }">
-                  <a ng-click="$parent.selectedSorting = sortingOption">
-                    <span>{{sortingOption.title}}</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="single-selector hide-for-medium-up">
-            <a class="right-off-canvas-toggle"
-              ng-click="$root.offCanvasMenu = 'sorting-selector'">{{selectedSorting.title}}</a>
-          </div>
-        </li>
-      </ul>
     </div>
   </header>
   <ul id="app-packs" class="row">
