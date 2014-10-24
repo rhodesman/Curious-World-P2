@@ -511,14 +511,14 @@ $list-item-gray: #4e5055;
 			display:block;
 			width:100%;
 			height:100%;
-			& img {
+			img {
 				width:100%;
-				height:100%;
 			}
 		}
 		&.media-card {
 			a{
 				border: 1px dashed $no-media-color;
+				overflow:hidden;
 			}
 			&.completed{
 				a{
