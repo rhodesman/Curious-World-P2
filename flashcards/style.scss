@@ -23,6 +23,8 @@ $card-btn-act: #19b0ff;
 $no-media-color: #92989b;
 $list-item-gray: #4e5055;
 
+$include-html-dropdown-classes: $include-html-classes;
+$f-dropdown-triangle-side-offset: 50%;
 
 .flashcards-page {
 	position:relative;
@@ -67,9 +69,20 @@ $list-item-gray: #4e5055;
 	}
 
 	.f-dropdown{
+		margin-top:7px;
+		border:transparent;
 		width:100%;
 		background-color: $card-btn-hvr;
+		max-width:255px;
+		@include border-radius(8px, 8px, 8px, 8px);
 		li{
+			overflow:hidden;
+			&:first-child {
+				@include border-radius(8px, 8px, 0, 0);
+			}
+			&:last-child {
+				@include border-radius(0, 0, 8px, 8px);
+			}
 			a{
 				color:$white;
 				&:hover{
@@ -120,8 +133,27 @@ $list-item-gray: #4e5055;
 		&:before{
 			border-color: transparent transparent $card-btn-hvr transparent;
 		}
+		&:after {
+			display:none;
+		}
 	}
+	#select-age {
+		width:60px;
+		margin-left:165px;
+		li a {
+			text-align:center;
+		}
+		&:before {
+			left:24px;
+		}
+	}
+	#choose-domain {
+		&:before {
+			left:auto;
+			right:20px;
+		}
 
+	}
 	.completed-cards{
 		background-color: $white;
 		width:100%;

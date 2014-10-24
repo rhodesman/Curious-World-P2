@@ -3,16 +3,16 @@
 <!--   top dropdowns -->
   <div class="row">
     <div class="small-12 columns dropdowns">
-      <a data-dropdown="hover1" data-options="is_hover:true" class="card-drop-down">Select Child's Age</a>
-        <ul id="hover1" class="f-dropdown" data-dropdown-content>
+      <a data-dropdown="select-age" data-options="is_hover:true" class="card-drop-down">Select Child's Age</a>
+        <ul id="select-age" class="f-dropdown" data-dropdown-content>
           <li ng-repeat="age in ages"
             ng-class="{ 'is-selected': $parent.$parent.selectedAge === age }">
             <a ng-click="$parent.$parent.selectedAge = age">{{age}}</a>
           </li>
         </ul>
 
-      <a data-dropdown="hover2" data-options="is_hover:true" class="card-drop-down">Choose Learning Area</a>
-        <ul id="hover2" class="f-dropdown" data-dropdown-content>
+      <a data-dropdown="choose-domain" data-options="is_hover:true" class="card-drop-down">Choose Learning Area</a>
+        <ul id="choose-domain" class="f-dropdown" data-dropdown-content>
           <li ng-class="{ 'is-selected': domains[0] === $parent.selectedDomain || !$parent.selectedDomain }">
             <a ng-class="'domain-' + domains[0].name"
               ng-click="$parent.selectedDomain = domains[0]">
