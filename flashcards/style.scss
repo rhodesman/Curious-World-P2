@@ -561,6 +561,11 @@ $f-dropdown-triangle-side-offset: 50%;
 		&.media-card {
 			img{
 				border: 1px solid $darker-boarder;
+				& + span{
+					padding-top:20px;
+					margin-top:20px;
+					color: $black;
+				}
 			}
 			&.completed{
 				a{

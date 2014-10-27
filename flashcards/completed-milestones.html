@@ -16,15 +16,16 @@
     </div>
   </div>
   <div id="cardfolio" class="row">
-    <ul class="small-block-grid-2 medium-block-grid-5" ng-show="toggle == 'grid'">
+    <ul class="small-block-grid-1 medium-block-grid-5" ng-show="toggle == 'grid'">
       <li class="media-card animate-repeat"
         ng-class="{'completed': completed.isComplete === true}"
         ng-repeat="completed in pagedItems">
         <a data-reveal-id="milestone-modal" ng-class="completed.domain.name">
           <img ng-hide="completed.image" src="img/flashcards/no-photo.png" alt="">
           <img ng-show="completed.image" ng-src="{{completed.image}}" alt="">
+          <span>{{completed.brief}}</span>
         </a>
-        <span>{{completed.brief}}</span>
+
       </li>
     </ul>
     <ul class="list-view" ng-show="toggle == 'list'">
