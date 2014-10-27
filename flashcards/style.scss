@@ -22,6 +22,7 @@ $card-btn-hvr: #798794;
 $card-btn-act: #19b0ff;
 $no-media-color: #92989b;
 $list-item-gray: #4e5055;
+$darker-boarder: #d8d8d8;
 
 $include-html-dropdown-classes: $include-html-classes;
 $f-dropdown-triangle-side-offset: 50%;
@@ -202,6 +203,8 @@ $f-dropdown-triangle-side-offset: 50%;
 			&.complete-btn{
 				&.done-state{
 					color: $orange;
+					border: 1px solid $darker-boarder;
+					box-shadow: 0 1px 0 $darker-boarder;
 					&:before{
 						background-position:0 -96px;
 					}
@@ -210,6 +213,8 @@ $f-dropdown-triangle-side-offset: 50%;
 			&.media-btn{
 				&.done-state{
 					color: $orange;
+					border: 1px solid $darker-boarder;
+					box-shadow: 0 1px 0 $darker-boarder;
 					&:before{
 						background-position: 0 -96px;
 					}
@@ -521,6 +526,9 @@ $f-dropdown-triangle-side-offset: 50%;
 		padding-right: 3rem;
 		text-decoration:underline;
 		position:relative;
+		&:hover{
+			color: $orange-hover;
+		}
 		&:after{
 			content: '';
 			background: url('../img/flashcards/down-arrow-orange.png') no-repeat center center;
@@ -538,6 +546,9 @@ $f-dropdown-triangle-side-offset: 50%;
 		/* width:200px; */
 		height:130px;
 		margin: 20px 0;
+		@media #{$small-only}{
+			margin-bottom:150px;
+		}
 		a {
 			position:relative;
 			display:block;
@@ -548,12 +559,12 @@ $f-dropdown-triangle-side-offset: 50%;
 			}
 		}
 		&.media-card {
-			a{
-				border: 1px dashed $no-media-color;
-				overflow:hidden;
+			img{
+				border: 1px solid $darker-boarder;
 			}
 			&.completed{
 				a{
+					background:none;
 					border: none;
 					&:before{
 						display:none;
@@ -576,70 +587,70 @@ $f-dropdown-triangle-side-offset: 50%;
 					background-repeat:no-repeat;
 					transition: background-color .2s ease-in-out;
 				}
-				&.creative{
-					&:before{
-						background-image:url(../img/domains/creative-icon-white.png);
-					}
-					&:hover:before {
-						background-color:$color-creative;
-					}
+			/* 	&.creative{
+				&:before{
+					background-image:url(../img/domains/creative-icon-white.png);
 				}
-				&.language{
-					&:before{
-						background-image:url(../img/domains/language-icon-white.png);
-					}
-					&:hover:before {
-						background-color:$color-language;
-					}
+				&:hover:before {
+					background-color:\$color-creative;
 				}
-				&.math{
-					&:before{
-						background-image:url(../img/domains/math-icon-white.png);
-					}
-					&:hover:before {
-						background-color:$color-math;
-					}
+			}
+			&.language{
+				&:before{
+					background-image:url(../img/domains/language-icon-white.png);
 				}
-				&.science {
-					&:before{
-						background-image:url(../img/domains/science-icon-white.png);
-					}
-					&:hover:before {
-						background-color:$color-science;
-					}
+				&:hover:before {
+					background-color:\$color-language;
 				}
-				&.family{
-					&:before{
-						background-image:url(../img/domains/family-icon-white.png);
-					}
-					&:hover:before {
-						background-color:$color-family;
-					}
+			}
+			&.math{
+				&:before{
+					background-image:url(../img/domains/math-icon-white.png);
 				}
-				&.executive{
-					&:before{
-						background-image:url(../img/domains/executive-icon-white.png);
-					}
-					&:hover:before {
-						background-color:$color-executive;
-					}
+				&:hover:before {
+					background-color:\$color-math;
 				}
-				&.social{
-					&:before{
-						background-image:url(../img/domains/social-icon-white.png);
-					}
-					&:hover:before {
-						background-color:$color-social;
-					}
+			}
+			&.science {
+				&:before{
+					background-image:url(../img/domains/science-icon-white.png);
 				}
-				&.health{
-					&:before{
-						background-image:url(../img/domains/health-icon-white.png);
-					}
-					&:hover:before {
-						background-color:$color-health;
-					}
+				&:hover:before {
+					background-color:\$color-science;
 				}
+			}
+			&.family{
+				&:before{
+					background-image:url(../img/domains/family-icon-white.png);
+				}
+				&:hover:before {
+					background-color:\$color-family;
+				}
+			}
+			&.executive{
+				&:before{
+					background-image:url(../img/domains/executive-icon-white.png);
+				}
+				&:hover:before {
+					background-color:\$color-executive;
+				}
+			}
+			&.social{
+				&:before{
+					background-image:url(../img/domains/social-icon-white.png);
+				}
+				&:hover:before {
+					background-color:\$color-social;
+				}
+			}
+			&.health{
+				&:before{
+					background-image:url(../img/domains/health-icon-white.png);
+				}
+				&:hover:before {
+					background-color:\$color-health;
+				}
+			} */
 			}
 		}
 	}
