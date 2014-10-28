@@ -16,7 +16,12 @@
     </div>
   </div>
   <div id="cardfolio" class="row">
-    <ul class="small-block-grid-1 medium-block-grid-5" ng-show="toggle == 'grid'">
+    <ul ng-hide="pagedItems" class="small-block-grid-1 medium-block-grid-5">
+      <li class="media-card">
+          <div class="image" style="background-image: url('img/flashcards/no-photo.png');"></div>
+      </li>
+    </ul>
+    <ul class="small-block-grid-1 medium-block-grid-5" ng-show="toggle == 'grid' && pagedItems">
       <li class="media-card animate-repeat"
         ng-class="{'completed': completed.isComplete === true}"
         ng-repeat="completed in pagedItems">
@@ -25,10 +30,9 @@
           <div ng-show="completed.image" class="image" style="background-image: url('{{completed.image}}');"></div>
           <span>{{completed.brief}}</span>
         </a>
-
       </li>
     </ul>
-    <ul class="list-view" ng-show="toggle == 'list'">
+    <ul class="list-view" ng-show="toggle == 'list' && pagedItems">
       <li class="media-card animate-repeat"
         ng-class="{'completed': completed.isComplete === true}"
         ng-repeat="completed in pagedItems">
@@ -50,7 +54,7 @@
         </div>
       </li>
     </ul>
-    <button ng-click="loadMore()" class="load-more button" ng-class="nextPageDisabledClass()" ng-disabled="nextPageDisabledClass()">Load More</button>
+    <button ng-show="pagedItems" ng-click="loadMore()" class="load-more button" ng-class="nextPageDisabledClass()" ng-disabled="nextPageDisabledClass()">Load More</button>
   </div>
 </div>
 
