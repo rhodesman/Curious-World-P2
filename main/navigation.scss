@@ -107,6 +107,9 @@ $color-link-active: #48b6e8;
 }
 #logo {
 	@include hide-text();
+	position:relative;
+	overflow:visible;
+	text-indent:10000px;
 	margin: 0;
 	background: url(../img/curious-world-logo.png) center center no-repeat;
 	background-size:contain;
@@ -116,10 +119,33 @@ $color-link-active: #48b6e8;
 		margin-top: ($mobile-header-height - $mobile-hitbox);
 		height:auto;
 		line-height:40px;
+		width:80px;
 		background: transparent url("../img/curious-world-logo-sml.png")  no-repeat;
+		&:after{
+				font-family:helvetica;
+				content: '\2122';
+				position:absolute;
+				top:-12px;
+				right:0;
+				font-size:rem-calc(14);
+				color:$orange;
+				font-weight:100;
+		}
 		@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
 			background-image: url("../img/curious-world-logo-sml-2x.png");
 			background-size: (124px / 2) (66px / 2);
+		}
+	}
+	&:after{
+		@media #{$medium-up}{
+			font-family:helvetica;
+			content: '\2122';
+			position:absolute;
+			top:-8px;
+			right:-16px;
+			font-size:rem-calc(14);
+			color:$orange;
+			font-weight:100;
 		}
 	}
 	a {
