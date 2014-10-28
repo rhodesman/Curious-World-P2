@@ -17,12 +17,12 @@ $dropdown-select-bg: #798893;
 $card-border: #c9c9c9;
 $card-nav-bg: #c7cdd1;
 $card-btn-bg: #fbfbfb;
-$card-btn: #d5dce0;
+$card-btn: #798794;
 $card-btn-hvr: #798794;
 $card-btn-act: #19b0ff;
 $no-media-color: #92989b;
 $list-item-gray: #4e5055;
-$darker-boarder: #d8d8d8;
+$darker-border: #d8d8d8;
 
 $include-html-dropdown-classes: $include-html-classes;
 $f-dropdown-triangle-side-offset: 50%;
@@ -53,7 +53,9 @@ $f-dropdown-triangle-side-offset: 50%;
 			@include border-radius(8px, 8px, 8px, 8px);
 			@media #{$small-only}{
 				display:block;
-				margin: 10px 8.333%;
+				margin: 10px auto;
+				width:260px;
+
 			}
 			&:after {
 				content:'';
@@ -141,17 +143,27 @@ $f-dropdown-triangle-side-offset: 50%;
 	#select-age {
 		width:60px;
 		margin-left:165px;
+		@media #{$small-only}{
+			width:95%!important;
+			margin-left:0;
+		}
 		li a {
 			text-align:center;
 		}
 		&:before {
 			left:24px;
+			@media #{$small-only}{
+				left:50%;
+			}
 		}
 	}
 	#choose-domain {
 		&:before {
 			left:auto;
 			right:20px;
+			@media #{$small-only}{
+				left:50%;
+			}
 		}
 
 	}
@@ -179,7 +191,7 @@ $f-dropdown-triangle-side-offset: 50%;
 			position:relative;
 			padding:25px;
 			padding-left:80px;
-			border:1px solid rgba(222,222,222,0.6);
+			border:1px solid darken(#e8e8e8, 5%);
 			background-color:$card-btn-bg;
 			margin:10px 0 10px 20px;
 			@include border-radius(25px,25px,25px,25px);
@@ -196,15 +208,17 @@ $f-dropdown-triangle-side-offset: 50%;
 			}
 			&.complete-btn:before {
 				background: url("../img/flashcards/check-complete.png") no-repeat 0 0;
+				background-position:0 -48px;
 			}
 			&.media-btn:before {
 				background: url("../img/flashcards/upload-media.png") no-repeat 0 0;
+				background-position:0 -48px;
 			}
 			&.complete-btn{
 				&.done-state{
 					color: $orange;
-					border: 1px solid $darker-boarder;
-					box-shadow: 0 1px 0 $darker-boarder;
+					border: 1px solid $darker-border;
+					box-shadow: 0 1px 0 $darker-border;
 					&:before{
 						background-position:0 -96px;
 					}
@@ -213,8 +227,8 @@ $f-dropdown-triangle-side-offset: 50%;
 			&.media-btn{
 				&.done-state{
 					color: $orange;
-					border: 1px solid $darker-boarder;
-					box-shadow: 0 1px 0 $darker-boarder;
+					border: 1px solid $darker-border;
+					box-shadow: 0 1px 0 $darker-border;
 					&:before{
 						background-position: 0 -96px;
 					}
@@ -526,9 +540,12 @@ $f-dropdown-triangle-side-offset: 50%;
 	padding-top:0;
 	.expand-milestones{
 		float:right;
-		padding-right: 3rem;
+		padding-right: 2rem;
 		text-decoration:underline;
 		position:relative;
+		@media #{$small-only}{
+			margin-top:20px;
+		}
 		&:hover{
 			color: $orange-hover;
 		}
@@ -541,7 +558,7 @@ $f-dropdown-triangle-side-offset: 50%;
 			position:absolute;
 			top:50%;
 			transform: translate(0,-50%);
-			right:20px;
+			right:0px;
 		}
 	}
 	& li {
@@ -550,7 +567,7 @@ $f-dropdown-triangle-side-offset: 50%;
 		height:130px;
 		margin: 20px 0;
 		@media #{$small-only}{
-			margin-bottom:150px;
+			margin-bottom:70px;
 		}
 		a {
 			position:relative;
@@ -562,8 +579,18 @@ $f-dropdown-triangle-side-offset: 50%;
 			}
 		}
 		&.media-card {
-			img{
-				border: 1px solid $darker-boarder;
+			.image{
+				display: block;
+				width: 100%;
+				height: 130px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				border:1px solid $darker-border;
+				background-size:cover;
+				background-color:darken(#f7f7f7, 10%);
+				@media #{$small-only}{
+					height:200px;
+				}
 				& + span{
 					padding-top:20px;
 					margin-top:20px;
@@ -590,17 +617,20 @@ $f-dropdown-triangle-side-offset: 50%;
 					width:80px;
 					height:80px;
 					border-radius:50%;
-					transform: translate(-50%, -50%);
+					transform: translate(-50%, -35%);
 					background-position:center;
 					background-repeat:no-repeat;
 					transition: background-color .2s ease-in-out;
+					@media #{$small-only}{
+						transform: translate(-50%, 0);
+					}
 				}
-			/* 	&.creative{
+			&.creative{
 				&:before{
 					background-image:url(../img/domains/creative-icon-white.png);
 				}
 				&:hover:before {
-					background-color:\$color-creative;
+					background-color:$color-creative;
 				}
 			}
 			&.language{
@@ -608,7 +638,7 @@ $f-dropdown-triangle-side-offset: 50%;
 					background-image:url(../img/domains/language-icon-white.png);
 				}
 				&:hover:before {
-					background-color:\$color-language;
+					background-color:$color-language;
 				}
 			}
 			&.math{
@@ -616,7 +646,7 @@ $f-dropdown-triangle-side-offset: 50%;
 					background-image:url(../img/domains/math-icon-white.png);
 				}
 				&:hover:before {
-					background-color:\$color-math;
+					background-color:$color-math;
 				}
 			}
 			&.science {
@@ -624,7 +654,7 @@ $f-dropdown-triangle-side-offset: 50%;
 					background-image:url(../img/domains/science-icon-white.png);
 				}
 				&:hover:before {
-					background-color:\$color-science;
+					background-color:$color-science;
 				}
 			}
 			&.family{
@@ -632,7 +662,7 @@ $f-dropdown-triangle-side-offset: 50%;
 					background-image:url(../img/domains/family-icon-white.png);
 				}
 				&:hover:before {
-					background-color:\$color-family;
+					background-color:$color-family;
 				}
 			}
 			&.executive{
@@ -640,7 +670,7 @@ $f-dropdown-triangle-side-offset: 50%;
 					background-image:url(../img/domains/executive-icon-white.png);
 				}
 				&:hover:before {
-					background-color:\$color-executive;
+					background-color:$color-executive;
 				}
 			}
 			&.social{
@@ -648,7 +678,7 @@ $f-dropdown-triangle-side-offset: 50%;
 					background-image:url(../img/domains/social-icon-white.png);
 				}
 				&:hover:before {
-					background-color:\$color-social;
+					background-color:$color-social;
 				}
 			}
 			&.health{
@@ -656,9 +686,9 @@ $f-dropdown-triangle-side-offset: 50%;
 					background-image:url(../img/domains/health-icon-white.png);
 				}
 				&:hover:before {
-					background-color:\$color-health;
+					background-color:$color-health;
 				}
-			} */
+			}
 			}
 		}
 	}
@@ -694,3 +724,11 @@ $f-dropdown-triangle-side-offset: 50%;
   .animate-repeat.ng-enter.ng-enter-active {
     opacity:1;
   }
+
+	#milestone-modal{
+		&.reveal-modal{
+			p{
+				padding-right:75px;
+			}
+		}
+	}
