@@ -121,8 +121,17 @@
             "domains",
             "authCheck",
             "Milestones",
-            function ($scope, domains, AuthCheck, Milestones) {
+            "$timeout",
+            function ($scope, domains, AuthCheck, Milestones, $timeout) {
                 ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
+
+                //load default modal if no data
+                $timeout(function() {
+                    if(!$scope.pagedItems){
+                      $('#default-flashcard').foundation('reveal', 'open');
+                    }
+                }, 0);
+
 
                 //get milestone results and paginate
                 $scope.itemsPerPage = 5;

@@ -7,6 +7,7 @@ $label-color: #b3b3b3;
 $close-button-size: 45px;
 $more-info-height: 68px;
 $modal-unlock-icon: 26px;
+$darker-border: #d8d8d8;
 
 // General modal definition
 .reveal-modal {
@@ -1081,5 +1082,34 @@ span.buttonText {
 				}
 			}
 		}
+	}
+}
+
+#default-flashcard{
+	.small-5{
+		padding-right:0;
+	}
+	.photo{
+		background: url('../img/flashcards/kid-photo.png') no-repeat;
+		background-position: -55px 0;
+		border-radius: 25px;
+		display:block;
+		width:100%;
+		height:380px;
+		border: 1px solid $darker-border;
+	}
+	.modal-card{
+		padding: 20px 35px 35px 35px;
+	}
+	max-width:830px;
+	p{
+		font-size:rem-calc(14);
+		padding: 0 50px;
+	}
+	h1{
+		font-size:rem-calc(31);
+		color:$black;
+		line-height:1.2;
+		font-weight:700;
 	}
 }
