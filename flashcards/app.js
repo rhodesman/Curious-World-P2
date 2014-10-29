@@ -127,7 +127,7 @@
 
                 //load default modal if no data
                 $timeout(function() {
-                    if(!$scope.pagedItems){
+                    if($scope.pagedItems){
                       $('#default-flashcard').foundation('reveal', 'open');
                     }
                 }, 0);
