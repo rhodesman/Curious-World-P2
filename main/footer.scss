@@ -38,7 +38,7 @@ footer {
 			font-weight:400;
 		}
 		&.cw-foot-links {
-			font-weight:700;
+			font-weight:400;
 			margin-bottom:$double-marg-bott;
 		}
 	}
@@ -51,13 +51,28 @@ footer {
 	}
 	h2 {
 		color:$footer-gray-h2;
-		margin-bottom:$double-marg-bott;
+		margin-bottom:0px;
+	}
+	h3{
+		font-size:rem-calc(21);
+		text-align:center;
+		margin-bottom:50px;
+	}
+	h4{
+		font-size:rem-calc(18);
+		color:#707173;
+		text-align:center;
+		text-transform:uppercase;
+		width:65%;
+		margin: 0 auto;
+		margin-bottom:20px;
 	}
 	.hmh-logo {
-		margin-bottom:$double-marg-bott;
+		margin-bottom:50px;
 	}
 	.copyright {
 		color:$footer-gray-copy;
+		font-size:rem-calc(14);
 	}
 	.copyright {
 		&:before {
