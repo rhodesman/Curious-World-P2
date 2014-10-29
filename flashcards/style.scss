@@ -215,6 +215,12 @@ $f-dropdown-triangle-side-offset: 50%;
 				background-position:0 -48px;
 			}
 			&.complete-btn{
+				&:hover{
+					color:$orange;
+					&:before{
+						background-position:0 -96px;
+					}
+				}
 				&.done-state{
 					color: $orange;
 					border: 1px solid $darker-border;
@@ -222,15 +228,33 @@ $f-dropdown-triangle-side-offset: 50%;
 					&:before{
 						background-position:0 -96px;
 					}
+					&:hover{
+						color: $card-btn;
+						&:before{
+							background-position: 0 -48px;
+						}
+					}
 				}
 			}
 			&.media-btn{
+				&:hover{
+					color:$orange;
+					&:before{
+						background-position:0 -96px;
+					}
+				}
 				&.done-state{
 					color: $orange;
 					border: 1px solid $darker-border;
 					box-shadow: 0 1px 0 $darker-border;
 					&:before{
 						background-position: 0 -96px;
+					}
+					&:hover{
+						color: $card-btn;
+						&:before{
+							background-position: 0 -48px;
+						}
 					}
 				}
 			}
