@@ -453,10 +453,12 @@ $f-dropdown-triangle-side-offset: 50%;
 .completed-milestones-page{
 	margin-top:70px;
 	.list-view{
-		.card-domain{
-			left:0;
-			right:auto;
-			float:left;
+		@media #{$small-only}{
+			.card-domain{
+				left:0;
+				right:auto;
+				float:left;
+			}
 		}
 		h2{
 			cursor:pointer;
