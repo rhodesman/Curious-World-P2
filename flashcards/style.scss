@@ -54,8 +54,7 @@ $f-dropdown-triangle-side-offset: 50%;
 			@media #{$small-only}{
 				display:block;
 				margin: 10px auto;
-				width:260px;
-
+				width:360px;
 			}
 			&:after {
 				content:'';
@@ -67,6 +66,9 @@ $f-dropdown-triangle-side-offset: 50%;
 				border:1px solid $dropdown-border;
 				background:$dropdown-select-bg url("../img/small-arrow-dwn.png") no-repeat 4px center;
 				@include border-radius(0, 8px, 8px, 0);
+				@media #{$small-only}{
+					background-color: #3c4456;
+				}
 			}
 		}
 	}
@@ -144,8 +146,8 @@ $f-dropdown-triangle-side-offset: 50%;
 		width:60px;
 		margin-left:165px;
 		@media #{$small-only}{
-			width:95%!important;
-			margin-left:0;
+			width:90%!important;
+			margin-left:10px;
 		}
 		li a {
 			text-align:center;
@@ -158,6 +160,10 @@ $f-dropdown-triangle-side-offset: 50%;
 		}
 	}
 	#choose-domain {
+		@media #{$small-only}{
+			width:90%!important;
+			margin-left:10px;
+		}
 		&:before {
 			left:auto;
 			right:20px;
@@ -195,6 +201,13 @@ $f-dropdown-triangle-side-offset: 50%;
 			background-color:$card-btn-bg;
 			margin:10px 0 10px 20px;
 			@include border-radius(25px,25px,25px,25px);
+			@media #{$small-only}{
+				font-size:rem-calc(12);
+				margin: 0;
+				margin-bottom: 14px;
+				padding: 20px 15px 20px 5px;
+				padding-left:60px;
+			}
 			color:$card-btn;
 			&:before {
 				content:'';
@@ -205,16 +218,27 @@ $f-dropdown-triangle-side-offset: 50%;
 				width:48px;
 				height:48px;
 				transform: translate(0, -50%);
+				@media #{$small-only}{
+					transform: translate(0, -50%) scale(0.8);
+					left:10px;
+				}
+
 			}
 			&.complete-btn:before {
 				background: url("../img/flashcards/check-complete.png") no-repeat 0 0;
 				background-position:0 -48px;
+
 			}
 			&.media-btn:before {
 				background: url("../img/flashcards/upload-media.png") no-repeat 0 0;
 				background-position:0 -48px;
 			}
 			&.complete-btn{
+				@media #{$small-only}{
+					float:left;
+					width:42%;
+					margin-left:20px;
+				}
 				&:hover{
 					color:$orange;
 					&:before{
@@ -237,6 +261,11 @@ $f-dropdown-triangle-side-offset: 50%;
 				}
 			}
 			&.media-btn{
+				@media #{$small-only}{
+					float:right;
+					width:42%;
+					margin-right:20px;
+				}
 				&:hover{
 					color:$orange;
 					&:before{
@@ -290,6 +319,9 @@ $f-dropdown-triangle-side-offset: 50%;
 	height:90px;
 	margin:20px 0px 10px 10px;
 	right:-18px;
+	@media #{$small-only}{
+		right:18px;
+	}
 	&:before, &:after {
 		content:'';
 		display:block;
@@ -372,6 +404,9 @@ $f-dropdown-triangle-side-offset: 50%;
 			color:white;
 			font-size:rem-calc(18);
 			text-align:right;
+			@media #{$small-only}{
+				font-size:rem-calc(12);
+			}
 		}
 	}
 
@@ -418,6 +453,11 @@ $f-dropdown-triangle-side-offset: 50%;
 .completed-milestones-page{
 	margin-top:70px;
 	.list-view{
+		.card-domain{
+			left:0;
+			right:auto;
+			float:left;
+		}
 		h2{
 			cursor:pointer;
 		}
@@ -542,6 +582,9 @@ $f-dropdown-triangle-side-offset: 50%;
 		li{
 			border-bottom: 1px solid lighten($list-item-gray, 60%);
 			width:95%;
+			@media #{$small-only}{
+				border-bottom: none;
+			}
 		}
 		h4{
 			font-size:rem-calc(13);
@@ -554,6 +597,10 @@ $f-dropdown-triangle-side-offset: 50%;
 		p{
 			font-size: rem-calc(16);
 			color:$list-item-gray;
+			@media #{$small-only}{
+				border-bottom: 1px solid lighten($list-item-gray, 60%);
+				padding-bottom:20px;
+			}
 		}
 	}
 }
@@ -562,6 +609,11 @@ $f-dropdown-triangle-side-offset: 50%;
 	padding-top:20px;
 	margin-top:0;
 	padding-top:0;
+	ul{
+		@media #{$small-only}{
+			margin: 0 20px;
+		}
+	}
 	.expand-milestones{
 		float:right;
 		padding-right: 2rem;
@@ -569,6 +621,7 @@ $f-dropdown-triangle-side-offset: 50%;
 		position:relative;
 		@media #{$small-only}{
 			margin-top:20px;
+			padding-right:3.5rem;
 		}
 		&:hover{
 			color: $orange-hover;
@@ -583,6 +636,9 @@ $f-dropdown-triangle-side-offset: 50%;
 			top:50%;
 			transform: translate(0,-50%);
 			right:0px;
+			@media #{$small-only}{
+				right:30px;
+			}
 		}
 	}
 	& li {
@@ -592,6 +648,9 @@ $f-dropdown-triangle-side-offset: 50%;
 		margin: 20px 0;
 		@media #{$small-only}{
 			margin-bottom:80px;
+			&:first-child{
+				margin-top:30px;
+			}
 		}
 		a {
 			position:relative;
@@ -722,6 +781,9 @@ $f-dropdown-triangle-side-offset: 50%;
 	font-size:rem-calc(21);
 	border-radius:18px;
 	margin-top:40px;
+	@media #{$small-only}{
+		margin-left:30px;
+	}
 	&.disabled{
 		background: gray;
 		opacity: 0.3;

@@ -37,12 +37,12 @@
         ng-class="{'completed': completed.isComplete === true}"
         ng-repeat="completed in pagedItems">
         <div class="row">
-          <div class="small-1 columns">
+          <div class="small-12 medium-1 columns">
             <div class="card-domain" ng-class="completed.domain.name">
               <img ng-src="img/learning-areas/domain-icons/{{completed.domain.name}}.svg" alt="">
             </div>
           </div>
-          <div class="small-11 columns card-details">
+          <div class="small-12 medium-11 columns card-details">
             <div class="card-details-status" ng-class="completed.domain.name">
               <h4>{{completed.domain.name}} {{completed.cardNo}} of 100  |  Completed {{completed.timestamp}}</h4>
               <span class="checked"></span>
