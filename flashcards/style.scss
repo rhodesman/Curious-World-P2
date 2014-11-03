@@ -54,7 +54,7 @@ $f-dropdown-triangle-side-offset: 50%;
 			@media #{$small-only}{
 				display:block;
 				margin: 10px auto;
-				width:360px;
+				width:290px;
 			}
 			&:after {
 				content:'';
@@ -202,11 +202,10 @@ $f-dropdown-triangle-side-offset: 50%;
 			margin:10px 0 10px 20px;
 			@include border-radius(25px,25px,25px,25px);
 			@media #{$small-only}{
-				font-size:rem-calc(12);
+				font-size:rem-calc(11);
 				margin: 0;
 				margin-bottom: 14px;
-				padding: 20px 15px 20px 5px;
-				padding-left:60px;
+				padding: 20px 15px 20px 55px;
 			}
 			color:$card-btn;
 			&:before {
@@ -220,7 +219,7 @@ $f-dropdown-triangle-side-offset: 50%;
 				transform: translate(0, -50%);
 				@media #{$small-only}{
 					transform: translate(0, -50%) scale(0.8);
-					left:10px;
+					left:5px;
 				}
 
 			}
