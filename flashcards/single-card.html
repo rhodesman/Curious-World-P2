@@ -3,12 +3,12 @@
     <img ng-src="img/learning-areas/domain-icons/{{card.domain.name}}.svg" alt="">
   </div>
   <div class="row">
-    <div class="small-12 medium-8 medium-push-4 columns card-copy">
+    <div class="small-12 medium-6 medium-push-6 large-8 large-push-4 columns card-copy">
       <h1>{{card.title}}</h1>
       <p>{{card.description}}</p>
       <p><strong>Skill: </strong>{{card.skill}}</p>
     </div>
-    <div class="small-12 medium-4 medium-pull-8 columns card-buttons" ng-init="card.event = false; card.media=false">
+    <div class="small-12 medium-6 medium-pull-6 large-4 large-pull-8 columns card-buttons" ng-init="card.event = false; card.media=false">
       <a ng-click="card.event = true" class="ready-state complete-btn" ng-show="!card.event">Complete</a>
       <a ng-click="card.event = false" class="done-state complete-btn " ng-hide="!card.event">Complete</a>
       <a ng-click="card.media = true" class="media-btn ready-state" ng-hide="card.media">Upload a pic</a>
