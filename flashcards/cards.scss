@@ -37,8 +37,8 @@ $card-nav-link: #c7cdd1;
 		margin: 0 auto;
 		width: 100%;
 		height: 100%;
-    transform: translateX(-50%);
     @media #{$small-only}{
+      transform: translateX(-50%);
       width:200px;
       margin: 80px auto 0 auto;
       left:50%;
@@ -103,21 +103,7 @@ $card-nav-link: #c7cdd1;
 			}
 			&.prev{
 				left:-10px;
-        &:before{
-          position:absolute;
-          top:-15px;
-          right: 85px;
-          height:55px;
-          width:45px;
-        }
-        &:after{
-          position:absolute;
-          top:-5px;
-          right:0px!important;
-          margin-left:-69px!important;
-          transform: scale(0.7);
-        }
-			}
+      }
 			&.next{
 				right:-10px;
 			}
