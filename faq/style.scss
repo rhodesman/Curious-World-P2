@@ -44,7 +44,7 @@
         content: '-';
         position:absolute;
         top:42%;
-        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
         right:20px;
         font-weight:400;
         font-size:rem-calc(30);
@@ -54,7 +54,7 @@
       content: '+';
       position:absolute;
       top:50%;
-      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
       right:20px;
       font-weight:400;
       font-size:rem-calc(30);
