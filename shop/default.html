@@ -2,7 +2,7 @@
   <section id="store-feature">
     <div class="feature-covers">
       <div>
-        <slick dots=true infinite=true speed=500 slides-to-show=1 css-ease=ease arrows=false autoplay=true>
+        <slick dots=true infinite=true speed=500 slides-to-show=1 css-ease=ease arrows=false autoplay=false>
           <div class="slick-slide">
             <a href="shop/#/0"></a>
             <ul class="book-cover">
@@ -63,6 +63,56 @@
             <div class="domains">
               <ul>
                 <li ng-repeat="domains in carouselKits[2].domains"
+                  ng-init="active = true"
+                  class="{{'domain-' + domains.name}}"
+                  ng-class="{'active' : active == false}"
+                  ng-click="active = !active">
+                  <span>{{domains.title}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="slick-slide">
+            <a href="shop/#/0"></a>
+            <ul class="book-cover">
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/9780152380212_lres.jpg"></li>
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/0618663770_lres.jpg"></li>
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/0899194028_lres.jpg"></li>
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/9780547905730_lres.jpg"></li>
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/9780547905730_lres.jpg"></li>
+            </ul>
+            <div class="row feature-caption">
+              <h2>{{carouselKits[0].title}}</h2>
+              <h3>{{carouselKits[0].description}}</h3>
+            </div>
+            <div class="domains">
+              <ul>
+                <li ng-repeat="domains in carouselKits[0].domains"
+                  ng-init="active = true"
+                  class="{{'domain-' + domains.name}}"
+                  ng-class="{'active' : active == false}"
+                  ng-click="active = !active">
+                  <span>{{domains.title}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="slick-slide">
+            <a href="shop/#/0"></a>
+            <ul class="book-cover">
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/9780152380212_lres.jpg"></li>
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/0618663770_lres.jpg"></li>
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/0899194028_lres.jpg"></li>
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/9780547905730_lres.jpg"></li>
+              <li><img src="http://www.houghtonmifflinbooks.com/assets/product/9780547905730_lres.jpg"></li>
+            </ul>
+            <div class="row feature-caption">
+              <h2>{{carouselKits[0].title}}</h2>
+              <h3>{{carouselKits[0].description}}</h3>
+            </div>
+            <div class="domains">
+              <ul>
+                <li ng-repeat="domains in carouselKits[0].domains"
                   ng-init="active = true"
                   class="{{'domain-' + domains.name}}"
                   ng-class="{'active' : active == false}"
