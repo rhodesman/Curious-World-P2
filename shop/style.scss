@@ -1,4 +1,5 @@
 $carousel-height: 400px;
+$carousel-snd-book-row: -90px;
 $kits-domain-height: 50px;
 $kits-domain-width: 55px;
 $kit-info-width: 380px;
@@ -43,7 +44,7 @@ $kit-box-height: 429px;
 		padding:10px 60px 0 10px;
 		text-align:center;
 		margin:0;
-		max-height:400px;
+		max-height:500px;
 		position:absolute;
 		//top:15%;
 		width:90%;
@@ -52,6 +53,7 @@ $kit-box-height: 429px;
 			//top:0;
 			padding-top:75px;
 			width:100%;
+			max-height:400px;
 		}
 		li {
 			display:inline-block;
@@ -83,11 +85,17 @@ $kit-box-height: 429px;
 			+ li + li img {
 				@include transform-me(-3deg);
 			}
-			+ li + li + li img {
-				@include transform-me(1deg);
+			+ li + li + li {
+				margin-top:$carousel-snd-book-row;
+				img {
+					@include transform-me(1deg);
+				}
 			}
-			+ li + li + li + li img {
-				@include transform-me(5deg);
+			+ li + li + li + li {
+				margin-top:$carousel-snd-book-row;
+				img {
+					@include transform-me(5deg);
+				}
 			}
 			&:only-child {
 				width:30%;
@@ -115,6 +123,11 @@ $kit-box-height: 429px;
 			margin-bottom:0;
 			-webkit-margin-before: 0em;
 			-webkit-margin-after: 0em;
+			@media #{$small-only}{
+				left:60px;
+				right:auto;
+				transform: translate(0,0);
+			}
 			li {
 				float:left;
 				margin:0 10px;
@@ -168,7 +181,10 @@ $kit-box-height: 429px;
 			.feature-caption {
 				position:absolute;
 				bottom:0;
-				padding:0 35px;
+				padding:0 10px;
+				@media #{$medium-up}{
+					padding:0 35px;
+				}
 				h2 {
 					color:white;
 					text-align:left;

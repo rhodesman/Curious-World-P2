@@ -45,19 +45,25 @@
       bottom:0;
       left:50%;
       transform: translateX(-50%);
+      @media #{$small-only} {
+        background: url('../img/landing/top-characters-sml.png') center bottom no-repeat;
+      }
     }
   }
   &.two{
     background: url('../img/landing/feature-four.jpg') center center no-repeat;
     background-size:cover;
+
   }
   &.three{
     background: url('../img/landing/feature-five.jpg') center center no-repeat;
     background-size:cover;
+
   }
   &.four{
     background: url('../img/landing/feature-five.jpg') center center no-repeat;
     background-size:cover;
+
   }
   &.video{
     .play-button{
@@ -69,6 +75,9 @@
       left:50%;
       transform: translate(-50%, -50%);
       background: url('../img/landing/play-button.png') center center no-repeat;
+      @media #{$small-only} {
+        background: url('../img/landing/play-button-sml.png') center center no-repeat;
+      }
     }
   }
 }
@@ -88,15 +97,16 @@
   left:50%;
   transform: translateX(-50%);
   @media #{$small-only} {
-    bottom: 25px;
+    bottom:25px;
+    height:60%;
   }
   h1 {
-    font-size: rem-calc(50);
+    font-size: rem-calc(30);
     color: $white;
     font-family: $font-family;
     font-weight: 400;
     text-shadow: 0 0 25px rgba(0,0,0,0.25);
-    line-height: 1.1;
+    line-height: 1.4;
     width:80%;
     text-align:center;
     position:relative;
@@ -104,6 +114,7 @@
     transform: translateX(-50%);
     @media #{$medium-up} {
       font-size: rem-calc(63);
+      line-height: 1.1;
     }
   }
   h4 {
@@ -120,6 +131,12 @@
   a.button {
     margin-bottom: 0;
     color: $white;
+    @media #{$small-only}{
+      position:absolute;
+      bottom:0;
+      left:50%;
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -136,6 +153,7 @@
   z-index:999!important;
   @media #{$small-only} {
     display: none;
+    right:5px;
   }
   li {
     &:last-child {
