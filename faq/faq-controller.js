@@ -14,6 +14,16 @@
                     answer: "CuriousWorld.com informs parents about developmental milestones for kids, ages 3-7. In total, there are approximately 200 milestones that correspond to school readiness. CuriousWorld.com lets parents and kids practice these skills and track a child's growth across 8 key learning areas."
                 }];
 
+                //scroll to ID 
+                $scope.scrollTo = function(element) {
+                  //requires an element to be an id (or add '#' or '.' to html)
+                  var idElement = '#' + element;
+                  var offset = 100;
+                  $( 'html, body').animate({
+                    scrollTop: $(idElement).offset().top - offset
+                  }, 250);
+                };
+
                 //Cards
                 $scope.cards = [{
                     title: "What are Cards?",
