@@ -21,7 +21,7 @@
           <div class="image" style="background-image: url('img/flashcards/no-photo.png');"></div>
       </li>
     </ul>
-    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-5" ng-show="toggle == 'grid' && pagedItems">
+    <ul class="grid-view small-block-grid-1 medium-block-grid-3 large-block-grid-5" ng-show="toggle == 'grid' && pagedItems">
       <li class="media-card animate-repeat"
         ng-class="{'completed': completed.isComplete === true}"
         ng-repeat="completed in pagedItems">
@@ -36,13 +36,12 @@
       <li class="media-card animate-repeat"
         ng-class="{'completed': completed.isComplete === true}"
         ng-repeat="completed in pagedItems">
-        <div class="row">
-          <div class="small-12 medium-1 columns">
+          <div class="small-12 medium-2 large-1 columns">
             <div class="card-domain" ng-class="completed.domain.name">
               <img ng-src="img/learning-areas/domain-icons/{{completed.domain.name}}.svg" alt="">
             </div>
           </div>
-          <div class="small-12 medium-11 columns card-details">
+          <div class="small-12 medium-10 large-11 columns card-details">
             <div class="card-details-status" ng-class="completed.domain.name">
               <h4>{{completed.domain.name}} {{completed.cardNo}} of 100  |  Completed {{completed.timestamp}}</h4>
               <span class="checked"></span>
@@ -51,7 +50,6 @@
             <h2 data-reveal-id="milestone-modal">{{completed.brief}}</h2>
             <p>{{completed.description}}</p>
           </div>
-        </div>
       </li>
     </ul>
     <button ng-show="pagedItems" ng-click="loadMore()" class="load-more button" ng-class="nextPageDisabledClass()" ng-disabled="nextPageDisabledClass()">Load More</button>
