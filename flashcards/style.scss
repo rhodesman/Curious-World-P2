@@ -50,6 +50,7 @@ $f-dropdown-triangle-side-offset: 50%;
 			border:1px solid $dropdown-border;
 			background-color: #3c4456;
 			position:relative;
+			width:260px;
 			@include border-radius(8px, 8px, 8px, 8px);
 			@media #{$small-only}{
 				display:block;
@@ -144,7 +145,7 @@ $f-dropdown-triangle-side-offset: 50%;
 	}
 	#select-age {
 		width:60px;
-		margin-left:165px;
+		margin-left:203px;
 		@media #{$small-only}{
 			width:90%!important;
 			margin-left:10px;
@@ -160,6 +161,7 @@ $f-dropdown-triangle-side-offset: 50%;
 		}
 	}
 	#choose-domain {
+		margin-left:3px;
 		@media #{$small-only}{
 			width:90%!important;
 			margin-left:10px;

@@ -32,9 +32,9 @@
 
 .slick-bg{
   height:630px;
+  background: center center no-repeat;
+  background-size:cover;
   &.one{
-    background: url('../img/landing/feature-background.jpg') center center no-repeat;
-    background-size:cover;
     &:after{
       content: '';
       background: url('../img/landing/top-characters.png') center center no-repeat;
@@ -51,19 +51,12 @@
     }
   }
   &.two{
-    background: url('../img/landing/feature-four.jpg') center center no-repeat;
-    background-size:cover;
-
   }
   &.three{
-    background: url('../img/landing/feature-five.jpg') center center no-repeat;
-    background-size:cover;
 
   }
   &.four{
-    background: url('../img/landing/feature-five.jpg') center center no-repeat;
-    background-size:cover;
-
+    
   }
   &.video{
     .play-button{
