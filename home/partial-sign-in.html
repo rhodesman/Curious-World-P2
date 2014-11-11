@@ -15,22 +15,19 @@
       </div>
     </div>
     <div class="row">
-      <div class="small-offset-2 small-8 columns end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.email.$error.required) }">
+      <div class="small-12 columns small-centered end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.email.$error.required) }">
       <input class="email better-placeholder" type="text" name="email" placeholder="Email"
         ng-model="username"
         required />
     </div>
-    <div class="small-offset-2 small-8 columns end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.password.$error.required) }">
+    <div class="small-12 columns small-centered end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.password.$error.required) }">
       <input class="password better-placeholder" type="password" name="password" placeholder="Password"
         ng-model="password"
         required />
     </div>
     </div>
     <div class="row password-options">
-      <div class="small-offset-2 small-8 columns last">
-
-        <!-- <input id="login-checkbox" class="checkbox" type="checkbox"/>
-        <label for="login-checkbox">Keep me logged in</label> -->
+      <div class="small-12 columns last">
 
         <input id="login-checkbox" type="checkbox" name="check" value="check1">
         <label for="login-checkbox">Keep me logged in</label>
@@ -39,13 +36,13 @@
       </div>
     </div>
     <div class="row sign-in">
-      <div class="small-8 columns small-centered">
-        <a class="button" ng-click="error = false; submitted=true; submit()">Sign In</a>
+      <div class="small-12 medium-8 columns small-centered">
+        <a class="button" ng-click="error = false; submitted=true; submit()">Sign&nbsp;In</a>
         <p class="terms">
           By signing up or using Curious World services
            you agree to the Curious World <a href="terms-of-use">Terms of Use</a>
             and <a href="privacy-policy">Privacy Policy.</a></p>
-        <h3>Don't have an account yet? <a href="#">Sign up</a></h3>
+        <h3>Don't have an account yet? <a href="#">Sign&nbsp;up</a></h3>
       </div>
     </div>
   </form>

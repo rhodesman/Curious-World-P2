@@ -386,6 +386,7 @@ $f-dropdown-triangle-side-offset: 50%;
 }
 
 .milestones {
+	position:relative;
 	background-color:$dropdown-select-bg;
  	a {
 		display: block;
@@ -395,18 +396,21 @@ $f-dropdown-triangle-side-offset: 50%;
 		@include border-radius(25px,25px,0,0);
 		text-align:center;
 		color:$card-btn-hvr;
-		width:230px;
+		max-width:230px;
 		&.close-milestones{
-			float:right;
+			margin: 0;
+			padding:0;
 			position:absolute;
-			right:0;
-			top:-2px;
+			right:60px;
+			top:50%;
+			transform: translate(0%, -50%);
 			background: transparent;
 			color:white;
 			font-size:rem-calc(18);
 			text-align:right;
 			@media #{$small-only}{
 				font-size:rem-calc(12);
+				right:30px;
 			}
 		}
 	}
