@@ -33,6 +33,13 @@
             function ($scope, $routeParams, $location,$anchorScroll, domains, AuthCheck) {
                 ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
+                $scope.go = function ( itemIndex, event ) {
+                  var path = "" + itemIndex;
+                  $location.path( path );
+                  event.stopPropagation();
+                  event.preventDefault();
+                };
+
                 var items = [{
                     title: "Gus, the Dinosaur Bus",
                     author: "Julia Liu, Bei Lynn",
