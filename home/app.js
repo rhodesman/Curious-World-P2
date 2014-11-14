@@ -12,7 +12,8 @@
                     })
                     .when("/sign-in", {
                         templateUrl: "home/sign-in.html",
-                        controller: "AccountController"
+                        controller: "AccountController",
+                        title: 'Sign In'
                     })
                     .when("/sign-up", {
                         templateUrl: "home/sign-up.html",

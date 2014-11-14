@@ -22,7 +22,7 @@ $darker-border: #d8d8d8;
 	overflow-y: auto;
 
 	@media #{$small-only} { // Overwrite Foundation's style
-		top: $mobile-header-height !important;
+		top: 50px!important;
 		min-height: 0;
 	}
 	@media #{$medium-up} {
@@ -38,11 +38,11 @@ $darker-border: #d8d8d8;
 	}
 	.close-reveal-modal {
 		display: none;
-
-		@media #{$medium-up} {
+			background-color:white;
+			position:absolute;
 			display: block;
-			right: 0;
-			top: -($close-button-size + 12px);
+			right:5px!important;
+			top: 5px!important;
 			width: $close-button-size;
 			height: $close-button-size;
 			text-align: center;
@@ -52,12 +52,13 @@ $darker-border: #d8d8d8;
 			color: white;
 			border-radius: 50%;
 			border: 1px solid white;
+			z-index: 100!important;
 
 			&:hover{
 				background-color:white;
 				color:black;
 			}
-		}
+
 	}
 	.title {
 		position: relative;
