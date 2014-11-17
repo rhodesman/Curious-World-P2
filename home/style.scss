@@ -493,6 +493,7 @@ form{
           font-weight:100;
           border-radius: 5px;
           position:relative;
+          min-width:200px;
           &:before{
             content: '';
             width:20px;
