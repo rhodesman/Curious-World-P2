@@ -294,18 +294,44 @@ $kit-box-height: 429px;
 	.kit { // Shared kit styles
 		overflow: hidden;
 
-		a {
+		.kit-link{
+			/* background: red;
+			display:block;
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			z-index:100; */
+		}
+
+		.kit-container{
+			height: $kits-domain-height * $number-of-domains;
+			position:relative;
+			/* cursor:pointer; */
+
+		/* a {
 			position: relative;
 			display: block;
 			width: 100%;
-			height: $kits-domain-height * $number-of-domains;
+			height: \$kits-domain-height * \$number-of-domains;
 			color: inherit;
+			float:left; */
 
 			.image {
 				position:relative;
 				padding:0px 0px;
 				width:100%;
 				height:100%;
+				z-index:3;
+				a{
+					display:block;
+					width:100%;
+					height:100%;
+					position:absolute;
+					top:0;
+					left:0;
+				}
 				@include vertical-gradient(#62CAEC, #41ACE2);
 				img{
 					height:100%;
@@ -330,13 +356,13 @@ $kit-box-height: 429px;
 			}
 		}
 	}
-	.kit a, #store-feature .feature-covers {
+	.kit .kit-container, #store-feature .feature-covers {
 		.domains {
 			position: absolute;
 			right: 0;
 			top: 0;
 			height: 100%;
-			z-index: 2;
+			z-index: 3;
 			&:before {
 				content: "";
 				display: inline-block;
@@ -351,22 +377,22 @@ $kit-box-height: 429px;
 				vertical-align: middle;
 
 				li {
-					position: relative;
-					left: 100%;
+					position:relative;
 					padding-right: 16px;
+					left:100%;
 					height: $kits-domain-height;
 					line-height: $kits-domain-height;
 					color: $white;
 					transition: left 0.2s ease;
-
+					width:$kits-domain-width;
+					white-space: nowrap;
 					&:hover{
-						@media #{$large-up}{
-							left: 0%;
-						}
+						left: 0%;
+						width:100%;
 					}
 					&.active {
 						@media #{$small-only}{
-							left: 0%;
+							left:0%;
 						}
 						@media #{$medium-only}{
 							left: 0%;

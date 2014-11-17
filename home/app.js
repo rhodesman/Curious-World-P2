@@ -12,7 +12,7 @@
                     })
                     .when("/sign-in", {
                         templateUrl: "home/sign-in.html",
-                        controller: "AccountController"
+                        controller: "AccountController",
                     })
                     .when("/sign-up", {
                         templateUrl: "home/sign-up.html",

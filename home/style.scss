@@ -118,7 +118,7 @@
     width: 55%;
     margin: 0 auto 25px auto;
     @media #{$small-only}{
-      display: none;
+      font-size: rem-calc(14);
     }
   }
   a.button {
