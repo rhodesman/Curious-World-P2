@@ -37,6 +37,9 @@ $f-dropdown-triangle-side-offset: 50%;
 	overflow:hidden;
 	opacity:0;
 	transition: 1s opacity ease-in;
+	@media #{$small-only}{
+		margin-top:0;
+	}
 
 	.dropdowns{
 		margin-bottom:42px;
