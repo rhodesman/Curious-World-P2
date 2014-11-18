@@ -292,7 +292,8 @@ $darker-border: #d8d8d8;
 }
 
 .reveal-modal-bg {
-	margin-top: $mobile-header-height;
+	position:fixed;
+	padding-top: 56px;
 	background: transparentize($black, 0.15);
 
 	@media #{$medium-up} {
@@ -1131,7 +1132,7 @@ right: 0!important; */
 	.modal-card{
 		padding: 20px 35px 35px 35px;
 		@media #{$small-only}{
-			padding: 20px 10px 20px 10px;
+			padding: 30px 10px 20px 10px;
 		}
 	}
 	max-width:830px;
