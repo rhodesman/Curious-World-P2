@@ -472,6 +472,7 @@ $f-dropdown-triangle-side-offset: 50%;
 				left:0;
 				right:auto;
 				float:left;
+				margin:0;
 			}
 		}
 		h2{
@@ -601,6 +602,7 @@ $f-dropdown-triangle-side-offset: 50%;
 			width:100%;
 			@media #{$small-only}{
 				border-bottom: none;
+				margin:0 !important;
 			}
 		}
 		h4{
