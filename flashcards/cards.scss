@@ -507,6 +507,7 @@ $card-nav-link: #c7cdd1;
 		border: 1px solid $card-border;
 		background: $white;
 		padding: 45px 35px 35px 35px;
+    overflow:hidden;
 		@include border-radius(25px,25px,25px,25px);
 		&:before, &:after {
 			@include border-radius(25px,25px,25px,25px);
