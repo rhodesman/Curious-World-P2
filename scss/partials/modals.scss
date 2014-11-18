@@ -22,7 +22,7 @@ $darker-border: #d8d8d8;
 	overflow-y: auto;
 
 	@media #{$small-only} { // Overwrite Foundation's style
-		top: 50px!important;
+		top: 55px!important;
 		min-height: 0;
 	}
 	@media #{$medium-up} {
@@ -37,12 +37,12 @@ $darker-border: #d8d8d8;
 		overflow: visible;
 	}
 	.close-reveal-modal {
-		display: none;
+			display: none;
 			background-color:white;
 			position:absolute;
 			display: block;
-			right:5px!important;
-			top: 5px!important;
+			right:10px!important;
+			top: 10px!important;
 			width: $close-button-size;
 			height: $close-button-size;
 			text-align: center;
@@ -53,6 +53,10 @@ $darker-border: #d8d8d8;
 			border-radius: 50%;
 			border: 1px solid white;
 			z-index: 100!important;
+			@media #{$medium-up}{
+				top: -15px!important;
+				right: -15px!important;
+			}
 
 			&:hover{
 				background-color:white;
@@ -1053,16 +1057,24 @@ span.buttonText {
 	}
 }
 
+
+
 .reveal-modal{
 	&.general-modal{
 		top:200px;
 		text-align:center;
 		padding: 70px;
+		@media #{$small-only}{
+			padding: 40px;
+		}
 		h1{
 			font-size:rem-calc(50);
 			color: #3c4457;
 			margin-bottom:20px;
 			line-height:1;
+			@media #{$small-only}{
+				font-size: rem-calc(30);
+			}
 			&.error{
 				color: $error-red;
 			}
@@ -1083,6 +1095,15 @@ span.buttonText {
 				}
 			}
 		}
+	}
+	.close-reveal-modal{
+/* 		top: 0!important;
+right: 0!important; */
+		@media #{$medium-up}{
+			top: -15px!important;
+			right: -15px!important;
+		}
+
 	}
 }
 
