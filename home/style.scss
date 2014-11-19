@@ -1,9 +1,7 @@
 #development{
   display:none;
 }
-.loader {
-  @include loading-spinner();
-}
+
 .landing{
   opacity:0;
   transition: .25s opacity ease-in;
@@ -690,7 +688,7 @@ input[type=checkbox]:checked + label:before {
   .title-bar{
     background: $modal-title;
     height:60px;
-    a{
+    /* a{
       top:0;
       border:none;
       border-radius:none;
@@ -702,7 +700,7 @@ input[type=checkbox]:checked + label:before {
         background:transparent;
         color:white;
       }
-    }
+    } */
   }
   a.button{
     margin-bottom:100px;

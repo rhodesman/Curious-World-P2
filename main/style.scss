@@ -1,2 +1,32 @@
 @import 'navigation';
 @import 'footer';
+
+.loader-bg{
+  background: rgba(59, 70, 86, 0.85);
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:10000;
+  width:100%;
+  height:100%;
+  display:none;
+  opacity: 0;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.loader {
+  @include loading-spinner();
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}

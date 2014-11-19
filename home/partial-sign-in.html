@@ -15,19 +15,19 @@
       </div>
     </div>
     <div class="row">
-      <div class="small-12 columns small-centered end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.email.$error.required) }">
+      <div class="small-12 medium-10 columns small-centered end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.email.$error.required) }">
       <input class="email better-placeholder" type="text" name="email" placeholder="Email"
         ng-model="username"
         required />
     </div>
-    <div class="small-12 columns small-centered end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.password.$error.required) }">
+    <div class="small-12 medium-10 columns small-centered end text-inputs" ng-class="{ 'has-error': (submitted && loginForm.password.$error.required) }">
       <input class="password better-placeholder" type="password" name="password" placeholder="Password"
         ng-model="password"
         required />
     </div>
     </div>
     <div class="row password-options">
-      <div class="small-12 columns last">
+      <div class="small-12 medium-offset-1 columns last">
 
         <input id="login-checkbox" type="checkbox" name="check" value="check1">
         <label for="login-checkbox">Keep me logged in</label>

@@ -27,8 +27,8 @@ angular.module('authenticate.js').run(['$rootScope', '$location', 'AuthenticateJ
 angular.module('authenticate.js').directive('authenticateLoginForm', function () {
   return {
     scope: true,
-    controller: ['$scope', '$location', 'AuthenticateJS', 'Referer',
-      function ($scope, $location, AuthenticateJS, Referer) {
+    controller: ['$scope', '$location', 'AuthenticateJS', 'Referer', '$timeout',
+      function ($scope, $location, AuthenticateJS, Referer, $timeout) {
       $scope.error    = false;
       $scope.ready  = false;
 
@@ -51,26 +51,37 @@ angular.module('authenticate.js').directive('authenticateLoginForm', function ()
 
       // Login
       $scope.submit = function() {
-        if (!$scope.loading) {
-            $scope.loading = true;
 
             $scope.errorStatus = null;
 
             if (!$scope.loginForm.$valid || $scope.errorStatus != null) {
-                $scope.loading = false;
                 $scope.error = true;
             } else {
-                AuthenticateJS.login($scope.username, $scope.password).then(function () {
-                    $scope.loading = false;
-                    //$scope.password = '';
-                    redirect();
-                }, function (error) {
-                    $scope.errorStatus = error;
-                    $scope.loading = false;
-                    $scope.error = true;
-                });
+              //simulate loading start
+              $('.loader-bg').css({
+                display: 'block',
+                opacity: 1
+              });
+              $timeout(function(){
+
+                  //simulate loading end
+                  $('.loader-bg').css({
+                    display: 'none',
+                    opacity: 0
+                  });
+
+                  //authentication continue
+                  AuthenticateJS.login($scope.username, $scope.password).then(function () {
+                      //$scope.password = '';
+                      redirect();
+                  }, function (error) {
+                      $scope.errorStatus = error;
+                      $scope.loading = false;
+                      $scope.error = true;
+                  });
+
+              },3000);
             }
-        }
       };
     }],
 
