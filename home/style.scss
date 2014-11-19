@@ -1,7 +1,9 @@
 #development{
   display:none;
 }
-
+.loader {
+  @include loading-spinner();
+}
 .landing{
   opacity:0;
   transition: .25s opacity ease-in;
