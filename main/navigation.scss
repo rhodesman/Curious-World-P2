@@ -110,7 +110,7 @@ $color-link-active: #48b6e8;
 	@include hide-text();
 	position:relative;
 	overflow:visible;
-	text-indent:10000px;
+	text-indent:-10000px;
 	margin: 0;
 	background: url(../img/curious-world-logo.png) center center no-repeat;
 	background-size:contain;

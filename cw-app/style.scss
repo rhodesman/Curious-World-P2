@@ -17,11 +17,12 @@ $store-character-width: $store-video-margin - 16px;
 	height: $header-bar-height;
 	line-height: $header-bar-height;
 	text-align: center;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: 600;
 	color: $success-green;
 
 	@media #{$medium-up} {
+		font-size: 1.5rem;
 		margin-left: 20px;
 		margin-right: 20px;
 	}
