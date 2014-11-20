@@ -171,36 +171,7 @@
   text-indent: -9999em;
   -webkit-animation: load5 1.1s infinite ease;
   animation: load5 1.1s infinite ease;
-  @media #{$small-only}{
-    top:25%;
-    left:50%;
-    transform: translate(-65%, -50%);
-  }
-  // < iphone 5
-  @media screen and (device-aspect-ratio: 2/3) {
-    left:24%;
-  }
-  //iphone 5
-  @media screen and (device-aspect-ratio: 40/71) {
-    left:23%;
-  }
-  //iphone 6
-  @media only screen
-    and (min-device-width : 375px)
-    and (max-device-width : 667px)
-    and (orientation : portrait)
-    and (-webkit-min-device-pixel-ratio : 2){
-      left:28.5%;
-    }
-
-  //iphone 6+
-  @media only screen
-    and (min-device-width : 414px)
-    and (max-device-width : 736px)
-    and (orientation : portrait)
-    and (-webkit-min-device-pixel-ratio : 3){
-      left:30%;
-    }
+  
 }
 @-webkit-keyframes load5 {
   0%,
