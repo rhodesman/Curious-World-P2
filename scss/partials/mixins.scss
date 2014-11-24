@@ -65,9 +65,31 @@
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}', GradientType=1);
 }
 
+@mixin vertical-gradient-glass($top, $bottom, $line-pos) {
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top,  $top 0%, $top $line-pos, $bottom $line-pos, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop($line-pos,$top), color-stop($line-pos,$bottom), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $top 0%,$top $line-pos,$bottom $line-pos,$bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $top 0%,$top $line-pos,$bottom $line-pos,$bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $top 0%,$top $line-pos,$bottom $line-pos,$bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $top 0%,$top $line-pos,$bottom $line-pos,$bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$top}', endColorstr='#{$bottom}',GradientType=0 ); /* IE6-9 */
+}
+
 @mixin border-radius($tL, $tR, $bR, $bL) {
   -webkit-border-radius: $tL $tR $bR $bL;
   border-radius: $tL $tR $bR $bL;
+}
+
+@mixin cw-button() {
+  border-radius:18px;
+  background: $orange;
+  padding:10px 25px;
+  color:white;
+  &:hover{
+    background: $orange-hover;
+    color: white;
+  }
 }
 
 @mixin border-gradient($borStartColor, $borEndColor)  {
@@ -171,7 +193,7 @@
   text-indent: -9999em;
   -webkit-animation: load5 1.1s infinite ease;
   animation: load5 1.1s infinite ease;
-  
+
 }
 @-webkit-keyframes load5 {
   0%,
