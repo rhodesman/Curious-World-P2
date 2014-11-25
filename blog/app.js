@@ -9,6 +9,10 @@
                     .when("/", {
                         templateUrl: "blog/default.html",
                         controller: "DefaultController"
+                    })
+                    .when("/post", {
+                        templateUrl: "blog/single-post.html",
+                        controller: "DefaultController"
                     });
             }
         ])
