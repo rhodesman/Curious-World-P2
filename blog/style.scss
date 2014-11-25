@@ -126,12 +126,15 @@ $copy-gray: #898989;
     overflow:hidden;
     img {
       padding-left:0;
+      @media #{$small-only}{
+        padding-right:0;
+      }
     }
     h3 {
       margin-top:0;
       font-size:rem-calc(26);
       line-height:1.125;
-      margin: 0.5rem 0;
+      margin: 1rem 0 0.5rem 0;
     }
     .preview-copy {
       p {
@@ -146,6 +149,10 @@ $copy-gray: #898989;
       li {
         margin-top: 10px;
         margin-bottom:10px;
+        &.arrow{
+          position:relative;
+          top:3px;
+        }
         &.arrow.unavailable {
           display:none;
         }
