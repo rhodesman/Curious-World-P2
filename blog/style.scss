@@ -27,6 +27,7 @@ $copy-gray: #898989;
     .date {
       font-weight:bold;
       color:#3c4457;
+      margin-right: 10px;
     }
     .tags {
       display:block;
@@ -130,6 +131,7 @@ $copy-gray: #898989;
       margin-top:0;
       font-size:rem-calc(26);
       line-height:1.125;
+      margin: 0.5rem 0;
     }
     .preview-copy {
       p {
@@ -188,6 +190,10 @@ $copy-gray: #898989;
         img{
           float:left;
           padding: 5px 20px 0px 0px;
+          @media #{$small-only}{
+            width:100%;
+            padding: 20px 0;
+          }
         }
       }
     }
@@ -227,7 +233,7 @@ $copy-gray: #898989;
       }
     }
     .post-nav{
-      margin: 30px 0;
+      margin: 30px 0 0 0;
       a{
         display:block;
         width:100%;
