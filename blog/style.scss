@@ -144,6 +144,8 @@ $copy-gray: #898989;
     ul {
       float:right;
       li {
+        margin-top: 10px;
+        margin-bottom:10px;
         &.arrow.unavailable {
           display:none;
         }
