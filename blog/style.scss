@@ -328,7 +328,10 @@ $copy-gray: #898989;
           &:after{
             top:50%;
             left:15%;
-            transform: translate(-50%, -50%) scale(0.6);
+            transform: translate(-50%, -50%) scale(1);
+            @media #{$small-only}{
+              transform: translate(-50%, -50%) scale(0.6);
+            }
           }
         }
         h5,h6{
@@ -350,7 +353,10 @@ $copy-gray: #898989;
           &:after{
             top:50%;
             right:15%;
-            transform: translate(50%, -50%) rotate(180deg) scale(0.6);
+            transform: translate(50%, -50%) rotate(180deg) scale(1);
+            @media #{$small-only}{
+              transform: translate(50%, -50%) rotate(180deg) scale(0.6);
+            }
           }
         }
         h5,h6{
