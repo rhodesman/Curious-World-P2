@@ -78,6 +78,13 @@ $copy-gray: #898989;
             color: black;
             margin-top:4px;
           }
+          &:hover {
+            background-color:#d1d4d9;
+            a {
+              color:#555555;
+              text-decoration:underline;
+            }
+          }
           &:first-child {
             border-top:none;
           }
@@ -224,23 +231,31 @@ $copy-gray: #898989;
             background: url('../img/social-icons.png') no-repeat;
             &.facebook{
               background-position: center 0px;
-              background-color: #6179A9;
-              /* background: url('..img/facebook-share.png') center center no-repeat; */
+              background-color: rgba( 59, 89, 152, 0.8);
+              &:hover {
+                background-color: rgba( 59, 89, 152, 1.0);
+              }
             }
             &.google{
               background-position: center -30px;
-              background-color: #E06E62;
-              /* background: url('..img/google-share.png') center center no-repeat; */
+              background-color: rgba( 221, 75, 57, 0.8);
+              &:hover {
+                background-color: rgba( 221, 75, 57, 1.0);
+              }
             }
             &.pinterest{
               background-position: center -60px;
-              background-color: #D14D4C;
-              /* background: url('..img/pinterest-share.png') center center no-repeat; */
+              background-color: rgba( 203, 33, 29, 0.8);
+              &:hover {
+                background-color: rgba( 203, 33, 29, 1.0);
+              }
             }
             &.twitter{
               background-position: center -90px;
-              background-color: #78B4DD;
-              /* background: url('..img/twitter-share.png') center center no-repeat; */
+              background-color: rgba( 86, 163, 217, 0.8);
+              &:hover {
+                background-color: rgba( 86, 163, 217, 1.0);
+              }
             }
           }
         }
