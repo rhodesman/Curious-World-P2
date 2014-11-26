@@ -151,6 +151,7 @@ $copy-gray: #898989;
     }
   }
   .pagination {
+    margin-bottom:30px;
     ul {
       float:right;
       li {
@@ -262,7 +263,7 @@ $copy-gray: #898989;
       }
     }
     .post-nav{
-      margin: 30px 0 0 0;
+      margin: 30px 0 30px 0;
       a{
         display:block;
         width:100%;
@@ -274,6 +275,9 @@ $copy-gray: #898989;
         font-size: rem-calc(18);
         margin-bottom: 0.25em;
         line-height:1;
+        @media #{$small-only}{
+          font-size: rem-calc(12);
+        }
       }
       h5{
         color: #3c4457;
@@ -281,6 +285,9 @@ $copy-gray: #898989;
       h6{
         color: #8a96aa;
         padding-top:20px;
+        @media #{$small-only}{
+          padding-top:10px;
+        }
       }
       .button-group{
         background: white;
@@ -289,11 +296,14 @@ $copy-gray: #898989;
         overflow:hidden;
         position:relative;
         box-shadow: 0px 0px 1px rgba(#c4c4c4, 0.75);
+        @media #{$small-only}{
+          height:100px;
+        }
         &:before{
           content: '';
           display:block;
           position:absolute;
-          background: #8a96aa;
+          background: #c7cdd1;
           width:30%;
           height:100%;
         }
@@ -302,6 +312,11 @@ $copy-gray: #898989;
           width:24px;
           height:35px;
           position:absolute;
+        }
+        &:hover{
+          &:before{
+            background: #8a96aa;
+          }
         }
       }
       &.prev{
@@ -313,7 +328,7 @@ $copy-gray: #898989;
           &:after{
             top:50%;
             left:15%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) scale(0.6);
           }
         }
         h5,h6{
@@ -321,6 +336,9 @@ $copy-gray: #898989;
           padding-left:35%;
           text-align:right;
           padding-right:20px;
+          @media #{$small-only}{
+            padding-right:10px;
+          }
         }
       }
       &.next{
@@ -332,7 +350,7 @@ $copy-gray: #898989;
           &:after{
             top:50%;
             right:15%;
-            transform: translate(50%, -50%) rotate(180deg);
+            transform: translate(50%, -50%) rotate(180deg) scale(0.6);
           }
         }
         h5,h6{
@@ -340,6 +358,9 @@ $copy-gray: #898989;
           padding-right:35%;
           text-align:left;
           padding-left:20px;
+          @media #{$small-only}{
+            padding-left:10px;
+          }
         }
       }
     }
