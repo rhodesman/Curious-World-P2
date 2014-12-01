@@ -78,6 +78,13 @@ $copy-gray: #898989;
             color: black;
             margin-top:4px;
           }
+          &:hover {
+            background-color:#d1d4d9;
+            a {
+              color:#555555;
+              text-decoration:underline;
+            }
+          }
           &:first-child {
             border-top:none;
           }
@@ -144,6 +151,7 @@ $copy-gray: #898989;
     }
   }
   .pagination {
+    margin-bottom:30px;
     ul {
       float:right;
       li {
@@ -224,30 +232,38 @@ $copy-gray: #898989;
             background: url('../img/social-icons.png') no-repeat;
             &.facebook{
               background-position: center 0px;
-              background-color: #6179A9;
-              /* background: url('..img/facebook-share.png') center center no-repeat; */
+              background-color: rgba( 59, 89, 152, 0.8);
+              &:hover {
+                background-color: rgba( 59, 89, 152, 1.0);
+              }
             }
             &.google{
               background-position: center -30px;
-              background-color: #E06E62;
-              /* background: url('..img/google-share.png') center center no-repeat; */
+              background-color: rgba( 221, 75, 57, 0.8);
+              &:hover {
+                background-color: rgba( 221, 75, 57, 1.0);
+              }
             }
             &.pinterest{
               background-position: center -60px;
-              background-color: #D14D4C;
-              /* background: url('..img/pinterest-share.png') center center no-repeat; */
+              background-color: rgba( 203, 33, 29, 0.8);
+              &:hover {
+                background-color: rgba( 203, 33, 29, 1.0);
+              }
             }
             &.twitter{
               background-position: center -90px;
-              background-color: #78B4DD;
-              /* background: url('..img/twitter-share.png') center center no-repeat; */
+              background-color: rgba( 86, 163, 217, 0.8);
+              &:hover {
+                background-color: rgba( 86, 163, 217, 1.0);
+              }
             }
           }
         }
       }
     }
     .post-nav{
-      margin: 30px 0 0 0;
+      margin: 30px 0 30px 0;
       a{
         display:block;
         width:100%;
@@ -259,6 +275,9 @@ $copy-gray: #898989;
         font-size: rem-calc(18);
         margin-bottom: 0.25em;
         line-height:1;
+        @media #{$small-only}{
+          font-size: rem-calc(12);
+        }
       }
       h5{
         color: #3c4457;
@@ -266,6 +285,9 @@ $copy-gray: #898989;
       h6{
         color: #8a96aa;
         padding-top:20px;
+        @media #{$small-only}{
+          padding-top:10px;
+        }
       }
       .button-group{
         background: white;
@@ -274,19 +296,27 @@ $copy-gray: #898989;
         overflow:hidden;
         position:relative;
         box-shadow: 0px 0px 1px rgba(#c4c4c4, 0.75);
+        @media #{$small-only}{
+          height:100px;
+        }
         &:before{
           content: '';
           display:block;
           position:absolute;
-          background: #8a96aa;
+          background: #c7cdd1;
           width:30%;
           height:100%;
         }
         &:after{
-          background: url('../img/flashcards/card-arrows.png') no-repeat;
+          background: url('../img/blog/card-Arrows.png') no-repeat;
           width:24px;
           height:35px;
           position:absolute;
+        }
+        &:hover{
+          &:before{
+            background: #8a96aa;
+          }
         }
       }
       &.prev{
@@ -298,7 +328,10 @@ $copy-gray: #898989;
           &:after{
             top:50%;
             left:15%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) scale(1);
+            @media #{$small-only}{
+              transform: translate(-50%, -50%) scale(0.6);
+            }
           }
         }
         h5,h6{
@@ -306,6 +339,9 @@ $copy-gray: #898989;
           padding-left:35%;
           text-align:right;
           padding-right:20px;
+          @media #{$small-only}{
+            padding-right:10px;
+          }
         }
       }
       &.next{
@@ -317,7 +353,10 @@ $copy-gray: #898989;
           &:after{
             top:50%;
             right:15%;
-            transform: translate(50%, -50%) rotate(180deg);
+            transform: translate(50%, -50%) rotate(180deg) scale(1);
+            @media #{$small-only}{
+              transform: translate(50%, -50%) rotate(180deg) scale(0.6);
+            }
           }
         }
         h5,h6{
@@ -325,6 +364,9 @@ $copy-gray: #898989;
           padding-right:35%;
           text-align:left;
           padding-left:20px;
+          @media #{$small-only}{
+            padding-left:10px;
+          }
         }
       }
     }
