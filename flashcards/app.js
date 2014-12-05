@@ -125,6 +125,16 @@
             function ($scope, domains, AuthCheck, Milestones, $timeout) {
                 ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
+                //load next set of flashcards modal
+                $scope.completedFlashcards = function(){
+                  $('#next-flashcards').foundation('reveal', 'open');
+                  
+                  //wait 10 seconds and then close
+                  $timeout(function(){
+                    $('#next-flashcards').foundation('reveal', 'close');
+                  }, 10000);
+                }
+
                 //load default modal if no data
                 $timeout(function() {
                     if(!$scope.pagedItems){
