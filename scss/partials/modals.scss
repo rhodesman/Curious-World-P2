@@ -8,6 +8,7 @@ $close-button-size: 45px;
 $more-info-height: 68px;
 $modal-unlock-icon: 26px;
 $darker-border: #d8d8d8;
+$list-item-gray: #4e5055;
 
 // General modal definition
 .reveal-modal {
@@ -1108,7 +1109,63 @@ right: 0!important; */
 	}
 }
 
-#next-flashcards{
+.flashcards-modal{
+	&.reveal-modal{
+		h1{
+			text-align:center;
+			font-size:rem-calc(38);
+			color:$black;
+			line-height:1.1;
+			font-weight:700;
+			margin-bottom: 20px;
+			@media #{$small-only}{
+				font-size:rem-calc(20);
+				margin-bottom:20px;
+			}
+		}
+		p{
+			text-align:center;
+			font-size: rem-calc(13);
+		}
+		a{
+			text-decoration:underline;
+			&:hover{
+				color: $orange-hover;
+			}
+		}
+		.center-copy{
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			left: 50%;
+			width: 100%;
+			padding: 0 70px;
+		}
+		.modal-card{
+			min-height:425px;
+			padding: 0 70px;
+			@media #{$small-only}{
+				padding: 30px 10px 20px 10px;
+			}
+		}
+		.underline{
+			color: $list-item-gray;
+			text-decoration: underline;
+			&:hover{
+				color: lighten($list-item-gray, 10%);
+			}
+		}
+		max-width:830px;
+		position:absolute;
+		top:175px;
+	}
+	a.close-reveal-modal{
+		text-decoration:none;
+	}
+
+}
+
+.click-through{
 	a{
 		&.close-full{
 			position:absolute;
@@ -1127,31 +1184,6 @@ right: 0!important; */
 				padding: 0!important;
 			}
 		}
-	}
-	position:absolute;
-	top:175px;
-	.modal-card{
-		padding: 131px 35px 131px 35px;
-		@media #{$small-only}{
-			padding: 30px 10px 20px 10px;
-		}
-	}
-	max-width:830px;
-	h1{
-		text-align:center;
-		font-size:rem-calc(38);
-		color:$black;
-		line-height:1.1;
-		font-weight:700;
-		margin-bottom: 20px;
-		@media #{$small-only}{
-			font-size:rem-calc(20);
-			margin-bottom:20px;
-		}
-	}
-	p{
-		text-align:center;
-		font-size: rem-calc(13);
 	}
 }
 
