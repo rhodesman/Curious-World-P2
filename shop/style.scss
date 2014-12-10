@@ -240,6 +240,17 @@ $kit-box-height: 429px;
 			}
 		}
 	}
+	#shop-banner {
+		margin-top:-32px;
+		padding:10px 0;
+		background-color:#f2a900;
+		div {
+			text-align:center;
+			color: white;
+			font-size:rem-calc(25);
+			text-shadow: 0 0 7px rgba(0, 0, 0, 0.17);
+		}
+	}
 	#kits { // Kit listing
 		padding-top: 32px;
 		background: $light-grey;
