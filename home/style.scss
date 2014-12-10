@@ -352,7 +352,7 @@
       border: none;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
-      padding: 0 0 0 20px;
+      padding: 0 0 0 20px !important;
       font-size: rem-calc(17);
       @media #{$xsmall-only} {
         font-size: rem-calc(13);
