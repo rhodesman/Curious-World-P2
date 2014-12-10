@@ -769,7 +769,7 @@ input[type="email"]{
     margin: 0;
     position:absolute;
     top:15%;
-    left:76px;
+    left:73px;
     opacity: 0!important;
     visibility: hidden;
     font-size: 0.75rem;
@@ -802,10 +802,4 @@ input[type="email"]{
   display:none!important;
   opacity:0!important;
   line-height: 1;
-}
-
-#create-account-form {
-  .better-placeholder-text {
-    left:73px;
-  }
 }
