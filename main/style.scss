@@ -17,25 +17,75 @@
   animation: fadeIn 1s;
 }
 
+@keyframes spin {
+  to { transform: rotate(1turn);  }
+}
+
+$container-width: 150px;
+$item-width:25px;
 
 .loader {
-  @include loading-spinner();
+  position: relative;
+  top:50%;
+  left:50%;
+  display: inline-block;
+  width: $container-width;
+  height: $container-width;
+  margin: -$container-width/2;
+  font-size: 12px;
+  text-indent: 999em;
+  overflow: hidden;
+  animation: spin 1s infinite steps(8);
 }
-@keyframes load5 {
-  @include spinner-keys();
+
+.loader:before,
+.loader:after,
+.loader > div:before,
+.loader > div:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: ($container-width - $item-width)/2; /* (container width - part width)/2  */
+  width: $item-width;
+  height: $item-width;
+  border-radius: 50%;
+  background: #eee;
+  box-shadow: 0 ($container-width - $item-width) #eee; /* container height - part height */
+  transform-origin: 50% $container-width/2; /* container height / 2 */
 }
-@-moz-keyframes load5 {
-  @include spinner-keys();
+
+.loader:before {
+  background: #eee;
+  opacity: 1;
 }
-@-ms-keyframes load5 {
-  @include spinner-keys();
+
+.loader:after {
+  transform: rotate(-45deg);
+  background: #eee;
+  opacity: 0.75;
 }
-@-o-keyframes load5 {
-  @include spinner-keys();
+
+.loader > div:before {
+  transform: rotate(-90deg);
+  background: #eee;
+  opacity: 0.5;
 }
-@-webkit-keyframes load5 {
-  @include spinner-keys();
+
+.loader > div:after {
+  transform: rotate(-135deg);
+  background: #eee;
+  opacity: 0.2;
 }
+
+
+
+
+
+
+
+
+
+
 
 @-webkit-keyframes fadeIn {
     from { opacity: 0; }

@@ -62,7 +62,7 @@ angular.module('authenticate.js').directive('authenticateLoginForm', function ()
                 display: 'block',
                 opacity: 1
               });
-              $('.loader-bg div').addClass('loader');
+              $('.loader-bg > div').addClass('loader');
               $timeout(function(){
 
                   //simulate loading end
@@ -70,7 +70,7 @@ angular.module('authenticate.js').directive('authenticateLoginForm', function ()
                     display: 'none',
                     opacity: 0
                   });
-                  $('.loader-bg div').removeClass('loader');
+                  $('.loader-bg > div').removeClass('loader');
                   //authentication continue
                   AuthenticateJS.login($scope.username, $scope.password).then(function () {
                       //$scope.password = '';
@@ -81,7 +81,7 @@ angular.module('authenticate.js').directive('authenticateLoginForm', function ()
                       $scope.error = true;
                   });
 
-              },3000);
+              },300000);
             }
       };
     }],
