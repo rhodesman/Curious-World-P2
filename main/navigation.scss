@@ -287,6 +287,10 @@ $color-link-active: #48b6e8;
 	}
 }
 
+.fixfixed #header { 
+	position: absolute;
+}
+
 #account-menu{
 	a{
 		line-height:40px;

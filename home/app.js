@@ -41,7 +41,7 @@
               ng.extend($scope, new AuthCheck($scope)); // Inject authentication checking
 
               //simulate load spinner
-              
+
 
               //create brightcover video in slider
               brightcove.createExperiences();
