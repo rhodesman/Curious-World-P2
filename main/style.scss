@@ -21,7 +21,7 @@
   to { transform: rotate(1turn);  }
 }
 
-$container-width: 150px;
+$container-width: 154px;
 $item-width:26px;
 
 .loader {
@@ -36,55 +36,45 @@ $item-width:26px;
   text-indent: 999em;
   overflow: hidden;
   animation: spin 1s infinite steps(8);
+  &:before {
+    background: #eee;
+    opacity: 1;
+  }
+  &:after {
+    transform: rotate(-45deg);
+    background: #eee;
+    opacity: 0.5;
+  }
+  > div {
+    width:$container-width;
+    height:$item-width;
+    &:before {
+      transform: rotate(-90deg);
+      background: #eee;
+      opacity: 0.25;
+    }
+    &:after {
+      transform: rotate(-135deg);
+      background: #eee;
+      opacity: 0.25;
+    }
+  }
+  &:before,
+  &:after,
+  > div:before,
+  > div:after {
+    content: '';
+    position: absolute;
+    display:block;
+    top: 0;
+    left: ($container-width - $item-width)/2; /* (container width - part width)/2  */
+    width: $item-width;
+    height: $item-width;
+    border-radius: 50%;
+    box-shadow: 0 ($container-width - $item-width) rgba(255,255,255,0.2); /* container height - part height */
+    transform-origin: 50% ($container-width/2); /* container height / 2 */
+  }
 }
-
-.loader:before,
-.loader:after,
-.loader > div:before,
-.loader > div:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: ($container-width - $item-width)/2; /* (container width - part width)/2  */
-  width: $item-width;
-  height: $item-width;
-  border-radius: 50%;
-  box-shadow: 0 ($container-width - $item-width) rgba(255,255,255,0.2); /* container height - part height */
-  transform-origin: 50% ($container-width/2); /* container height / 2 */
-}
-
-.loader:before {
-  background: #eee;
-  opacity: 1;
-}
-
-.loader:after {
-  transform: rotate(-45deg);
-  background: #eee;
-  opacity: 0.5;
-}
-
-.loader > div:before {
-  transform: rotate(-90deg);
-  background: #eee;
-  opacity: 0.25;
-}
-
-.loader > div:after {
-  transform: rotate(-135deg);
-  background: #eee;
-  opacity: 0.25;
-}
-
-
-
-
-
-
-
-
-
-
 
 @-webkit-keyframes fadeIn {
     from { opacity: 0; }
