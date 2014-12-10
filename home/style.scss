@@ -546,7 +546,7 @@ form{
   input{
     /* height:50px; */
     border-radius: 5px;
-    margin: 0 0 20px 0;
+    margin: 10px 0 10px 0;
     padding-left:60px;
     color:$input-gray;
     &:focus{
@@ -718,7 +718,7 @@ input[type="email"]{
 
 .better-placeholder {
     height:50px;
-    line-height:1;
+    //line-height:1;
     padding: 0;
     margin: 0;
     color: $dark-grey;
@@ -766,25 +766,28 @@ input[type="email"]{
     }
   }
   .better-placeholder-text {
-    line-height:1;
+    //line-height:1;
     padding:0;
     margin: 0;
     position:absolute;
-    top:25%;
+    top:50%;
     right:100px;
     opacity: 1!important;
     visibility: hidden;
     font-size: 0.75rem;
     font-weight: 400;
     color: $label-color;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     transition: all 0.2s ease-in-out;
 
     &.active {
-      line-height:1;
+      //line-height:1;
       padding:0;
       margin: 0;
       position:absolute;
-      top:25%!important;
+      //top:50%!important;
       right:40px;
       opacity: 1!important;
       visibility: visible;
@@ -798,11 +801,11 @@ input[type="email"]{
 [placeholder]::webkit-input-placeholder {
   display:none!important;
   opacity: 0!important;
-  line-height:50px;
+  line-height:1;
 }
 
 [placeholder]:focus::-webkit-input-placeholder {
   display:none!important;
   opacity:0!important;
-  line-height: 50px;
+  line-height: 1;
 }
