@@ -22,7 +22,7 @@
 }
 
 $container-width: 150px;
-$item-width:25px;
+$item-width:26px;
 
 .loader {
   position: relative;
@@ -31,7 +31,7 @@ $item-width:25px;
   display: inline-block;
   width: $container-width;
   height: $container-width;
-  margin: -$container-width/2;
+  margin: -($container-width/2);
   font-size: 12px;
   text-indent: 999em;
   overflow: hidden;
@@ -49,9 +49,8 @@ $item-width:25px;
   width: $item-width;
   height: $item-width;
   border-radius: 50%;
-  background: #eee;
-  box-shadow: 0 ($container-width - $item-width) #eee; /* container height - part height */
-  transform-origin: 50% $container-width/2; /* container height / 2 */
+  box-shadow: 0 ($container-width - $item-width) rgba(255,255,255,0.2); /* container height - part height */
+  transform-origin: 50% ($container-width/2); /* container height / 2 */
 }
 
 .loader:before {
@@ -62,19 +61,19 @@ $item-width:25px;
 .loader:after {
   transform: rotate(-45deg);
   background: #eee;
-  opacity: 0.75;
+  opacity: 0.5;
 }
 
 .loader > div:before {
   transform: rotate(-90deg);
   background: #eee;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
 .loader > div:after {
   transform: rotate(-135deg);
   background: #eee;
-  opacity: 0.2;
+  opacity: 0.25;
 }
 
 
