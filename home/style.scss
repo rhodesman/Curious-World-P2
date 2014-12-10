@@ -353,6 +353,7 @@
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
       padding: 0 0 0 20px !important;
+      font-size: rem-calc(17);
       @media #{$xsmall-only} {
         font-size: rem-calc(13);
       }
@@ -712,11 +713,12 @@ input[type="password"],
 input[type="email"]{
   padding: 0!important;
   padding-left: 60px!important;
-  height:70px;
+  height:50px;
 }
 
 .better-placeholder {
-    height:70px;
+    height:50px;
+    line-height:1;
     padding: 0;
     margin: 0;
     color: $dark-grey;
@@ -768,38 +770,39 @@ input[type="email"]{
     padding:0;
     margin: 0;
     position:absolute;
-    top:15%;
-    left:73px;
-    opacity: 0!important;
+    top:25%;
+    right:100px;
+    opacity: 1!important;
     visibility: hidden;
     font-size: 0.75rem;
     font-weight: 400;
     color: $label-color;
-    transition: all 0.2s linear;
+    transition: all 0.2s ease-in-out;
 
     &.active {
       line-height:1;
       padding:0;
       margin: 0;
       position:absolute;
-      top:15%!important;
+      top:25%!important;
+      right:40px;
       opacity: 1!important;
       visibility: visible;
       font-size: 0.75rem;
       font-weight: 400;
       color: $label-color;
-      transition: all 0.2s linear;
+      transition: all 0.2s ease-in-out;
     }
   }
 
 [placeholder]::webkit-input-placeholder {
   display:none!important;
   opacity: 0!important;
-  line-height:1;
+  line-height:50px;
 }
 
 [placeholder]:focus::-webkit-input-placeholder {
   display:none!important;
   opacity:0!important;
-  line-height: 1;
+  line-height: 50px;
 }
