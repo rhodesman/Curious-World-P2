@@ -3,6 +3,22 @@
 
     // Prepare Foundation to handle extra dropdown and modal logic
     $(function () {
+
+      /* we need this only on touch devices */
+      if (Modernizr.touch) {
+        /* cache dom references */
+        var $body = jQuery('body');
+
+        /* bind events */
+        $(document)
+        .on('focus', 'input', function(e) {
+          $body.addClass('fixfixed');
+        })
+        .on('blur', 'input', function(e) {
+          $body.removeClass('fixfixed');
+        });
+      }
+
         var wrapper,
             activeClassName = "reveal-is-open",
             revealEvents = ["open", "close"];
