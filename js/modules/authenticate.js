@@ -81,7 +81,7 @@ angular.module('authenticate.js').directive('authenticateLoginForm', function ()
                       $scope.error = true;
                   });
 
-              },300000);
+              },3000);
             }
       };
     }],

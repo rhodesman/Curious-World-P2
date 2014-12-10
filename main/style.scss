@@ -35,7 +35,7 @@ $item-width:26px;
   font-size: 12px;
   text-indent: 999em;
   overflow: hidden;
-  animation: spin 1s infinite steps(12);
+  animation: spin 1s infinite steps(8);
   &:before {
     background: #eee;
     opacity: 1;
@@ -48,6 +48,7 @@ $item-width:26px;
   > div {
     width:$container-width;
     height:$item-width;
+    line-height: $container-width;
     &:before {
       transform: rotate(-90deg);
       background: #eee;
