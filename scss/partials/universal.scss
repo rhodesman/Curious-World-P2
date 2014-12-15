@@ -83,6 +83,16 @@ a {
 		text-decoration:underline;
 	}
 }
+nav, .dropdowns, .general-modal, .blog-page-side {
+	a:hover {
+		text-decoration:none !important;
+	}
+	li:hover {
+		a {
+			text-decoration:none !important;
+		}
+	}
+}
 
 *:focus {
 	outline: 0;
