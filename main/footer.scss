@@ -11,6 +11,9 @@ footer {
 	@media #{$medium-up}{
 		/* padding-bottom:\$footer-padding; */
 	}
+	a:hover {
+		text-decoration:underline !important;
+	}
 	.footer-home {
 		padding-bottom:70px;
 		@media #{$medium-up}{

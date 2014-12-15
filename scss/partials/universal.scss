@@ -80,18 +80,14 @@ a {
 	cursor: pointer;
 	&:hover {
 		color: $link-orange;
-		text-decoration:underline;
+		//text-decoration:underline;
 	}
 }
-nav, .dropdowns, .general-modal, .blog-page-side {
-	a:hover {
-		text-decoration:none !important;
-	}
-	li:hover {
-		a {
-			text-decoration:none !important;
-		}
-	}
+p a:hover {
+	text-decoration:underline;
+}
+li:hover a {
+	text-decoration:none !important;
 }
 
 *:focus {
